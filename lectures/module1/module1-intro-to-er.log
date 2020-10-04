@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  4 OCT 2020 13:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  4 OCT 2020 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -743,8 +743,7 @@ Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@dima=\skip70
 \bigstrutjot=\dimen298
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.st
-y) (/usr/local/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
+(/usr/local/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write5
 
 Excluding comment 'comment')
@@ -1019,6 +1018,8 @@ File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ks.code.tex
 File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.st
+y)
 
 ! LaTeX Error: File `tkz-berge.sty' not found.
 
@@ -1147,7 +1148,7 @@ Excluding comment 'notbeamer' Include comment 'beamer'
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 175.
 
-No file module1-intro-to-er.aux.
+(./module1-intro-to-er.aux)
 \openout1 = `module1-intro-to-er.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 194.
@@ -1166,6 +1167,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 194.
 LaTeX Font Info:    ... okay on input line 194.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 194.
 LaTeX Font Info:    ... okay on input line 194.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1241,6 +1243,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 194.
 LaTeX Info: Redefining \pageref on input line 194.
 LaTeX Info: Redefining \nameref on input line 194.
+ (./module1-intro-to-er.out) (./module1-intro-to-er.out)
 \@outlinefile=\write6
 \openout6 = `module1-intro-to-er.out'.
 
@@ -1324,22 +1327,19 @@ tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 \c@lstlisting=\count362
+ (./module1-intro-to-er.nav) [1
 
-No file module1-intro-to-er.nav.
-[1
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] [3
 
 ] [4
 
 ]
-<dunn.png, id=143, 894.34125pt x 507.8975pt>
-File: dunn.png Graphic file (type png)
-<use dunn.png>
-Package pdftex.def Info: dunn.png  used on input line 269.
+<finalFigures/dunn.png, id=155, 894.34125pt x 507.8975pt>
+File: finalFigures/dunn.png Graphic file (type png)
+<use finalFigures/dunn.png>
+Package pdftex.def Info: finalFigures/dunn.png  used on input line 269.
 (pdftex.def)             Requested size: 313.02412pt x 177.76678pt.
 
 Overfull \hbox (5.73425pt too wide) in paragraph at lines 269--269
@@ -1348,8 +1348,8 @@ Overfull \hbox (5.73425pt too wide) in paragraph at lines 269--269
 
 [5
 
- <./dunn.png>]
-<finalFigures/BicyclePatent.jpg, id=171, 451.6875pt x 738.96075pt>
+ <./finalFigures/dunn.png>]
+<finalFigures/BicyclePatent.jpg, id=185, 451.6875pt x 738.96075pt>
 File: finalFigures/BicyclePatent.jpg Graphic file (type jpg)
 <use finalFigures/BicyclePatent.jpg>
 Package pdftex.def Info: finalFigures/BicyclePatent.jpg  used on input line 283
@@ -1362,7 +1362,7 @@ Overfull \vbox (6.49352pt too high) detected at line 283
 [6
 
  <./finalFigures/BicyclePatent.jpg>]
-<finalFigures/census-hero2.png, id=197, 937.5025pt x 433.62pt>
+<finalFigures/census-hero2.png, id=213, 937.5025pt x 433.62pt>
 File: finalFigures/census-hero2.png Graphic file (type png)
 <use finalFigures/census-hero2.png>
 Package pdftex.def Info: finalFigures/census-hero2.png  used on input line 303.
@@ -1376,7 +1376,7 @@ Overfull \hbox (114.58235pt too wide) in paragraph at lines 303--303
 [7
 
  <./finalFigures/census-hero2.png>]
-<finalFigures/voter-issues-2.png, id=225, 754.82pt x 284.06125pt>
+<finalFigures/voter-issues-2.png, id=243, 754.82pt x 284.06125pt>
 File: finalFigures/voter-issues-2.png Graphic file (type png)
 <use finalFigures/voter-issues-2.png>
 Package pdftex.def Info: finalFigures/voter-issues-2.png  used on input line 33
@@ -1396,7 +1396,7 @@ Package pdftex.def Info: finalFigures/voter-issues-2.png  used on input line 33
 ] [10
 
 ]
-<finalFigures/linkage2.png, id=303, 784.9325pt x 600.2425pt>
+<finalFigures/linkage2.png, id=327, 784.9325pt x 600.2425pt>
 File: finalFigures/linkage2.png Graphic file (type png)
 <use finalFigures/linkage2.png>
 Package pdftex.def Info: finalFigures/linkage2.png  used on input line 393.
@@ -1404,7 +1404,7 @@ Package pdftex.def Info: finalFigures/linkage2.png  used on input line 393.
  [11
 
  <./finalFigures/linkage2.png>]
-<finalFigures/node.png, id=330, 235.88126pt x 124.465pt>
+<finalFigures/node.png, id=356, 235.88126pt x 124.465pt>
 File: finalFigures/node.png Graphic file (type png)
 <use finalFigures/node.png>
 Package pdftex.def Info: finalFigures/node.png  used on input line 405.
@@ -1412,7 +1412,7 @@ Package pdftex.def Info: finalFigures/node.png  used on input line 405.
  [12
 
  <./finalFigures/node.png>]
-<finalFigures/node-feature.png, id=357, 492.84125pt x 301.125pt>
+<finalFigures/node-feature.png, id=386, 492.84125pt x 301.125pt>
 File: finalFigures/node-feature.png Graphic file (type png)
 <use finalFigures/node-feature.png>
 Package pdftex.def Info: finalFigures/node-feature.png  used on input line 416.
@@ -1431,7 +1431,7 @@ Package pdftex.def Info: finalFigures/linkage2.png  used on input line 428.
 ] [15
 
 ]
-<finalFigures/pain-points.png, id=436, 837.1275pt x 368.37625pt>
+<finalFigures/pain-points.png, id=471, 837.1275pt x 368.37625pt>
 File: finalFigures/pain-points.png Graphic file (type png)
 <use finalFigures/pain-points.png>
 Package pdftex.def Info: finalFigures/pain-points.png  used on input line 461.
@@ -1441,7 +1441,7 @@ Package pdftex.def Info: finalFigures/pain-points.png  used on input line 461.
  <./finalFigures/pain-points.png>] [17
 
 ]
-<finalFigures/pipeline.png, id=489, 959.585pt x 477.785pt>
+<finalFigures/pipeline.png, id=527, 959.585pt x 477.785pt>
 File: finalFigures/pipeline.png Graphic file (type png)
 <use finalFigures/pipeline.png>
 Package pdftex.def Info: finalFigures/pipeline.png  used on input line 504.
@@ -1456,7 +1456,7 @@ Overfull \hbox (9.37416pt too wide) in paragraph at lines 504--504
  <./finalFigures/pipeline.png>] [19
 
 ]
-<finalFigures/block.png, id=542, 756.57657pt x 357.58594pt>
+<finalFigures/block.png, id=585, 756.57657pt x 357.58594pt>
 File: finalFigures/block.png Graphic file (type png)
 <use finalFigures/block.png>
 Package pdftex.def Info: finalFigures/block.png  used on input line 531.
@@ -1498,47 +1498,48 @@ Overfull \hbox (21.85255pt too wide) in paragraph at lines 612--612
 ] [25
 
 ]
-<Dunn-0.png, id=698, 848.16875pt x 243.91125pt>
-File: Dunn-0.png Graphic file (type png)
-<use Dunn-0.png>
-Package pdftex.def Info: Dunn-0.png  used on input line 730.
+<finalFigures/Dunn-0.png, id=752, 848.16875pt x 243.91125pt>
+File: finalFigures/Dunn-0.png Graphic file (type png)
+<use finalFigures/Dunn-0.png>
+Package pdftex.def Info: finalFigures/Dunn-0.png  used on input line 730.
 (pdftex.def)             Requested size: 245.83282pt x 70.69522pt.
  [26
 
- <./Dunn-0.png>] [27
+ <./finalFigures/Dunn-0.png>] [27
 
 ]
-File: dunn.png Graphic file (type png)
-<use dunn.png>
-Package pdftex.def Info: dunn.png  used on input line 750.
+File: finalFigures/dunn.png Graphic file (type png)
+<use finalFigures/dunn.png>
+Package pdftex.def Info: finalFigures/dunn.png  used on input line 750.
 (pdftex.def)             Requested size: 307.28987pt x 174.51184pt.
  [28
 
 ]
-<newcombe.png, id=776, 587.19376pt x 231.86626pt>
-File: newcombe.png Graphic file (type png)
-<use newcombe.png>
-Package pdftex.def Info: newcombe.png  used on input line 766.
+<finalFigures/newcombe.png, id=837, 587.19376pt x 231.86626pt>
+File: finalFigures/newcombe.png Graphic file (type png)
+<use finalFigures/newcombe.png>
+Package pdftex.def Info: finalFigures/newcombe.png  used on input line 766.
 (pdftex.def)             Requested size: 307.28987pt x 121.33888pt.
  [29
 
- <./newcombe.png>]
-<datatron.jpeg, id=804, 1027.84pt x 916.42375pt>
-File: datatron.jpeg Graphic file (type jpg)
-<use datatron.jpeg>
-Package pdftex.def Info: datatron.jpeg  used on input line 780.
+ <./finalFigures/newcombe.png>]
+<finalFigures/datatron.jpeg, id=866, 1027.84pt x 916.42375pt>
+File: finalFigures/datatron.jpeg Graphic file (type jpg)
+<use finalFigures/datatron.jpeg>
+Package pdftex.def Info: finalFigures/datatron.jpeg  used on input line 780.
 (pdftex.def)             Requested size: 184.3758pt x 164.38982pt.
  [30
 
- <./datatron.jpeg>]
-<FS.png, id=830, 1071.00125pt x 386.44376pt>
-File: FS.png Graphic file (type png)
-<use FS.png>
-Package pdftex.def Info: FS.png  used on input line 793.
+ <./finalFigures/datatron.jpeg>]
+<finalFigures/FS.png, id=894, 1071.00125pt x 386.44376pt>
+File: finalFigures/FS.png Graphic file (type png)
+<use finalFigures/FS.png>
+Package pdftex.def Info: finalFigures/FS.png  used on input line 793.
 (pdftex.def)             Requested size: 307.28987pt x 110.88058pt.
  [31
 
- <./FS.png>] [32
+ <./finalFigures/FS.png>]
+[32
 
 ] [33
 
@@ -1556,14 +1557,13 @@ Package pdftex.def Info: FS.png  used on input line 793.
 
 ] [40
 
-]
-[41
+] [41
 
 ]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./finalFigures/rl_vs_er.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<finalFigures/rl_vs_er.pdf, id=1111, 361.35pt x 122.93628pt>
+<finalFigures/rl_vs_er.pdf, id=1198, 361.35pt x 122.93628pt>
 File: finalFigures/rl_vs_er.pdf Graphic file (type pdf)
 <use finalFigures/rl_vs_er.pdf>
 Package pdftex.def Info: finalFigures/rl_vs_er.pdf  used on input line 1028.
@@ -1571,7 +1571,7 @@ Package pdftex.def Info: finalFigures/rl_vs_er.pdf  used on input line 1028.
 [42
 
  <./finalFigures/rl_vs_er.pdf>]
-<finalFigures/dblink-model.png, id=1159, 578.16pt x 400.49625pt>
+<finalFigures/dblink-model.png, id=1248, 578.16pt x 400.49625pt>
 File: finalFigures/dblink-model.png Graphic file (type png)
 <use finalFigures/dblink-model.png>
 Package pdftex.def Info: finalFigures/dblink-model.png  used on input line 1055
@@ -1584,7 +1584,7 @@ Overfull \vbox (4.61987pt too high) detected at line 1055
 [43
 
  <./finalFigures/dblink-model.png>]
-<finalFigures/dblink-exp.png, id=1190, 732.7375pt x 586.19pt>
+<finalFigures/dblink-exp.png, id=1281, 732.7375pt x 586.19pt>
 File: finalFigures/dblink-exp.png Graphic file (type png)
 <use finalFigures/dblink-exp.png>
 Package pdftex.def Info: finalFigures/dblink-exp.png  used on input line 1069.
@@ -1592,7 +1592,7 @@ Package pdftex.def Info: finalFigures/dblink-exp.png  used on input line 1069.
  [44
 
  <./finalFigures/dblink-exp.png>]
-<finalFigures/census-exp.png, id=1217, 444.66125pt x 134.5025pt>
+<finalFigures/census-exp.png, id=1310, 444.66125pt x 134.5025pt>
 File: finalFigures/census-exp.png Graphic file (type png)
 <use finalFigures/census-exp.png>
 Package pdftex.def Info: finalFigures/census-exp.png  used on input line 1092.
@@ -1601,7 +1601,7 @@ Package pdftex.def Info: finalFigures/census-exp.png  used on input line 1092.
 [45
 
  <./finalFigures/census-exp.png>]
-<figures/classicClusters.png, id=1245, 842.14626pt x 550.055pt>
+<figures/classicClusters.png, id=1339, 842.14626pt x 550.055pt>
 File: figures/classicClusters.png Graphic file (type png)
 <use figures/classicClusters.png>
 Package pdftex.def Info: figures/classicClusters.png  used on input line 1124.
@@ -1647,7 +1647,7 @@ No file module1-intro-to-er.bbl.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\translate ' on input line 1315.
 
-<figures/CRP_N_increasingand_alpha_fixed.png, id=1559, 2086.79625pt x 650.43pt>
+<figures/CRP_N_increasingand_alpha_fixed.png, id=1676, 2086.79625pt x 650.43pt>
 
 File: figures/CRP_N_increasingand_alpha_fixed.png Graphic file (type png)
 <use figures/CRP_N_increasingand_alpha_fixed.png>
@@ -1658,7 +1658,7 @@ nput line 1330.
 
 
  <./figures/CRP_N_increasingand_alpha_fixed.png>]
-<figures/CRP_N_and_alpha_increasing.png, id=1589, 1603.49063pt x 514.92375pt>
+<figures/CRP_N_and_alpha_increasing.png, id=1707, 1603.49063pt x 514.92375pt>
 File: figures/CRP_N_and_alpha_increasing.png Graphic file (type png)
 <use figures/CRP_N_and_alpha_increasing.png>
 Package pdftex.def Info: figures/CRP_N_and_alpha_increasing.png  used on input 
@@ -1695,17 +1695,17 @@ Package rerunfilecheck Warning: File `module1-intro-to-er.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `module1-intro-to-er.out':
-(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
 (rerunfilecheck)             After:  D9694BC855D0C50CCAD6B8D6DEDF7609;41.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 28868 strings out of 480608
- 597352 string characters out of 5903631
- 962634 words of memory out of 5000000
- 43913 multiletter control sequences out of 15000+600000
+ 29001 strings out of 480608
+ 599060 string characters out of 5903631
+ 961679 words of memory out of 5000000
+ 44033 multiletter control sequences out of 15000+600000
  557373 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,14n,83p,834b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1720,10 +1720,10 @@ sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on module1-intro-to-er.pdf (59 pages, 3239195 bytes).
+Output written on module1-intro-to-er.pdf (59 pages, 3247390 bytes).
 PDF statistics:
- 1683 PDF objects out of 1728 (max. 8388607)
- 1531 compressed objects within 16 object streams
+ 1802 PDF objects out of 2073 (max. 8388607)
+ 1649 compressed objects within 17 object streams
  123 named destinations out of 1000 (max. 500000)
  244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
