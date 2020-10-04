@@ -153,6 +153,24 @@ sum(sapply(recordsPerBlock, choose, k=2))
 
 Calculate the Pairwise Precision and Recall. 
 
-# Case Study to XX
+# Case Study to El Salvador 
 
-Merge this into an exercise or a homework assignment. 
+We return to the case study on El Salvador, where we will investigate deterministic blocking as done in Sadinle (2014). 
+
+# Task 1
+
+Implement the blocking procedure from Sadinle (2014), where the blocking criterion is XXX. 
+
+# Task 2
+
+Explain why you think the author choose this blocking criterion. 
+
+# Task 3
+
+What is the reduction ratio, precision, and recall assuming that the ground truth is true in this situation? 
+
+# Task 4
+
+Can you come up with a better blocking criterion for this data set that is deterministic? 
+
+
