@@ -1,10 +1,4 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
 DBI
 RSQLite
 bit
@@ -19,3 +13,4 @@ tokenizers
 usethis
 devtools
 cora
+ggplot2
