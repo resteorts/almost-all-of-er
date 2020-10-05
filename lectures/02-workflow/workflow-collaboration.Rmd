@@ -1,0 +1,20 @@
+
+---
+title: "Module X: Collaboration and Workflow"
+author: "Olivier Binette and Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+
+
+Agenda
+===
+
+
+
+
+
