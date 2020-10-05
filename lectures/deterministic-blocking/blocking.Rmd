@@ -24,6 +24,7 @@ Load R packages
 
 ```{r, echo=FALSE }
 library(RecordLinkage)
+library(blink)
 ```
 
 Data Cleaning Pipeline
@@ -135,7 +136,7 @@ sum(sapply(recordsPerBlock, choose, k=2))
 
 # RLdata500 (Continued)
 
-What is the overall dimension reduction form the orginal space to the reduced space induced by blocking? 
+What is the overall dimension reduction form the original space to the reduced space induced by blocking? 
 
 Recall the original space of comparisons was 
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
@@ -147,11 +148,22 @@ We have reduced the number of comparisons to
 sum(sapply(recordsPerBlock, choose, k=2))
 ```
 
-\textcolor{red}{Calculate the RR.}
+# How do we calculate the reducation ratio?
+
+```{r}
+reduction.ratio <- function(block.labels) 1 - sum(choose(table(block.labels),2)) / choose(length(block.labels),2)
+```
+
+# How do we calculate the reducation ratio?
+
+```{r}
+rr <- reduction.ratio()
+```
 
 # Pairwise Evaluation Metrics
 
 Calculate the Pairwise Precision and Recall. 
+\textcolor{red}{Need a function that works for this generally.}
 
 # Case Study to El Salvador 
 
