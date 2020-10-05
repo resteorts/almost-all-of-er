@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: Probabilitic Blocking"
+title: "Module X: Probabilistic Blocking"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:
@@ -369,7 +369,7 @@ Want create the signature matrix through minhashing
 The signature matrix is a hashing of values from the permuted characteristic matrix and has one row for the number of permutations calculated ($m$), and a column for each record
 
 # Minhashing (cont'd)
-
+\tiny
 ```{r minhash-1, cache=TRUE}
 # set seed for reproducibility
 set.seed(02082018)
@@ -421,8 +421,10 @@ The number of agreements over the total number of combinations is an approximati
 ```{r jaccard-sig, fig.height=4, cache=TRUE}
 # add jaccard similarity approximated from the minhash to compare
 # number of agreements over the total number of combinations
-hashed_jaccard$similarity_minhash <- apply(hashed_jaccard, 1, function(row) {
-  sum(sig_mat[, row[["record1"]]] == sig_mat[, row[["record2"]]])/nrow(sig_mat)
+hashed_jaccard$similarity_minhash <- 
+  apply(hashed_jaccard, 1, function(row) {
+  sum(sig_mat[, row[["record1"]]] 
+      == sig_mat[, row[["record2"]]])/nrow(sig_mat)
 })
 
 # how far off is this approximation? plot differences
@@ -432,11 +434,13 @@ qplot(hashed_jaccard$similarity_minhash - hashed_jaccard$similarity) +
 
 # Jaccard similarity approximation
 
-```{r jaccard-sig, fig.height=4, cache=TRUE, echo=FALSE}
+```{r jaccard-sig-again, fig.height=4, cache=TRUE, echo=FALSE}
 # add jaccard similarity approximated from the minhash to compare
 # number of agreements over the total number of combinations
-hashed_jaccard$similarity_minhash <- apply(hashed_jaccard, 1, function(row) {
-  sum(sig_mat[, row[["record1"]]] == sig_mat[, row[["record2"]]])/nrow(sig_mat)
+hashed_jaccard$similarity_minhash <- 
+  apply(hashed_jaccard, 1, function(row) {
+  sum(sig_mat[, row[["record1"]]] == 
+        sig_mat[, row[["record2"]]])/nrow(sig_mat)
 })
 
 # how far off is this approximation? plot differences
@@ -548,19 +552,17 @@ lsh_jaccard <- lsh_compare(candidates, corpus, jaccard_similarity, progress = FA
 qplot(lsh_jaccard$score)
 ```
 
-
 # Putting it all together
 
 The last thing we need is to go from candidate pairs to blocks
 
-\footnotesize
+
 ```{r, echo=TRUE}
 library(igraph) #graph package
-
 # think of each record as a node
 # there is an edge between nodes if they are candidates
 g <- make_empty_graph(n, directed = FALSE) # empty graph
-g <- add_edges(g, as.vector(t(candidates[, 1:2]))) # candidate edges
+g <- add_edges(g, is.vector((candidates[, 1:2]))) # candidate edges
 g <- set_vertex_attr(g, "id", value = dat$id) # add id
 
 # get custers, these are the blocks
@@ -591,5 +593,6 @@ Using the `fname_c1` and `lname_c1` columns in the `RecordLinkage::RL500` datase
 - The feature space is then binned into $m$ evenly spaced bins
 - The $m$ minimums (for each bin separately) are the $m$ different hash values
 
+\vfill
 
 
