@@ -449,7 +449,17 @@ c(precision, recall)
 
 # Your turn
 
-Using the `title`, `authors`, `year`, and `journal` columns in the `cora` dataset from the `RLdata` package,
+Using the `title`, `authors`, `year`, and `journal` columns in the `cora` dataset from the `RLdata` package. First, we will load the necessary packages and data sets. 
+
+
+```{r}
+install_github("cleanzr/RLdata")
+library(RLdata)
+data("cora")
+data("cora_gold")
+```
+
+# Your turn
 
 1. Let's only use data with **complete cases** (for simplicity):
     ```{r missing, eval = FALSE}
@@ -470,10 +480,6 @@ Using the `title`, `authors`, `year`, and `journal` columns in the `cora` datase
 ```{r, message=FALSE, results="hide", echo = TRUE}
 # 1. complete cases of data onl
 # load data
-library(RLdata)
-data("cora")
-data("cora_gold")
-
 not_missing <- complete.cases(cora[, c("year", "journal", "title", "authors")])
 
 # 2. formatting data 
