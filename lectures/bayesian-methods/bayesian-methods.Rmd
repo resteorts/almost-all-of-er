@@ -14,7 +14,7 @@ Reading
 
 - Binette and Steorts (2020)
 - Steorts, Hall, Fienberg (2016)
-- Steorts (2016)
+- Steorts (2015)
 
 
 # What is "Bayesian"?
@@ -45,8 +45,11 @@ estimate latent individuals across multiple high dimensional databases.
 
 # The entity resolution graph
 
-\centering
-![](figures/linkage2)
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/linkage2.png}
+    \end{center}
+\end{figure}
 
 
 # The latent variable approach 
@@ -54,16 +57,22 @@ estimate latent individuals across multiple high dimensional databases.
 <!-- Each entity is associated with one or more records and the -->
 <!-- goal is to recover the latent entities (clusters). -->
 
-\centering
-![](figures/latent1.png)
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/latent1.png}
+    \end{center}
+\end{figure}
 
 # The latent variable approach
 
 <!-- Eight latent entities: One cluster of size 4, one of size 2, six of size 1 -->
 
-\centering
-![](figures/latent2.png)
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/latent2.png}
+    \end{center}
+\end{figure}
 
 # Notation
 
@@ -82,5 +91,179 @@ estimate latent individuals across multiple high dimensional databases.
 \vspace{1mm}
 
 - $z_{ij\ell}$: indicator of whether a distortion has occurred for record field value $X_{ij\ell}$
+
+# Graphical Record Linkage
+
+Graphical model representation of \textcolor{blue}{Steorts et al. (2016)}:
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{figures/recordLinkage_graphicalModel.pdf}
+    \end{center}
+\end{figure}
+
+
+- $\Lambda_{ij}$ represents the linkage structure $\rightarrow$  \textcolor{blue}{uniform prior}.
+ 
+- Requires information about the number of latent entities a priori and it is very informative.
+
+# Bayesian Entity Resolution
+
+Previous literature: not balanced regarding modeling, handling high-dimensional data, and uncertainty of multiple databases.
+
+- Bayesian model: simultaneously links and de-duplicates.
+* Assume records are noisy, distorted.
+* We have a novel representation ($\boldsymbol{\Lambda}$): linkage structure.
+* The \textcolor{blue}{strength} of a Bayesian approach is that transitivity of the linked records is nearly automatic. 
+* Our data structure provides uncertainty estimates of linked records
+that can be propagated into later analyses.
+
+[\textcolor{blue}{Steorts}, Hall, and Fienberg (2014), \textcolor{blue}{Steorts}, Hall, and Fienberg (2016)]
+
+
+# Empirically Motivated Priors 
+
+- The major weakness of \textcolor{blue}{Steorts}, Hall, and Fienberg (2016) is the fact that it did not handle text (string) data. 
+
+- Steorts (2015) overcomes this issue by taking an empirical Bayesian approach, and making extensive comparisons to supervised methods. 
+
+
+# Model Specification: String model
+
+-  The distortion of string-valued variables is modeled using a probabilistic mechanism based on some measure of distance between the true and distorted strings.
+\begin{center}
+$$P(X_{ij\ell}=w| \lambda_{ij}, Y_{\lambda_{ij}\ell}, z_{ij\ell})=
+\frac{\alpha_\ell\exp[-{\color{blue}c d(w, Y_{\lambda_{ij}\ell})}]}
+{\sum_{w \in S_{l}}\alpha_\ell\exp[-c d(w, Y_{\lambda_{ij}\ell})]}$$
+\end{center}
+
+
+where $c$ is a parameter that needs to be specified and $d$ represents a string metric distance e.g. \textcolor{blue}{Levenshtein or Jaro-Winkler}.
+
+
+# Model Specification: Likelihood Function
+
+\[
+  X_{ij\ell}=w| \lambda_{ij}, Y_{\lambda_{ij}\ell}, z_{ij\ell}  \stackrel{iid}{\sim} \left.
+  \begin{cases}
+    \delta(Y_{\lambda_{ij}\ell}), & \text{if } z_{ij\ell} = 0 \\
+    F_{\ell}(Y_{\lambda_{ij}\ell}), & \text{if } z_{ij\ell} = 1 
+    \text{ and }\ell \leq p_{s} \\
+    G_{\ell}, & \text{if } z_{ij\ell} = 1 
+    \text{ and }\ell > p_{s}
+  \end{cases}
+  \right.
+\]
+
+- $z_{ij\ell} = 0$, then $X_{ij\ell} = Y_{\lambda_{ij\ell}}$
+
+\vspace{0.5mm}
+
+- ${\color{blue}F_{\ell}}$ is the string model in the last slide.
+
+\vspace{0.5mm}
+
+- ${\color{blue}G_{\ell}}$ is the empirical distribution function of the categorical data.
+
+
+# Model Specification: Hierarchical Model
+
+\begin{center}
+\begin{align*}
+& Y_{\lambda_{ij}\ell} \stackrel{iid}{\sim} G_{\ell}  \\
+& z_{ij\ell}|\beta_{i\ell}\stackrel{iid}{\sim} \text{Bernoulli}(\beta_{i\ell})   \\
+& \beta_{i\ell}\stackrel{iid}{\sim} \text{Beta}(a,b) \\
+& \lambda_{ij} \stackrel{iid}{\sim} \text{DiscreteUniform(1,\ldots,N)}
+\end{align*}
+\end{center}
+where $a,b,N$ are unknown parameters that must be estimated or fixed. 
+
+- $\beta_{i\ell}$ represent the distortion probabilities of the fields. 
+
+\vspace{0.5mm}
+
+- The parameters $a$ and $b$ for the Beta prior need to be specified. 
+
+\vspace{0.5mm}
+
+- The number of latent entities or clusters needs to be specified in advance.
+
+# `blink` package
+
+`R` package that removes duplicate entries from multiple databases using the empirical Bayes graphical method:
+
+```{r blink-install, eval=FALSE, echo=TRUE}
+install.packages("blink")
+```
+
+- Formatting data for use with `blink`
+- Tuning parameters
+- Running the Gibbs sampler (estimate model parameters)
+- Output
+
+# `RLdata500` data
+
+We will continue with the  `RLdata500` dataset in the `blink` package consisting of $500$ records with 10% duplication.
+
+```{r data, echo=TRUE}
+library("blink")
+data("RLdata500") # load data
+head(RLdata500) # take a look
+```
+
+# Formatting the data
+
+```{r, echo=TRUE}
+# categorical variables
+X.c <- as.matrix(RLdata500[, c("by","bm","bd")]) 
+
+# string variables 
+X.s <- as.matrix(RLdata500[, c("fname_c1", "lname_c1")]) 
+```
+
+`X.c` and `X.s` include all files stacked on top of each other, for categorical and string variables respectively
+
+```{r echo=TRUE}
+# keep track of which rows of are in which files
+file.num <- rep(c(1, 2, 3), c(200, 150, 150))
+```
+
+# Tuning parameters
+
+## Hyperparameters
+
+```{r, echo=TRUE}
+# Subjective choices for distortion probability prior
+# parameters of a Beta(a,b)
+a <- 1
+b <- 999
+```
+
+## Distortion
+
+```{r, echo=TRUE}
+# string distance function example
+d <- function(s1, s2) {
+  adist(s1, s2) # approximate string distance
+}
+
+# steepness parameter
+c <- 1
+```
+
+# Running the Gibbs sampler
+
+```{r, echo=TRUE, cache=TRUE, results='hide'}
+lam.gs <- rl.gibbs(file.num = file.num, # file
+                   X.s = X.s, X.c = X.c, # data 
+                   num.gs = 10, # iterations
+                   a = a, b = b, # prior params
+                   c = c, d = d, # distortion
+                   M = 500) # max # latents
+```
+
+
+
+
 
 
