@@ -9,7 +9,12 @@ output:
 font-size: 8px
 ---
 
+Reading
+===
 
+- Binette and Steorts (2020)
+- Steorts, Ventura, Sadinle, Fienberg (2014)
+- Murray (2016)
 
 Agenda
 ===
@@ -151,13 +156,13 @@ sum(sapply(recordsPerBlock, choose, k=2))
 # How do we calculate the reducation ratio?
 
 ```{r}
-reduction.ratio <- function(block.labels) 1 - sum(choose(table(block.labels),2)) / choose(length(block.labels),2)
+#reduction.ratio <- function(block.labels) 1 - sum(choose(table(block.labels),2)) / choose(length(block.labels),2)
 ```
 
 # How do we calculate the reducation ratio?
 
 ```{r}
-rr <- reduction.ratio()
+#rr <- reduction.ratio()
 ```
 
 # Pairwise Evaluation Metrics
