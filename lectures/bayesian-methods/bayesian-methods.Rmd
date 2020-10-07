@@ -1,0 +1,86 @@
+
+---
+title: "Module X: Bayesian Graphical Entity Resolution"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Reading
+===
+
+- Binette and Steorts (2020)
+- Steorts, Hall, Fienberg (2016)
+- Steorts (2016)
+
+
+# What is "Bayesian"?
+
+1. Setting up a *full probability model* -- a joint probability distribution for all observable and unobservable quantities
+    \begin{align*}
+    p(\boldsymbol x | \boldsymbol \theta) &- \text{ likelihood} \\
+    p(\boldsymbol \theta) &- \text{ prior}
+    \end{align*}
+2. Conditioning on observed data -- calculating and interpreting the appropriate *posterior distribution*
+    $$
+    p(\boldsymbol \theta | \boldsymbol x) = \frac{p(\boldsymbol x, \boldsymbol \theta)}{p(\boldsymbol x)} = \frac{p(\boldsymbol x|\boldsymbol \theta)p(\boldsymbol \theta)}{p(\boldsymbol x)} \propto p(\boldsymbol x|\boldsymbol \theta)p(\boldsymbol \theta)
+    $$
+    
+    
+# Why Bayesian Entity Resolution
+
+
+1. Entity resolution can be treated as a clustering problem. 
+2. Records are clustering to a latent entity.
+3. This results in the model becoming a bipartite graph, which allows one to 
+estimate latent individuals across multiple high dimensional databases.
+4. The Bayesian paradigm naturally allows uncertainty quantification of the entity resolution process, a full posterior distribution, credible intervals, etc. 
+5. Theoretical properties have recently been explored for latent variable models, supporting the above approach. 
+
+
+[Copas and Hilton (1990), Tancredi and Liseo (2011), Steorts, Barnes, Neiswanger (2017), Zanella et al. (2016)]
+
+# The entity resolution graph
+
+\centering
+![](figures/linkage2)
+
+
+# The latent variable approach 
+
+<!-- Each entity is associated with one or more records and the -->
+<!-- goal is to recover the latent entities (clusters). -->
+
+\centering
+![](figures/latent1.png)
+
+
+# The latent variable approach
+
+<!-- Eight latent entities: One cluster of size 4, one of size 2, six of size 1 -->
+
+\centering
+![](figures/latent2.png)
+
+# Notation
+
+- $X_{ij\ell}$: observed value of the $\ell$th field for the $j$th record in the $i$th data set, $1 \leq i \leq k$ and $1 \leq j \leq n_i$. 
+
+\vspace{1mm}
+
+- $Y_{j'\ell}$: true value of the $\ell$th field for the j'th latent individual. 
+
+\vspace{1mm}
+
+- $\lambda_{ij}$: latent individual to which the $j$th record in the $i$th list corresponds. $\boldsymbol{\Lambda}$ is the collection of these values.. 
+    * e.g. Five records in one list $\boldsymbol{\Lambda}= \{1, 1, 2, 3, 3\}
+    \rightarrow$ 3 latent entities or clusters.
+
+\vspace{1mm}
+
+- $z_{ij\ell}$: indicator of whether a distortion has occurred for record field value $X_{ij\ell}$
+
+
