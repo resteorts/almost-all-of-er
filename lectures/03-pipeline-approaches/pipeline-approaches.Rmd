@@ -9,6 +9,11 @@ output:
 font-size: 8px
 ---
 
+Reading
+===
+
+- Binette and Steorts (2020)
+- Christen (2012), give page numbers
 
 
 Agenda
