@@ -256,14 +256,52 @@ c <- 1
 ```{r, echo=TRUE, cache=TRUE, results='hide'}
 lam.gs <- rl.gibbs(file.num = file.num, # file
                    X.s = X.s, X.c = X.c, # data 
-                   num.gs = 10, # iterations
+                   num.gs = 1000, # iterations
                    a = a, b = b, # prior params
                    c = c, d = d, # distortion
                    M = 500) # max # latents
 ```
 
 
+# Evaluation
+\scriptsize
+```{r, echo=TRUE, cache=TRUE}
+# estimated pairwise links
+est_links_pair <- pairwise(links(lam.gs))
 
+# true pairwise links
+true_links_pair <- pairwise(links(matrix(identity.RLdata500, nrow = 1)))
+
+#comparison
+comparison <- links.compare(est_links_pair, true_links_pair, counts.only = TRUE)
+
+# precision
+precision <- comparison$correct/(comparison$incorrect + comparison$correct)
+
+# recall
+recall <- comparison$correct/(comparison$correct + comparison$missing)
+
+
+# results
+c(precision, recall)
+```
+
+# Your turn
+
+Using the `title`, `authors`, `year`, and `journal` columns in the `cora` dataset complete the following using the cora package on CRAN (forthcoming):
+
+
+1. Let's only use data with **complete cases** (for simplicity):
+    ```{r missing, eval = FALSE}
+    not_missing <- complete.cases(cora[, c("year", "journal", "title", "authors")])
+    ```
+1. Format the data to use with `blink`
+    - Which columns are string vs. categorical?
+    - Of the remaining data, assume that the rows 1-200 are from database 1, 201-400 are from database 2, and 401-560 are from database 3
+1. Create tuning parameters for your model
+    - Think about prior hyperparameters as well as the string distortion function
+1. Run the Gibbs sampler 50 times to update the linkage structure
+1. **Extra:** Evaluate your estimated linkage structure using precision and recall
 
 
 
