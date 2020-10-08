@@ -2,6 +2,7 @@
 ---
 title: "Module X: Blocking"
 author: "Rebecca C. Steorts"
+institute: joint with Olivier Binette
 output: 
      beamer_presentation:
       includes: 
