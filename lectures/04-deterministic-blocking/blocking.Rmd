@@ -27,7 +27,8 @@ Agenda
 Load R packages
 ===
 
-```{r, echo=FALSE }
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=4, fig.height=3, fig.align="center")
 library(RecordLinkage)
 library(blink)
 ```
@@ -123,9 +124,14 @@ length(unique(last_init))
 # Total number of records per block
 recordsPerBlock <- table(last_init)
 head(recordsPerBlock)
+```
 
+# RLdata500 (Continued)
+
+```{r, eval=TRUE, message=FALSE, warning=FALSE, fig.width=5}
 # Block sizes can vary 
-summary(as.numeric(recordsPerBlock))
+plot(recordsPerBlock, 
+     cex.axis=0.6, xlab="", ylab="")
 ```
 
 # RLdata500 (Continued)
