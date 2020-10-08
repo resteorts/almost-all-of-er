@@ -131,3 +131,78 @@ induce conditional independence between the latent entities.
 \item[c)] Perturbation sampling algorithm for updating the entity attributes, which relies on the Vose-Alias method.
 \end{enumerate}
 \end{enumerate}
+
+# dblink
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{finalFigures/dblink}
+\end{center}
+\end{figure}
+
+
+# Posterior inference
+
+Since the posterior for the linkage structure $p(\Lambda | X)$ is not 
+tractable, we resort to \emph{approximate inference}.
+
+We propose an MCMC algorithm based on the \emph{partially-collapsed Gibbs} 
+sampler~(van Dyk and Park, 2008):
+  \begin{itemize}
+  \item regular Gibbs updates for the distortion probabilities $\theta_{ta}$, 
+    distortion indicators $z_{tra}$ and links $\lambda_{tr}$
+    \item ``marginalization'' and ``trimming'' are applied to jointly update 
+    the entity attributes $y_{ea}$ and the partition assignments for the 
+    linked records
+    \item order of the updates is important (to preserve the stationary 
+    distribution)
+  \end{itemize}
+
+# distributed MCMC
+
+\begin{center}
+    \includegraphics[width=\linewidth]{finalFigures/distributed-transition-operator.pdf}
+\end{center}
+
+# Tricks for speeding up inference 
+
+\begin{enumerate}
+\item linkage structure update 
+ $\mathcal{O}(\text{\# records} \times \text{\# entities})$ 
+\item entity attribute update 
+$\mathcal{O}(\text{\# entities} \times \text{domain size})$   
+\end{enumerate}
+    
+\vline
+    
+Solutions:
+\begin{enumerate}
+      \item Indexing: Maintain indices from ``entity attributes $\to$ entities''           and 
+      ``entities $\to$ linked records." This allows us to prune candidate links for      a record
+   \item Thresholding similarity scores
+    \item Express the distribution for the entity attribute update as a 
+      two-component perturbation mixture model
+\end{enumerate}
+
+# Software
+
+Two software packages:
+\begin{enumerate}
+\item dblink: Apache Spark
+\item dblinkR: R wrapper for Spark package
+\end{enumerate}
+
+In order to run the R package, you must have the Spark package fully installed. 
+
+# dblinkR
+
+```{r}
+library(devtools)
+install_github("cleanzr/dblinkR") # assumes that you have dblink 
+# and any required packages installed locally (java, sbt, etc)
+```
+
+
+
+
