@@ -1,0 +1,10 @@
+base
+usethis
+devtools
+dblinkR
+sparklyr
+stringr
+dplyr
+tidyr
+ggplot2
+tidybayes
