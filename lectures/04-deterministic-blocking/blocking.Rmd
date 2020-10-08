@@ -137,12 +137,11 @@ plot(recordsPerBlock,
 # RLdata500 (Continued)
 
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
-
 # Total number of records pairs per block
-sapply(recordsPerBlock, choose, k=2)
+choose(recordsPerBlock, 2)
 
 # Reduction on comparison space
-sum(sapply(recordsPerBlock, choose, k=2))
+sum(choose(recordsPerBlock, 2))
 ```
 
 # RLdata500 (Continued)
@@ -151,7 +150,7 @@ What is the overall dimension reduction form the original space to the reduced s
 
 Recall the original space of comparisons was 
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
-choose(500,2)
+choose(500, 2)
 ```
 
 We have reduced the number of comparisons to 
