@@ -1,0 +1,208 @@
+
+---
+title: "Module X: Distributied and Scalable Bayesian Graphical Entity Resolution"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Reading
+===
+
+- Binette and Steorts (2020)
+- Steorts, Hall, Fienberg (2016)
+- Steorts (2015)
+- Marchant et al. (2020)
+
+
+# Why is ER difficult? 
+
+Suppose that we have a total of $N$ records in $k$ databases. 
+
+\begin{enumerate}
+\item We seek models that are much less than $O(N^k).$
+\item We seek models that are reliable, accurate, fit the data well, and account for the uncertainty of the model.
+\item We seek models and algorithms to handle unbalanced data (containing duplications).
+\end{enumerate}
+
+# Existing ER methods
+
+  \begin{enumerate}
+   \item deterministic linking
+   \item probabilistic linking (Fellegi Sunter, random forests, deep learning)
+   \item Bayesian Fellegi Sunter 
+  \end{enumerate}
+  
+# Limitations of Existing ER methods
+  
+  \begin{itemize}
+   \item pairs of records are assessed independently
+   \item awkward post-processing step (transitive closure)
+    \item subjectivity in setting the decision threshold
+    \item lack of uncertainty quantification
+    \item require training data
+ \item scalability achieved via deterministic dimension reduction of the data
+  \end{itemize}
+  
+\vline
+
+[Fellegi and Sunter (1969), Ventura et al. (2014), Christen (2012), Dong and Shrivastava (2015), Belin and Rubin (1995), Gutman et al. (2013), McVeigh et al. (2020), Sadinle (2014+)]. 
+  
+# Graphical Bayesian ER
+
+Builds off Copas and Hilton (2011), Tancredi and Liseo (2011).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{finalFigures/recordLinkage_graphicalModel}
+\label{fig:graphicalProcess}
+\end{center}
+\end{figure}
+
+
+[\textbf{RCS}, Hall, Fienberg (2014, 2016); \textbf{RCS} (2015), Zanella, et al. (2016),
+ \textbf{RCS} et al. (2017), (2018), Tancredi et al. (2019), Betancourt et al. (2020)]. 
+
+# Review of Bayesian Graphical ER
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.35]{finalFigures/latents_firstex}
+\end{figure}
+
+# Review of Bayesian Graphical ER
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.35]{finalFigures/latents_secondex}
+\end{center}
+\end{figure}
+
+# Our Goal
+
+\Large
+ Scaling Bayesian ER methods to millions of records without  sacrificing accuracy
+   and crucially giving uncertainty of the ER task 
+   
+# Our Solution
+
+\Large
+   We propose a scalable joint (Bayesian) model for blocking and performing entity resolution, where the error from this joint task is exactly measured. 
+   
+# Problem setup
+
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.5\linewidth}
+      Key assumptions:
+      \begin{itemize}
+        \item multiple tables\slash sources
+        \item duplicates within and across tables
+        \item attributes are aligned
+        \item attributes are discrete
+        \item some missing values
+        \item no ground truth (unsupervised)
+      \end{itemize}
+    \end{column}
+    \hfill
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{finalFigures/multiple-datasets.pdf}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  Output: approximate posterior distribution over the blocks and linkage structure
+  
+# Contribution
+
+\begin{enumerate}
+\item Joint Bayesian model for blocking (latent entities) and ER. 
+\item Propose blocks (latent entities) that
+induce conditional independence between the latent entities. 
+\item Blocking function (responsible for partitioning the entities) groups similar entities together while achieving well-balanced partitions.
+\item Application of partially-collapsed Gibbs sampling in the context of distributed computing.
+\item Improving computational efficiency:
+\begin{enumerate}
+\item[a)] Sub-quadratic algorithm for updating links based on indexing.
+\item[b)] Truncation of the attribute similarities.
+\item[c)] Perturbation sampling algorithm for updating the entity attributes, which relies on the Vose-Alias method.
+\end{enumerate}
+\end{enumerate}
+
+# dblink
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[scale=0.5]{finalFigures/dblink}
+\end{center}
+\end{figure}
+
+
+# Posterior inference
+
+Since the posterior for the linkage structure $p(\Lambda | X)$ is not 
+tractable, we resort to \emph{approximate inference}.
+
+We propose an MCMC algorithm based on the \emph{partially-collapsed Gibbs} 
+sampler~(van Dyk and Park, 2008):
+  \begin{itemize}
+  \item regular Gibbs updates for the distortion probabilities $\theta_{ta}$, 
+    distortion indicators $z_{tra}$ and links $\lambda_{tr}$
+    \item ``marginalization'' and ``trimming'' are applied to jointly update 
+    the entity attributes $y_{ea}$ and the partition assignments for the 
+    linked records
+    \item order of the updates is important (to preserve the stationary 
+    distribution)
+  \end{itemize}
+
+# distributed MCMC
+
+\begin{center}
+    \includegraphics[width=\linewidth]{finalFigures/distributed-transition-operator.pdf}
+\end{center}
+
+# Tricks for speeding up inference 
+
+\begin{enumerate}
+\item linkage structure update 
+ $\mathcal{O}(\text{\# records} \times \text{\# entities})$ 
+\item entity attribute update 
+$\mathcal{O}(\text{\# entities} \times \text{domain size})$   
+\end{enumerate}
+    
+\vline
+    
+Solutions:
+\begin{enumerate}
+      \item Indexing: Maintain indices from ``entity attributes $\to$ entities''           and 
+      ``entities $\to$ linked records." This allows us to prune candidate links for      a record
+   \item Thresholding similarity scores
+    \item Express the distribution for the entity attribute update as a 
+      two-component perturbation mixture model
+\end{enumerate}
+
+# Software
+
+Two software packages:
+\begin{enumerate}
+\item dblink: Apache Spark
+\item dblinkR: R wrapper for Spark package
+\end{enumerate}
+
+In order to run the R package, you must have the Spark package fully installed. 
+
+# dblinkR
+
+```{r}
+library(devtools)
+install_github("cleanzr/dblinkR") # assumes that you have dblink 
+# and any required packages installed locally (java, sbt, etc)
+```
+
+
+
+
