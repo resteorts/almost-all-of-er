@@ -197,12 +197,93 @@ In order to run the R package, you must have the Spark package fully installed.
 
 # dblinkR
 
-```{r}
+```{r, message=FALSE}
 library(devtools)
-install_github("cleanzr/dblinkR") # assumes that you have dblink 
+library(dblinkR)
+# install_github("cleanzr/dblinkR") # assumes that you have dblink 
 # and any required packages installed locally (java, sbt, etc)
 ```
 
 
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=7, 
+  fig.height=5
+)
+```
+
+# Loading Required Packages
+
+```{r packages, message=FALSE, cache=TRUE}
+# For running dblink
+library(sparklyr)
+spark_install(version = "2.4.3")
+library(dblinkR)
+# For generating trace plots
+library(stringr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+# For generating credible interval plots
+library(tidybayes)
+```
+
+# Connecting to Spark
+
+We will run `dblink` on a local instance of Spark with 2 
+cores. This is sufficient for testing purposes; for larger data sets, 
+we recommend connecting to a Spark deployment. The `sparklyr` 
+[documentation](https://spark.rstudio.com/deployment/) contains information 
+about connecting to Spark deployments.
+
+```{r spark-connect, message=FALSE, cache=TRUE}
+sc <- spark_connect(master = "local[2]", version = "2.4.3")
+spark_context(sc) %>% invoke("setLogLevel", "WARN")
+```
+
+# Connecting to Spark
 
 
+`dblink` requires a location on disk to save diagnostics, 
+posterior samples, and the state of the Markov chain. 
+
+We refer to this location as the *project path*, and set it to the current working directory below.  In addition, we must also specify a location on disk to save Spark checkpoints.
+
+```{r set-paths, message=FALSE}
+projectPath <- paste0(getwd(), "/") # working directory
+spark_set_checkpoint_dir(sc, paste0(projectPath, "checkpoints/"))
+```
+
+# RLdata500
+
+```{r load-data}
+records <- RLdata500
+records['rec_id'] <- seq_len(nrow(records))
+records <- lapply(records, as.character) %>% as.data.frame(stringsAsFactors = FALSE)
+# inspect RLdata500
+head(RLdata500)
+```
+
+# dblink parameters
+
+Here, we specify the parameters for the `dblink` model. 
+
+- We treat the name-related attributes as string-type with a Levenshtein 
+similarity function, and 
+- the date-related attributes as categorical (with a 
+constant similarity function). 
+- We place a Beta prior on the distortion probability for each attribute. 
+
+```{r set-attribute-parameters}
+distortionPrior <- BetaRV(1, 50)
+levSim <- LevenshteinSimFn(threshold = 7, maxSimilarity =  10)
+attributeSpecs <- list(
+  fname_c1 = Attribute(levSim, distortionPrior),
+  lname_c1 = Attribute(levSim, distortionPrior),
+  by = CategoricalAttribute(distortionPrior),
+  bm = CategoricalAttribute(distortionPrior),
+  bd = CategoricalAttribute(distortionPrior)
+)
+```
