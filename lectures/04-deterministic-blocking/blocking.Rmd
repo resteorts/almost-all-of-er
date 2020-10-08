@@ -156,19 +156,33 @@ choose(500,2)
 
 We have reduced the number of comparisons to 
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
-sum(sapply(recordsPerBlock, choose, k=2))
+sum(choose(recordsPerBlock, 2))
 ```
 
 # How do we calculate the reducation ratio?
 
+The reduction ratio is
+$$
+  \text{RR} = \text{\% comparisons eliminated by blocking.}
+$$
+
 ```{r}
-#reduction.ratio <- function(block.labels) 1 - sum(choose(table(block.labels),2)) / choose(length(block.labels),2)
+(choose(500, 2) - sum(choose(recordsPerBlock, 2))) / choose(500, 2)
 ```
 
 # How do we calculate the reducation ratio?
 
+In a function:
+
 ```{r}
-#rr <- reduction.ratio()
+reduction.ratio <- function(block.labels) {
+  n_all_comp = choose(length(block.labels), 2)
+  n_block_comp = sum(choose(table(block.labels), 2))
+
+  (n_all_comp - n_block_comp) / n_all_comp
+}
+
+reduction.ratio(last_init)
 ```
 
 # Pairwise Evaluation Metrics
