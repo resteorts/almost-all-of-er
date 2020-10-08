@@ -170,9 +170,7 @@ $$
   choose(500, 2)
 ```
 
-# How do we calculate the reducation ratio?
-
-In a function:
+# How do we calculate the reducation ratio (via a function)?
 
 ```{r}
 reduction.ratio <- function(block.labels) {
@@ -185,9 +183,7 @@ reduction.ratio <- function(block.labels) {
 reduction.ratio(last_init)
 ```
 
-# Pairwise Evaluation Metrics
-
-## Precision
+# Pairwise Precision
 
 ```{r}
 labels = unique(last_init)
@@ -206,7 +202,7 @@ n_pairs = sum(choose(table(last_init), 2))
 sum(n_matches) / n_pairs
 ```
 
-# Pairwise Evaluation Metrics
+# Pairwise Precision
 
 ```{r}
 precision <- function(block.labels, IDs) {
@@ -227,9 +223,7 @@ precision <- function(block.labels, IDs) {
 precision(last_init, identity.RLdata500)
 ```
 
-# Pairwise Evaluation Metrics
-
-## Recall
+# Pairwise Recall
 
 ```{r}
 recall <- function(block.labels, IDs) {
@@ -238,24 +232,106 @@ recall <- function(block.labels, IDs) {
 ```
 
 
-# Case Study to El Salvador 
+# Italian Survey on Household and Wealth (SHIW)
 
-We return to the case study on El Salvador, where we will investigate deterministic blocking as done in Sadinle (2014). 
+We will now explore a case study to the SHIW 
 
-# Task 1
+```{r}
+library(devtools)
+devtools::install_github("cleanzr/italy")
+library(italy)
+```
 
-Implement the blocking procedure from Sadinle (2014), where the blocking criterion is XXX. 
+# SHIW
 
-# Task 2
+- The SHIW is a sample survey 383 households
+conducted by the Bank of Italy every two years.
+- The data set is anonymized to remove first and last name (and other sensitive information). 
+- The following attribute information is available: 
+\begin{itemize}
+\item PARENT (parental status)
+\item GENDER
+\item ANASC (year of birth)
+\item NASCREG (working status)
+\item CIT (employment status)
+\item ACOM4C (branch of activity)
+\item STUDIO (town size)
+\item Q (quality of life status)
+\item QUAL (whether or not Italian national)
+\item SETT (highest educational level obtained)
+\item ireq (region of italy)
+\end{itemize}
 
-Explain why you think the author choose this blocking criterion. 
+# Explore Data
 
-# Task 3
+```{r}
+head(italy08) # first year of SHIW
+head(italy10) # second year of SHIW
+```
+# Reformat Data
 
-What is the reduction ratio, precision, and recall assuming that the ground truth is true in this situation? 
+```{r}
+id08 <- italy08$id
+id10 <- italy10$id
+id <- c(italy08$id, italy10$id) # combine the id
+italy08 <- italy08[-c(1)] # remove the id
+italy10 <- italy10[-c(1)] # remove the id 
+italy <- rbind(italy08, italy10)
+```
 
-# Task 4
 
-Can you come up with a better blocking criterion for this data set that is deterministic? 
+
+# Your turn
+
+- Construct a blocking criterion for the SHIW data set. 
+- Provide code to construct the blocks
+- Are your blocks well balanced?
+- What is the reduction ratio? 
+- What is the pairwise recall and precision?
+- Would you recommend your blocking criterion for an ER task? Why or why not. 
+
+# Your turn solution
+
+I will block on gender. Why?
+
+```{r}
+# block by gender 
+blockByGender <- italy$SEX
+recordsPerBlock <- table(blockByGender)
+head(recordsPerBlock)
+```
+
+# Your turn solution
+
+The block sizes are similar. But note, they are still quite large. 
+
+```{r}
+# Checking block sizes 
+plot(recordsPerBlock,
+cex.axis=0.6, xlab="", ylab="")
+```
+# Your turn solution
+```{r}
+print(rr <- reduction.ratio(blockByGender))
+```
+
+We have reduced the overall space by rougly 50 percent. 
+
+# Your turn solution
+
+```{r}
+precision(blockByGender, id)
+recall(blockByGender, id)
+```
+
+This is not an optimal blocking criterion as ideally, we would want both the precision and recall to be close to 1. 
+
+# Your turn solution
+
+```{r}
+blockRule <- italy$SEX && italy$ANASC
+precision(blockRule, id)
+recall(blockRule, id)
+```
 
 
