@@ -166,7 +166,8 @@ $$
 $$
 
 ```{r}
-(choose(500, 2) - sum(choose(recordsPerBlock, 2))) / choose(500, 2)
+(choose(500, 2) - sum(choose(recordsPerBlock, 2))) / 
+  choose(500, 2)
 ```
 
 # How do we calculate the reducation ratio?
@@ -186,8 +187,56 @@ reduction.ratio(last_init)
 
 # Pairwise Evaluation Metrics
 
-Calculate the Pairwise Precision and Recall. 
-\textcolor{red}{Need a function that works for this generally.}
+## Precision
+
+```{r}
+labels = unique(last_init)
+
+# Number of matching pairs among blocks
+n_matches = sapply(labels, function(label) {
+  # Records in a given blocks
+  records = which(last_init == label)
+  # Number of matches in that block
+  sum(duplicated(identity.RLdata500[records]))
+})
+
+# Total number of pairs
+n_pairs = sum(choose(table(last_init), 2))
+
+sum(n_matches) / n_pairs
+```
+
+# Pairwise Evaluation Metrics
+
+```{r}
+precision <- function(block.labels, IDs) {
+  labels = unique(block.labels)
+
+  # Number of matching pairs among blocks
+  n_matches = sapply(labels, function(label) {
+    records = which(block.labels == label)
+    sum(duplicated(IDs[records]))
+  })
+  
+  # Total number of pairs
+  n_pairs = sum(choose(table(block.labels), 2))
+
+  sum(n_matches) / n_pairs
+}
+
+precision(last_init, identity.RLdata500)
+```
+
+# Pairwise Evaluation Metrics
+
+## Recall
+
+```{r}
+recall <- function(block.labels, IDs) {
+  precision(IDs, block.labels)
+}
+```
+
 
 # Case Study to El Salvador 
 
