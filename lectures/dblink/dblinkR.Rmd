@@ -193,7 +193,7 @@ Two software packages:
 \item dblinkR: R wrapper for Spark package
 \end{enumerate}
 
-# dblink
+# dblinkR
 
 Given the sensitivity of connections between R and Spark, we will perform this demo solely in R. 
 
