@@ -201,9 +201,12 @@ Using the `title`, `authors`, and `journal` fields in the `cora` dataset,
 \small
 ```{r your-turn-sol-1, echo=TRUE, cache=TRUE}
 # get only the columns we want
-n <- nrow(cora) # number of records
-dat <- data.frame(id = seq_len(n)) # create id column
-dat <- cbind(dat, cora[, c("title", "authors", "journal")]) # get columns we want
+# number of records
+n <- nrow(cora) 
+# create id column
+dat <- data.frame(id = seq_len(n)) 
+# get columns we want
+dat <- cbind(dat, cora[, c("title", "authors", "journal")])
 
 # 1. paste the columns together and tokenize for each record
 shingles <- apply(dat, 1, function(x) {
@@ -217,7 +220,8 @@ shingles <- apply(dat, 1, function(x) {
 \small
 ```{r your-turn-sol-2, echo=TRUE, cache=TRUE}
 # 2. Jaccard similarity between pairs
-jaccard <- expand.grid(record1 = seq_len(n), # empty holder for similarities
+# empty holder for similarities
+jaccard <- expand.grid(record1 = seq_len(n), 
                        record2 = seq_len(n))
 
 # don't need to compare the same things twice
@@ -225,9 +229,11 @@ jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
 
 time <- Sys.time() # for timing comparison
 jaccard$similarity <- apply(jaccard, 1, function(pair) {
-  jaccard_similarity(shingles[[pair[1]]], shingles[[pair[2]]]) # get jaccard for each pair
+  # get jaccard for each pair
+  jaccard_similarity(shingles[[pair[1]]], shingles[[pair[2]]]) 
 })
-time <- difftime(Sys.time(), time, units = "secs") # timing
+# timing
+time <- difftime(Sys.time(), time, units = "secs") 
 ```
 
 \normalsize
