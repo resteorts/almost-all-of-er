@@ -15,7 +15,7 @@ Agenda
 ===
 
 - Data Cleaning Pipeline
-- Probabilistic Blocking
+- Blocking
 - Locality Sensitive Hashing (LSH)
 - Hash functions
 - Hashed shingles
@@ -27,19 +27,19 @@ Agenda
 Load R packages
 ===
 
-```{r, echo=FALSE, verbatim = FALSE}
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(RecordLinkage)
 library(blink)
 library(knitr)
 library(textreuse) # text reuse/document similarity
 library(tokenizers) # shingles
 library(devtools)
-install_github("resteorts/cora")
 library(cora)
 library(ggplot2)
+# install_github("resteorts/cora")
 data(cora) # load the cora data set
-str(cora) # structure of cora
 ```
+
 
 
 Data Cleaning Pipeline
@@ -70,18 +70,23 @@ Locality sensitive hashing (LSH) is a fast method of blocking for record linkage
 
 # Citation data set
 
-Recall that last time we worked with citation data set.
+Recall that last time we worked with the `cora` citation data set.
 
-```{r}
+\small
+```{r, cache=TRUE}
 # get only the columns we want
-n <- nrow(cora) # number of records
-dat <- data.frame(id = seq_len(n)) # create id column
-dat <- cbind(dat, cora[, c("title", "authors", "journal")]) # get columns we want
+# number of records
+n <- nrow(cora) 
+# create id column
+dat <- data.frame(id = seq_len(n)) 
+# get columns we want
+dat <- cbind(dat, cora[, c("title", "authors", "journal")]) 
 shingles <- apply(dat, 1, function(x) {
   # tokenize strings
   tokenize_character_shingles(paste(x[-1], collapse=" "), n = 3)[[1]]
 })
-jaccard <- expand.grid(record1 = seq_len(n), # empty holder for similarities
+# empty holder for similarities
+jaccard <- expand.grid(record1 = seq_len(n), 
                        record2 = seq_len(n))
 
 # don't need to compare the same things twice
@@ -89,37 +94,42 @@ jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
 ```
 
 
-# Hash functions
+# Hash function overview
 
 - Traditionally, a *hash function* maps objects to integers such that similar objects are far apart
 - Instead, we want special hash functions that do the **opposite** of this, i.e. similar objects are placed closed together!
 
+# Hash function 
 
-## Definition: Hash function
+
 *Hash functions* $h()$ are defined such that
 
 > If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is **high** and if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is **low**.
 
 # Hashing shingles
 
-Instead of storing the strings as shines, we can instead store  *hashed values*  
+Instead of storing the strings as shingles, we can instead store the  *hashed values*  
 
-These are integers, and they take up less space.
+These are integers (instead of strings), and they take up less space/memory.
 
-# Hashing shingles
+# Hashing shingles (continued)
 
 
-```{r hash-tokens, echo=TRUE}
+```{r hash-tokens, echo=TRUE, cache=TRUE}
 # instead store hash values (less memory)
 hashed_shingles <- apply(dat, 1, function(x) {
-  string <- paste(x[-1], collapse=" ") # get the string
+  # get the string
+  string <- paste(x[-1], collapse=" ") 
   shingles <- 
-    tokenize_character_shingles(string, n = 3)[[1]] # 3-shingles
-  hash_string(shingles) # return hashed shingles
+    # 3-shingles
+    tokenize_character_shingles(string, n = 3)[[1]] 
+  # return hashed shingles
+  hash_string(shingles) 
 })
 ```
 
-# Hashing shingles
+# Hashing shingles (continued)
+\small
 ```{r hash-tokens-jaccard, cache=TRUE}
 # Jaccard similarity on hashed shingles
 hashed_jaccard <- 
@@ -128,18 +138,22 @@ hashed_jaccard <-
 # don't need to compare the same things twice
 hashed_jaccard <- 
   hashed_jaccard[hashed_jaccard$record1 < hashed_jaccard$record2,]
-
-time <- Sys.time() # see how long this takes
+# see how long this takes
+time <- Sys.time() 
 hashed_jaccard$similarity <- 
   apply(hashed_jaccard, 1, function(pair) {
   jaccard_similarity(hashed_shingles[[pair[1]]], 
                      hashed_shingles[[pair[2]]])
 }) # get jaccard for each hashed pair
-time <- difftime(Sys.time(), time, units = "secs") # timing
+time <- difftime(Sys.time(), time, units = "secs") 
 ```
 
-\normalsize
-This took up $`r object.size(hashed_shingles)`$ bytes, while storing the shingles took $`r object.size(shingles)`$ bytes; the whole pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes)
+# Hashing shingles (continued)
+
+- To hash the shingles, it took $`r object.size(hashed_shingles)`$ bytes. 
+- To store the shingles, it took $`r object.size(shingles)`$ bytes. 
+- The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches. 
+
 
 # Similarity preserving summaries of sets
 
@@ -152,7 +166,7 @@ If we have millions of records in our data set, it may not be possible to store 
 We can replace large sets by smaller representations, called *signatures*
 \vfill
 
-And use these signatures to **approximate** Jaccard similarity
+We can use signatures to **approximate** Jaccard similarity
 \vfill
 
 # Characteristic matrix
@@ -161,33 +175,42 @@ In order to get a signature of our data set, we build a *characteristic matrix*
 
 Columns correspond to records and the rows correspond to all hashed shingles
 
-# Characteristic matrix
+# Helper Function for Building Characteristic Matrix
 
-```{r characteristic, cache=TRUE}
+```{r}
 # return if an item is in a list
 item_in_list <- function(item, list) {
   as.integer(item %in% list) 
 }
+```
 
+# Characteristic matrix
+\small
+```{r characteristic, cache=TRUE}
 # get the characteristic matrix
 # items are all the unique hash values
 # columns will be each record
 # we want to keep track of where each hash is included 
 char_mat <- data.frame(item = unique(unlist(hashed_shingles)))
-
 # for each hashed shingle, see if it is in each row
 contained <- lapply(hashed_shingles, function(col) {
   vapply(char_mat$item, FUN = item_in_list, 
          FUN.VALUE = integer(1), list = col)
 })
+# list to matrix
+char_mat <- do.call(cbind, contained) 
+# row names
+rownames(char_mat) <- unique(unlist(hashed_shingles)) 
+# column names
+colnames(char_mat) <- paste("Record", seq_len(nrow(dat))) 
+```
 
-char_mat <- do.call(cbind, contained) # list to matrix
-rownames(char_mat) <- unique(unlist(hashed_shingles)) # row names
-colnames(char_mat) <- paste("Record", seq_len(nrow(dat))) # column names
-
+# Characteristic matrix (continued)
+```{r characteristic-2, cache=TRUE}
 # inspect results
 kable(char_mat[10:15, 1:5])
 ```
+
 
 The result is a $`r dim(char_mat)[1]`\times `r dim(char_mat)[2]`$ matrix
 
@@ -206,21 +229,18 @@ We want to create the signature matrix through minhashing
 The signature matrix is a hashing of values from the permuted characteristic matrix and has one row for the number of permutations calculated ($m$), and a column for each record
 
 # Minhashing (cont'd)
-\tiny
+\small
 ```{r minhash-1, cache=TRUE}
 # set seed for reproducibility
 set.seed(02082018)
-
 # function to get signature for 1 permutation
 get_sig <- function(char_mat) {
   # get permutation order
   permute_order <- sample(seq_len(nrow(char_mat)))
-  
   # get min location of "1" for each column (apply(2, ...))
   t(apply(char_mat[permute_order, ], 2, 
           function(col) min(which(col == 1))))
 }
-
 # repeat many times
 m <- 360
 sig_mat <- matrix(NA, nrow=m, 
@@ -257,7 +277,7 @@ The number of agreements over the total number of combinations is an approximati
 \vfill
 
 # Jaccard similarity approximation
-
+\small
 ```{r jaccard-sig, fig.height=4, cache=TRUE}
 # add jaccard similarity approximated from the minhash to compare
 # number of agreements over the total number of combinations
@@ -274,7 +294,7 @@ qplot(hashed_jaccard$similarity_minhash - hashed_jaccard$similarity) +
 
 # Jaccard similarity approximation
 
-```{r jaccard-sig-again, fig.height=4, cache=TRUE, echo=FALSE}
+```{r jaccard-sig-again, fig.height=4, cache=TRUE, echo=FALSE, warning=FALSE}
 # add jaccard similarity approximated from the minhash to compare
 # number of agreements over the total number of combinations
 hashed_jaccard$similarity_minhash <- 
@@ -292,7 +312,7 @@ Used minhashing to get an approximation to the Jaccard similarity, which helps b
 
 # Wait did I miss something?
 
-We still haven not addressed the issue of **pairwise comparisons**
+We still haven not addressed the issue of **pairwise comparisons**!
 
 # Locality Sensitive Hashing (LSH)
 
