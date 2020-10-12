@@ -26,7 +26,7 @@ Agenda
 Load R packages
 ===
 
-```{r, echo=FALSE, verbatim = FALSE}
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(RecordLinkage)
 library(blink)
 library(knitr)
@@ -144,11 +144,13 @@ kable(records)
 
 # Useful packages/functions in `R`
 
-(Obviously) We don't want to do this by hand most times. 
+We don't want to do this by hand! 
 
 Here are some useful packages in `R` that can help us!
 
-```{r helpful-packages, echo = TRUE}
+\vline
+
+```{r helpful-packages, echo=TRUE, message=FALSE, warning=FALSE}
 library(textreuse) # text reuse/document similarity
 library(tokenizers) # shingles
 ```
@@ -156,6 +158,8 @@ library(tokenizers) # shingles
 # Shingling
 
 We can use the following functions to create $k$-shingles and calculate Jaccard similarity for our data
+
+\vline
 
 ```{r helpful-functions, eval=FALSE, echo=TRUE}
 # get k-shingles
@@ -169,12 +173,16 @@ jaccard_similarity(a, b)
 
 Research paper headers and citations, with information on authors, title, institutions, venue, date, page numbers and several other fields
 
-\tiny
-```{r load-ex-data, echo=TRUE}
+```{r load-ex-data, echo=TRUE, message=FALSE, warning=FALSE}
 library(devtools)
 install_github("resteorts/cora")
 library(cora)
 library(ggplot2)
+```
+
+# Citation Data Set
+
+```{r load-ex-data-2, echo=TRUE, message=FALSE, warning=FALSE}
 data(cora) # load the cora data set
 str(cora) # structure of cora
 ```
@@ -190,9 +198,8 @@ Using the `title`, `authors`, and `journal` fields in the `cora` dataset,
 \vfill
 
 # Your turn (solution)
-
-\footnotesize
-```{r your-turn2-sol, echo=TRUE, cache=TRUE}
+\small
+```{r your-turn-sol-1, echo=TRUE, cache=TRUE}
 # get only the columns we want
 n <- nrow(cora) # number of records
 dat <- data.frame(id = seq_len(n)) # create id column
@@ -203,7 +210,12 @@ shingles <- apply(dat, 1, function(x) {
   # tokenize strings
   tokenize_character_shingles(paste(x[-1], collapse=" "), n = 3)[[1]]
 })
+```
 
+# Your turn (solution)
+
+\small
+```{r your-turn-sol-2, echo=TRUE, cache=TRUE}
 # 2. Jaccard similarity between pairs
 jaccard <- expand.grid(record1 = seq_len(n), # empty holder for similarities
                        record2 = seq_len(n))
@@ -248,14 +260,14 @@ ggplot(jaccard) +
 
 # Summary
 
-For a dataset of size $n$, the number of comparisons we must compute is $$\frac{n(n-1)}{2}.$$
+For a data set of size $n$, the number of comparisons we must compute is $$\frac{n(n-1)}{2}.$$
 
 \vfill
-For our set of records, we needed to compute $`r scales::comma(nrow(dat)*(nrow(dat) - 1)/2)`$ comparisons/
+For our set of records, we needed to compute $`r scales::comma(nrow(dat)*(nrow(dat) - 1)/2)`$ comparisons
 \vfill
 For very large data sets, we need something faster (where we filter out records that are not similar).
 \vfill
-A better approach for datasets of any realistic size is to use *hashing*, which we will look at next time. 
+A better approach for data sets of any realistic size is to use *hashing*, which we will look at next time. 
 \vfill
 
 
