@@ -331,7 +331,7 @@ This is not an optimal blocking criterion as ideally, we would want both the pre
 # Your turn solution
 
 ```{r}
-blockRule <- italy$SEX && italy$ANASC
+blockRule <- italy$SEX & italy$ANASC
 precision(blockRule, id)
 recall(blockRule, id)
 ```
