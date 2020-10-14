@@ -168,7 +168,7 @@ $$
 
 ```{r}
 (choose(500, 2) - sum(choose(recordsPerBlock, 2))) / 
-  choose(500, 2)
+choose(500, 2)
 ```
 
 # How do we calculate the reducation ratio (via a function)?
@@ -238,8 +238,9 @@ recall <- function(block.labels, IDs) {
 We will now explore a case study to the SHIW 
 
 ```{r}
-library(devtools)
-devtools::install_github("cleanzr/italy")
+install.packages("italy", repos='http://cran.us.r-project.org')
+#library(devtools)
+#devtools::install_github("cleanzr/italy")
 library(italy)
 ```
 
