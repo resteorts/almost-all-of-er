@@ -1,0 +1,63 @@
+
+---
+title: "Module X: fastlink"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Reading
+===
+
+- Binette and Steorts (2020)
+- Others ??
+
+
+# Probabilistic Entity Resolution 
+
+While Fellegi and Sunter (1969) have provided a framework for probabilistic entity resolution, there are few implmentations that scale to large size data sets. 
+
+# fastlink
+
+- Edmorando et al. (2020) developed fastlink
+a scalable implementation of the FS method. 
+
+- In addition, the authors incorporated
+auxiliary information such as population name frequency and migration rates.
+
+- The authors used parallelization and hashing to merge millions of records in
+a near real-time on a laptop computer, and provided open-source software of
+their proposed methodology. 
+
+# Agreement Patterns
+
+\begin{itemize}
+\item Two data sets ($A$ and $B$) with variables in common
+\item Agreement value in field $a$ for record pair $(i,j)$
+\end{itemize}
+
+$$\rho_a(i,j) \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{agree}} \\ \\
+    								     \color{blue}{\texttt{disagree}} \end{array}
+                               \right.$$
+                               
+                               
+\vspace*{1em}
+\pause
+
+\begin{table}[]
+\begin{tabular}{ccccccc}
+    &  & First & Last &  Age & Street \\
+  \hline
+    & \multicolumn{3}{l}{Data set $\mathcal{A}$} \\
+    &  1 &  \texttt{James}  	& \texttt{Smith}  	& \texttt{35} & \bf{{\texttt{Devereux St.}}} \\
+    &  \multicolumn{3}{l}{Data set $\mathcal{B}$} \\
+    &  7 &  \texttt{James} 	& \texttt{Smit} 		& \texttt{43} & \bf{{\texttt{Dvereux St.}}}  \\
+	 \hdashline
+    & & \color{blue} {\texttt{agree}} 	& \color{blue} {\texttt{agree}}  	& \color{blue} {\texttt{disagree}} 		&   \color{blue} {\bf{{\texttt{agree}}}} \\  \hline
+\end{tabular}
+\end{table}
+
+
