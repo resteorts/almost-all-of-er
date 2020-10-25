@@ -101,14 +101,124 @@ Where $\lambda$, ${\color{red}{\pi}_{\text{\color{red}{M}}}}$, ${\color{blue}{\p
 # fastlink in R
 
 ```{r}
-install.packages("fastLink")
 library(fastLink)
+library(RecordLinkage)
 ```
 
-# RLdata500
+# RLdata10000
 
 ```{r}
-# load RLdata500
-library(blink)
-head(RLdata500)
+# load RLdata10000
+records <- read.table("data/RLdata10000.csv", sep=",", header=TRUE)
+head(records, 4)
 ```
+
+# RLdata10000
+
+```{r}
+# Number of unique records 
+length(unique(records$ent_id))
+```
+
+#Linkage Fields
+
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", "lname_c1", "by", "bm", "bd")
+```
+
+# Exact Matching 
+
+```{r}
+# perform exact matching 
+exact.match <- merge(records, records, by = linkageFields)
+
+# number of self-matches
+sum(exact.match$rec_id.x == exact.match$rec_id.y)
+
+# number of non-self matches
+sum(exact.match$rec_id.x != exact.match$rec_id.y)
+```
+
+# Who are they?
+
+```{r}
+head(exact.match[exact.match$rec_id.x 
+                 != exact.match$rec_id.y,
+                 c(linkageFields)], 4)
+
+```
+
+
+# Preparation 
+
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", "lname_c1", "by", "bm", "bd")
+
+# string distance fields
+stringDistFields <- c("fname_c1", "lname_c1")
+
+# partial distance fields (fields where we allow
+# for agree, disagree, and partially agree)
+partialMatchFields <- c("fname_c1", "lname_c1")
+```
+
+# Run fastlink
+
+```{r}
+
+out <- fastLink(dfA = records,
+                dfB = records,
+                varnames = linkageFields,
+                stringdist.match = stringDistFields, # JW by default
+                partial.match = partialMatchFields,
+                cut.a = 0.94, cut.p = 0.84, # JW cutoffs
+                dedupe = FALSE # 1-to-1 match
+)
+```
+
+# fastlink Objects
+
+fastLink has the following objects as output: 
+
+```{r}
+names(out)
+```
+
+# Who is matched
+
+The indices of each matched pair can be found in out$matches
+
+```{r}
+head(cbind(out$matches$inds.a, out$matches$inds.b), 6)
+```
+
+# Counting Patterns 
+
+- Counts and FS weights for each patterns can be found in `out$EM$patterns.w`
+
+- Legend: 2 = Agree; 1 = Partially Agree; 0 = Disagree
+
+```{r}
+tail(out$EM$patterns.w[, 1:7])
+```
+
+Matching Threshold
+===
+
+By default it is 0.85, but it can be easily changed:
+
+```{r}
+out <- fastLink(dfA = records, dfB = records, varnames = linkageFields,
+stringdist.match = stringDistFields, partial.match = partialMatchFields,
+cut.a = 0.94, cut.p = 0.84,
+threshold.match = 0.90, # Matching threshold dedupe = FALSE
+)
+```
+
+Exercises/TODO
+===
+
+- How would you calculate the precision and recall? 
+- Apply this to a much large data set with blocking. (Make this another module).
