@@ -222,3 +222,4 @@ Exercises/TODO
 
 - How would you calculate the precision and recall? 
 - Apply this to a much large data set with blocking. (Make this another module).
+- Combine with fastlink and dblink
