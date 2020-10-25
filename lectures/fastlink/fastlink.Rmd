@@ -44,8 +44,9 @@ $$\rho_a(i,j) \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{agree}} \\ \\
                                \right.$$
                                
                                
-\vspace*{1em}
-\pause
+
+
+# Agreement Patterns
 
 \begin{table}[]
 \begin{tabular}{ccccccc}
@@ -60,4 +61,54 @@ $$\rho_a(i,j) \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{agree}} \\ \\
 \end{tabular}
 \end{table}
 
+\vspace*{4em}
+\pause
 
+\begin{center}
+\textbf{Agreement pattern} $\gamma(i, j) = \{\gamma_1(i,j), \gamma_2(i,j), \ldots, \gamma_K(i,j) \}$ 
+\end{center}  
+
+
+# Agreement Patterns
+
+- We observe agreement patterns $\gamma(i,j)$ 
+- We do not observe the matching status 
+
+$$C_{i,j} \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{non-match}} \\ \\
+    								     \color{red}{\texttt{match}} \end{array}
+                               \right.$$
+
+
+
+# fastlink Model
+
+\begin{center}
+\begin{eqnarray*}
+  C(i, j) & \iid & \text{Bernoulli}(\mu) \\ 
+  \rho(i,j) \mid C(i, j) = \text{\color{blue}{non-match}} & \iid &  \mathcal{F}({ \color{blue}{\pi}_{\text{\color{blue}{NM}}} }) \\ 
+  \rho(i,j) \mid C(i, j) = \text{\color{white}{non-}\color{red}{match}} & \iid &  \mathcal{F}( {\color{red}{\pi}_{\text{\color{red}{M}}} }) 
+\end{eqnarray*} 
+\end{center}
+
+Where $\lambda$, ${\color{red}{\pi}_{\text{\color{red}{M}}}}$, ${\color{blue}{\pi}_{\text{\color{blue}{NM}}}}$  are estimated via the EM algorithm
+
+
+# fastlink
+
+- Available on CRAN
+- We investigate it first on RLdata500
+
+# fastlink in R
+
+```{r}
+install.packages("fastLink")
+library(fastLink)
+```
+
+# RLdata500
+
+```{r}
+# load RLdata500
+library(blink)
+head(RLdata500)
+```
