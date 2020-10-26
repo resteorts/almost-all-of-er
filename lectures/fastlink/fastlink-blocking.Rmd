@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: fastlink with blocking"
+title: "Module X: fastLink with blocking"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:
@@ -192,4 +192,16 @@ recordsfL.blockE <- do.call('rbind', results)
 length(unique(recordsfL.blockE$dedupe.ids))
 ```
 
+# Setup
 
+```{r}
+library(data.table)
+trueMembership <- records$ent_id
+recordIds <- records$rec_id
+numRecords <- dim(records)[1]
+matches <- 
+  data.table(cbind(results$matches$inds.a,     
+                   results$matches$inds.b))
+head(matches)
+dim(matches)[1]
+```

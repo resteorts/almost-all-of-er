@@ -279,6 +279,18 @@ FNR <- round(FN/dim(matches)[1], 2)
 FNR
 ```
 
+# Precision and Recall
+
+```{r}
+precision <- 1 - FDR
+
+recall <- 1 - FNR 
+
+f1 <- (2.0*TP)/(2.0*TP+FP+FNR)
+
+cbind(precision, recall, f1)
+```
+
 # Summary
 
 - We have introduced the basics of \texttt{fastLink}
