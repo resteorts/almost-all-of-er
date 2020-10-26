@@ -19,7 +19,12 @@ Reading
 
 # Probabilistic Entity Resolution 
 
-While Fellegi and Sunter (1969) have provided a framework for probabilistic entity resolution, there are few implmentations that scale to large size data sets. 
+While Fellegi and Sunter (1969) have provided a framework for probabilistic entity resolution, there are few implmentations that scale to large data sets. 
+
+# Agenda
+
+- We review fastlink, Edmorando et al. (2020)
+- We illustrate a toy example on \texttt{RLdata10000}
 
 # fastlink
 
@@ -235,7 +240,7 @@ out <- fastLink(dfA = records, dfB = records,
 
 ```{r}
 source("evaluationMetrics.R")
-library(exchangeableER)
+#library(exchangeableER)
 library(magrittr)
 library(data.table)
 ```
@@ -247,7 +252,8 @@ trueMembership <- records$ent_id
 recordIds <- records$rec_id
 numRecords <- dim(records)[1]
 matches <- 
-  data.table(cbind(out$matches$inds.a,     out$matches$inds.b))
+  data.table(cbind(out$matches$inds.a,     
+                   out$matches$inds.b))
 head(matches)
 dim(matches)[1]
 ```
@@ -273,41 +279,8 @@ FNR <- round(FN/dim(matches)[1], 2)
 FNR
 ```
 
-# Precision and Recall
+# Summary
 
-```{r}
-## Precision
-precision <- round(1 - FDR, 2)
-
-## Recall
-recall <- round(1 - FNR, 2) 
-
-f1 <- round((2.0*TP)/(2.0*TP+FP+FNR), 2)
-
-cbind(precision, recall, f1)
-```
-
-TODO: The precision and recall is being done a bit weird here. 
-
-<!-- # Precision and Recall -->
-
-<!-- ```{r} -->
-<!-- # Duplication/not duplication under unique id -->
-<!-- recordsfL$dupTrue <- ifelse(duplicated(records$ent_id), "Duplicated", "Not duplicated") -->
-
-<!-- # Duplication/not duplication under fastLink  -->
-<!-- recordsfL$dupfL <- ifelse(duplicated(records$dedupe.ids), "Duplicated", "Not duplicated") -->
-
-<!-- # Confusion Matrix  -->
-<!-- confusion <- table("fastLink" = records$dupfL, "True" = recordsfL$dupTrue) -->
-
-<!-- ``` -->
-
-
-
-Exercises/TODO
-===
-
-- How would you calculate the precision and recall? 
-- Apply this to a much large data set with blocking. (Make this another module).
-- Combine with fastlink and dblink
+- We have introduced the basics of \texttt{fastLink}
+- How would one incorporate blocking to scale to larger data sets? 
+- How would we apply this package to a real data set beyond \texttt{RLdata10000}?
