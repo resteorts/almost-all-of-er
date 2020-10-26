@@ -17,3 +17,11 @@ font-size: 8px
 
 
 # Fellegi and Sunter
+
+Give a quick review
+
+# Introduce the Sadinle paper
+
+# Apply this to simple data set
+
+# Apply this to a more interesting data set 
