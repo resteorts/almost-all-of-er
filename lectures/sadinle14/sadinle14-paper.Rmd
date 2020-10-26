@@ -104,7 +104,15 @@ $$Z = (\textcolor{blue}{1}, \textcolor{green}{2}, \textcolor{blue}{1}, \textcolo
 
 $$Z = (\textcolor{blue}{4}, \textcolor{green}{1}, \textcolor{blue}{4}, \textcolor{red}{2}, \textcolor{red}{2})$$ 
 
-would correspond to this partition because
+would correspond to this partition because both $Z_1 = Z_3 = Z_4 = Z_5$ and $Z_2$ gets its own value.
 
-both $Z_1 = Z_3 = Z_4 = Z_5$ and $Z_2$ gets its own value.
+# Connection to the $r$th Bell number
+
+The number of ways in which a data file with r records can be partitioned is given by the $r$th Bell number, which grows rapidly with $r.$
+
+See Rota (1964). 
+
+# Comparison data
+
+# Model
 
