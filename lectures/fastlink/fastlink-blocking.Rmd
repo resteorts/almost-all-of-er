@@ -86,7 +86,7 @@ partialMatchFields <- c("fname_c1", "lname_c1")
 # Run \texttt{fastLink}
 
 ```{r, message=FALSE}
-out2 <- fastLink(dfA = records,
+out <- fastLink(dfA = records,
                 dfB = records,
                 varnames = linkageFields,
                 stringdist.match = stringDistFields, 
@@ -101,7 +101,7 @@ out2 <- fastLink(dfA = records,
 ```{r}
 recordsfL2 <- getMatches(dfA = records, 
                          dfB = records, 
-                         fl.out = out2)
+                         fl.out = out)
 # number of unique individuals that 
 # fastLink finds 
 length(unique(recordsfL2$dedupe.ids))
@@ -182,6 +182,64 @@ for(j in 1:length(blockby)) {
 }
 ```
 
+<!-- # Setup -->
+<!-- ```{r} -->
+<!-- library(data.table) -->
+<!-- trueMembership <- records$ent_id -->
+<!-- recordIds <- records$rec_id -->
+<!-- numRecords <- dim(records)[1] -->
+<!-- ``` -->
+
+<!-- # Traditional Blocking -->
+
+<!-- \footnotesize -->
+<!-- ```{r, cache=TRUE} -->
+<!-- # store the results from each block -->
+<!-- results <- list() -->
+<!-- matches <- list() -->
+<!-- metrics <- list() -->
+<!-- # matches for each block -->
+<!-- for(j in 1:length(blockby)) { -->
+<!--   # subset original data to form block -->
+<!--   records.temp <- records[blockby[[j]]$dfA.inds, ] -->
+<!--   # fastLink applied to a block -->
+<!--   out.temp <- fastLink(dfA = records.temp, dfB =    -->
+<!--               records.temp, -->
+<!--               varnames = linkageFields2,   -->
+<!--               stringdist.match = stringDistFields,  -->
+<!--               partial.match = partialMatchFields,  -->
+<!--               cut.a = 0.92, cut.p = 0.84,   -->
+<!--               threshold.match = 0.90, -->
+<!--               dedupe = FALSE) -->
+<!--   matches.temp <-  -->
+<!--   data.table(cbind(out.temp$matches.temp$inds.a,      -->
+<!--                    out.temp$matches.temp$inds.b)) -->
+<!--   TP.temp <- sum(records$ent_id[matches.temp$V1]  -->
+<!--           == records$ent_id[matches.temp$V2]) -->
+<!--   FP.temp <- sum(records$ent_id[matches.temp$V1]  -->
+<!--           != records$ent_id[matches.temp$V2]) -->
+<!--   FN.temp <- dim(matches.temp)[1] - TP.temp -->
+
+<!--   FDR.temp <- round(FP.temp/(FP.temp + TP.temp), 2) -->
+<!--   FNR.temp <- round(FN.temp/dim(matches.temp)[1], 2) -->
+<!--   metrics.temp <- data.table(cbind(FDR.temp, FNR.temp)) -->
+
+<!--   # get the data -->
+<!--   records.temp <-  -->
+<!--     getMatches(dfA = records.temp,  -->
+<!--                dfB = records.temp, -->
+<!--                fl.out = out.temp) -->
+<!--     # adjust the unique identifier to be block specific -->
+<!--   records.temp$dedupe.ids <- paste0("B", j, "_", records.temp$dedupe.ids) -->
+<!--   # Store the deduplicated data in our object for storage -->
+<!--   results[[j]] <- records.temp -->
+<!--   matches[[j]] <- matches.temp -->
+<!--   metrics[[j]] <- metrics.temp -->
+<!-- } -->
+<!-- ``` -->
+
+
+
 # How many unique entities? 
 
 ```{r}
@@ -192,16 +250,57 @@ recordsfL.blockE <- do.call('rbind', results)
 length(unique(recordsfL.blockE$dedupe.ids))
 ```
 
-# Setup
+# Evaluation Metrics 
 
 ```{r}
+matches <- results
 library(data.table)
 trueMembership <- records$ent_id
 recordIds <- records$rec_id
 numRecords <- dim(records)[1]
 matches <- 
-  data.table(cbind(results$matches$inds.a,     
-                   results$matches$inds.b))
+  data.table(cbind(out$matches$inds.a,     
+                   out$matches$inds.b))
 head(matches)
 dim(matches)[1]
 ```
+
+
+# True Positives, False Positives, and False Negatives
+```{r}
+## True Positives, False Positives, and False Negatives:
+TP <- sum(records$ent_id[matches$V1] 
+          == records$ent_id[matches$V2])
+FP <- sum(records$ent_id[matches$V1] 
+          != records$ent_id[matches$V2])
+FN <- dim(matches)[1] - TP
+```
+
+# FDR and FNR
+```{r}
+## False Discovery Rate
+FDR <- round(FP/(FP + TP), 2)
+FDR
+
+## False Negative Rate
+FNR <- round(FN/dim(matches)[1], 2)
+FNR
+```
+
+# Precision and Recall
+
+```{r}
+precision <- 1 - FDR
+
+recall <- 1 - FNR 
+
+f1 <- (2.0*TP)/(2.0*TP+FP+FNR)
+
+cbind(precision, recall, f1)
+```
+
+# Summary
+
+- We have just performed traditional blocking
+- How would we proceed using probabilistic blocking and applying this to a larger data set? 
+
