@@ -1,0 +1,19 @@
+
+---
+title: "Module X: Bayesian Fellegi and Sunter"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+# Reading
+
+
+- Binette and Steorts (2020)
+- Sadinle (2014)
+
+
+# Fellegi and Sunter
