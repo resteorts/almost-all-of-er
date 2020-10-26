@@ -1,0 +1,195 @@
+
+---
+title: "Module X: fastlink with blocking"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Reading
+===
+
+- Binette and Steorts (2020)
+- Edmorando et al. (2020)
+- Fellegi and Sunter (1969)
+
+
+# Agenda
+
+- We continue with our exploration of \texttt{fastLink} by adding blocking. 
+- We investigate this using the \texttt{RLdata10000} data set
+
+
+# Load Packages
+
+```{r, message=FALSE}
+# load libraries 
+library(fastLink)
+```
+
+# Load RLdata10000
+
+\footnotesize
+```{r}
+# load RLdata10000
+records <- 
+  read.table("data/RLdata10000.csv", 
+             sep=",", header=TRUE)
+head(records, 4)
+```
+
+# RLdata10000
+
+```{r}
+# Number of unique records 
+length(unique(records$ent_id))
+```
+
+# Linkage Fields
+
+\footnotesize
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", "lname_c1", "by", "bm", "bd")
+```
+
+# Add Numberic Fields
+
+```{r}
+# We can add numeric comparisons using dissimilarity
+numericMatchFields <- c("by")
+
+#  Make sure these are class numeric
+records$by <- as.numeric(records$by)
+```
+
+
+
+# Preparation 
+
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", 
+                   "lname_c1", "by", "bm", "bd")
+
+# string distance fields
+stringDistFields <- c("fname_c1", "lname_c1")
+
+# partial distance fields (fields where we allow
+# for agree, disagree, and partially agree)
+partialMatchFields <- c("fname_c1", "lname_c1")
+```
+
+# Run \texttt{fastLink}
+
+```{r, message=FALSE}
+out2 <- fastLink(dfA = records,
+                dfB = records,
+                varnames = linkageFields,
+                stringdist.match = stringDistFields, 
+                partial.match = partialMatchFields,
+                cut.a.num = 1.5,
+                cut.a = 0.94, cut.p = 0.84,
+                dedupe = FALSE)
+```
+
+# How did we do?
+
+```{r}
+recordsfL2 <- getMatches(dfA = records, 
+                         dfB = records, 
+                         fl.out = out2)
+# number of unique individuals that 
+# fastLink finds 
+length(unique(recordsfL2$dedupe.ids))
+```
+
+# Blocking
+
+1. We can use traditional, deterministic blocking, which is simple and easier but does not allow us to propagate error
+
+2. We can also use probabilistic blocking, which allows us propagate (some) of the record linkage error
+
+# Traditional Blocking
+
+We will create a simplistic blocking scheme based upon date of birth year. 
+
+```{r}
+records$by2 <- records$by
+```
+
+# Plot
+
+```{r}
+plot(table(records$by2))
+```
+
+# Traditional Blocking
+
+We will filter out records that are not typical for date of birth year for computational reasons. 
+
+```{r}
+head(records$by2[records$by < 1924] <- 1923)
+head(records$by2[records$by > 2008] <- 2009)
+```
+
+# Traditional Blocking
+
+```{r}
+blockby <- blockData(records, records, varnames = "by2")
+```
+
+# Traditional Blocking
+
+```{r}
+# modify the list of linkage fields 
+# birth year is of no use for 
+# merging within a traditional block
+linkageFields2 <- c("fname_c1", "lname_c1", "bm", "bd")
+```
+
+
+# Traditional Blocking
+
+\footnotesize
+```{r, cache=TRUE}
+# store the results from each block
+results <- list()
+for(j in 1:length(blockby)) {
+  # subset original data to form block
+  records.temp <- records[blockby[[j]]$dfA.inds, ]
+  # fastLink applied to a block
+  out.temp <- fastLink(dfA = records.temp, dfB =   
+              records.temp,
+              varnames = linkageFields2,  
+              stringdist.match = stringDistFields, 
+              partial.match = partialMatchFields, 
+              cut.a = 0.92, cut.p = 0.84,  
+              threshold.match = 0.90,
+              dedupe = FALSE)
+  # get the data
+  records.temp <- 
+    getMatches(dfA = records.temp, 
+               dfB = records.temp,
+               fl.out = out.temp)
+    # adjust the unique identifier to be block specific
+  records.temp$dedupe.ids <- paste0("B", j, "_", records.temp$dedupe.ids)
+  # Store the deduplicated data in our object for storage
+  results[[j]] <- records.temp
+}
+```
+
+# How many unique entities? 
+
+```{r}
+# aggregate all the results from the traditional blocking
+recordsfL.blockE <- do.call('rbind', results)
+
+# unique records under fastLink with blocking
+length(unique(recordsfL.blockE$dedupe.ids))
+```
+
+
