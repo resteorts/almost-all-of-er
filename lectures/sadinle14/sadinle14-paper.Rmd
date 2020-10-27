@@ -88,7 +88,8 @@ $$Z = (Z_1, Z_2, \ldots, Z_r)$$ contains all the records labels.
 Thus,
 
 $$ \Delta_{ij} = I(Z_i = Z_j).$$
-# Back to our Example
+
+# Example (Continued)
 
 Recall our database has $\{1,2,3,4,5\}$ records and the partition can be represented by the three groups:
 
@@ -96,9 +97,9 @@ Recall our database has $\{1,2,3,4,5\}$ records and the partition can be represe
 $$\{1,3\}, \{2\}, \{4,5\}.$$
 What would be examples $Z$ of arbitary labellings for this example?
 
-# Back to our Example
+# Example (Continued)
 
-The labellings
+The labelings
 
 $$Z = (\textcolor{blue}{1}, \textcolor{green}{2}, \textcolor{blue}{1}, \textcolor{red}{3}, \textcolor{red}{3})$$ or 
 
@@ -227,21 +228,23 @@ $\Phi_f = (m_f , u_f).$
 
 # Prior speciification for the model parameters 
 
-Sadinle (2014) specifies that 
+Sadinle (2014) specified that 
 
-$m_{fl}$ are drawn from a $$\text{TruncatedBeta}(\alpha_{f\ell}^1, \beta_{f\ell}^1, \lambda_{f\ell},1)$$
+$$m_{fl} \sim \text{TruncatedBeta}(\alpha_{f\ell}^1, \beta_{f\ell}^1, \lambda_{f\ell},1)$$
 for 
 $\ell = 2, \ldots, L_{f}-1.$
 
-$m_{f0} \sim \text{Beta}(\alpha_{f0}^1, \beta_{f0}^1).$
+In addition, 
+
+$$m_{f0} \sim \text{Beta}(\alpha_{f0}^1, \beta_{f0}^1).$$
 
 # Prior speciification for the model parameters 
 
-Sadinle (2014) specifies that 
+Sadinle (2014) specified that 
 
 $$u_{f\ell} \sim \texttt{Uniform}(0,1)$$ for all features and disagreement. 
 
-The authors states that one might take 
+The author stated that one might take 
 $$u_{f\ell} \sim \text{Beta}(\alpha_{f0}^0, \beta_{f0}^0)$$ if prior information is available. 
 
 # Gibbs sampling
