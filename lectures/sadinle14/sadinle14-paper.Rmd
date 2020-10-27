@@ -114,5 +114,137 @@ See Rota (1964).
 
 # Comparison data
 
-# Model
+- Comparison data are obtained by comparing pairs of records, with the goal of finding evidence of whether
+two records refer to the same entity.
+
+- Intuitively, two records referring to the same
+entity should be very similar. 
+
+# Notation 
+
+Assume $f$ features.
+
+Compare features $f$ of records $(i,j)$ by computing some similarity measure $S_f(i,j).$ 
+
+The range of $S_f(i,j)$ is divided into $L_f + 1$ intervals
+
+$$I_{f0}, I_{f1}, \ldots, I_{fL_{f}},$$ which represent levels of disagreement. 
+
+By convention, $I_{f0}$ denotes the **highest level of agreement** and $I_{fL_{f}}$ denotes the **lowest level of agreement**. 
+
+# Notation 
+
+For records $(i,j)$ define 
+
+$$\gamma_{ij}^{f} = \ell \quad \text{if} \quad S_f(i,j) \in I_{f\ell}.$$
+
+- The larger the value of $\gamma_{ij}^{f}$ the large the disagreement between records $(i,j)$ with respect to feature $f.$
+
+- These feature comparisons are collected into a vector for each record pair denoted by 
+$$\bm{\gamma}_{ij} = (\gamma_{ij}^1, \gamma_{ij}^2,\ldots \gamma_{ij}^F),$$ which denotes the comparison vector for records $(i,j),$ where $F$ is the number of features being compared. 
+
+
+
+# Model for the Comparison Data
+
+Assume that the comparison vector $\bm{\gamma}_{ij}$ is a realization of a random vector $\bm{\Gamma}_{ij}.$
+
+The set of record pairs is composed of two types -- co-referent and non co-referent record pairs. 
+
+# Model for the Comparison Data
+
+One expects the distribution of the comparison vectors $\bm{\Gamma}_{ij}$ of co-referent/non co-referent record pairs to be quite different. 
+
+For example, one expects to observe more
+agreements among co-referent pairs than among non0coreferent pairs. 
+
+Similarly, one expects many more disagreements among non-coreferent pairs than among co-referent pairs.
+
+# Model for the Comparison Data
+
+This intuition can be formalized by assuming that the distribution of $\bm{\Gamma}_{ij}$ is the same for all record pairs that refer to the same entity and is the same for all record pairs that refer to different entities.
+
+This is modeled as follows:
+
+\begin{align}
+\bm{\Gamma}_{ij} \mid \Delta_{ij} = 1 &\stackrel{iid}{\sim} G_1 \\
+\bm{\Gamma}_{ij} \mid \Delta_{ij} = 0 &\stackrel{iid}{\sim} G_0
+\end{align}
+for all $i,j \in P,$ where $G_1, G_0$ represent the models of the comparison vectors for pairs that are coreferent and noncoreferent, respectively.
+
+# Prior distribution on the coreference partition 
+
+The co-reference matrix reprents a partition of the entries of $\Delta.$ 
+
+Let $D$ represent the set of possible co-reference partitions. 
+
+The author assumes a uniform prior that assigns equal probability to each partition in $D.$ 
+
+This can be written as 
+$$\pi(\Delta) \propto I(\Delta \in D).$$
+
+# Prior distribution on the coreference partition 
+
+One simple way to obtain this prior for $Z$ is to assign equal probability to each of the $r!/(r-n)!$ labelings of a partition with $n$ cells/groups. 
+
+This leads to the prior
+
+$$p(\bm{Z}) \propto \frac{(r - n(\bm{Z}))}{r!} I(\bm{Z} \in Z)$$
+
+where $n(\bm{Z})$ measure the number of different labelings of $\bm{Z}.$
+
+# A model for independent comparison fields
+
+We describe a simple parametrization for $G_1$ and $G_0.$ 
+
+This model assumes that the comparison fields are independent for both co-referent and non co-referent records.
+
+Assuming that $\Gamma_{ij}^f$ takes $L_f +1$ values corresponding to levels disagreement, one can model 
+
+$$\Gamma_{ij}^f \mid \bm{m}_{f} \sim \text{Multinomial}(\bm{m}_{f}),$$
+
+where 
+
+$\bm{m}_{f} = (m_{f0},m_{f1}, \ldots,  m_{f, L_f-1}).$
+
+# A model for independent comparison fields
+
+Similarly, 
+
+$$\Gamma_{ij}^f \mid \bm{u}_{f} \sim \text{Multinomial}(\bm{u}_{f}),$$
+where 
+
+$\bm{u}_{f} = (u_{f0},u_{f1}, \ldots,  u_{f, L_f-1}).$
+
+# A model for independent comparison fields
+
+Following the notation of Sadinle (2014),
+
+$\Phi_0 = (u_1, \ldots, u_F)$ and $\Phi_1 = (m_1, \ldots, m_F)$
+such that
+
+$\Phi_f = (m_f , u_f).$
+
+# Prior speciification for the model parameters 
+
+Sadinle (2014) specifies that 
+
+$m_{fl}$ are drawn from a $$\text{TruncatedBeta}(\alpha_{f\ell}^1, \beta_{f\ell}^1, \lambda_{f\ell},1)$$
+for 
+$\ell = 2, \ldots, L_{f}-1.$
+
+$m_{f0} \sim \text{Beta}(\alpha_{f0}^1, \beta_{f0}^1).$
+
+# Prior speciification for the model parameters 
+
+Sadinle (2014) specifies that 
+
+$$u_{f\ell} \sim \texttt{Uniform}(0,1)$$ for all features and disagreement. 
+
+The authors states that one might take 
+$$u_{f\ell} \sim \text{Beta}(\alpha_{f0}^0, \beta_{f0}^0)$$ if prior information is available. 
+
+# Gibbs sampling
+
+In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use a Gibbs sampler. 
 
