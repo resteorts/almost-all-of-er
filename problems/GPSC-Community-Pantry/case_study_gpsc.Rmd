@@ -67,9 +67,11 @@ Many pantry users have filed more than one order in the considered time period. 
 
 The fields `name`, `phone` and `email` are all expected to contain variations. For example, I could have entered my name as "Olivier", "Olivier B." or "Olivier Binette" in different days, or pantry volunteers may have recorded my name as "Oliver". I have two duke email addresses: \url{olivier.binette@duke.edu} as well as \url{ob37@duke.edu}, and on some days I could have used my gmail address. My phone number changed a few months after I moved to Durham.
 
-In order to identify unique individuals, perform deterministic record linkage using the three fields `name`, `phone` and `email` in combination: define two records to be a match if they agree on at least one of these fields. Given this record linkage, assign a unique entity identifier to each pantry user. Hint: construct an adjacency list and use `igraph::components()` together with `igraph::graph_from_adj_list()` in order to define unique entity identifiers.
+In order to identify unique individuals, perform deterministic record linkage using the three fields `name`, `phone` and `email` in combination: define two records to be a match if they agree on at least one of these fields. Given this record linkage, assign a unique entity identifier to each pantry user. 
 
-**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure would be more efficient than using `igraph` as above?
+**Hint:** construct an adjacency list and use `igraph::components()` together with `igraph::graph_from_adj_list()` in order to define unique entity identifiers.
+
+**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure to find connected components would be more efficient than using `igraph` as above?
 
 
 ## Task 2
@@ -80,7 +82,7 @@ Construct a data frame where each row represents a unique pantry user and each c
 
 Given the above, answer the following questions:
 
-1. How many individuals have only used the pantry one time in this time period?
+1. How many individuals have only used the pantry only one time in this time period?
 2. What is the composition of degree type, order type and year among pantry users? 
 3. Does the above differ between one-time versus recurrent users?
 
