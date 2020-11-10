@@ -2,6 +2,7 @@
 title: 'Case Study: GPSC Community Pantry'
 author: "Olivier Binette"
 date: "November 10, 2020"
+urlcolor: blue
 header-includes:
    - \usepackage{booktabs}
    - \usepackage{multirow}
@@ -71,7 +72,7 @@ In order to identify unique individuals, perform deterministic record linkage us
 
 **Hint:** construct an adjacency list and use `igraph::components()` together with `igraph::graph_from_adj_list()` in order to define unique entity identifiers.
 
-**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure to find connected components would be more efficient than using `igraph` as above? Discuss.
+**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure to find and managed connected components would be more efficient than using `igraph` as above? Discuss.
 
 ## Task 2
 
@@ -88,12 +89,19 @@ Given the above, answer the following questions:
 Furthermore, discuss the following: How could the pantry improve its data collection efforts in order to gain more meaningful insights into its users and their needs? Keep in mind the need to protect the privacy of the pantry users.
 
 
+# Learn more
 
+I recommend the book [*Algorithms, Fourth Edition*](https://algs4.cs.princeton.edu/) by Robert Sedgewick and Kevin Wayne to learn more about data structures and algorithms.
 
+\begin{quote}
+  ``Good algorithms can make the difference between being able to solve a practical problem and not being able to address it at all.''
+\end{quote}
 
+There is a free MOOC by the authors on coursera: \url{https://www.coursera.org/learn/algorithms-part1}
 
-
-
+- The "Union-Find" module of Week 1 covers the disjoint-set data structure and the union-find problem.
+- Week 3 covers sorting algorithms.
+- [Part II](https://www.coursera.org/learn/algorithms-part2) of the MOOC, Week 1, covers graph data structures and algorithms to find connected components.
 
 
 
