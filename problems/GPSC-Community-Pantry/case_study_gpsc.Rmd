@@ -71,8 +71,7 @@ In order to identify unique individuals, perform deterministic record linkage us
 
 **Hint:** construct an adjacency list and use `igraph::components()` together with `igraph::graph_from_adj_list()` in order to define unique entity identifiers.
 
-**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure to find connected components would be more efficient than using `igraph` as above?
-
+**Optional challenge:** Can you perform this deterministic record linkage in much less than $\mathcal{O}(n^2)$ time, where $n$ is the number of records? Hint: use sorting to efficiently construct the adjacency list. Do you think that using a disjoint-set data structure to find connected components would be more efficient than using `igraph` as above? Discuss.
 
 ## Task 2
 
