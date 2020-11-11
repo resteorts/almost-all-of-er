@@ -1,5 +1,5 @@
 ---
-title: 'Case Study: GPSC Community Pantry'
+title: 'Case Study: Community Pantry'
 author: "Olivier Binette"
 date: "November 10, 2020"
 urlcolor: blue
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
 
 # Introduction
 
-The Graduate and Professional Student Council (GPSC) [Community Pantry](http://dukegpsc.org/resources-for-students/community-pantry/) provides food and basic necessities to Duke students in need of assistance. Since the beginning of the COVID-19 pandemic, pantry usage has mainly been restricted to the weekly bag program: students fill bag orders through a Qualtrics survey, and the bags are then delivered to them or ready for pick-up on the next Saturday.
+A Durham pantry provides food and basic necessities to students in need of assistance. Since the beginning of the COVID-19 pandemic, pantry usage has mainly been restricted to the weekly bag program: students fill bag orders through a Qualtrics survey, and the bags are then delivered to them or ready for pick-up on the next Saturday.
 
 As a volunteer statistician at the Pantry, you are tasked to:
 
@@ -27,7 +27,7 @@ Your analysis will assist the Pantry in its negotiation with University stakehol
 
 # Data
 
-The raw Pantry records consists of weekly bag orders filled between June 24 and November 4 2020 using the Qualtrics "Weekly Grocery Bag Request Survey" (see attached Word file). This is an online survey made available to all of Duke's graduate and professional students. The survey is mainly advertised over email in periodical GPSC newsletters and it records all bag orders for the given time period. Its content is summarized in Table 1.
+The raw Pantry records consists of weekly bag orders filled between June 24 and November 4 2020 using a Qualtrics survey. This is an online survey made available to all of Duke's graduate and professional students. The survey is mainly advertised over email in periodical newsletters and it records all bag orders for the given time period. Its content is summarized in Table 1.
 
 \begin{table}[ht]
 \centering

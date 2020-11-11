@@ -6,7 +6,7 @@ library(dplyr)
 library(assert)
 
 filename = "Weekly Grocery Bag Request Survey_November 8, 2020_12.47.xlsx"
-filepath = "problems/GPSC-Community-Pantry"
+filepath = "problems/Community-Pantry"
 data_raw = readxl::read_xlsx(file.path(filepath, filename))
 
 fields = c(date = "RecordedDate",
@@ -25,7 +25,7 @@ md5_key = as.character(openssl::rand_num())
 data = data_raw %>%
   select(!!!fields) %>%
   mutate(date = openxlsx::convertToDate(date)) %>%
-  filter(date >= "2020-06-24", date <= "2020-11-04") %>% 
+  filter(date >= "2020-06-24", date <= "2020-11-04") %>%
   mutate(name = openssl::md5(tolower(name), key=md5_key),
          email = openssl::md5(tolower(email), key=md5_key),
          phone = openssl::md5(gsub("[^0-9.-]", "", phone), key=md5_key))
