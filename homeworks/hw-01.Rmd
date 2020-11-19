@@ -1,8 +1,12 @@
+
 ---
-title: 'Similarity Scores and Pipeline Approaches Applied to Conflict Data in El Salvador'
-author: "STA 490/690: Assignment 1, Spring 2020"
-date: "Due TBD"
-output: pdf_document
+title: "Homework 1, STA 490/690"
+author: "Rebecca C. Steorts"
+output: 
+     pdf_document:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
 ---
 
 ***General instructions for homeworks***: Please follow the uploading file instructions according to the syllabus. Your code must be completely reproducible and must compile. 
@@ -54,21 +58,93 @@ dim(df)
 Observe that we are only considering two municipalities in El Salvador now, which is what was considered in Sadinle (2014). 
 
 
-\section*{Task 1}
-\textbf{Consider the similarity of first name and last name. What type of distance metric would you use for this data set and why? Explain.}
+\section*{Task 1: Similarity of Hispanic Names}
+\textbf{Consider the similarity of first name and last name. Consider looking at the Edit distance and comment on how this works. Below we explain a recently proposed hybrid metric for Hispanic names. Consider this using the code provided. Explain your findings.}
 
-Consider comparing the following two names using Edit distance: `r df$firstname[1]` and `r df$firstname[2]`. We find that using the following code below that the distance is just `r levenshteinSim(df$firstname[1], df$firstname[2])`. This seems quite reasonable given that both names are quite different.
+\paragraph{Background on the Monge Elkan Distance Metric}
 
-```{r, message=FALSE}
-levenshteinSim(df$firstname[1], df$firstname[2])
-```
+It will be useful (for this case study) to utilize a hybrid distance measure for 
+comparing textual strings containing multiple words (tokens). 
+A hybrid distance measure accounts for differences between tokens, while 
+allowing for fuzzy matching between tokens.
+The measure we describe here resembles a hybrid similarity measure 
+proposed by Monge (1996)  for attribute matching. As shown in Marchant et. al. (2020)
+this metric attempts to match the tokens in each string while incorporating penalties for ``missing'' 
+tokens. 
 
-Consider comparing the following two names using Edit distance: `r df$firstname[731]` and `r df$firstname[732]`.
-We find the Edit distance is `r levenshteinSim(df$firstname[731], df$firstname[732])`.
+We describe the measure with reference to the following example.
+Suppose we have two strings to compare:
+$y =$ "University of California, San Diego'' and 
+$x =$ "Univ. Calif., Sna Diego''. 
 
-We have now seen an interesting case. Hopefully, you have noticed that Hispanic first names, have two tokens, and thus, are much longer than Western names. Perhaps we might want to change the distance function. 
+The two strings clearly refer to the same entity, however the latter 
+string is abbreviated and has a typographical error.
+We begin by splitting each string into tokens:
+\begin{align*}
+  \vec{y} &= [\text{``University'', ``of'', ``California,'', ``San'', ``Diego''}], \\
+  \vec{x} &= [\text{``Univ.'', ``Calif.,'', ``Sna'', ``Diego''}].
+\end{align*}
 
-Let's try using the Monge Elkan string distance metric. First, we will define the normalized Edit distance. 
+As explained in Marchant et al. (2020), to compute the distance between $\vec{y}$ and $\vec{x}$, one must proceed in three steps:
+\begin{enumerate}
+  \item If $\vec{y}$ and $\vec{x}$ do not contain the same number of 
+  tokens, we append special \texttt{NA} tokens to the shorter token 
+  vector to make $|\vec{y}| = |\vec{x}|$. 
+  For the above example, we append an \texttt{NA} token to $\vec{x}$.
+  \item Next we view $\vec{y}$ and $\vec{x}$ as two independent parts 
+  of a bipartite graph.
+  We solve the minimum weight matching problem for the bipartite graph, 
+  where the weights between nodes (tokens) are defined by an \emph{inner} 
+  distance measure $\operatorname{dist}_\mathrm{inner}(y_i, x_j)$ for 
+  $y_i \in \vec{y}$ and $x_i \in \vec{x}$. 
+  Note that $\distfn_\mathrm{inner}(y_i, x_j)$ must return valid 
+  distances when either $y_i$ or $x_j$ is an \texttt{NA} token. 
+  We represent the solution of the minimum weight bipartite matching 
+  problem as an edge set 
+  $M = \{(y_i \leftrightarrow x_j) : i \in 1, \ldots, |\vec{y}|\}$. 
+  For the above example, we obtain  
+  $M = \{(\text{``University''} \leftrightarrow \text{``Univ.''}), 
+         (\text{``of''} \leftrightarrow \texttt{NA}), 
+         (\text{``California,''} \leftrightarrow \text{``Calif.,''}), 
+         (\text{``San''} \leftrightarrow \text{``Sna''}), 
+         (\text{``Diego''} \leftrightarrow \text{``Diego''})\}$ 
+  using the inner distance measure defined below.
+  \item Finally we define the hybrid distance between $y$ and $x$ 
+  as an average over the minimum matching weights:
+  \begin{equation*}
+    \distfn(y, x) = \frac{1}{|M|} \sum_{(y_i \leftrightarrow x_j) \in M} \distfn_\mathrm{inner}(y_i, x_j).
+  \end{equation*}
+  For the above example, we obtain $\distfn(y, x) = 0.62$\footnote{
+    Using $d_\mathrm{miss,l} = \infty$, $d_\mathrm{miss,r} = 0$, 
+    $d_\mathrm{abbr,l} = 0.1$, $d_\mathrm{abbr,r} = 1$.
+  } which is an good result given that $y$ and $x$ have the same 
+  semantic meaning.
+  In comparison, the Levenshtein (edit) distance 
+  $\distfn_\mathrm{Ed}(y,x) = 12$ does not reflect the semantic 
+  closeness of $y$ and $x$.
+\end{enumerate}
+
+The inner distance measure $\distfn_\mathrm{in}$ plays a crucial role in 
+the performance of the hybrid distance. The authors utilize a 
+modified Levenshtein distance which handles \texttt{NA} tokens and detects abbreviations.
+
+Concretely, they set
+\begin{equation*}
+  \distfn_\mathrm{inner}(y, x) = \begin{cases}
+    d_\mathrm{miss,l}, & \text{if } y = \mathtt{NA}, \\
+    d_\mathrm{miss,r}, & \text{if } x = \mathtt{NA}, \\
+    d_\mathrm{abbr,l} \cdot \distfn_\mathrm{Ed}(y, x), & \text{if } y \text{ abbreviates } x, \\
+    d_\mathrm{abbr,r} \cdot \distfn_\mathrm{Ed}(y, x), & \text{if } x \text{ abbreviates } y, \\
+    \distfn_\mathrm{Ed}(y, x) & \text{otherwise}.
+  \end{cases}
+\end{equation*}
+where $d_\mathrm{miss,l}$, $d_\mathrm{miss,r}$, $d_\mathrm{abbr,l}$, 
+$d_\mathrm{abbr,l}$ are positive constants and $\distfn_\mathrm{Ed}$ 
+is the Levenshtein distance.
+
+
+
+
 
 ```{r}
 # Normalized Levenshtein similarity function used below
@@ -81,7 +157,8 @@ unitLevenshteinSimilarity <- function(v1, v2) {
 ```
 
 
-Now, we define the Monge Elkan metric.
+
+
 
 ```{r}
 #' Similarity function for Hispanic names based upon the Monge Elkan metric
@@ -158,35 +235,55 @@ unitHispanicSimilarity <- function(x, y, sep = '\\s+', knownTokens = NULL) {
 }
 ```
 
+\section*{Solution to Task 1}
+
+Consider comparing the following two names using Edit distance: `r df$firstname[1]` and `r df$firstname[2]`. We find that using the following code below that the distance is just `r levenshteinSim(df$firstname[1], df$firstname[2])`. This seems quite reasonable given that both names are quite different.
+
+```{r, message=FALSE}
+levenshteinSim(df$firstname[1], df$firstname[2])
+```
+
+Consider comparing the following two names using Edit distance: `r df$firstname[731]` and `r df$firstname[732]`.
+We find the Edit distance is `r levenshteinSim(df$firstname[731], df$firstname[732])`.
+
+We have now seen an interesting case. Hopefully, you have noticed that Hispanic first names, have two tokens, and thus, are much longer than Western names. Perhaps we might want to change the distance function. 
+
 Now when comparing `r df$firstname[1]` and `r df$firstname[2]` under the Monge Elkan metric our score is
 `r unitHispanicSimilarity(df$firstname[1], df$firstname[2])`. 
 
 Now when comparing `r df$firstname[731]` and `r df$firstname[732]` under the Monge Elkan metric our score is
 `r unitHispanicSimilarity(df$firstname[731], df$firstname[732])`. 
 
-Play around with this metric more to see if this is a good fit.
+
 
 \section*{Task 2}
 
-\textbf{How does exact matching work on this data set? What about off by one matching? Be sure to provide the precision and recall.}
+\textbf{How does exact matching work on this data set? What about off by one matching? Be sure to provide the precision and recall. Hint: Be sure to work on the modified data set below as I have removed columns that would not be wise for comparing, such as the record label.}
 
 ```{r}
 head(df)
 head(df_new <- df[,3:8,10])
 ```
 
+\section*{Solution Task 2}
+
 \section*{Task 3}
 
 \textbf{How would you build a decision rule for matches/non-matches based upon scoring rules. What would your scoring rule be? Write this up as an algorithm.}
+
+\section*{Solution Task 3}
 
 
 \section*{Task 4}
 
 \textbf{Code up your algorithm in Task 3 and provide the precision and recall. Did your method do better or worse than exact matching?}
 
+\section*{Solution Task 4}
 
 \section*{Task 5}
 
 \textbf{Give insights into how you might be able to improve deterministic approaches moving forward if you re-did your analysis. What advice would you give to a new member that is just joining the project after working on this project (assume that they have just joined your team and your job is to bring them up to speed).}
+
+\section*{Solution Task 5}
 
 
