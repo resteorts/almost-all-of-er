@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Introduction to Bayesian Statistics (STA 360)</title>
+    <title>Introduction to Almost All of Entity Resolution (STA 490/690)</title>
     <meta charset="utf-8" />
     <meta name="author" content="Professor Rebecca Steorts" />
     <link rel="stylesheet" href="sta199-slides.css" type="text/css" />
@@ -10,7 +10,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Introduction to Bayesian Statistics (STA 360)
+# Introduction to Almost All of Entity Resolution (STA 490/690)
 ### Professor Rebecca Steorts
 
 ---
@@ -26,13 +26,11 @@ class: center, middle
 
 ---
 
-## What is Bayesian Statistics?
+## What is Entity Resolution?
 
-*"Bayesian statistics is a theory in the field of statistics based on the Bayesian interpretation of probability where probability expresses a degree of belief in an event. The degree of belief may be based on prior knowledge about the event, such as the results of previous experiments, or on personal beliefs about the event. This differs from a number of other interpretations of probability, such as the frequentist interpretation that views probability as the limit of the relative frequency of an event after many trials. &lt;/font&gt;."*
+Entity resolution (record linkage or de-duplication) is method used to remove duplicate entries from large, noisy databases that often do not have a unique identifer. 
 
-.pull-right[
-[-Wikipedia](https://en.wikipedia.org/wiki/Bayesian_statistics)
-]
+Can you think of some examples that you have seen? 
 
 ---
 
@@ -44,8 +42,8 @@ class: regular
 
 &lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[beka@stat.duke.edu](mailto:beka@stat.duke.edu)&lt;br&gt;
 &lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp; 988 1669 9435 &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; Class: Tues/Th, 1:45 - 3:00 PM ESD &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; OH: Tues/Th, 3:00 - 4:00 PM ESD
+&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; Class: Wednesday/Friday, Noon-1:15 PM EDT &lt;br&gt;
+&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; OH: TBD
 
 
 
@@ -57,54 +55,12 @@ class: regular
 [Olivier Binette](https://olivierbinette.ca/)
 
 &lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[olivier.binette@duke.edu](mailto:olivier.binette@duke.edu)&lt;br&gt;
-&lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp; 951 0070 7304 (Lab ID) &lt;br&gt;
 &lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp; 949 7135 3069 (OH ID) &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; Lab-01: Fri, 12:00 - 1:15 PM ESD &lt;br&gt;
 &lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; OH: Wed, 9:00 - 10:00 AM ESD &lt;br&gt;
 ]
 ---
 
 
-## Teaching Assistants
-&lt;small&gt;
-.pull-left[
-
-[Michael Christensen](https://www.linkedin.com/in/michael-christensen-497133162)
-
-&lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[mfc22@duke.edu](mailto: mfc22@duke.edu@duke.edu)&lt;br&gt;
-&lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp;912 3642 9338 (Lab ID) &lt;br&gt;
-&lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp; 949 7135 3069 (OH ID) &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; Lab-02: Fri, 1:45 - 3:00 PM ESD &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; OH: Mon, 9:00 - 10:00 AM ESD &lt;br&gt;
-]
-
----
-
-
-
-## Teaching Assistants
-&lt;small&gt;
-.pull-left[
-
-[Ziang Wang](Webpage)
-
-&lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[ziang.wang@duke.edu](mailto:ziang.wang@duke.edu)&lt;br&gt;
-
-&lt;br&gt;&lt;br&gt;
-
-[Lavonne Hoang](Webpage)
-
-&lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[lavonne.hoang@duke.edu](mailto:lavonne.hoang@duke.edu)&lt;br&gt;
-&lt;i class="material-icons"&gt;work_outline&lt;/i&gt; &amp;nbsp; 988 1669 9435 (OH ID) &lt;br&gt;
-&lt;i class="material-icons"&gt;calendar_today&lt;/i&gt;&amp;nbsp; OH: Wed, 3:30 - 4:30 PM ESD &lt;br&gt;
-
-&lt;br&gt;&lt;br&gt;
-
-[Ashley Murray](Webpage)
-
-&lt;i class="material-icons"&gt;mail_outline&lt;/i&gt; &amp;nbsp;[ashley.j.murray@duke.edu](mailto:ashley.j.murray@duke.edu)&lt;br&gt;
-
-]
 
 
 
@@ -112,16 +68,16 @@ class: regular
 
 ## Where to find information
 
-- Course website (all major course information here): [https://resteorts.github.io/teach/bayes20.html](https://resteorts.github.io/teach/bayes20.html)
-
-- Google group (course forum): [https://groups.google.com/forum/#!forum/bayes20](https://groups.google.com/forum/#!forum/bayes20)
+- Course website (all major course information here): [https://resteorts.github.io/teach/er21.html](https://resteorts.github.io/teach/er21.html)
 
 - Sakai (upload homeworks): [https://shib.oit.duke.edu/idp/authn/external?conversation=e1s1](https://shib.oit.duke.edu/idp/authn/external?conversation=e1s1)
 
 - Duke Gradescope (upload homeworks):
 [https://gradescope.com/auth/saml/duke](https://gradescope.com/auth/saml/duke)
 
-- Course syllabus [https://github.com/resteorts/modern-bayes/blob/master/syllabus/syllabus-sta360-fall20.pdf](https://github.com/resteorts/modern-bayes/blob/master/syllabus/syllabus-sta360-fall20.pdf)
+- Course syllabus [https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/syllabus-sta490-spring-2021.pdf](https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/syllabus-sta490-spring-2021.pdf)
+
+- Course cheat sheet [https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/deadlines-cheatsheat.pdf](https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/deadlines-cheatsheat.pdf)
 
 
 Remark: Videos on Github are too large to view, so you will need to download these if you wish to watch them. The fastest way, is to clone the repository and they will all download. They are stored this way in case your internet connection is slow. 
@@ -145,10 +101,7 @@ Remark: Videos on Github are too large to view, so you will need to download the
 
 ## Where can you find all the course information
 
-Course website (all major course information here):  [https://resteorts.github.io/teach/bayes20.html](https://resteorts.github.io/teach/bayes20.html)
-
-Course cheat sheet (a summary of course information):
-[https://github.com/resteorts/modern-bayes/blob/master/syllabus/deadlines-cheatsheat.pdf](https://github.com/resteorts/modern-bayes/blob/master/syllabus/deadlines-cheatsheat.pdf)
+Course website (all major course information here):  [https://resteorts.github.io/teach/er21.html](https://resteorts.github.io/teach/er21.html)
 
 ---
 
@@ -159,52 +112,31 @@ Course cheat sheet (a summary of course information):
 - Linear algebra [http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/lecture_12](http://www.stat.columbia.edu/~fwood/Teaching/w4315/Fall2009/lecture_12)
 - R programming (STA 199) [https://www2.stat.duke.edu/courses/Spring18/Sta199/](https://www2.stat.duke.edu/courses/Spring18/Sta199/)
 - github (STA 199) [https://www2.stat.duke.edu/courses/Spring18/Sta199/](https://www2.stat.duke.edu/courses/Spring18/Sta199/)
+- STA 360/601/602 
 
 ---
 
 ## Course Objectives
 
-- Provide a foundation to Bayesian statistical methods
+- Provide a foundation to entity resolution methods
 
-- Explore, visualize, and analyze data in a reproducible and shareable manner using Bayesian methods from the course
+- Explore, visualize, and analyze data in a reproducible and shareable manner 
 
--  Gain experience in data wrangling and munging, building Bayesian models, visualizing them, and interpreting them 
+-  Gain experience in data wrangling and munging exploring entity resolution models 
 
 - Work on problems and case studies inspired by and based on real-world questions and data
 
-- Learn to effectively communicate results through written assignments and exams 
+- Learn to effectively communicate results through written assignments and case studies
 
 ---
 
 class: middle, center
 
-## Examples of Bayesian Statistics 
 
----
-
-## Social Networks
-
-&lt;img src="figures/multi_view.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-
----
-
-## Precision Medicine 
-
-&lt;img src="figures/suchi.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-
-----
-
-## Estimating Rent Prices in Small Domains
-
-&lt;img src="figures/BenchandSmooth.png" width="70%" style="display: block; margin: auto;" /&gt;
-
----
 
 ## Unstable/slow internet?
 
-Go to [https://github.com/resteorts/modern-bayes/](https://github.com/resteorts/modern-bayes/) and fork the repository. 
+Go to [https://github.com/resteorts/almost-all-of-er/](https://github.com/resteorts/almost-all-of-er) and fork the repository. 
 
 - The videos are compressed, and this was done on purpose for those in the class that might have slow internet. I would suggest that everyone forks the repository to avoid any issues. 
 
@@ -293,22 +225,18 @@ class: middle, center
 --
 
 &lt;font class="vocab"&gt;Lecture&lt;/font&gt; 
-- Learn Bayesian statistical methods
+- Learn entity resolution methods 
 - Lectures will consist of learning methodology and applied coding techniques
-- You might find it useful to have a tablet/document camera for homeworks/OH/exams
-- An alternative to this is using your phone to take pictures using Evernote (students have said this worked well in the spring). Please test things out in advance and make sure things are legible! 
-
---
-
-&lt;font class="vocab"&gt;Lab&lt;/font&gt;
-- Labs will reinforce concepts learned in class using R 
-- Apply concepts from lecture to real or synthetic data 
-- Many labs will be finished as part of your homework  
-- Bring fully-charged laptop to every lab
+- Lectures will be full of interactive exercises so make sure that you laptop is charged and your ready to do some computing! 
+- You might find it useful to have a tablet/document camera for taking notes 
+- An alternative to this is using your phone to take pictures using Evernote (students have said this worked well in the spring/fall). Please test things out in advance and make sure things are legible! 
 
 ---
 
-## Required Textbooks
+## Supplemental Textbooks
+
+- [Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection, Peter Christen]
+  - Digital Copy or Hard Copy available for purchase. 
 
 - [A First Course in Bayesian Statistical Methods, Peter Hoff]
     - Free PDF available online through the library. Hard copy available for purchase.
@@ -339,35 +267,23 @@ class: middle, center
 
 ## Activities &amp; Assessments
 
-- &lt;font class="vocab"&gt;Homework&lt;/font&gt;: Individual assignments combining conceptual and computational skills along with lab exercises. *Lowest score dropped.*
+- &lt;font class="vocab"&gt;Homework&lt;/font&gt;: Individual assignments combining conceptual and computational skills. *Lowest score dropped.*
 
 --
 
-- &lt;font class="vocab"&gt;Labs&lt;/font&gt;: **Attending lab is highly encouraged**, and, there will be a lab problem on each homework each week. 
 
 - &lt;font class="vocab"&gt;Class/Lab&lt;/font&gt;: **You will be responsible for keeping up with all class and lab material on a weekly basis (even though there are recordings)!**
 
 ---
 
-## Lab Engagement 
-
-0. Students are expected to have attempted the lab solutions before coming to lab and have watched the lab videos provided if they had trouble. 
-1. Students are encouraged to post lab questions in advance to the Google group regarding lab, which should be posted no later than each Thursday at 5 PM EST. 
-2. Each lab TA will go over all lab tasks, providing clarifications, solutions/advice, and more advanced insights. 
-3. Each lab TA will take questions (in person) or go over those posted to the Google group or via email. 
-4. You should always indicate what lab you are in on the Google group. You can also reach out to Olivier for his lab at olivier.binette@gmail.com and to Michael at michael.f.christensen@duke.edu
-5. Attendance is highly encouraged in order to learn tips and tricks and in order to get hints/advice which are important for homeworks and exams.
-
----
 
 ## Class Engagement
 
 0. Students are expected to have read the assigned reading before coming to class. 
 1. Students are expected to have watched the pre-recorded videos. 
 2. Prof. Steorts will go through the concepts in class again, highlighting the most important parts, providing clarifications, solutions/advice, and more advanced insights. 
-3. Prof. Steorts will take questions (in person) or those that are posted in advance on the Google Group by Monday at 10 AM EST and Wed at 10 AM EST. 
-4. Prof. Steorts will provide exercises for the class to work through, practice exams, and an interactive environment. 
-5. TAs will be present to help in these activities such that we can break into small groups and students can receive more individualized attention. 
+3. Prof. Steorts will provide exercises for the class to work through, practice exams, and an interactive environment. 
+4. TAs will be present to help in these activities such that we can break into small groups and students can receive more individualized attention. 
 
 
 
