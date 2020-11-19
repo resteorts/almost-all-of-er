@@ -21,6 +21,8 @@ code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's wi
 
 Total points on assignment: 5 (reproducibility) + 10 points for the assignment. 
 
+\section*{El Salvador Civil War}
+
 Recall that between 1980 and 1991, the Republic of El Salvador witnessed a civil war between the central government, the left-wing guerrilla Farabundo Marti National Liberation Front (FMLN), and right-wing paramilitary death squads. After the peace agreement in 1992, the United Nations created a Commission on the Truth (UNTC) for El Salvador, which invited members of Salvadoran society to report war-related human rights violations, which mainly focused on killings and disappearances.In order to collect such information the UNTC invited individuals through newspapers, radio, and television advertisements to come forward and testify.  The UNTC opened offices through El Salvador where witnesses could provide their testimonials, and this resulted in a list of potential victims with names, date of death, and reported location.
 
 In this assignment, you will explore the UNTC data set to get a better understanding of how to work with real data versus toy data. Let's read in the data. 
@@ -53,7 +55,7 @@ Observe that we are only considering two municipalities in El Salvador now, whic
 
 
 \section*{Task 1}
-\textbf{Consider the similarity of first name and last name. What type of distance metric would you use for this data set and why?}
+\textbf{Consider the similarity of first name and last name. What type of distance metric would you use for this data set and why? Explain.}
 
 Consider comparing the following two names using Edit distance: `r df$firstname[1]` and `r df$firstname[2]`. We find that using the following code below that the distance is just `r levenshteinSim(df$firstname[1], df$firstname[2])`. This seems quite reasonable given that both names are quite different.
 
@@ -168,9 +170,15 @@ Play around with this metric more to see if this is a good fit.
 
 \textbf{How does exact matching work on this data set? What about off by one matching? Be sure to provide the precision and recall.}
 
+```{r}
+head(df)
+head(df_new <- df[,3:8,10])
+```
+
 \section*{Task 3}
 
 \textbf{How would you build a decision rule for matches/non-matches based upon scoring rules. What would your scoring rule be? Write this up as an algorithm.}
+
 
 \section*{Task 4}
 
