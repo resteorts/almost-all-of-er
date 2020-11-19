@@ -1,0 +1,102 @@
+
+---
+title: "Homework 3: Blocking Approaches Applied to the El Salvodoran Conflict "
+author: "Rebecca C. Steorts, STA 490/690"
+output: 
+     pdf_document:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+\textbf{Total points on assignment: 5 (reproducibility) + 10 points for the assignment.}
+
+\section*{El Salvador Civil War}
+
+We will continue with our exploration of the UNTC data set from El Salvador. 
+
+```{r, message=FALSE}
+library(knitr)
+library(RecordLinkage)
+```
+
+```{r}
+# read in data
+df <- read.csv("../sv-mauricio/sv-mauricio.csv")
+ent_id <- df$HandID
+# Filter out records with ground truth, leaving dept 1 and 7
+df <- df[!is.na(ent_id),]
+ent_id <- ent_id[!is.na(ent_id)]
+new_df <- df[,c(3:8,10)]
+head(new_df)
+```
+
+
+Recall that we are only considering two municipalities in El Salvador now, which is what was considered in Sadinle (2014). 
+
+\section*{Blocking applied to the El Salvadoran conflict}
+\textbf{In this assignment, you should explore deterministic and probablistic blocking methods and how these work on the El Salvadoran data set. Find at least one deterministic and probabilistic blocking criterion that seems suitable for this data set. Illustrate its effectiveness on the data using the reduction ratio, precision, and recall. Utilize other vizualiations that might also help you in explaining your results. How would you use these blocking methods to remove duplicate records in the data set?}
+
+
+
+
+```{r}
+# blocking on last name
+head(blockLastName <- new_df$lastname)
+length(unique(blockLastName))
+recordsPerBlock <- table(blockLastName)
+head(recordsPerBlock)
+plot(recordsPerBlock,
+cex.axis=0.6, xlab="", ylab="")
+```
+
+```{r}
+reduction.ratio <- function(block.labels) { 
+  n_all_comp = choose(length(block.labels), 2) 
+  n_block_comp = sum(choose(table(block.labels), 2))
+ (n_all_comp - n_block_comp) / n_all_comp 
+  }
+```
+
+```{r}
+reduction.ratio(blockLastName)
+```
+
+```{r}
+precision <- function(block.labels, IDs) { 
+  labels = unique(block.labels)
+  
+  # Number of matching pairs among blocks
+  n_matches = sapply(labels, function(label){
+    records = which(block.labels == label)
+    sum(duplicated(IDs[records]))
+  })
+  # Total number of pairs
+  n_pairs = sum(choose(table(block.labels), 2))
+  
+  sum(n_matches) / n_pairs
+}
+```
+
+```{r}
+recall <- function(block.labels, IDs) { 
+  precision(IDs, block.labels)
+}
+```
+
+```{r}
+precision(blockLastName, df$HandID)
+recall(blockLastName, df$HandID)
+```
+
+
+```{r}
+blockRule <- new_df$dept & new_df$geocode
+head(blockRule)
+recall(blockRule, df$HandID)
+reduction.ratio(blockRule)
+```
+
+
+
+
