@@ -23,7 +23,7 @@ code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's wi
 
 ***Working with data***
 
-Total points on assignment: 5 (reproducibility) + 10 points for the assignment. 
+\textbf{Total points on assignment: 5 (reproducibility) + 10 points for the assignment.}
 
 \section*{El Salvador Civil War}
 
