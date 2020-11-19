@@ -1,0 +1,21 @@
+$precision
+[1] 0.8448276
+
+$recall
+[1] 0.7424242
+
+$F1
+[1] 0.7903226
+
+$accuracy
+[1] 0.9999036
+
+$specificity
+[1] 0.9999666
+
+$sensitivity
+[1] 0.7424242
+
+$balancedAccuracy
+[1] 0.8711954
+

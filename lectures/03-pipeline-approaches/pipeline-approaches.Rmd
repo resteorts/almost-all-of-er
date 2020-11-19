@@ -145,7 +145,38 @@ Case study on El Salvador.
 
 Let's consider a case study from El Salvador. 
 
-\textcolor{red}{Talk about the data set.}
+
+Civil War in the Republic of El Salvador
+===
+
+Between 1980 and 1991, the Republic of El Salvador witnessed a civil war between the central government, the left-wing guerrilla Farabundo Marti National Liberation Front (FMLN), and right-wing paramilitary death squads.
+
+After the peace agreement in 1992, the United Nations created a Commission on the Truth (UNTC) for El Salvador, which invited members of Salvadoran society to report war-related human rights violations, which mainly focused on killings and disappearances. 
+
+In order to collect such information the UNTC invited individuals through newspapers, radio, and television advertisements to come forward and testify. 
+
+The UNTC opened offices through El Salvador where witnesses could provide their testimonials, and this resulted in a list of potential victims with names, date of death, and reported location. 
+
+Data analysis
+===
+
+Let's read in the data and inspect it. 
+
+\tiny
+```{r}
+# read in data
+df <- read.csv("./sv-mauricio/sv-mauricio.csv")
+head(df)
+```
+
+
+
+First steps
+===
+
+What steps do we need to take before running any algorithms or methods on this data? 
+
+Meet with your group and discuss. Be prepared to discuss ideas and any observations.
 
 
 Task 1
@@ -165,6 +196,7 @@ How would you build a decision rule for matches/non-matches based upon scoring r
 
 Task 4
 ===
+
 Implement you scoring rule from Task 4 and compare it to exact and off-by-one matching. What are you findings? 
 
 Task 5
