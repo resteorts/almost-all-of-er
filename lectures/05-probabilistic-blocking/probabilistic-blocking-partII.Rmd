@@ -1,6 +1,6 @@
 
 ---
-title: "Module 4: Probabilistic Blocking, Part II"
+title: "Module 5: Probabilistic Blocking, Part II"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:

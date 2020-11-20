@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: Pipeline Approaches and Deterministic ER"
+title: "Module 3: Pipeline Approaches and Deterministic ER"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:

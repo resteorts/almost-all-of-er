@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: Blocking"
+title: "Module 4: Deterministic Blocking"
 author: "Rebecca C. Steorts"
 institute: joint with Olivier Binette
 output: 
