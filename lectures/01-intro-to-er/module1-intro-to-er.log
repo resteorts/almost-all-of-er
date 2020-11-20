@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 OCT 2020 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  19 NOV 2020 17:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1026,6 +1026,13 @@ y)
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
+Enter file name: r
+
+! LaTeX Error: File `r.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
 Enter file name: 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
@@ -1700,10 +1707,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 29003 strings out of 480608
- 599072 string characters out of 5903631
- 962165 words of memory out of 5000000
- 44035 multiletter control sequences out of 15000+600000
+ 29006 strings out of 480608
+ 599092 string characters out of 5903631
+ 961213 words of memory out of 5000000
+ 44037 multiletter control sequences out of 15000+600000
  557373 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,14n,83p,834b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1718,7 +1725,7 @@ sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
 r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
 local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on module1-intro-to-er.pdf (59 pages, 3247649 bytes).
+Output written on module1-intro-to-er.pdf (59 pages, 3247684 bytes).
 PDF statistics:
  1806 PDF objects out of 2073 (max. 8388607)
  1653 compressed objects within 17 object streams
