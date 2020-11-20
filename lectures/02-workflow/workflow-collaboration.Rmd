@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: Collaboration and Workflow"
+title: "Module 2: Collaboration and Workflow"
 author: "Olivier Binette and Rebecca C. Steorts"
 output: 
      beamer_presentation:
