@@ -1,0 +1,99 @@
+
+---
+title: "Module 6: Fellegi-Sunter Method Applied to RLdata500"
+author: "Rebecca C. Steorts"
+institute: joint with Olivier Binette
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+## Agenda 
+
+
+
+
+## Load packages
+
+```{r, echo=FALSE}
+library(RecordLinkage)
+```
+
+## RLdata500
+
+```{r}
+data(RLdata500)
+head(RLdata500)
+head(identity.RLdata500)
+```
+
+## Comparison Vectors
+
+Why do we build record pairs of comparison vectors? 
+
+\textbf{Answer}: Reduce the total number of record comparisons.
+
+## Comparison Vectors
+
+How do we build record pairs of comparison vectors?
+
+\vspace*{1em}
+
+\textbf{Answer}: Use the `compare.dedup` function. 
+
+## Comparison Vectors
+
+
+```{r}
+# create comparison vectors
+rpairs <- compare.dedup(RLdata500, 
+                        identity = identity.RLdata500)
+```
+
+## Comparison Vectors 
+
+\footnotesize
+```{r}
+# inspect comparison vectors
+rpairs$pairs[1:5,]
+```
+
+## Blocking
+
+Blocking is the reduction of the amount of data pairs through focusing on specified agreement patterns.
+
+Blocking is a common strategy to reduce computation time and memory consumption by only comparing records with equal values for a subset of attributes, called blocking fields. 
+
+## Blocking
+
+A blocking specification can be supplied to the `compare` function via the argument `blockfld`. 
+
+We will consider a blocking pattern where two records must agree in either the **first component of the first name** or **full date of birth**.
+
+## Blocking and Comparison Vectors
+
+```{r}
+# blocking and comparison vectors
+rpairs <- compare.dedup(RLdata500, 
+                        blockfld = list(1,5:7),
+                        identity = identity.RLdata500)
+```
+
+## Blocking and Comparison Vectors
+
+\footnotesize
+```{r}
+# inspect comparison vectors
+rpairs$pairs[c(1:3, 1203:1204),]
+```
+
+
+Observe that these records agree on first name but not date of birth (as designed).
+
+# String Comparators
+
+
+
+
