@@ -1,0 +1,420 @@
+---
+title: "The Fellegi-Sunter Model of Record Linkage"
+author: "Olivier Binette"
+date: "August 26, 2020"
+fontsize: 11pt
+output: 
+  beamer_presentation:
+    include:
+      in_header: preamble.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+\section{Agenda}
+
+## Agenda
+
+**Today's goal:** Introduce the Fellegi-Sunter *model* of record linkage.
+
+\pause
+
+Focus on:
+
+- Motivating example and some fundamental ideas.
+\pause
+
+- Databases, records and attributes.
+- Pairwise record comparisons.
+- Model parameters: $m$ and $u$ distributions, matching weights, and matching configuration matrix.
+
+\pause
+
+Afterwards:
+
+- Model estimation and linkage rules.
+- Sadinle (2017) and McVeigh (2020) go into more detail here.
+
+## Agenda
+
+**Outline:**
+
+1. Newcombe et al. (1959): "Automatic Linkage of Vital Records"
+    - Provides a motivating example and introduces key ideas.
+2. Fellegi and Sunter (1969): "A Theory for Record Linkage"
+    - I will focus on the record linkage *model* rather than the theory.
+    - I will deviate a little bit from the original paper in order to introduce the key supplemental idea of ``Bayesian FS.''
+
+\pause
+
+**References:** see ``(Almost) All of Entity Resolution''
+
+1. pp. 11 --- 13
+
+2. pp. 13 --- 19
+
+##
+\section{Newcombe et al. (1959)}
+
+## Newcombe's Automatic Linkage of Vital Records
+
+Newcombe et al. (1959). Published in \textit{Science}:
+
+\begin{center}
+    \includegraphics[width=\linewidth]{newcombe}
+\end{center}
+    
+
+## Newcombe's Automatic Linkage of Vital Records
+
+\begin{exampleblock}{What they did:}
+    \begin{itemize}
+        \item Introduced an automatic (probabilistic) record linkage technique and implemented it on the Datatron 205 computer.
+    \end{itemize}
+\end{exampleblock}
+
+\pause
+
+\textbf{Two things here:}
+\begin{itemize}
+    \item Stated record linkage as a statistical problem and proposed the first unsupervised probabilistic RL approach.
+    \item They showed that a computer could be programed to perform RL.
+\end{itemize}
+
+
+## Newcombe's Automatic Linkage of Vital Records
+    
+\textbf{\alert{Their applied goal:}} to link \textbf{34,138 birth records} from 1955 in British Columbia \textbf{to 114,471 marriage records} in the preceding ten year period.
+
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{rcc}
+    \toprule
+    & Marriage record & Birth record\\
+    \midrule
+        Husband's family name & Ayad & Ayot \\
+        Wife's family name & Barr & Barr\\
+        Husband's initials & J Z & J Z\\
+        Wife's initials & M T & B T\\
+        Husband's birth province & AB & AB\\
+        Wife's birth province & PE & PE\\
+        \bottomrule
+    \end{tabular}
+    \caption{Example of identify information from compared marriage and birth records. This is adapted and translated from Table I of Newcombe (1969). AB and PE represent the Canadian provinces of Alberta and Prince Edward Island.}
+    \label{tab:my_label}
+\end{table}
+
+
+## Newcombe's Automatic Linkage of Vital Records
+
+\begin{exampleblock}{Newcombe's algorithm:}
+    \begin{enumerate}
+        \item Sort records by the Soundex coding of family names.
+        \item Where Soundex coding agrees, and informal likelihood ratio test determines whether or not to link.
+    \end{enumerate}
+\end{exampleblock}
+
+\pause
+
+\textbf{Soundex coding:}
+
+\begin{itemize}
+    \item Olivier $\longrightarrow$ O416
+    
+    \item Oliver $\longrightarrow$ O416
+    
+    \item Olivia $\longrightarrow$ O410
+    
+    \item Rebecca $\longrightarrow$ R120
+    
+    \item Rebbeka $\longrightarrow$ R120
+    
+    \item Beka $\longrightarrow$ B200
+\end{itemize}
+
+
+## Newcombe's Automatic Linkage of Vital Records
+    
+\textbf{Likelihood ratio test:}
+
+\begin{itemize}
+    \item Imagine that two records agree on the husband's first initial J.
+    \pause
+    \item Let $p_L$ be the probability of this given that the records are actually a match, and let $p_F$ be the probability of this given that the records are not a match.
+    \pause
+    \item Let $p_R$ be the proportion of the initial ``J'' among husbands.
+\end{itemize}
+\pause
+Then
+$$p_L \approx p_R, \pause\quad p_F \approx p_R^2$$
+\pause
+so
+$$
+    \log(p_L/p_F) \approx -\log (p_R).
+$$
+\pause This is the ``matching weight.''
+
+## Newcombe's Automatic Linkage of Vital Records
+    
+\textbf{Likelihood ratio test (cont'd):}
+
+\begin{itemize}
+    \item If the initial is very common, e.g. $p_R = 0.1$, then
+    $$
+        \log(p_L/p_F) \approx -\log(0.1) \approx 2.3
+    $$
+    is weights in a little bit for a match.
+    \pause 
+    \item If the initial is not at all common, e.g. $p_R = 0.0001$, then
+    $$
+        \log(p_L/p_F) \approx -\log(0.0001) \approx 9.2
+    $$
+    weights in much more in favor of a match.
+\end{itemize}
+
+## Newcombe's Automatic Linkage of Vital Records
+
+\begin{exampleblock}{Performance:}
+\begin{itemize}
+    \item Processed 10 record pairs per minute.
+    \item About $98.3\%$ of the true matches were detected, and about $0.7\%$ of the linked records were not actual matches.
+    \item ``by far the largest part of the effort'' was the preparation of punched card files reproducing marriage records in an adequate format.
+\end{itemize}
+\end{exampleblock}
+
+\pause
+
+\begin{alertblock}{Caveat:}
+    \begin{itemize}
+        \item Not clear how exactly the probabilities for the likelihood ratio test were computed in all cases.
+    \end{itemize}
+\end{alertblock}
+
+##
+
+\section{The Fellegi-Sunter model}
+
+## The Fellegi-Sunter model
+
+Fellegi and Sunter (1969). Published in JASA:
+\begin{center}
+    \includegraphics[width=\linewidth]{FS}
+\end{center}
+
+## The Fellegi-Sunter model
+\begin{exampleblock}{What this paper does:}
+    \begin{itemize}
+        \item It formalizes the approach of Newcombe et al. (1959) in a decision-theoretic framework.
+    \end{itemize}
+\end{exampleblock}
+
+\pause
+
+Given a pair of records, it considers three possible actions:
+\begin{itemize}
+    \item to \textit{link} them;
+    \item to call them a \textit{possible link}; or
+    \item to \textit{not link} them.
+\end{itemize}
+
+An "optimal" decision rule is proposed for this.
+
+\pause
+
+Here I'm focusing on the model rather than the decision-theoretic framework.
+
+## The Fellegi-Sunter model
+
+**Basic elements:**
+
+- Two *databases* $A$ and $B$
+  - Duplication *accross* but not within databases (bipartite record linkage).
+- *Records* with corresponding *attributes* or *fields*
+  - Name, age, address, SSN, etc.
+
+## The Fellegi-Sunter model
+
+**What we want to do:**
+
+- Figure out which records refer to the same **entity** (a *person*, *object* or *event*.)
+
+\pause
+
+**How we'll do that:**
+
+- We'll compare records in pairs from databases $A$ and $B$, as to obtain multidimensional measures of similarity.
+- Based on the measures of similarity, we'll try to group together the records which refer to the same entity.
+
+## The Fellegi-Sunter model
+
+\begin{center}
+\small
+\begin{tabular}{cccc}
+\toprule
+& Field 1 & Field 2 & Field 3\\
+Record no. & First name & Last name & Age\\
+\midrule
+1 & Olivier & Binette & 25\\
+2 & Peter & Hoff & NA\\
+$\vdots$ & $\vdots$ & $\vdots$& $\vdots$\\
+$N_1$ & Beka & Steorts & NA\\
+\bottomrule
+\end{tabular}
+
+\quad
+
+\begin{tabular}{cccc}
+\toprule
+& Field 1 & Field 2 & Field 3\\
+Record no. & First name & Last name & Age\\
+\midrule
+1 & Oliver & Binette & NA\\
+2 & Brian & K & NA\\
+$\vdots$ & $\vdots$ & $\vdots$& $\vdots$\\
+$N_2$ & Frances & Hung & NA\\
+\bottomrule
+\end{tabular}
+
+\end{center}
+
+
+## The Fellegi-Sunter model
+
+Let $i = 1,2,\dots, N_1\times N_2$ enumerate the set of all record pairs in $A \times B$.
+\pause
+
+**Comparison vectors:**
+
+- For the $i$th pair of records, we compute a corresponding *comparison vector*
+$$
+  \gamma_i = (\gamma_i^{(1)}, \gamma_i^{(2)}, \dots, \gamma_i^{(k)}).
+$$
+\pause
+
+- Each $\gamma_i^{j}$ compares the $j$th field of the records.
+
+\pause
+
+- For example, if the $j$th field is "age," we could have $\gamma_i^{j} = 0$ if ages are the same, and $\gamma_i^{j} = 1$ if ages different.
+
+## The Fellegi-Sunter model
+
+**Binary comparisons:**
+
+- $\gamma_i^{j} \in \{0,1\}$
+\pause
+
+**Levels of agreement/disagreement:**
+
+- $\gamma_i^{j} \in \{0, 1, 2,\dots, L_j\}$
+\pause
+
+**How they're obtained:**
+
+- You choose!
+- Use string distance functions to compare names.
+
+## The Fellegi-Sunter model
+
+The set $\{\gamma_k\}_{j=1}^{N_1 \times N_2}$ of computed comparison vectors becomes the **observed data** for the Fellegi-Sunter model.
+\pause
+
+**Next component of the model:**
+
+- The **matching configuration** $r = \{r_j\}_{j=1}^{N_1 \times N_2}$, with $r_j = 1$ if the $j$th record pair matches, and $r_j = 0$ otherwise.
+  - This is the adjacency list representation. We can also use a matching configuration matrix.
+
+- This is not a very efficient representation for bipartite matching. Saindle (2017) instead uses a *matching labeling*.
+
+## The Fellegi-Sunter model
+
+- For record pairs that are a ***m**atch* ($r_j = 1$), we assume that $\gamma \sim m$ independently.
+\pause
+
+- For record pairs that are ***u**nmatched* ($r_j = 0$), we assume that $\gamma \sim u$ independently.
+\pause
+
+- More precisely, 
+
+$$
+  p\left(\{\gamma_j\}_{j=1}^{N_1 \times N_2} \mid r, m, u\right) = \left(\prod_{j\,:\,r_j = 1} m(\gamma_j) \right)\times\left(\prod_{j\,:\,r_j = 0} u(\gamma_j) \right).
+$$
+
+## The Fellegi-Sunter model
+
+$$
+  p\left(\{\gamma_j\}_{j=1}^{N_1 \times N_2} \mid r, m, u\right) = \left(\prod_{j\,:\,r_j = 1} m(\gamma_j) \right)\times\left(\prod_{j\,:\,r_j = 0} u(\gamma_j) \right).
+$$
+
+\begin{center}
+  \includegraphics[width=0.85\linewidth]{mixture}
+\end{center}
+
+
+## The Fellegi-Sunter model
+
+What's left to do?
+\pause
+
+- Estimate model parameters.
+\pause
+
+- Define a prior $p(r, m, u)$.
+\pause
+
+- Obtain a posterior
+\begin{align*}
+  p(r \mid \{\gamma_j\}_{j=1}^{N_1 \times N_2}) &= \int p(r, m ,u \mid \{\gamma_j\}_{j=1}^{N_1 \times N_2})\,dm\, du\\
+  &\propto \int p(\{\gamma_j\}_{j=1}^{N_1 \times N_2}\mid r, m, u)p(r, m, u)\,dm\, du
+\end{align*}
+
+## The Fellegi-Sunter model
+
+- This is **not** what Fellegi-Sunter originally proposed
+\pause
+
+- Originally, FS proposed to estimate $m$ and $u$ on their own.
+\pause
+
+- Then, define the log-likelihood ratio (**matching weight**)
+$$
+  W(\gamma_j) = \log \frac{m(\gamma_j)}{u(\gamma_j)}.
+$$
+\pause
+
+- Say that the $j$th pair is a match if $W(\gamma_j)$ is large, that they're not a match if $W(\gamma_j)$ is small: this is a likelihood ratio test.
+
+## The Fellegi-Sunter model
+
+What's the problem with the original FS approach?
+\pause
+
+- You consider all record pairs independently.
+\pause
+
+- You could link records $a$ and $b$, and $b$ and $c$, and yet say that $a$ and $c$ are not a match. This is incoherent.
+\pause
+
+- In the *bipartite record linkage* framework, we want to specify a prior on $r$ which reflects the fact that there is duplication across but not within databases.
+
+##
+
+\section{Summary}
+
+## Summary
+
+- Newcombe (1958) proposed a likelihood ratio test approach to record linkage based on probability heuristics.
+\pause
+
+- I've introduced the very basic components of the Fellegi-Sunter model
+\pause
+
+- Sadinle (2017) and McVeigh (2020) provide information about the priors and about model fitting.
+
+
+
+

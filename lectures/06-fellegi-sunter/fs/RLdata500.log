@@ -1,0 +1,101 @@
+*** Starting blocking pass "by" ***
+Indexing record pair comparisons...
+Verify linking fields: fname_c1, lname_c1, bm, bd
+
+Count pattern frequencies...
+Run EM algorithm...
+Scores for each pattern are [-23.2020090799405, -16.4402422255263, -16.4402369795034, -9.67847012508917, -8.63216351008779, -1.87039665567356, -1.87039140965068, 4.89137544476357, -7.70240067930209, -0.940633824887914, -0.940628578865021, 5.82113827554923, 6.86744489055062, 13.6292117449649, 13.6292169909877, 20.3909838454019]
+Writing results to disk at RLdata500_candidates_by.csv
+Wall clock running time 0.175935029983521 secs
+
+*** Starting blocking pass "bm" ***
+Indexing record pair comparisons...
+Verify linking fields: fname_c1, lname_c1, by, bd
+
+Count pattern frequencies...
+Run EM algorithm...
+Scores for each pattern are [-22.540386453054, -16.107843253867, -14.1056185721662, -7.6730753729793, -8.05876970183475, -1.62622650264793, 0.375998179052963, 6.80854137823988, -7.11179177550508, -0.67924857631826, 1.32297610538267, 7.75551930456954, 7.36982497571409, 13.802368174901, 15.8045928566018, 22.2371360557888]
+Writing results to disk at RLdata500_candidates_bm.csv
+Wall clock running time 0.23065710067749 secs
+
+Warning messages:
+1: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+2: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+3: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+4: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.match' not found
+5: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.nonmatch' not found
+6: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+7: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+8: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+9: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.match' not found
+10: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.nonmatch' not found
+There are 50 matching pairs in the population
+Reading candidate pairs for blocking pass "by" from RLdata500_candidates_by.csv
+Reading candidate pairs for blocking pass "bm" from RLdata500_candidates_bm.csv
+There are 487 candidate pairs with score >= -10 across all passes
+There are 10 matching pairs outside the blocks
+Indexing record pairs...
+
+*** Evaluating for sample size 5 ***
+There are 55 pairs with score >= 0 across all passes
+Sampled 2 pairs with score >= 0 to include in the training set
+There are 11901 total candidate pairs
+Starting rejection sampling of pairs with score < 0. This can be slow.
+Sampled 3 pairs with score < 0 to include in the training set
+Finding optimal threshold for scores in blocking pass "by"
+Candidate thresholds are 13.6292169909877
+  At threshold 13.6292169909877 F1 score is 1
+Optimal threshold is 13.6292169909877
+Finding optimal threshold for scores in blocking pass "bm"
+Candidate thresholds are 15.8045928566018
+  At threshold 15.8045928566018 F1 score is 1
+Optimal threshold is 15.8045928566018
+Precision is 1
+Recall is 0.633333333333333
+F1 score is 0.775510204081633
+
+*** Evaluating for sample size 400 ***
+There are 55 pairs with score >= 0 across all passes
+Sampled 55 pairs with score >= 0 to include in the training set
+There are 11901 total candidate pairs
+Starting rejection sampling of pairs with score < 0. This can be slow.
+Sampled 200 pairs with score < 0 to include in the training set
+Finding optimal threshold for scores in blocking pass "by"
+Candidate thresholds are -8.63216351008779,13.6292117449649,13.6292169909877,20.3909838454019
+  At threshold -8.63216351008779 F1 score is 0.903225806451613
+  At threshold 13.6292117449649 F1 score is 0.91304347826087
+  At threshold 13.6292169909877 F1 score is 0.863636363636364
+  At threshold 20.3909838454019 F1 score is 0.734177215189873
+Optimal threshold is 13.6292117449649
+Finding optimal threshold for scores in blocking pass "bm"
+Candidate thresholds are -8.05876970183475,-7.11179177550508,7.36982497571409,13.802368174901,15.8045928566018,22.2371360557888
+  At threshold -8.05876970183475 F1 score is 0.85981308411215
+  At threshold -7.11179177550508 F1 score is 0.893203883495146
+  At threshold 7.36982497571409 F1 score is 0.910891089108911
+  At threshold 13.802368174901 F1 score is 0.947368421052632
+  At threshold 15.8045928566018 F1 score is 0.863636363636364
+  At threshold 22.2371360557888 F1 score is 0.734177215189873
+Optimal threshold is 13.802368174901
+Precision is 1
+Recall is 0.816666666666667
+F1 score is 0.899082568807339
+
+Warning messages:
+1: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+2: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+3: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().
+4: In result_fetch(res@ptr, n = n) :
+  SQL statements must be issued with dbExecute() or dbSendStatement() instead of dbGetQuery() or dbSendQuery().

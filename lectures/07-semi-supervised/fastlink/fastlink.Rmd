@@ -1,0 +1,298 @@
+
+---
+title: "Module X: fastlink"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Reading
+===
+
+- Binette and Steorts (2020)
+- Edmorando et al. (2020)
+- Fellegi and Sunter (1969)
+
+
+# Probabilistic Entity Resolution 
+
+While Fellegi and Sunter (1969) have provided a framework for probabilistic entity resolution, there are few implmentations that scale to large data sets. 
+
+# Agenda
+
+- We review fastlink, Edmorando et al. (2020)
+- We illustrate a toy example on \texttt{RLdata10000}
+
+# fastlink
+
+- Edmorando et al. (2020) developed fastlink
+a scalable implementation of the FS method. 
+
+- In addition, the authors incorporated
+auxiliary information such as population name frequency and migration rates.
+
+- The authors used parallelization and hashing to merge millions of records in
+a near real-time on a laptop computer, and provided open-source software of
+their proposed methodology. 
+
+# Agreement Patterns
+
+\begin{itemize}
+\item Assume two data sets ($A$ and $B$) with overlapping variables in common (such as name, gender, address, etc.)
+\item Define an agreement value in field $a$ for record pair $(i,j):$
+\end{itemize}
+
+$$\rho_a(i,j) \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{agree}} \\ \\
+    								     \color{blue}{\texttt{disagree}} \end{array}
+                               \right.$$
+                               
+                               
+
+
+# Agreement Patterns
+
+\begin{table}[]
+\begin{tabular}{ccccccc}
+    &  & First & Last &  Age & Street \\
+  \hline
+    & \multicolumn{3}{l}{Data set $\mathcal{A}$} \\
+    &  1 &  \texttt{James}  	& \texttt{Smith}  	& \texttt{35} & \bf{{\texttt{Devereux St.}}} \\
+    &  \multicolumn{3}{l}{Data set $\mathcal{B}$} \\
+    &  7 &  \texttt{James} 	& \texttt{Smit} 		& \texttt{43} & \bf{{\texttt{Dvereux St.}}}  \\
+	 \hdashline
+    & & \color{blue} {\texttt{agree}} 	& \color{blue} {\texttt{agree}}  	& \color{blue} {\texttt{disagree}} 		&   \color{blue} {\bf{{\texttt{agree}}}} \\  \hline
+\end{tabular}
+\end{table}
+
+\vspace*{4em}
+\pause
+
+\begin{center}
+\textbf{Agreement pattern} $\gamma(i, j) = \{\gamma_1(i,j), \gamma_2(i,j), \ldots, \gamma_K(i,j) \}$ 
+\end{center}  
+
+
+# Agreement Patterns
+
+- We **observe** the agreement patterns $\gamma(i,j)$ 
+- We **do not observe** the matching status 
+
+$$C_{i,j} \ = \ \left\{\begin{array}{l}   \color{blue}{\texttt{non-match}} \\ \\
+    								     \color{red}{\texttt{match}} \end{array}
+                               \right.$$
+
+
+
+# \texttt{fastLink} Model
+
+\begin{center}
+\begin{eqnarray*}
+  C(i, j) & \iid & \text{Bernoulli}(\mu) \\ 
+  \rho(i,j) \mid C(i, j) = \text{\color{blue}{non-match}} & \iid &  \mathcal{F}({ \color{blue}{\pi}_{\text{\color{blue}{NM}}} }) \\ 
+  \rho(i,j) \mid C(i, j) = \text{\color{white}{non-}\color{red}{match}} & \iid &  \mathcal{F}( {\color{red}{\pi}_{\text{\color{red}{M}}} }),
+\end{eqnarray*} 
+\end{center}
+
+where $\lambda$, ${\color{red}{\pi}_{\text{\color{red}{M}}}}$, ${\color{blue}{\pi}_{\text{\color{blue}{NM}}}}$  are estimated via the EM algorithm
+
+
+# \texttt{fastLink} package
+
+- Available on CRAN
+- We investigate it first on RLdata10000
+- We assume no blocking 
+
+# fastlink in R
+
+```{r, message=FALSE}
+# load libraries 
+library(fastLink)
+library(RecordLinkage)
+```
+
+# RLdata10000
+
+\footnotesize
+```{r}
+# load RLdata10000
+records <- 
+  read.table("data/RLdata10000.csv", 
+             sep=",", header=TRUE)
+head(records, 4)
+```
+
+# RLdata10000
+
+```{r}
+# Number of unique records 
+length(unique(records$ent_id))
+```
+
+# Linkage Fields
+
+\footnotesize
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", "lname_c1", "by", "bm", "bd")
+```
+
+# Exact Matching 
+
+```{r}
+# perform exact matching 
+exact.match <- merge(records, records, 
+                     by = linkageFields)
+
+# number of self-matches
+sum(exact.match$rec_id.x == exact.match$rec_id.y)
+
+# number of non-self matches
+sum(exact.match$rec_id.x != exact.match$rec_id.y)
+```
+
+# Who are the non-self matches?
+
+```{r}
+head(exact.match[exact.match$rec_id.x 
+                 != exact.match$rec_id.y,
+                 c(linkageFields)], 4)
+
+```
+
+
+# Preparation 
+
+```{r}
+# linkage fields 
+linkageFields <- c("fname_c1", 
+                   "lname_c1", "by", "bm", "bd")
+
+# string distance fields
+stringDistFields <- c("fname_c1", "lname_c1")
+
+# partial distance fields (fields where we allow
+# for agree, disagree, and partially agree)
+partialMatchFields <- c("fname_c1", "lname_c1")
+```
+
+# Run \texttt{fastLink}
+
+```{r, message=FALSE}
+out <- fastLink(dfA = records,
+                dfB = records,
+                varnames = linkageFields,
+                # JW by default
+                stringdist.match = stringDistFields, 
+                partial.match = partialMatchFields,
+                # JW cutoffs
+                cut.a = 0.94, cut.p = 0.84, 
+                # 1-to-1 match
+                dedupe = FALSE)
+```
+
+# \texttt{fastLink} Objects
+
+\texttt{fastLink} has the following objects as output: 
+
+\small
+```{r}
+names(out)
+```
+
+# Who is matched?
+
+The indices of each matched pair can be found in out$matches
+
+```{r}
+head(cbind(out$matches$inds.a, out$matches$inds.b), 6)
+```
+
+# Counting Patterns 
+
+- Counts and FS weights for each patterns can be found in `out$EM$patterns.w`
+
+- Legend: 2 = Agree; 1 = Partially Agree; 0 = Disagree
+
+\footnotesize
+```{r}
+tail(out$EM$patterns.w[, 1:7])
+```
+
+Matching Threshold
+===
+
+By default the **matching threshold 0.85**, but it can be easily changed:
+
+```{r}
+out <- fastLink(dfA = records, dfB = records, 
+                varnames = linkageFields,
+                stringdist.match = stringDistFields, 
+                partial.match = partialMatchFields,
+                cut.a = 0.94, cut.p = 0.84,
+                # Matching threshold dedupe = FALSE
+                threshold.match = 0.90,)
+```
+
+# Loading Packages
+
+```{r}
+source("evaluationMetrics.R")
+#library(exchangeableER)
+library(magrittr)
+library(data.table)
+```
+
+# Setup
+
+```{r}
+trueMembership <- records$ent_id
+recordIds <- records$rec_id
+numRecords <- dim(records)[1]
+matches <- 
+  data.table(cbind(out$matches$inds.a,     
+                   out$matches$inds.b))
+head(matches)
+dim(matches)[1]
+```
+
+# True Positives, False Positives, and False Negatives
+```{r}
+## True Positives, False Positives, and False Negatives:
+TP <- sum(records$ent_id[matches$V1] 
+          == records$ent_id[matches$V2])
+FP <- sum(records$ent_id[matches$V1] 
+          != records$ent_id[matches$V2])
+FN <- dim(matches)[1] - TP
+```
+
+# FDR and FNR
+```{r}
+## False Discovery Rate
+FDR <- round(FP/(FP + TP), 2)
+FDR
+
+## False Negative Rate
+FNR <- round(FN/dim(matches)[1], 2)
+FNR
+```
+
+# Precision and Recall
+
+```{r}
+precision <- 1 - FDR
+
+recall <- 1 - FNR 
+
+f1 <- (2.0*TP)/(2.0*TP+FP+FNR)
+
+cbind(precision, recall, f1)
+```
+
+# Summary
+
+- We have introduced the basics of \texttt{fastLink}
+- How would one incorporate blocking to scale to larger data sets? 
+- How would we apply this package to a real data set beyond \texttt{RLdata10000}?

@@ -1,0 +1,4117 @@
+EBMNTH,TBYEAR,ESEX,ERACE,TFIPSST
+8,1978,MALE,Residual,California
+6,1932,MALE,White alone,Florida
+7,1958,FEMALE,Black alone,Florida
+9,1931,MALE,White alone,Florida
+3,1968,MALE,Residual,Louisiana
+5,1979,FEMALE,White alone,Louisiana
+4,1950,FEMALE,Black alone,Pennsylvania
+9,1972,FEMALE,Black alone,Louisiana
+3,1968,MALE,White alone,Florida
+8,1983,FEMALE,White alone,Florida
+8,1966,MALE,White alone,Florida
+12,1941,MALE,White alone,Pennsylvania
+4,1961,FEMALE,White alone,Florida
+4,1987,FEMALE,Black alone,Florida
+11,1976,FEMALE,White alone,Florida
+12,1952,FEMALE,White alone,Florida
+5,1990,FEMALE,White alone,Florida
+8,1939,MALE,White alone,Nevada
+12,1941,MALE,White alone,Pennsylvania
+3,1957,FEMALE,White alone,Florida
+6,1962,MALE,White alone,Florida
+11,1975,MALE,White alone,Pennsylvania
+12,1954,FEMALE,White alone,Louisiana
+5,1987,MALE,White alone,Pennsylvania
+3,1930,MALE,White alone,Missouri
+6,1961,FEMALE,White alone,Ohio
+4,1959,FEMALE,White alone,Iowa
+9,1969,FEMALE,White alone,Iowa
+12,1963,MALE,White alone,Missouri
+4,1949,MALE,White alone,Iowa
+4,1936,MALE,White alone,Ohio
+12,1925,MALE,White alone,Ohio
+6,1987,MALE,White alone,Utah
+2,1926,MALE,White alone,Ohio
+8,1955,MALE,White alone,Connecticut
+6,1927,MALE,White alone,Ohio
+8,1946,FEMALE,White alone,Ohio
+5,1955,FEMALE,White alone,Ohio
+12,1969,FEMALE,White alone,Ohio
+1,1988,MALE,Black alone,Connecticut
+8,1920,FEMALE,White alone,Ohio
+1,1964,FEMALE,Black alone,Illinois
+2,1962,FEMALE,White alone,Illinois
+7,1920,MALE,White alone,Illinois
+8,1955,FEMALE,White alone,North Carolina
+8,1941,MALE,White alone,Tennessee
+9,1959,MALE,White alone,Tennessee
+11,1966,MALE,White alone,Georgia
+1,1989,FEMALE,White alone,North Carolina
+10,1970,FEMALE,White alone,North Carolina
+2,1950,FEMALE,White alone,Illinois
+12,1965,MALE,White alone,Tennessee
+5,1988,MALE,White alone,Minnesota
+4,1971,MALE,White alone,North Carolina
+10,1950,MALE,White alone,Minnesota
+3,1974,MALE,White alone,Minnesota
+5,1931,MALE,White alone,Minnesota
+11,1990,FEMALE,White alone,Illinois
+6,1920,FEMALE,White alone,North Carolina
+4,1972,FEMALE,White alone,Minnesota
+8,1984,FEMALE,White alone,Ohio
+8,1953,FEMALE,White alone,Missouri
+2,1949,MALE,Residual,Missouri
+1,1947,MALE,White alone,Iowa
+4,1933,FEMALE,Black alone,Ohio
+9,1948,FEMALE,White alone,Tennessee
+9,1935,FEMALE,Black alone,Missouri
+11,1953,FEMALE,White alone,Ohio
+1,1954,MALE,White alone,Ohio
+10,1984,FEMALE,White alone,Ohio
+9,1964,FEMALE,White alone,Utah
+4,1925,FEMALE,White alone,Ohio
+7,1920,FEMALE,White alone,Connecticut
+11,1967,FEMALE,Black alone,Connecticut
+12,1989,MALE,White alone,Ohio
+8,1970,FEMALE,White alone,Iowa
+11,1946,FEMALE,White alone,Iowa
+10,1986,MALE,White alone,Utah
+9,1987,FEMALE,White alone,Ohio
+9,1984,FEMALE,White alone,Arkansas
+11,1924,FEMALE,White alone,Arkansas
+5,1961,FEMALE,White alone,Arkansas
+2,1959,MALE,White alone,Arkansas
+11,1961,MALE,White alone,New Mexico
+7,1942,FEMALE,Black alone,South Carolina
+2,1985,MALE,White alone,Massachusetts
+2,1956,MALE,White alone,Massachusetts
+7,1944,FEMALE,White alone,Massachusetts
+8,1970,MALE,White alone,Wisconsin
+12,1932,FEMALE,White alone,Massachusetts
+6,1982,FEMALE,White alone,Massachusetts
+10,1969,MALE,White alone,Virginia
+1,1990,FEMALE,White alone,Massachusetts
+2,1954,FEMALE,White alone,South Carolina
+12,1953,FEMALE,White alone,New Mexico
+2,1950,MALE,White alone,South Carolina
+5,1985,MALE,Black alone,Wisconsin
+12,1981,MALE,Black alone,Wisconsin
+4,1948,FEMALE,White alone,Massachusetts
+5,1931,FEMALE,White alone,South Carolina
+9,1943,MALE,White alone,South Carolina
+6,1926,FEMALE,White alone,Massachusetts
+11,1959,MALE,White alone,Wisconsin
+2,1978,FEMALE,Asian alone,South Carolina
+8,1977,FEMALE,White alone,Florida
+10,1985,FEMALE,White alone,Florida
+11,1990,FEMALE,Black alone,Florida
+1,1937,FEMALE,White alone,Florida
+7,1962,MALE,White alone,Florida
+7,1951,FEMALE,White alone,Pennsylvania
+11,1958,MALE,White alone,Pennsylvania
+2,1959,FEMALE,White alone,Florida
+5,1936,MALE,Black alone,Florida
+12,1921,FEMALE,White alone,Pennsylvania
+10,1946,FEMALE,Black alone,Florida
+8,1942,MALE,Black alone,Louisiana
+1,1984,FEMALE,White alone,Florida
+3,1965,MALE,White alone,Florida
+4,1971,FEMALE,White alone,Virginia
+9,1930,FEMALE,White alone,Louisiana
+1,1969,MALE,White alone,Pennsylvania
+6,1955,FEMALE,White alone,Florida
+6,1963,FEMALE,Black alone,Texas
+9,1974,FEMALE,White alone,Arizona
+11,1941,MALE,White alone,Arizona
+6,1981,FEMALE,Black alone,Virginia
+11,1983,FEMALE,White alone,West Virginia
+1,1939,FEMALE,White alone,Arizona
+10,1937,MALE,White alone,Maryland
+2,1930,FEMALE,White alone,New Jersey
+11,1925,FEMALE,Black alone,New Jersey
+2,1928,MALE,White alone,New Jersey
+2,1962,MALE,White alone,New Jersey
+6,1958,FEMALE,Black alone,Rhode Island
+4,1949,MALE,White alone,Arizona
+8,1963,FEMALE,Black alone,Georgia
+9,1977,FEMALE,White alone,New Jersey
+9,1985,FEMALE,White alone,Arizona
+9,1979,MALE,White alone,New Jersey
+4,1939,MALE,White alone,New Jersey
+8,1932,MALE,White alone,Pennsylvania
+11,1970,FEMALE,Black alone,Michigan
+3,1932,FEMALE,White alone,New York
+10,1952,FEMALE,Residual,California
+1,1977,FEMALE,White alone,California
+6,1962,FEMALE,White alone,California
+12,1948,MALE,White alone,California
+7,1955,MALE,White alone,Michigan
+1,1938,FEMALE,White alone,New York
+4,1964,FEMALE,Black alone,Michigan
+12,1948,FEMALE,Asian alone,California
+12,1962,FEMALE,White alone,Michigan
+2,1943,FEMALE,Black alone,California
+1,1943,MALE,White alone,Michigan
+2,1945,MALE,Asian alone,California
+11,1936,FEMALE,White alone,Michigan
+9,1952,FEMALE,White alone,California
+5,1987,MALE,Asian alone,Hawaii
+10,1939,FEMALE,White alone,California
+11,1927,FEMALE,White alone,Idaho
+11,1938,FEMALE,White alone,Michigan
+3,1953,FEMALE,Black alone,New York
+11,1949,FEMALE,White alone,Michigan
+6,1958,FEMALE,White alone,New York
+1,1956,MALE,White alone,New York
+6,1987,MALE,White alone,Washington
+7,1953,MALE,White alone,Michigan
+7,1983,MALE,White alone,California
+5,1960,FEMALE,Residual,California
+9,1956,MALE,White alone,California
+12,1961,FEMALE,White alone,California
+2,1935,FEMALE,White alone,California
+6,1961,FEMALE,White alone,California
+11,1924,FEMALE,White alone,California
+4,1934,FEMALE,White alone,California
+10,1943,FEMALE,Residual,Idaho
+9,1989,MALE,White alone,Idaho
+9,1974,FEMALE,White alone,Arizona
+8,1926,FEMALE,White alone,Georgia
+1,1990,MALE,White alone,Georgia
+4,1974,FEMALE,White alone,Georgia
+12,1973,MALE,White alone,Georgia
+1,1947,FEMALE,White alone,Georgia
+11,1957,FEMALE,Asian alone,Georgia
+8,1986,MALE,Residual,Georgia
+7,1987,FEMALE,White alone,Georgia
+11,1984,FEMALE,Black alone,Georgia
+10,1969,MALE,White alone,Washington
+3,1936,MALE,White alone,Washington
+11,1969,MALE,White alone,Georgia
+11,1987,MALE,White alone,Georgia
+4,1963,MALE,Black alone,Washington
+12,1948,FEMALE,Black alone,Georgia
+11,1982,MALE,Residual,Washington
+3,1986,MALE,Black alone,Georgia
+1,1961,FEMALE,White alone,Oregon
+12,1963,MALE,Black alone,Maryland
+10,1954,MALE,White alone,West Virginia
+6,1964,FEMALE,White alone,New Jersey
+9,1982,FEMALE,White alone,Arizona
+2,1929,MALE,White alone,New Jersey
+2,1945,MALE,White alone,Rhode Island
+8,1924,FEMALE,Black alone,New Jersey
+6,1960,FEMALE,White alone,Rhode Island
+11,1979,FEMALE,Black alone,New Jersey
+3,1959,MALE,White alone,Rhode Island
+4,1968,FEMALE,White alone,Arizona
+3,1983,FEMALE,White alone,New Jersey
+10,1984,FEMALE,White alone,New Jersey
+6,1937,FEMALE,White alone,New Jersey
+7,1933,MALE,White alone,Rhode Island
+1,1958,MALE,White alone,Iowa
+3,1990,MALE,White alone,Ohio
+9,1955,FEMALE,White alone,Missouri
+3,1959,MALE,White alone,Missouri
+4,1981,MALE,White alone,Missouri
+3,1938,MALE,White alone,Ohio
+6,1980,FEMALE,White alone,Iowa
+7,1956,FEMALE,White alone,Ohio
+9,1931,FEMALE,Black alone,Missouri
+12,1961,FEMALE,White alone,Missouri
+4,1923,FEMALE,White alone,Missouri
+5,1961,FEMALE,White alone,Ohio
+9,1963,MALE,White alone,Ohio
+10,1980,FEMALE,White alone,Ohio
+2,1955,MALE,White alone,Connecticut
+12,1963,MALE,White alone,Ohio
+6,1948,MALE,White alone,Ohio
+10,1968,MALE,White alone,Virginia
+1,1948,MALE,White alone,Nebraska
+10,1982,MALE,White alone,Nebraska
+11,1982,FEMALE,Black alone,Virginia
+10,1958,MALE,Black alone,Virginia
+7,1970,MALE,White alone,Alabama
+5,1959,MALE,White alone,Kentucky
+10,1975,MALE,White alone,Alabama
+11,1990,FEMALE,White alone,Virginia
+3,1961,MALE,White alone,Virginia
+12,1947,FEMALE,White alone,Kentucky
+2,1985,MALE,White alone,Kentucky
+10,1964,MALE,Residual,Oregon
+5,1987,MALE,Residual,Oregon
+1,1943,FEMALE,White alone,Virginia
+7,1929,MALE,White alone,Alabama
+12,1970,MALE,Residual,Oregon
+1,1961,FEMALE,White alone,Virginia
+8,1960,MALE,White alone,Kentucky
+12,1962,FEMALE,Black alone,Alabama
+5,1960,FEMALE,White alone,Oregon
+7,1976,FEMALE,White alone,Nebraska
+5,1929,FEMALE,White alone,Florida
+5,1946,MALE,White alone,Florida
+7,1937,FEMALE,White alone,Pennsylvania
+7,1973,FEMALE,White alone,Pennsylvania
+3,1990,MALE,White alone,Pennsylvania
+8,1974,FEMALE,Black alone,Louisiana
+2,1990,MALE,Residual,Alaska
+12,1983,FEMALE,White alone,Florida
+8,1966,FEMALE,White alone,Pennsylvania
+11,1974,FEMALE,Black alone,Florida
+6,1926,FEMALE,White alone,Florida
+7,1965,FEMALE,Black alone,Pennsylvania
+3,1970,FEMALE,White alone,Florida
+11,1959,MALE,White alone,Minnesota
+6,1949,FEMALE,White alone,Tennessee
+7,1960,FEMALE,Black alone,Illinois
+2,1942,MALE,White alone,North Carolina
+10,1978,MALE,White alone,Minnesota
+4,1986,FEMALE,Black alone,Tennessee
+4,1951,FEMALE,White alone,North Carolina
+12,1987,MALE,Black alone,Tennessee
+3,1963,MALE,White alone,North Carolina
+11,1965,MALE,White alone,Minnesota
+12,1973,FEMALE,White alone,North Carolina
+12,1965,FEMALE,White alone,Minnesota
+4,1941,FEMALE,White alone,Minnesota
+5,1929,MALE,White alone,Tennessee
+3,1974,FEMALE,White alone,Minnesota
+6,1977,FEMALE,White alone,Illinois
+4,1974,FEMALE,White alone,Illinois
+4,1985,MALE,White alone,Minnesota
+11,1967,MALE,Asian alone,Illinois
+7,1927,FEMALE,White alone,Tennessee
+10,1958,MALE,Black alone,North Carolina
+3,1963,FEMALE,White alone,Minnesota
+11,1954,FEMALE,White alone,Minnesota
+7,1990,MALE,White alone,Minnesota
+6,1926,FEMALE,White alone,Minnesota
+9,1935,FEMALE,White alone,North Carolina
+9,1946,FEMALE,Black alone,North Carolina
+7,1986,MALE,White alone,Illinois
+9,1977,MALE,White alone,Minnesota
+6,1972,FEMALE,White alone,New York
+7,1977,FEMALE,White alone,Tennessee
+4,1989,FEMALE,White alone,Tennessee
+10,1956,MALE,Black alone,Tennessee
+6,1976,MALE,White alone,North Carolina
+7,1987,MALE,White alone,Minnesota
+1,1930,FEMALE,White alone,Kansas
+3,1977,MALE,White alone,Oklahoma
+2,1991,MALE,Black alone,Oklahoma
+2,1984,MALE,White alone,Kansas
+9,1962,FEMALE,White alone,Kansas
+5,1948,FEMALE,White alone,Oklahoma
+12,1969,MALE,White alone,Kansas
+2,1930,FEMALE,White alone,Kansas
+1,1952,FEMALE,White alone,Kansas
+4,1974,MALE,White alone,Kansas
+10,1983,MALE,White alone,Montana
+4,1963,MALE,Black alone,Alabama
+9,1984,FEMALE,White alone,Kentucky
+9,1928,FEMALE,White alone,Virginia
+5,1946,FEMALE,Black alone,Virginia
+2,1973,MALE,White alone,Virginia
+3,1981,FEMALE,White alone,Kentucky
+4,1988,FEMALE,White alone,Kentucky
+10,1981,MALE,White alone,Alabama
+4,1935,MALE,White alone,Kentucky
+8,1963,FEMALE,White alone,Virginia
+3,1991,MALE,Residual,Oregon
+2,1964,MALE,Black alone,Virginia
+8,1931,MALE,Black alone,Virginia
+3,1977,FEMALE,White alone,Virginia
+4,1958,FEMALE,White alone,Oregon
+2,1976,MALE,White alone,Nebraska
+2,1984,FEMALE,Asian alone,Virginia
+3,1948,FEMALE,White alone,Oregon
+2,1961,MALE,White alone,Oregon
+3,1960,FEMALE,Residual,Oregon
+2,1968,FEMALE,White alone,Oregon
+12,1954,FEMALE,White alone,Virginia
+11,1954,FEMALE,White alone,Oregon
+8,1954,FEMALE,White alone,Oregon
+6,1952,MALE,White alone,Texas
+9,1986,MALE,White alone,Texas
+2,1933,FEMALE,Black alone,Texas
+2,1964,FEMALE,White alone,Texas
+4,1969,FEMALE,White alone,Texas
+6,1973,MALE,White alone,Texas
+4,1961,MALE,White alone,Indiana
+5,1955,FEMALE,Black alone,Michigan
+10,1975,FEMALE,Black alone,Indiana
+9,1924,FEMALE,White alone,Texas
+7,1960,MALE,White alone,Texas
+3,1970,MALE,White alone,Texas
+4,1965,FEMALE,White alone,Texas
+7,1964,FEMALE,White alone,Texas
+4,1947,MALE,White alone,Texas
+3,1940,FEMALE,White alone,Texas
+1,1943,FEMALE,White alone,Indiana
+6,1980,FEMALE,Black alone,Indiana
+5,1990,MALE,White alone,Indiana
+12,1962,MALE,White alone,Indiana
+11,1956,MALE,White alone,Indiana
+9,1960,FEMALE,Black alone,Colorado
+9,1974,FEMALE,White alone,Colorado
+11,1951,MALE,White alone,Texas
+10,1945,MALE,White alone,Colorado
+8,1960,FEMALE,White alone,Texas
+8,1962,MALE,White alone,Colorado
+8,1991,MALE,White alone,California
+2,1953,FEMALE,White alone,New Hampshire
+11,1963,MALE,Residual,New Hampshire
+6,1977,FEMALE,White alone,Georgia
+1,1989,MALE,White alone,Washington
+9,1960,MALE,White alone,Georgia
+2,1964,MALE,White alone,Washington
+3,1935,FEMALE,White alone,Washington
+9,1951,FEMALE,White alone,Washington
+11,1951,FEMALE,White alone,Washington
+6,1966,MALE,White alone,Washington
+9,1941,FEMALE,White alone,Georgia
+9,1962,FEMALE,White alone,Washington
+5,1944,FEMALE,White alone,California
+7,1954,FEMALE,White alone,California
+4,1957,MALE,Asian alone,California
+11,1989,MALE,Asian alone,California
+9,1967,MALE,White alone,Michigan
+5,1953,FEMALE,White alone,California
+8,1963,FEMALE,Black alone,Michigan
+3,1985,FEMALE,Black alone,New York
+5,1991,MALE,White alone,California
+7,1965,FEMALE,White alone,New York
+9,1963,FEMALE,Residual,California
+12,1938,MALE,White alone,California
+2,1933,FEMALE,White alone,New York
+7,1951,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,New York
+3,1954,MALE,White alone,Michigan
+7,1922,MALE,White alone,Wyoming
+1,1947,MALE,White alone,California
+3,1928,MALE,White alone,California
+1,1965,FEMALE,White alone,California
+7,1959,FEMALE,White alone,New York
+3,1982,MALE,White alone,New York
+11,1934,MALE,Black alone,Michigan
+8,1982,MALE,White alone,Georgia
+1,1931,MALE,White alone,Washington
+3,1924,FEMALE,White alone,Washington
+3,1950,FEMALE,White alone,Georgia
+7,1969,FEMALE,White alone,Georgia
+9,1986,MALE,Black alone,Georgia
+7,1943,MALE,White alone,Georgia
+12,1920,FEMALE,White alone,Maine
+2,1978,FEMALE,White alone,Washington
+1,1936,FEMALE,White alone,Washington
+7,1926,MALE,White alone,Washington
+7,1955,FEMALE,White alone,Georgia
+12,1966,MALE,Asian alone,Washington
+1,1975,MALE,White alone,Washington
+4,1961,FEMALE,White alone,Washington
+4,1960,FEMALE,White alone,Georgia
+10,1921,FEMALE,White alone,Washington
+8,1951,MALE,White alone,Washington
+12,1982,FEMALE,White alone,Washington
+6,1957,MALE,White alone,Arizona
+6,1958,MALE,White alone,Arizona
+12,1940,MALE,White alone,Rhode Island
+11,1987,MALE,Black alone,Maryland
+8,1984,FEMALE,Residual,Maryland
+4,1957,MALE,White alone,New Jersey
+6,1986,FEMALE,White alone,Arizona
+6,1954,MALE,White alone,Arizona
+6,1990,MALE,Black alone,Maryland
+9,1980,MALE,White alone,Arizona
+2,1934,FEMALE,White alone,Maryland
+1,1976,MALE,Asian alone,New Jersey
+6,1949,FEMALE,Black alone,North Carolina
+11,1989,FEMALE,White alone,Maryland
+5,1935,FEMALE,White alone,New Jersey
+9,1924,FEMALE,White alone,Arizona
+12,1982,FEMALE,White alone,Arizona
+10,1941,FEMALE,White alone,Arizona
+8,1951,FEMALE,White alone,Maryland
+3,1988,FEMALE,White alone,New Jersey
+11,1977,FEMALE,White alone,New Jersey
+7,1957,FEMALE,White alone,Arizona
+2,1972,MALE,White alone,New Jersey
+8,1979,MALE,White alone,Maryland
+3,1942,FEMALE,White alone,West Virginia
+3,1920,MALE,White alone,Ohio
+10,1939,MALE,White alone,Missouri
+10,1929,MALE,White alone,Missouri
+5,1940,FEMALE,White alone,Missouri
+10,1972,FEMALE,White alone,Iowa
+3,1989,MALE,White alone,Iowa
+6,1991,FEMALE,White alone,Missouri
+6,1954,FEMALE,White alone,Ohio
+10,1959,MALE,White alone,Utah
+8,1967,MALE,White alone,Ohio
+10,1936,FEMALE,Black alone,Ohio
+2,1984,MALE,White alone,Connecticut
+2,1937,MALE,White alone,Connecticut
+12,1966,FEMALE,White alone,Iowa
+5,1960,FEMALE,White alone,Iowa
+2,1928,FEMALE,White alone,Connecticut
+3,1936,MALE,White alone,Missouri
+3,1990,MALE,White alone,Texas
+4,1968,FEMALE,White alone,Colorado
+1,1949,MALE,White alone,Texas
+2,1974,FEMALE,White alone,Texas
+10,1978,FEMALE,Asian alone,Texas
+8,1964,MALE,White alone,Texas
+3,1975,FEMALE,White alone,Texas
+2,1961,MALE,White alone,Colorado
+9,1926,MALE,White alone,Colorado
+12,1957,MALE,White alone,Mississippi
+7,1970,FEMALE,White alone,Indiana
+9,1984,MALE,White alone,Colorado
+10,1973,MALE,White alone,Colorado
+9,1957,FEMALE,White alone,Indiana
+4,1977,MALE,White alone,Texas
+4,1967,MALE,White alone,Indiana
+3,1967,FEMALE,White alone,Indiana
+11,1980,MALE,Residual,Tennessee
+9,1984,FEMALE,White alone,Indiana
+10,1971,MALE,White alone,Colorado
+2,1972,FEMALE,White alone,Indiana
+10,1985,FEMALE,White alone,Nevada
+2,1977,FEMALE,White alone,Colorado
+2,1952,FEMALE,White alone,Colorado
+6,1955,FEMALE,White alone,Oklahoma
+3,1949,FEMALE,White alone,Oklahoma
+12,1964,MALE,White alone,Vermont
+7,1979,MALE,White alone,Texas
+12,1963,FEMALE,White alone,Kansas
+11,1937,FEMALE,White alone,Kentucky
+12,1955,MALE,White alone,Virginia
+3,1974,MALE,Black alone,Virginia
+3,1936,FEMALE,Black alone,Virginia
+9,1989,MALE,White alone,Nebraska
+8,1958,MALE,Black alone,Virginia
+9,1989,FEMALE,White alone,Kentucky
+7,1972,FEMALE,White alone,Virginia
+2,1985,FEMALE,White alone,Kentucky
+6,1958,MALE,White alone,Alabama
+6,1988,FEMALE,White alone,Alabama
+12,1926,FEMALE,White alone,Virginia
+1,1954,FEMALE,Black alone,Virginia
+5,1970,FEMALE,White alone,Kentucky
+12,1951,FEMALE,White alone,Virginia
+10,1957,FEMALE,White alone,Virginia
+3,1944,FEMALE,White alone,Oregon
+4,1970,FEMALE,White alone,Virginia
+9,1977,FEMALE,White alone,Alabama
+11,1957,MALE,White alone,Virginia
+6,1956,MALE,White alone,Oregon
+9,1982,MALE,White alone,Florida
+7,1920,FEMALE,White alone,Alabama
+1,1981,MALE,White alone,California
+3,1957,MALE,White alone,New York
+1,1976,FEMALE,White alone,California
+8,1959,MALE,White alone,New York
+6,1942,FEMALE,White alone,Hawaii
+4,1921,MALE,White alone,New York
+7,1988,MALE,Residual,New York
+6,1957,FEMALE,Asian alone,California
+4,1944,FEMALE,Residual,California
+2,1970,FEMALE,Residual,California
+1,1985,FEMALE,White alone,California
+4,1984,MALE,White alone,Michigan
+1,1953,FEMALE,White alone,California
+8,1980,MALE,White alone,California
+7,1956,FEMALE,White alone,Idaho
+9,1972,MALE,Asian alone,New York
+9,1950,MALE,White alone,New York
+1,1962,MALE,Residual,New York
+12,1955,FEMALE,White alone,New York
+1,1985,MALE,White alone,New York
+9,1962,MALE,Black alone,California
+10,1926,FEMALE,Black alone,California
+3,1942,MALE,White alone,California
+2,1980,FEMALE,White alone,California
+5,1955,MALE,White alone,New York
+3,1955,FEMALE,White alone,Michigan
+3,1939,MALE,White alone,Michigan
+12,1957,MALE,White alone,California
+9,1948,MALE,White alone,New York
+2,1957,MALE,White alone,New York
+1,1962,FEMALE,White alone,California
+8,1920,FEMALE,White alone,New York
+3,1978,MALE,Black alone,New York
+1,1920,FEMALE,Residual,Arkansas
+4,1935,FEMALE,White alone,Arkansas
+9,1982,FEMALE,Residual,Arkansas
+12,1965,FEMALE,White alone,Florida
+3,1957,MALE,White alone,Arkansas
+11,1959,MALE,White alone,Wisconsin
+3,1953,MALE,White alone,Wisconsin
+4,1974,MALE,White alone,Wisconsin
+9,1989,FEMALE,White alone,New Mexico
+6,1963,FEMALE,White alone,Massachusetts
+6,1948,MALE,White alone,South Carolina
+6,1933,FEMALE,White alone,Massachusetts
+10,1986,FEMALE,White alone,Wisconsin
+12,1989,MALE,White alone,South Carolina
+11,1965,MALE,White alone,North Carolina
+11,1931,FEMALE,Residual,New Mexico
+6,1973,MALE,White alone,Florida
+11,1978,MALE,White alone,South Carolina
+3,1989,FEMALE,White alone,Wisconsin
+12,1978,MALE,White alone,Tennessee
+5,1982,FEMALE,White alone,North Carolina
+7,1966,FEMALE,White alone,Illinois
+6,1987,FEMALE,White alone,Illinois
+9,1989,MALE,White alone,Minnesota
+8,1987,MALE,White alone,North Carolina
+9,1951,FEMALE,White alone,Minnesota
+9,1946,MALE,White alone,Tennessee
+12,1962,MALE,Residual,North Carolina
+7,1979,FEMALE,White alone,Minnesota
+1,1936,MALE,White alone,Tennessee
+2,1991,MALE,White alone,Tennessee
+12,1940,FEMALE,White alone,Tennessee
+6,1961,FEMALE,White alone,Minnesota
+3,1924,MALE,White alone,Illinois
+11,1968,FEMALE,White alone,Illinois
+11,1956,MALE,White alone,Illinois
+1,1991,FEMALE,Black alone,North Carolina
+6,1987,FEMALE,Black alone,Minnesota
+10,1950,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,Illinois
+6,1951,MALE,White alone,Pennsylvania
+3,1937,MALE,White alone,Pennsylvania
+6,1942,MALE,White alone,Pennsylvania
+2,1953,MALE,White alone,Pennsylvania
+12,1967,MALE,White alone,Pennsylvania
+10,1965,MALE,White alone,Nevada
+4,1940,FEMALE,White alone,Florida
+7,1964,FEMALE,White alone,Pennsylvania
+6,1987,MALE,White alone,Florida
+5,1966,MALE,White alone,Florida
+5,1920,MALE,White alone,Florida
+10,1990,FEMALE,White alone,Georgia
+2,1989,FEMALE,Black alone,Georgia
+10,1964,MALE,Asian alone,Georgia
+12,1960,FEMALE,Black alone,Georgia
+6,1982,FEMALE,White alone,Washington
+2,1944,FEMALE,White alone,Washington
+9,1981,FEMALE,Black alone,Georgia
+7,1944,MALE,White alone,Washington
+2,1920,FEMALE,Residual,Oklahoma
+10,1976,FEMALE,White alone,Oklahoma
+11,1944,FEMALE,White alone,Kansas
+5,1952,MALE,White alone,Kansas
+2,1941,MALE,White alone,Oklahoma
+8,1984,FEMALE,White alone,Oklahoma
+6,1955,MALE,White alone,Oklahoma
+6,1976,FEMALE,Black alone,Minnesota
+9,1980,FEMALE,Asian alone,North Carolina
+9,1964,FEMALE,White alone,Tennessee
+12,1986,MALE,White alone,North Carolina
+7,1939,MALE,White alone,North Carolina
+11,1963,FEMALE,Black alone,North Carolina
+5,1935,MALE,Black alone,North Carolina
+10,1963,MALE,White alone,Illinois
+9,1920,FEMALE,Black alone,North Carolina
+7,1980,FEMALE,White alone,Minnesota
+5,1989,MALE,White alone,Minnesota
+6,1962,FEMALE,White alone,Tennessee
+5,1948,MALE,White alone,North Carolina
+12,1958,MALE,White alone,Illinois
+6,1975,FEMALE,Asian alone,Illinois
+4,1932,FEMALE,White alone,Illinois
+10,1984,FEMALE,White alone,Illinois
+2,1989,MALE,White alone,West Virginia
+12,1934,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,North Carolina
+8,1923,FEMALE,White alone,Florida
+1,1970,FEMALE,White alone,Minnesota
+7,1940,MALE,White alone,North Carolina
+11,1965,FEMALE,Residual,Minnesota
+7,1934,FEMALE,White alone,North Carolina
+1,1982,MALE,White alone,Minnesota
+9,1975,MALE,White alone,North Carolina
+1,1936,MALE,White alone,Minnesota
+10,1948,FEMALE,White alone,Montana
+1,1982,FEMALE,White alone,Oklahoma
+4,1920,MALE,White alone,Oklahoma
+12,1963,MALE,Residual,Oklahoma
+5,1973,FEMALE,White alone,Texas
+7,1952,FEMALE,White alone,Kansas
+2,1950,MALE,White alone,Kansas
+12,1944,MALE,White alone,Montana
+5,1935,FEMALE,White alone,Kansas
+5,1950,MALE,White alone,Wisconsin
+2,1981,FEMALE,White alone,Wisconsin
+5,1935,MALE,White alone,Wisconsin
+3,1985,MALE,White alone,Wisconsin
+3,1989,MALE,Black alone,Arkansas
+3,1986,MALE,Residual,Hawaii
+4,1931,FEMALE,White alone,Wisconsin
+6,1972,FEMALE,White alone,Massachusetts
+8,1985,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,Massachusetts
+8,1981,FEMALE,White alone,Massachusetts
+8,1944,FEMALE,Black alone,South Carolina
+12,1948,MALE,White alone,Massachusetts
+2,1920,FEMALE,White alone,Massachusetts
+5,1966,FEMALE,White alone,New Mexico
+11,1964,MALE,White alone,Massachusetts
+1,1934,FEMALE,Black alone,South Carolina
+7,1946,FEMALE,White alone,South Carolina
+2,1966,MALE,White alone,South Carolina
+4,1921,MALE,White alone,North Carolina
+6,1949,MALE,Black alone,South Carolina
+8,1968,MALE,White alone,Massachusetts
+4,1956,FEMALE,White alone,Massachusetts
+12,1978,FEMALE,White alone,Massachusetts
+11,1974,FEMALE,Black alone,South Carolina
+2,1944,FEMALE,White alone,Hawaii
+10,1920,FEMALE,White alone,South Carolina
+12,1946,MALE,White alone,Massachusetts
+11,1961,FEMALE,Residual,South Carolina
+8,1955,FEMALE,White alone,Massachusetts
+8,1947,FEMALE,White alone,Massachusetts
+7,1987,FEMALE,White alone,Massachusetts
+9,1925,FEMALE,White alone,Wisconsin
+7,1967,FEMALE,Black alone,South Carolina
+12,1931,MALE,White alone,Wisconsin
+8,1973,FEMALE,Black alone,South Carolina
+2,1949,MALE,White alone,Texas
+6,1935,MALE,Residual,Texas
+11,1954,FEMALE,Black alone,Michigan
+8,1955,FEMALE,White alone,Texas
+4,1961,MALE,White alone,Texas
+1,1975,MALE,White alone,Texas
+2,1965,MALE,Black alone,Texas
+1,1972,FEMALE,White alone,Texas
+7,1979,FEMALE,White alone,Texas
+12,1979,FEMALE,Residual,Texas
+6,1964,MALE,White alone,Texas
+3,1974,MALE,Black alone,Mississippi
+6,1960,FEMALE,White alone,Indiana
+9,1967,FEMALE,White alone,Colorado
+12,1946,MALE,Black alone,Indiana
+6,1960,MALE,White alone,Colorado
+8,1952,FEMALE,White alone,Colorado
+2,1948,FEMALE,White alone,Colorado
+1,1924,MALE,White alone,Indiana
+7,1957,MALE,White alone,Indiana
+1,1991,MALE,White alone,Colorado
+4,1920,FEMALE,White alone,Mississippi
+9,1931,FEMALE,White alone,Arizona
+6,1951,MALE,White alone,West Virginia
+8,1962,FEMALE,Black alone,Maryland
+11,1964,FEMALE,White alone,Arizona
+4,1982,FEMALE,White alone,Arizona
+7,1962,FEMALE,Black alone,Maryland
+8,1973,MALE,White alone,Arizona
+8,1967,FEMALE,Black alone,Maryland
+10,1941,MALE,White alone,Maryland
+7,1990,MALE,White alone,New Jersey
+2,1989,FEMALE,White alone,New Jersey
+9,1928,FEMALE,White alone,New Jersey
+12,1926,FEMALE,White alone,Maryland
+6,1942,MALE,White alone,North Carolina
+12,1987,MALE,White alone,New Jersey
+8,1978,FEMALE,Asian alone,New Jersey
+1,1978,FEMALE,White alone,New Jersey
+3,1988,FEMALE,White alone,Maryland
+10,1953,FEMALE,White alone,Arizona
+6,1950,FEMALE,White alone,Arizona
+1,1951,FEMALE,Black alone,Kentucky
+3,1971,FEMALE,White alone,Virginia
+11,1990,MALE,White alone,Nebraska
+1,1958,MALE,White alone,Kentucky
+9,1947,FEMALE,White alone,Kentucky
+12,1986,FEMALE,White alone,Pennsylvania
+8,1947,MALE,White alone,Kentucky
+11,1982,MALE,White alone,Virginia
+11,1980,MALE,Residual,Kentucky
+2,1988,MALE,White alone,Virginia
+10,1968,FEMALE,White alone,Virginia
+7,1944,FEMALE,White alone,Kentucky
+5,1953,MALE,White alone,Kentucky
+9,1980,FEMALE,White alone,Virginia
+11,1950,MALE,White alone,Kentucky
+4,1957,MALE,White alone,Virginia
+12,1953,MALE,White alone,Virginia
+9,1924,FEMALE,White alone,Oregon
+6,1957,MALE,White alone,Oregon
+1,1955,MALE,White alone,Virginia
+11,1990,FEMALE,White alone,Oregon
+5,1949,FEMALE,White alone,Virginia
+4,1922,FEMALE,White alone,Virginia
+3,1970,FEMALE,Residual,Oregon
+2,1934,MALE,White alone,Nebraska
+5,1967,FEMALE,White alone,Texas
+12,1968,MALE,White alone,Texas
+11,1985,MALE,White alone,Florida
+7,1960,FEMALE,White alone,Texas
+8,1960,MALE,White alone,Texas
+2,1991,MALE,White alone,Texas
+9,1987,FEMALE,White alone,Texas
+4,1963,FEMALE,White alone,Texas
+5,1926,MALE,White alone,Texas
+5,1991,FEMALE,White alone,Texas
+12,1961,FEMALE,Black alone,Mississippi
+1,1965,FEMALE,White alone,Texas
+2,1955,FEMALE,White alone,Florida
+4,1990,FEMALE,Black alone,Texas
+8,1948,FEMALE,White alone,Indiana
+1,1952,FEMALE,Black alone,Indiana
+4,1985,FEMALE,Residual,Indiana
+11,1987,FEMALE,White alone,Texas
+6,1987,FEMALE,White alone,Texas
+12,1939,FEMALE,White alone,Indiana
+9,1974,FEMALE,White alone,Indiana
+9,1950,FEMALE,White alone,Texas
+7,1982,FEMALE,White alone,Indiana
+9,1966,FEMALE,White alone,Indiana
+1,1978,MALE,White alone,Colorado
+6,1962,FEMALE,White alone,Texas
+6,1966,FEMALE,Residual,Indiana
+4,1981,MALE,White alone,Indiana
+3,1962,FEMALE,White alone,Indiana
+4,1986,FEMALE,White alone,Indiana
+9,1943,FEMALE,White alone,Indiana
+4,1970,MALE,White alone,Colorado
+8,1967,FEMALE,White alone,Louisiana
+11,1959,FEMALE,White alone,California
+12,1940,MALE,White alone,Alabama
+12,1957,FEMALE,White alone,California
+11,1961,MALE,Asian alone,California
+6,1957,MALE,White alone,California
+7,1965,FEMALE,White alone,California
+4,1956,MALE,White alone,Michigan
+1,1979,MALE,White alone,Michigan
+2,1929,FEMALE,White alone,Michigan
+7,1979,MALE,White alone,California
+10,1988,FEMALE,White alone,California
+2,1957,MALE,Asian alone,Michigan
+2,1947,MALE,White alone,California
+12,1987,FEMALE,Black alone,Michigan
+10,1924,MALE,White alone,Idaho
+6,1926,FEMALE,White alone,California
+11,1954,FEMALE,White alone,Michigan
+8,1948,FEMALE,White alone,New York
+6,1944,FEMALE,White alone,New York
+1,1988,MALE,Residual,California
+3,1953,MALE,White alone,New York
+2,1947,FEMALE,White alone,Michigan
+3,1990,MALE,Black alone,North Carolina
+11,1961,FEMALE,White alone,California
+12,1987,FEMALE,White alone,New York
+10,1990,MALE,White alone,California
+7,1977,MALE,Asian alone,California
+5,1990,MALE,White alone,New York
+4,1990,FEMALE,Asian alone,California
+5,1971,MALE,White alone,New York
+12,1977,FEMALE,White alone,New York
+6,1932,MALE,White alone,Florida
+7,1958,FEMALE,Black alone,Florida
+9,1931,MALE,White alone,Florida
+3,1968,MALE,Residual,Louisiana
+5,1979,FEMALE,White alone,Louisiana
+3,1950,FEMALE,Residual,Pennsylvania
+9,1972,FEMALE,Black alone,Louisiana
+3,1968,MALE,White alone,Florida
+8,1983,FEMALE,White alone,Florida
+8,1966,MALE,White alone,Florida
+12,1941,MALE,White alone,Pennsylvania
+4,1961,FEMALE,White alone,Florida
+11,1976,FEMALE,White alone,Florida
+12,1952,FEMALE,White alone,Florida
+5,1990,FEMALE,White alone,Florida
+8,1939,MALE,White alone,Nevada
+12,1941,MALE,White alone,Pennsylvania
+6,1962,MALE,White alone,Florida
+12,1975,MALE,White alone,Pennsylvania
+12,1954,FEMALE,White alone,Louisiana
+4,1987,MALE,White alone,Pennsylvania
+3,1930,MALE,White alone,Missouri
+5,1961,FEMALE,White alone,Ohio
+4,1959,FEMALE,White alone,Iowa
+9,1969,FEMALE,White alone,Iowa
+12,1963,MALE,White alone,Missouri
+1,1969,FEMALE,White alone,Iowa
+3,1931,FEMALE,White alone,Arizona
+7,1936,MALE,White alone,Ohio
+3,1972,MALE,White alone,Missouri
+3,1926,MALE,White alone,Ohio
+4,1987,MALE,White alone,Utah
+1,1926,MALE,White alone,Ohio
+8,1955,MALE,White alone,Connecticut
+5,1927,MALE,White alone,Ohio
+11,1946,FEMALE,White alone,Ohio
+7,1955,FEMALE,White alone,Ohio
+2,1970,FEMALE,White alone,Ohio
+1,1988,MALE,Black alone,Connecticut
+9,1920,FEMALE,White alone,Ohio
+1,1964,FEMALE,Black alone,Illinois
+2,1962,FEMALE,White alone,Illinois
+7,1920,MALE,White alone,Illinois
+4,1973,FEMALE,White alone,Minnesota
+8,1955,FEMALE,White alone,North Carolina
+9,1941,MALE,White alone,Tennessee
+9,1959,MALE,White alone,Tennessee
+11,1966,MALE,White alone,Georgia
+1,1989,FEMALE,White alone,North Carolina
+10,1970,FEMALE,White alone,North Carolina
+2,1950,FEMALE,White alone,Illinois
+12,1965,MALE,White alone,Tennessee
+5,1988,MALE,White alone,Minnesota
+4,1971,MALE,White alone,North Carolina
+10,1950,MALE,White alone,Minnesota
+3,1974,MALE,White alone,Minnesota
+5,1931,MALE,White alone,Minnesota
+11,1990,FEMALE,White alone,Illinois
+6,1920,FEMALE,White alone,North Carolina
+4,1972,FEMALE,White alone,Minnesota
+6,1984,FEMALE,White alone,Ohio
+8,1953,FEMALE,White alone,Missouri
+2,1949,MALE,Residual,Missouri
+1,1947,MALE,White alone,Iowa
+3,1933,FEMALE,Black alone,Ohio
+9,1948,FEMALE,White alone,Tennessee
+9,1935,FEMALE,Black alone,Missouri
+11,1953,FEMALE,White alone,Ohio
+1,1954,MALE,White alone,Ohio
+12,1984,FEMALE,White alone,Ohio
+9,1964,FEMALE,White alone,Utah
+2,1925,FEMALE,White alone,Ohio
+7,1920,FEMALE,White alone,Connecticut
+11,1967,FEMALE,Black alone,Connecticut
+12,1989,MALE,White alone,Ohio
+8,1970,FEMALE,White alone,Iowa
+11,1946,FEMALE,White alone,Iowa
+10,1986,MALE,White alone,Utah
+9,1987,FEMALE,White alone,Ohio
+9,1984,FEMALE,White alone,Arkansas
+11,1924,FEMALE,White alone,Arkansas
+2,1959,MALE,White alone,Arkansas
+11,1961,MALE,White alone,New Mexico
+8,1942,FEMALE,Black alone,South Carolina
+2,1956,MALE,White alone,Massachusetts
+7,1944,FEMALE,White alone,Massachusetts
+8,1970,MALE,White alone,Wisconsin
+12,1932,FEMALE,White alone,Massachusetts
+6,1982,FEMALE,White alone,Massachusetts
+10,1969,MALE,White alone,Massachusetts
+1,1990,FEMALE,White alone,Massachusetts
+1,1954,FEMALE,White alone,South Carolina
+12,1953,FEMALE,White alone,New Mexico
+2,1950,MALE,White alone,South Carolina
+8,1981,MALE,White alone,Wisconsin
+6,1985,MALE,Black alone,Wisconsin
+1,1982,MALE,Black alone,Wisconsin
+4,1948,FEMALE,White alone,Massachusetts
+3,1931,FEMALE,White alone,South Carolina
+9,1943,MALE,White alone,South Carolina
+6,1926,FEMALE,White alone,Massachusetts
+11,1959,MALE,White alone,Wisconsin
+2,1978,FEMALE,Asian alone,South Carolina
+8,1977,FEMALE,White alone,Florida
+10,1985,FEMALE,White alone,Florida
+11,1990,FEMALE,Black alone,Florida
+1,1937,FEMALE,White alone,Florida
+7,1962,MALE,White alone,Florida
+7,1951,FEMALE,White alone,Pennsylvania
+1,1948,MALE,White alone,Florida
+11,1958,MALE,White alone,Pennsylvania
+2,1959,FEMALE,White alone,Florida
+5,1936,MALE,Black alone,Florida
+12,1921,FEMALE,White alone,Pennsylvania
+10,1946,FEMALE,Black alone,Florida
+8,1942,MALE,Black alone,Louisiana
+1,1984,FEMALE,White alone,Florida
+3,1965,MALE,White alone,Florida
+4,1971,FEMALE,White alone,Virginia
+9,1930,FEMALE,White alone,Louisiana
+1,1969,MALE,White alone,Pennsylvania
+6,1955,FEMALE,White alone,Florida
+6,1963,FEMALE,Black alone,Texas
+9,1974,FEMALE,White alone,Arizona
+11,1941,MALE,White alone,Arizona
+6,1981,FEMALE,Black alone,Virginia
+11,1983,FEMALE,White alone,West Virginia
+1,1939,FEMALE,White alone,Arizona
+10,1937,MALE,White alone,Maryland
+11,1925,FEMALE,Black alone,New Jersey
+2,1928,MALE,White alone,New Jersey
+2,1962,MALE,White alone,New Jersey
+6,1958,FEMALE,Black alone,Rhode Island
+4,1949,MALE,White alone,Arizona
+8,1963,FEMALE,Black alone,New Jersey
+9,1977,FEMALE,White alone,New Jersey
+9,1985,FEMALE,White alone,Arizona
+4,1939,MALE,White alone,New Jersey
+8,1932,MALE,White alone,Pennsylvania
+11,1970,FEMALE,Black alone,Michigan
+3,1932,FEMALE,White alone,New York
+1,1977,FEMALE,White alone,California
+6,1962,FEMALE,White alone,California
+12,1948,MALE,White alone,California
+7,1955,MALE,White alone,Michigan
+1,1938,FEMALE,White alone,New York
+4,1964,FEMALE,Black alone,Michigan
+6,1947,FEMALE,Asian alone,California
+12,1962,FEMALE,White alone,Michigan
+2,1943,FEMALE,Black alone,California
+1,1943,MALE,White alone,Michigan
+2,1945,MALE,Asian alone,California
+11,1936,FEMALE,White alone,Michigan
+9,1952,FEMALE,White alone,California
+5,1987,MALE,Asian alone,Hawaii
+10,1939,FEMALE,White alone,California
+11,1927,FEMALE,White alone,Idaho
+11,1938,FEMALE,White alone,Michigan
+3,1953,FEMALE,Black alone,New York
+11,1949,FEMALE,White alone,Michigan
+6,1958,FEMALE,White alone,New York
+1,1956,MALE,White alone,New York
+6,1987,MALE,White alone,Washington
+7,1953,MALE,White alone,Michigan
+7,1983,MALE,White alone,California
+5,1960,FEMALE,Residual,California
+9,1956,MALE,White alone,California
+12,1961,FEMALE,White alone,California
+2,1935,FEMALE,White alone,California
+6,1961,FEMALE,White alone,California
+11,1924,FEMALE,White alone,California
+4,1934,FEMALE,White alone,California
+10,1943,FEMALE,Residual,Idaho
+9,1989,MALE,White alone,Idaho
+9,1974,FEMALE,White alone,Arizona
+8,1926,FEMALE,White alone,Georgia
+1,1990,MALE,White alone,Georgia
+4,1974,FEMALE,White alone,Georgia
+12,1973,MALE,White alone,Georgia
+1,1947,FEMALE,White alone,Georgia
+11,1957,FEMALE,Asian alone,Georgia
+8,1986,MALE,Residual,Georgia
+11,1987,MALE,White alone,Maine
+7,1987,FEMALE,White alone,Georgia
+11,1984,FEMALE,Black alone,Georgia
+10,1969,MALE,White alone,Washington
+12,1935,MALE,White alone,Washington
+11,1987,MALE,White alone,Georgia
+6,1963,MALE,Black alone,Washington
+12,1948,FEMALE,Black alone,Georgia
+5,1971,MALE,White alone,Georgia
+9,1982,MALE,Residual,Washington
+3,1986,MALE,Black alone,Georgia
+10,1954,MALE,White alone,West Virginia
+6,1964,FEMALE,White alone,New Jersey
+9,1982,FEMALE,White alone,Arizona
+2,1929,MALE,White alone,New Jersey
+11,1944,MALE,White alone,Rhode Island
+8,1924,FEMALE,Black alone,New Jersey
+5,1960,FEMALE,White alone,Rhode Island
+11,1979,FEMALE,Black alone,New Jersey
+4,1959,MALE,White alone,Rhode Island
+4,1968,FEMALE,White alone,Arizona
+3,1983,FEMALE,White alone,New Jersey
+10,1984,FEMALE,White alone,New Jersey
+6,1937,FEMALE,White alone,New Jersey
+7,1933,MALE,White alone,Rhode Island
+1,1958,MALE,White alone,Iowa
+3,1990,MALE,White alone,Ohio
+9,1955,FEMALE,White alone,Missouri
+4,1981,MALE,White alone,Missouri
+3,1938,MALE,White alone,Ohio
+6,1980,FEMALE,White alone,Iowa
+9,1956,FEMALE,White alone,Ohio
+9,1931,FEMALE,Black alone,Missouri
+11,1953,MALE,White alone,Ohio
+12,1961,FEMALE,White alone,Missouri
+4,1923,FEMALE,White alone,Missouri
+2,1961,FEMALE,White alone,Ohio
+8,1963,MALE,White alone,Ohio
+11,1980,FEMALE,White alone,Ohio
+2,1955,MALE,White alone,Connecticut
+12,1963,MALE,White alone,Ohio
+8,1948,MALE,White alone,Ohio
+10,1968,MALE,White alone,Virginia
+1,1948,MALE,White alone,Nebraska
+10,1982,MALE,White alone,Nebraska
+10,1982,FEMALE,Black alone,Virginia
+12,1958,MALE,Black alone,Virginia
+7,1970,MALE,White alone,Alabama
+5,1959,MALE,White alone,Kentucky
+10,1975,MALE,White alone,Alabama
+10,1990,FEMALE,White alone,Virginia
+2,1961,MALE,White alone,Virginia
+12,1947,FEMALE,White alone,Kentucky
+2,1985,MALE,White alone,Kentucky
+11,1964,MALE,Residual,Oregon
+6,1987,MALE,Residual,Oregon
+9,1981,FEMALE,White alone,Virginia
+2,1943,FEMALE,White alone,Virginia
+7,1929,MALE,White alone,Alabama
+9,1970,MALE,Residual,Oregon
+4,1961,FEMALE,White alone,Virginia
+8,1960,MALE,White alone,Kentucky
+12,1962,FEMALE,Black alone,Alabama
+8,1960,FEMALE,White alone,Oregon
+7,1976,FEMALE,White alone,Nebraska
+5,1929,FEMALE,White alone,Florida
+5,1946,MALE,White alone,Florida
+6,1937,FEMALE,White alone,Pennsylvania
+5,1973,FEMALE,White alone,Pennsylvania
+1,1990,MALE,White alone,Pennsylvania
+2,1990,MALE,Residual,Alaska
+8,1964,FEMALE,White alone,Nevada
+4,1987,MALE,White alone,Pennsylvania
+6,1953,MALE,Black alone,Louisiana
+12,1983,FEMALE,White alone,Florida
+11,1966,FEMALE,White alone,Pennsylvania
+11,1974,FEMALE,Black alone,Florida
+6,1926,FEMALE,White alone,Florida
+4,1965,FEMALE,Black alone,Pennsylvania
+3,1970,FEMALE,White alone,Florida
+11,1959,MALE,White alone,Minnesota
+6,1949,FEMALE,White alone,Tennessee
+7,1960,FEMALE,Black alone,Illinois
+2,1942,MALE,White alone,North Carolina
+10,1978,MALE,White alone,Minnesota
+4,1951,FEMALE,White alone,North Carolina
+11,1987,MALE,Black alone,Tennessee
+3,1963,MALE,White alone,North Carolina
+12,1973,FEMALE,White alone,North Carolina
+12,1965,FEMALE,White alone,Minnesota
+4,1941,FEMALE,White alone,Minnesota
+5,1929,MALE,White alone,Tennessee
+3,1974,FEMALE,White alone,Minnesota
+3,1979,MALE,Black alone,Illinois
+6,1977,FEMALE,White alone,Illinois
+8,1979,FEMALE,White alone,Tennessee
+4,1974,FEMALE,White alone,Illinois
+4,1985,MALE,White alone,Minnesota
+11,1967,MALE,Asian alone,Illinois
+9,1927,FEMALE,White alone,Tennessee
+10,1958,MALE,Black alone,North Carolina
+3,1963,FEMALE,White alone,Minnesota
+11,1954,FEMALE,White alone,Minnesota
+7,1990,MALE,White alone,Minnesota
+6,1926,FEMALE,White alone,Minnesota
+9,1935,FEMALE,White alone,North Carolina
+9,1946,FEMALE,Black alone,North Carolina
+7,1986,MALE,White alone,Illinois
+9,1977,MALE,White alone,Minnesota
+6,1972,FEMALE,White alone,New York
+7,1977,FEMALE,White alone,Tennessee
+4,1989,FEMALE,White alone,Tennessee
+1,1957,MALE,Black alone,Tennessee
+6,1976,MALE,White alone,North Carolina
+7,1987,MALE,White alone,Minnesota
+1,1930,FEMALE,White alone,Kansas
+7,1951,MALE,White alone,Oklahoma
+4,1991,MALE,Black alone,Oklahoma
+10,1970,MALE,White alone,Oklahoma
+2,1984,MALE,White alone,Kansas
+9,1962,FEMALE,White alone,Kansas
+9,1967,FEMALE,Residual,Vermont
+8,1948,FEMALE,White alone,Oklahoma
+12,1969,MALE,White alone,Kansas
+2,1930,FEMALE,White alone,Kansas
+1,1952,FEMALE,White alone,Kansas
+10,1983,MALE,White alone,Montana
+4,1963,MALE,Black alone,Alabama
+9,1984,FEMALE,White alone,Kentucky
+8,1928,FEMALE,White alone,Virginia
+2,1973,MALE,White alone,Virginia
+3,1981,FEMALE,White alone,Kentucky
+4,1988,FEMALE,White alone,Kentucky
+10,1981,MALE,White alone,Alabama
+4,1935,MALE,White alone,Kentucky
+8,1963,FEMALE,White alone,Virginia
+1,1991,MALE,Residual,Oregon
+1,1964,MALE,Black alone,Virginia
+11,1931,MALE,Black alone,Virginia
+3,1977,FEMALE,White alone,Virginia
+2,1976,MALE,White alone,Nebraska
+2,1984,FEMALE,Asian alone,Virginia
+3,1948,FEMALE,White alone,Oregon
+3,1961,MALE,White alone,Oregon
+12,1959,FEMALE,Residual,Oregon
+2,1968,FEMALE,White alone,Oregon
+12,1954,FEMALE,White alone,Virginia
+11,1954,FEMALE,White alone,Oregon
+6,1952,MALE,White alone,Texas
+9,1986,MALE,White alone,Texas
+1,1933,FEMALE,Black alone,Texas
+4,1964,FEMALE,White alone,Texas
+3,1969,FEMALE,White alone,Texas
+8,1972,MALE,White alone,Texas
+5,1973,MALE,White alone,Texas
+4,1961,MALE,White alone,Indiana
+5,1955,FEMALE,Black alone,Michigan
+10,1975,FEMALE,Black alone,Indiana
+10,1924,FEMALE,White alone,Texas
+7,1960,MALE,White alone,Texas
+2,1970,MALE,White alone,Texas
+3,1965,FEMALE,White alone,Texas
+6,1964,FEMALE,White alone,Texas
+1,1947,MALE,White alone,Texas
+3,1940,FEMALE,White alone,Texas
+1,1943,FEMALE,White alone,Indiana
+6,1980,FEMALE,Black alone,Indiana
+5,1990,MALE,White alone,Indiana
+11,1956,MALE,White alone,Indiana
+5,1943,FEMALE,Black alone,Mississippi
+9,1960,FEMALE,Black alone,Colorado
+9,1974,FEMALE,White alone,Colorado
+10,1951,MALE,White alone,Texas
+6,1988,MALE,White alone,Texas
+10,1945,MALE,White alone,Colorado
+7,1960,FEMALE,White alone,Texas
+8,1962,MALE,White alone,Colorado
+2,1953,FEMALE,White alone,New Hampshire
+11,1963,MALE,Residual,New Hampshire
+6,1977,FEMALE,White alone,Georgia
+3,1989,MALE,White alone,Washington
+9,1960,MALE,White alone,Georgia
+4,1952,MALE,White alone,Washington
+3,1964,MALE,White alone,Washington
+2,1935,FEMALE,White alone,Washington
+12,1951,FEMALE,White alone,Washington
+10,1951,FEMALE,White alone,Washington
+1,1977,FEMALE,White alone,Washington
+9,1941,FEMALE,White alone,Georgia
+9,1962,FEMALE,White alone,Washington
+5,1944,FEMALE,White alone,California
+3,1943,FEMALE,White alone,California
+12,1949,FEMALE,White alone,California
+4,1957,MALE,Asian alone,California
+11,1989,MALE,Asian alone,California
+9,1967,MALE,White alone,Michigan
+5,1953,FEMALE,White alone,California
+8,1963,FEMALE,Black alone,Michigan
+3,1985,FEMALE,Black alone,New York
+7,1965,FEMALE,White alone,New York
+9,1963,FEMALE,White alone,California
+12,1938,MALE,White alone,California
+2,1933,FEMALE,White alone,New York
+7,1951,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,New York
+4,1954,MALE,White alone,Michigan
+5,1922,MALE,White alone,Wyoming
+1,1947,MALE,White alone,California
+3,1928,MALE,White alone,California
+1,1965,FEMALE,White alone,California
+7,1959,FEMALE,White alone,New York
+9,1920,FEMALE,White alone,New York
+3,1982,MALE,White alone,New York
+11,1934,MALE,Black alone,Michigan
+8,1982,MALE,White alone,Georgia
+12,1930,MALE,White alone,Washington
+5,1924,FEMALE,White alone,Washington
+3,1950,FEMALE,White alone,Georgia
+7,1969,FEMALE,White alone,Georgia
+9,1986,MALE,Black alone,Georgia
+7,1943,MALE,White alone,Georgia
+12,1920,FEMALE,White alone,Maine
+3,1978,FEMALE,White alone,Washington
+12,1935,FEMALE,White alone,Washington
+7,1926,MALE,White alone,Washington
+7,1955,FEMALE,White alone,Georgia
+1,1967,MALE,Asian alone,Washington
+1,1975,MALE,White alone,Washington
+5,1961,FEMALE,White alone,Washington
+4,1960,FEMALE,White alone,Georgia
+12,1921,FEMALE,White alone,Washington
+8,1951,MALE,White alone,Washington
+12,1982,FEMALE,White alone,Washington
+6,1957,MALE,White alone,Arizona
+6,1958,MALE,White alone,Arizona
+12,1940,MALE,White alone,Rhode Island
+3,1961,FEMALE,White alone,Maryland
+11,1987,MALE,Black alone,Maryland
+8,1984,FEMALE,Residual,Maryland
+4,1957,MALE,White alone,New Jersey
+6,1986,FEMALE,White alone,Arizona
+6,1954,MALE,White alone,Arizona
+6,1990,MALE,Black alone,Maryland
+9,1980,MALE,White alone,Arizona
+2,1934,FEMALE,White alone,Maryland
+1,1976,MALE,Asian alone,New Jersey
+6,1949,FEMALE,Black alone,North Carolina
+11,1989,FEMALE,White alone,Maryland
+5,1935,FEMALE,White alone,New Jersey
+9,1924,FEMALE,White alone,Arizona
+12,1982,FEMALE,White alone,Arizona
+3,1942,MALE,White alone,Maryland
+10,1941,FEMALE,White alone,Arizona
+8,1951,FEMALE,White alone,Maryland
+3,1988,FEMALE,White alone,New Jersey
+11,1977,FEMALE,White alone,New Jersey
+7,1957,FEMALE,White alone,Arizona
+8,1979,MALE,White alone,Maryland
+5,1942,FEMALE,White alone,West Virginia
+4,1920,MALE,White alone,Ohio
+10,1939,MALE,White alone,Missouri
+10,1929,MALE,White alone,Missouri
+2,1981,FEMALE,White alone,Illinois
+5,1940,FEMALE,White alone,Missouri
+10,1972,FEMALE,White alone,Iowa
+3,1989,MALE,White alone,Iowa
+10,1959,MALE,White alone,Ohio
+5,1954,FEMALE,White alone,Ohio
+10,1959,MALE,White alone,Utah
+9,1967,MALE,White alone,Ohio
+9,1936,FEMALE,Black alone,Ohio
+2,1984,MALE,White alone,Connecticut
+2,1937,MALE,White alone,Connecticut
+12,1966,FEMALE,White alone,Iowa
+5,1960,FEMALE,White alone,Iowa
+2,1928,FEMALE,White alone,Connecticut
+3,1936,MALE,White alone,Missouri
+12,1989,MALE,White alone,Texas
+4,1968,FEMALE,White alone,Colorado
+12,1948,MALE,White alone,Texas
+1,1974,FEMALE,White alone,Texas
+11,1978,FEMALE,Asian alone,Texas
+8,1964,MALE,White alone,Texas
+3,1975,FEMALE,White alone,Texas
+2,1961,MALE,White alone,Colorado
+9,1926,MALE,White alone,Colorado
+12,1957,MALE,White alone,Mississippi
+12,1945,MALE,Black alone,Indiana
+7,1970,FEMALE,White alone,Indiana
+9,1984,MALE,White alone,Colorado
+10,1973,MALE,White alone,Colorado
+4,1958,FEMALE,White alone,Indiana
+6,1977,MALE,White alone,Texas
+4,1967,MALE,White alone,Indiana
+3,1967,FEMALE,White alone,Indiana
+11,1980,MALE,Residual,Tennessee
+9,1984,FEMALE,White alone,Indiana
+10,1971,MALE,White alone,Colorado
+2,1972,FEMALE,White alone,Indiana
+2,1977,FEMALE,White alone,Colorado
+2,1952,FEMALE,White alone,Colorado
+6,1955,FEMALE,White alone,Oklahoma
+2,1949,FEMALE,White alone,Oklahoma
+12,1964,MALE,White alone,Vermont
+7,1979,MALE,White alone,Texas
+12,1963,FEMALE,White alone,Kansas
+11,1937,FEMALE,White alone,Kentucky
+12,1955,MALE,White alone,Virginia
+3,1974,MALE,Black alone,Virginia
+4,1936,FEMALE,Black alone,Virginia
+9,1989,MALE,White alone,Nebraska
+10,1958,MALE,Black alone,Virginia
+9,1989,FEMALE,White alone,Kentucky
+9,1972,FEMALE,White alone,Virginia
+2,1985,FEMALE,White alone,Kentucky
+6,1958,MALE,White alone,Alabama
+6,1988,FEMALE,White alone,Alabama
+12,1926,FEMALE,White alone,Virginia
+2,1954,FEMALE,Black alone,Virginia
+5,1970,FEMALE,White alone,Kentucky
+9,1972,FEMALE,Asian alone,Oregon
+2,1952,FEMALE,White alone,Virginia
+8,1957,FEMALE,White alone,Virginia
+4,1944,FEMALE,White alone,Oregon
+5,1970,FEMALE,White alone,Virginia
+11,1957,MALE,White alone,Virginia
+6,1956,MALE,White alone,Oregon
+7,1982,MALE,White alone,Florida
+7,1920,FEMALE,White alone,Alabama
+1,1981,MALE,White alone,California
+1,1960,FEMALE,White alone,California
+11,1980,FEMALE,White alone,California
+3,1957,MALE,White alone,New York
+1,1976,FEMALE,White alone,California
+8,1959,MALE,White alone,New York
+6,1942,FEMALE,White alone,Hawaii
+4,1921,MALE,White alone,New York
+7,1988,MALE,Residual,New York
+6,1957,FEMALE,Asian alone,California
+4,1944,FEMALE,Residual,California
+2,1970,FEMALE,Residual,California
+1,1985,FEMALE,White alone,California
+4,1984,MALE,White alone,Michigan
+1,1953,FEMALE,White alone,California
+8,1980,MALE,White alone,California
+7,1956,FEMALE,White alone,Idaho
+9,1972,MALE,Asian alone,New York
+9,1950,MALE,White alone,New York
+1,1962,MALE,Residual,New York
+12,1955,FEMALE,White alone,New York
+1,1985,MALE,White alone,New York
+9,1962,MALE,Black alone,California
+10,1926,FEMALE,Black alone,California
+3,1942,MALE,White alone,California
+2,1980,FEMALE,White alone,California
+2,1955,MALE,White alone,New York
+3,1955,FEMALE,White alone,Michigan
+3,1939,MALE,White alone,Michigan
+12,1957,MALE,White alone,California
+9,1948,MALE,White alone,New York
+2,1957,MALE,White alone,New York
+1,1962,FEMALE,White alone,California
+8,1920,FEMALE,White alone,New York
+3,1978,MALE,Black alone,New York
+1,1920,FEMALE,Residual,Arkansas
+4,1935,FEMALE,White alone,Arkansas
+9,1982,FEMALE,Residual,Arkansas
+12,1965,FEMALE,White alone,Florida
+3,1957,MALE,White alone,Arkansas
+11,1959,MALE,White alone,Wisconsin
+4,1953,MALE,White alone,Wisconsin
+4,1974,MALE,White alone,Wisconsin
+9,1989,FEMALE,White alone,New Mexico
+6,1963,FEMALE,White alone,Massachusetts
+5,1948,MALE,White alone,South Carolina
+6,1933,FEMALE,White alone,Massachusetts
+12,1986,FEMALE,White alone,Wisconsin
+12,1989,MALE,White alone,South Carolina
+11,1965,MALE,White alone,Massachusetts
+11,1931,FEMALE,Residual,New Mexico
+6,1973,MALE,White alone,Florida
+12,1978,MALE,White alone,South Carolina
+1,1989,FEMALE,White alone,Wisconsin
+2,1979,MALE,White alone,Tennessee
+5,1982,FEMALE,White alone,North Carolina
+7,1966,FEMALE,White alone,Illinois
+6,1987,FEMALE,White alone,Illinois
+8,1987,MALE,White alone,North Carolina
+7,1951,FEMALE,White alone,Minnesota
+9,1946,MALE,White alone,Tennessee
+12,1962,MALE,Residual,North Carolina
+7,1979,FEMALE,White alone,Minnesota
+1,1936,MALE,White alone,Tennessee
+11,1990,MALE,White alone,Tennessee
+1,1941,FEMALE,White alone,Tennessee
+6,1961,FEMALE,White alone,Minnesota
+3,1924,MALE,White alone,Illinois
+12,1970,FEMALE,White alone,Illinois
+11,1968,FEMALE,White alone,Illinois
+11,1956,MALE,White alone,Illinois
+1,1991,FEMALE,Black alone,North Carolina
+6,1987,FEMALE,Black alone,Minnesota
+10,1950,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,Illinois
+6,1951,MALE,White alone,Pennsylvania
+3,1937,MALE,White alone,Pennsylvania
+6,1942,MALE,White alone,Pennsylvania
+2,1953,MALE,White alone,Pennsylvania
+12,1967,MALE,White alone,Pennsylvania
+10,1965,MALE,White alone,Nevada
+1,1951,MALE,White alone,Louisiana
+4,1940,FEMALE,White alone,Florida
+7,1964,FEMALE,White alone,Pennsylvania
+6,1987,MALE,White alone,Florida
+5,1966,MALE,White alone,Florida
+5,1920,MALE,White alone,Florida
+9,1981,MALE,White alone,Nevada
+10,1990,FEMALE,White alone,Georgia
+2,1989,FEMALE,Black alone,Georgia
+10,1964,MALE,Asian alone,Georgia
+7,1959,MALE,White alone,Georgia
+12,1960,FEMALE,Black alone,Georgia
+6,1982,FEMALE,White alone,Washington
+12,1943,FEMALE,White alone,Washington
+9,1981,FEMALE,Black alone,Georgia
+11,1979,MALE,White alone,Washington
+7,1944,MALE,White alone,Washington
+12,1920,FEMALE,Residual,Oklahoma
+5,1986,MALE,Black alone,Oklahoma
+10,1976,FEMALE,White alone,Oklahoma
+11,1944,FEMALE,White alone,Kansas
+5,1952,MALE,White alone,Kansas
+3,1941,MALE,White alone,Oklahoma
+11,1984,FEMALE,White alone,Oklahoma
+7,1955,MALE,White alone,Oklahoma
+6,1976,FEMALE,Black alone,Minnesota
+9,1980,FEMALE,Asian alone,North Carolina
+11,1964,FEMALE,White alone,Tennessee
+12,1986,MALE,White alone,North Carolina
+7,1939,MALE,White alone,North Carolina
+11,1963,FEMALE,Black alone,North Carolina
+5,1935,MALE,Black alone,North Carolina
+10,1963,MALE,White alone,Illinois
+9,1920,FEMALE,Black alone,North Carolina
+7,1980,FEMALE,White alone,Minnesota
+5,1989,MALE,White alone,Minnesota
+5,1962,FEMALE,White alone,Tennessee
+5,1948,MALE,White alone,North Carolina
+9,1955,FEMALE,White alone,Tennessee
+12,1958,MALE,White alone,Illinois
+6,1975,FEMALE,Asian alone,Illinois
+4,1932,FEMALE,White alone,Illinois
+10,1984,FEMALE,White alone,Illinois
+2,1989,MALE,White alone,West Virginia
+12,1934,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,North Carolina
+8,1923,FEMALE,White alone,Florida
+1,1970,FEMALE,White alone,Minnesota
+7,1940,MALE,White alone,North Carolina
+11,1965,FEMALE,Residual,Minnesota
+7,1934,FEMALE,White alone,North Carolina
+1,1982,MALE,White alone,Minnesota
+9,1975,MALE,White alone,North Carolina
+11,1930,FEMALE,White alone,Illinois
+1,1936,MALE,White alone,Minnesota
+10,1948,FEMALE,White alone,Montana
+6,1952,FEMALE,White alone,Oklahoma
+11,1982,FEMALE,Residual,Oklahoma
+1,1982,FEMALE,White alone,Oklahoma
+3,1920,MALE,White alone,Oklahoma
+6,1973,FEMALE,White alone,Texas
+7,1952,FEMALE,White alone,Kansas
+2,1950,MALE,White alone,Kansas
+12,1944,MALE,White alone,Montana
+5,1935,FEMALE,White alone,Kansas
+9,1971,FEMALE,Residual,Oklahoma
+6,1950,MALE,White alone,Wisconsin
+12,1980,FEMALE,White alone,Wisconsin
+7,1935,MALE,White alone,Wisconsin
+1,1985,MALE,White alone,Wisconsin
+9,1970,MALE,Asian alone,Wisconsin
+2,1957,FEMALE,White alone,Wisconsin
+3,1989,MALE,Black alone,Arkansas
+3,1986,MALE,Residual,Hawaii
+5,1931,FEMALE,White alone,Wisconsin
+6,1972,FEMALE,White alone,Massachusetts
+8,1985,MALE,White alone,Massachusetts
+1,1936,FEMALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,Massachusetts
+8,1981,FEMALE,White alone,Massachusetts
+8,1944,FEMALE,Black alone,South Carolina
+12,1948,MALE,White alone,Massachusetts
+2,1920,FEMALE,White alone,Massachusetts
+5,1966,FEMALE,White alone,New Mexico
+11,1964,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,South Carolina
+1,1977,MALE,White alone,New Hampshire
+6,1946,FEMALE,White alone,South Carolina
+3,1921,MALE,White alone,Florida
+9,1949,MALE,Black alone,South Carolina
+8,1968,MALE,White alone,Massachusetts
+4,1956,FEMALE,White alone,Massachusetts
+12,1978,FEMALE,White alone,Massachusetts
+10,1974,FEMALE,Black alone,South Carolina
+2,1944,FEMALE,White alone,Hawaii
+12,1946,MALE,White alone,Massachusetts
+11,1961,FEMALE,Residual,South Carolina
+8,1955,FEMALE,White alone,Massachusetts
+8,1947,FEMALE,White alone,Massachusetts
+7,1987,FEMALE,White alone,Massachusetts
+9,1960,MALE,Black alone,Wisconsin
+9,1967,FEMALE,Black alone,South Carolina
+10,1931,MALE,White alone,Wisconsin
+9,1973,FEMALE,Black alone,South Carolina
+10,1954,FEMALE,Black alone,Michigan
+6,1955,FEMALE,White alone,Texas
+9,1984,FEMALE,Asian alone,Texas
+3,1961,MALE,White alone,Texas
+1,1975,MALE,White alone,Texas
+2,1965,MALE,Black alone,Texas
+11,1971,FEMALE,White alone,Texas
+6,1979,FEMALE,White alone,Texas
+6,1969,FEMALE,Residual,Mississippi
+1,1980,FEMALE,Residual,Texas
+7,1964,MALE,White alone,Texas
+3,1974,MALE,Black alone,Mississippi
+6,1960,FEMALE,White alone,Indiana
+9,1967,FEMALE,White alone,Colorado
+12,1946,MALE,Black alone,Indiana
+6,1960,MALE,White alone,Colorado
+3,1972,FEMALE,White alone,Colorado
+8,1952,FEMALE,White alone,Colorado
+1,1924,MALE,White alone,Indiana
+10,1920,MALE,White alone,Colorado
+1,1955,MALE,White alone,Colorado
+7,1957,MALE,White alone,Indiana
+1,1991,MALE,White alone,Colorado
+4,1920,FEMALE,White alone,Mississippi
+9,1931,FEMALE,White alone,Arizona
+6,1951,MALE,White alone,West Virginia
+8,1962,FEMALE,Black alone,Maryland
+11,1964,FEMALE,White alone,Arizona
+4,1982,FEMALE,White alone,Arizona
+8,1961,FEMALE,Black alone,Maryland
+8,1973,MALE,White alone,Arizona
+9,1920,FEMALE,White alone,Arizona
+8,1967,FEMALE,Black alone,Maryland
+10,1941,MALE,White alone,Maryland
+7,1990,MALE,White alone,New Jersey
+2,1989,FEMALE,White alone,New Jersey
+9,1928,FEMALE,White alone,New Jersey
+12,1926,FEMALE,White alone,Maryland
+6,1942,MALE,White alone,North Carolina
+12,1987,MALE,White alone,New Jersey
+8,1978,FEMALE,Asian alone,New Jersey
+1,1978,FEMALE,White alone,New Jersey
+3,1988,FEMALE,White alone,Maryland
+6,1950,FEMALE,White alone,Arizona
+1,1951,FEMALE,Black alone,Kentucky
+3,1971,FEMALE,White alone,Virginia
+11,1990,MALE,White alone,Nebraska
+1,1958,MALE,White alone,Kentucky
+9,1947,FEMALE,White alone,Kentucky
+12,1986,FEMALE,White alone,Pennsylvania
+8,1947,MALE,White alone,Kentucky
+12,1982,MALE,White alone,Virginia
+11,1980,MALE,Residual,Kentucky
+12,1968,FEMALE,White alone,Virginia
+7,1944,FEMALE,White alone,Kentucky
+5,1953,MALE,White alone,Kentucky
+6,1980,FEMALE,White alone,Virginia
+11,1950,MALE,White alone,Kentucky
+5,1957,MALE,White alone,Virginia
+10,1953,MALE,White alone,Virginia
+9,1924,FEMALE,White alone,Oregon
+8,1957,MALE,White alone,Oregon
+1,1967,FEMALE,Black alone,Virginia
+12,1954,MALE,White alone,Virginia
+10,1990,FEMALE,White alone,Oregon
+4,1949,FEMALE,White alone,Virginia
+3,1922,FEMALE,White alone,Virginia
+2,1934,MALE,White alone,Nebraska
+5,1967,FEMALE,White alone,Texas
+12,1968,MALE,White alone,Texas
+12,1985,MALE,White alone,Texas
+8,1960,FEMALE,White alone,Texas
+8,1960,MALE,White alone,Texas
+2,1991,MALE,White alone,Texas
+3,1963,FEMALE,White alone,Texas
+5,1926,MALE,White alone,Texas
+12,1961,FEMALE,Black alone,Mississippi
+1,1965,FEMALE,White alone,Texas
+4,1990,FEMALE,Black alone,Texas
+8,1948,FEMALE,White alone,Indiana
+1,1952,FEMALE,Black alone,Indiana
+4,1985,FEMALE,Residual,Indiana
+6,1987,FEMALE,White alone,Texas
+12,1939,FEMALE,White alone,Indiana
+9,1974,FEMALE,White alone,Indiana
+7,1950,FEMALE,White alone,Texas
+7,1982,FEMALE,White alone,Indiana
+9,1966,FEMALE,White alone,Indiana
+1,1978,MALE,White alone,Colorado
+3,1962,FEMALE,White alone,Texas
+6,1966,FEMALE,Residual,Indiana
+4,1981,MALE,White alone,Indiana
+11,1953,FEMALE,White alone,Indiana
+3,1962,FEMALE,White alone,Indiana
+4,1986,FEMALE,White alone,Indiana
+9,1943,FEMALE,White alone,Indiana
+4,1970,MALE,White alone,Colorado
+8,1967,FEMALE,White alone,Louisiana
+11,1959,FEMALE,White alone,California
+10,1935,MALE,White alone,Alabama
+12,1957,FEMALE,White alone,California
+11,1961,MALE,Asian alone,California
+6,1957,MALE,White alone,California
+7,1965,FEMALE,White alone,California
+4,1956,MALE,White alone,Michigan
+2,1964,MALE,White alone,Michigan
+1,1979,MALE,White alone,Michigan
+2,1929,FEMALE,White alone,Michigan
+7,1979,MALE,White alone,California
+2,1957,MALE,Asian alone,Michigan
+2,1947,MALE,White alone,California
+12,1987,FEMALE,Black alone,Michigan
+10,1924,MALE,White alone,Idaho
+6,1926,FEMALE,White alone,California
+11,1954,FEMALE,White alone,Michigan
+8,1948,FEMALE,White alone,New York
+6,1944,FEMALE,White alone,New York
+1,1988,MALE,Residual,California
+3,1953,MALE,White alone,New York
+2,1947,FEMALE,White alone,Michigan
+3,1990,MALE,Black alone,North Carolina
+11,1961,FEMALE,White alone,California
+12,1987,FEMALE,White alone,New York
+10,1990,MALE,White alone,California
+5,1990,MALE,White alone,New York
+4,1990,FEMALE,Asian alone,California
+5,1971,MALE,White alone,New York
+6,1932,MALE,White alone,Florida
+7,1958,FEMALE,Black alone,Florida
+9,1931,MALE,White alone,Florida
+5,1979,FEMALE,White alone,Louisiana
+3,1950,FEMALE,Residual,Pennsylvania
+9,1972,FEMALE,Black alone,Louisiana
+3,1968,MALE,White alone,Florida
+8,1983,FEMALE,White alone,Florida
+8,1966,MALE,White alone,Florida
+12,1941,MALE,White alone,Pennsylvania
+4,1961,FEMALE,White alone,Florida
+11,1976,FEMALE,White alone,Florida
+12,1952,FEMALE,White alone,Florida
+8,1939,MALE,White alone,Nevada
+12,1941,MALE,White alone,Pennsylvania
+3,1957,FEMALE,White alone,Florida
+6,1962,MALE,White alone,Florida
+12,1975,MALE,White alone,Pennsylvania
+12,1954,FEMALE,White alone,Louisiana
+2,1973,MALE,Black alone,Florida
+4,1987,MALE,White alone,Pennsylvania
+3,1930,MALE,White alone,Missouri
+5,1961,FEMALE,White alone,Ohio
+4,1959,FEMALE,White alone,Iowa
+9,1969,FEMALE,White alone,Iowa
+12,1963,MALE,White alone,Missouri
+1,1969,FEMALE,White alone,Iowa
+7,1936,MALE,White alone,Ohio
+3,1972,MALE,White alone,Missouri
+12,1953,MALE,White alone,Missouri
+3,1926,MALE,White alone,Ohio
+4,1987,MALE,White alone,Utah
+1,1926,MALE,White alone,Ohio
+8,1955,MALE,White alone,Connecticut
+10,1968,FEMALE,White alone,Connecticut
+5,1927,MALE,White alone,Ohio
+11,1946,FEMALE,White alone,Ohio
+7,1955,FEMALE,White alone,Ohio
+2,1970,FEMALE,White alone,Ohio
+1,1988,MALE,Black alone,Connecticut
+9,1920,FEMALE,White alone,Ohio
+1,1964,FEMALE,Black alone,Illinois
+2,1962,FEMALE,White alone,Illinois
+7,1920,MALE,White alone,Illinois
+4,1973,FEMALE,White alone,Minnesota
+8,1955,FEMALE,White alone,North Carolina
+9,1941,MALE,White alone,Tennessee
+9,1959,MALE,White alone,Tennessee
+11,1966,MALE,White alone,Georgia
+1,1989,FEMALE,White alone,North Carolina
+10,1970,FEMALE,White alone,North Carolina
+2,1950,FEMALE,White alone,Illinois
+12,1965,MALE,White alone,Tennessee
+5,1988,MALE,White alone,Minnesota
+4,1971,MALE,White alone,North Carolina
+10,1950,MALE,White alone,Minnesota
+3,1974,MALE,White alone,Minnesota
+5,1931,MALE,White alone,Minnesota
+6,1920,FEMALE,White alone,North Carolina
+4,1972,FEMALE,White alone,Minnesota
+6,1984,FEMALE,White alone,Ohio
+8,1953,FEMALE,White alone,Missouri
+2,1949,MALE,Residual,Missouri
+1,1947,MALE,White alone,Iowa
+3,1933,FEMALE,Black alone,Ohio
+9,1948,FEMALE,White alone,Ohio
+11,1957,MALE,White alone,Ohio
+9,1935,FEMALE,Black alone,Missouri
+11,1953,FEMALE,White alone,Ohio
+1,1954,MALE,White alone,Ohio
+12,1984,FEMALE,White alone,Ohio
+4,1980,MALE,White alone,Missouri
+9,1964,FEMALE,White alone,Utah
+2,1925,FEMALE,White alone,Ohio
+7,1920,FEMALE,White alone,Connecticut
+11,1967,FEMALE,Black alone,Connecticut
+12,1989,MALE,White alone,Ohio
+8,1970,FEMALE,White alone,Iowa
+11,1946,FEMALE,White alone,Iowa
+8,1956,FEMALE,Black alone,Ohio
+9,1987,FEMALE,White alone,Ohio
+11,1924,FEMALE,White alone,Arkansas
+5,1961,FEMALE,White alone,Arkansas
+2,1959,MALE,White alone,Arkansas
+11,1961,MALE,White alone,New Mexico
+8,1942,FEMALE,Black alone,South Carolina
+2,1956,MALE,White alone,Massachusetts
+7,1944,FEMALE,White alone,Massachusetts
+8,1970,MALE,White alone,Wisconsin
+5,1979,FEMALE,White alone,Wisconsin
+12,1932,FEMALE,White alone,Massachusetts
+6,1982,FEMALE,White alone,Massachusetts
+10,1969,MALE,White alone,Massachusetts
+1,1990,FEMALE,White alone,Massachusetts
+1,1954,FEMALE,White alone,South Carolina
+12,1953,FEMALE,White alone,New Mexico
+2,1950,MALE,White alone,South Carolina
+2,1981,MALE,White alone,Wisconsin
+6,1985,MALE,Black alone,Wisconsin
+4,1948,FEMALE,White alone,Massachusetts
+9,1943,MALE,White alone,South Carolina
+6,1926,FEMALE,White alone,Massachusetts
+11,1959,MALE,White alone,Wisconsin
+2,1978,FEMALE,Asian alone,South Carolina
+8,1977,FEMALE,White alone,Florida
+10,1985,FEMALE,White alone,Florida
+11,1990,FEMALE,Black alone,Florida
+1,1937,FEMALE,White alone,Florida
+7,1962,MALE,White alone,Florida
+7,1951,FEMALE,White alone,Pennsylvania
+1,1948,MALE,White alone,Florida
+11,1958,MALE,White alone,Pennsylvania
+2,1959,FEMALE,White alone,Florida
+5,1936,MALE,Black alone,Florida
+2,1979,FEMALE,White alone,Florida
+12,1921,FEMALE,White alone,Pennsylvania
+2,1932,MALE,White alone,Pennsylvania
+10,1946,FEMALE,Black alone,Florida
+8,1942,MALE,Black alone,Louisiana
+1,1984,FEMALE,White alone,Florida
+3,1965,MALE,White alone,Florida
+4,1971,FEMALE,White alone,Virginia
+9,1930,FEMALE,White alone,Louisiana
+6,1955,FEMALE,White alone,Florida
+9,1974,FEMALE,White alone,Arizona
+11,1941,MALE,White alone,Arizona
+6,1981,FEMALE,Black alone,Virginia
+11,1983,FEMALE,White alone,West Virginia
+1,1939,FEMALE,White alone,Arizona
+10,1937,MALE,White alone,Maryland
+2,1930,FEMALE,White alone,New Jersey
+2,1928,MALE,White alone,New Jersey
+2,1962,MALE,White alone,New Jersey
+6,1958,FEMALE,Black alone,Rhode Island
+4,1949,MALE,White alone,Arizona
+1,1953,FEMALE,Black alone,New Jersey
+8,1963,FEMALE,Black alone,New Jersey
+9,1977,FEMALE,White alone,New Jersey
+1,1980,MALE,White alone,New Jersey
+2,1989,MALE,Asian alone,Maryland
+4,1939,MALE,White alone,New Jersey
+8,1932,MALE,White alone,Pennsylvania
+11,1970,FEMALE,Black alone,Michigan
+3,1932,FEMALE,White alone,New York
+10,1952,FEMALE,Residual,California
+1,1977,FEMALE,White alone,California
+6,1962,FEMALE,White alone,California
+12,1948,MALE,White alone,California
+7,1955,MALE,White alone,Michigan
+1,1938,FEMALE,White alone,New York
+4,1964,FEMALE,Black alone,Michigan
+6,1947,FEMALE,Asian alone,California
+12,1962,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,Michigan
+2,1945,MALE,Asian alone,California
+11,1936,FEMALE,White alone,Michigan
+9,1952,FEMALE,White alone,California
+5,1987,MALE,Asian alone,Hawaii
+10,1939,FEMALE,White alone,California
+11,1927,FEMALE,White alone,Idaho
+11,1938,FEMALE,White alone,Michigan
+3,1953,FEMALE,Black alone,New York
+11,1949,FEMALE,White alone,Michigan
+6,1958,FEMALE,White alone,New York
+1,1956,MALE,White alone,New York
+6,1987,MALE,White alone,Idaho
+7,1983,MALE,White alone,California
+5,1960,FEMALE,Residual,California
+9,1956,MALE,White alone,California
+12,1961,FEMALE,White alone,California
+2,1935,FEMALE,White alone,California
+6,1961,FEMALE,White alone,California
+11,1924,FEMALE,White alone,California
+4,1934,FEMALE,White alone,California
+10,1943,FEMALE,Residual,Idaho
+9,1989,MALE,White alone,Idaho
+9,1974,FEMALE,White alone,Arizona
+8,1926,FEMALE,White alone,Georgia
+1,1990,MALE,White alone,Georgia
+4,1974,FEMALE,White alone,Georgia
+12,1973,MALE,White alone,Georgia
+9,1954,FEMALE,White alone,Georgia
+11,1957,FEMALE,Asian alone,Georgia
+8,1986,MALE,Residual,Georgia
+11,1987,MALE,White alone,Maine
+7,1987,FEMALE,White alone,Georgia
+11,1984,FEMALE,Black alone,Georgia
+2,1952,FEMALE,White alone,Washington
+10,1969,MALE,White alone,Washington
+12,1935,MALE,White alone,Washington
+11,1987,MALE,White alone,Georgia
+6,1963,MALE,Black alone,Washington
+12,1948,FEMALE,Black alone,Georgia
+5,1971,MALE,White alone,Georgia
+9,1982,MALE,Residual,Washington
+3,1986,MALE,Black alone,Georgia
+10,1954,MALE,White alone,West Virginia
+9,1982,FEMALE,White alone,Arizona
+2,1929,MALE,White alone,New Jersey
+11,1944,MALE,White alone,Rhode Island
+8,1924,FEMALE,Black alone,New Jersey
+5,1960,FEMALE,White alone,Rhode Island
+11,1979,FEMALE,Black alone,New Jersey
+4,1959,MALE,White alone,Rhode Island
+12,1945,MALE,White alone,New Jersey
+3,1983,FEMALE,White alone,New Jersey
+10,1984,FEMALE,White alone,New Jersey
+6,1937,FEMALE,White alone,New Jersey
+7,1933,MALE,White alone,Rhode Island
+1,1958,MALE,White alone,Iowa
+3,1990,MALE,White alone,Ohio
+9,1955,FEMALE,White alone,Missouri
+3,1938,MALE,White alone,Ohio
+6,1980,FEMALE,White alone,Iowa
+9,1956,FEMALE,White alone,Ohio
+9,1931,FEMALE,Black alone,Missouri
+11,1953,MALE,White alone,Ohio
+12,1961,FEMALE,White alone,Missouri
+4,1923,FEMALE,White alone,Missouri
+2,1961,FEMALE,White alone,Ohio
+8,1963,MALE,White alone,Ohio
+11,1980,FEMALE,White alone,Ohio
+2,1955,MALE,White alone,Connecticut
+12,1963,MALE,White alone,Ohio
+8,1948,MALE,White alone,Ohio
+10,1968,MALE,White alone,Virginia
+10,1952,FEMALE,White alone,Virginia
+1,1948,MALE,White alone,Nebraska
+10,1982,MALE,White alone,Nebraska
+10,1982,FEMALE,Black alone,Virginia
+12,1958,MALE,Black alone,Virginia
+7,1970,MALE,White alone,Alabama
+5,1959,MALE,White alone,Kentucky
+10,1975,MALE,White alone,Alabama
+10,1990,FEMALE,White alone,Virginia
+11,1946,FEMALE,White alone,Kentucky
+2,1961,MALE,White alone,Virginia
+2,1985,MALE,White alone,Kentucky
+11,1964,MALE,Residual,Oregon
+6,1987,MALE,Residual,Oregon
+2,1943,FEMALE,White alone,Virginia
+7,1929,MALE,White alone,Alabama
+9,1970,MALE,Residual,Washington
+4,1961,FEMALE,White alone,Virginia
+8,1960,MALE,White alone,Kentucky
+5,1943,FEMALE,White alone,Oregon
+12,1962,FEMALE,Black alone,Alabama
+8,1960,FEMALE,White alone,Oregon
+7,1976,FEMALE,White alone,Nebraska
+5,1929,FEMALE,White alone,Florida
+5,1946,MALE,White alone,Florida
+6,1937,FEMALE,White alone,Pennsylvania
+5,1973,FEMALE,White alone,Pennsylvania
+1,1990,MALE,White alone,Pennsylvania
+2,1990,MALE,Residual,Alaska
+2,1986,MALE,White alone,Pennsylvania
+12,1955,MALE,Black alone,Louisiana
+12,1983,FEMALE,White alone,Florida
+11,1966,FEMALE,White alone,Pennsylvania
+11,1974,FEMALE,Black alone,Florida
+6,1926,FEMALE,White alone,Florida
+4,1965,FEMALE,Black alone,Pennsylvania
+3,1970,FEMALE,White alone,Florida
+11,1959,MALE,White alone,Minnesota
+6,1949,FEMALE,White alone,Tennessee
+7,1960,FEMALE,Black alone,Illinois
+2,1942,MALE,White alone,North Carolina
+10,1978,MALE,White alone,Minnesota
+4,1951,FEMALE,White alone,North Carolina
+11,1987,MALE,Black alone,Tennessee
+3,1963,MALE,White alone,North Carolina
+12,1973,FEMALE,White alone,North Carolina
+12,1965,FEMALE,White alone,Minnesota
+4,1941,FEMALE,White alone,Minnesota
+5,1929,MALE,White alone,Tennessee
+3,1974,FEMALE,White alone,Minnesota
+3,1979,MALE,Black alone,Illinois
+6,1977,FEMALE,White alone,Illinois
+4,1974,FEMALE,White alone,Illinois
+4,1985,MALE,White alone,Minnesota
+11,1967,MALE,Asian alone,Illinois
+9,1927,FEMALE,White alone,Tennessee
+10,1958,MALE,Black alone,North Carolina
+3,1963,FEMALE,White alone,Minnesota
+11,1954,FEMALE,White alone,Minnesota
+7,1990,MALE,White alone,Minnesota
+6,1926,FEMALE,White alone,Minnesota
+9,1935,FEMALE,White alone,North Carolina
+9,1946,FEMALE,Black alone,North Carolina
+7,1986,MALE,White alone,Illinois
+9,1977,MALE,White alone,Minnesota
+6,1972,FEMALE,White alone,Minnesota
+7,1977,FEMALE,White alone,Tennessee
+4,1989,FEMALE,White alone,Tennessee
+1,1957,MALE,Black alone,Tennessee
+6,1976,MALE,White alone,North Carolina
+10,1984,FEMALE,White alone,Minnesota
+7,1987,MALE,White alone,Minnesota
+1,1930,FEMALE,White alone,Kansas
+8,1945,FEMALE,Residual,Oklahoma
+8,1984,FEMALE,Residual,Oklahoma
+10,1970,MALE,White alone,Oklahoma
+2,1984,MALE,White alone,Kansas
+9,1962,FEMALE,White alone,Kansas
+9,1967,FEMALE,Residual,Vermont
+8,1948,FEMALE,White alone,Oklahoma
+12,1969,MALE,White alone,Kansas
+2,1930,FEMALE,White alone,Kansas
+1,1952,FEMALE,White alone,Kansas
+9,1944,MALE,Black alone,Delaware
+4,1974,MALE,White alone,Kansas
+10,1983,MALE,White alone,Montana
+4,1963,MALE,Black alone,Alabama
+9,1984,FEMALE,White alone,Kentucky
+8,1928,FEMALE,White alone,Virginia
+4,1946,FEMALE,Black alone,Virginia
+2,1973,MALE,White alone,Virginia
+3,1981,FEMALE,White alone,Kentucky
+4,1988,FEMALE,White alone,Kentucky
+10,1981,MALE,White alone,Alabama
+4,1935,MALE,White alone,Kentucky
+8,1963,FEMALE,White alone,Virginia
+1,1964,MALE,Black alone,Virginia
+11,1931,MALE,Black alone,Virginia
+3,1977,FEMALE,White alone,Virginia
+6,1958,FEMALE,White alone,Oregon
+2,1984,FEMALE,Asian alone,Virginia
+3,1948,FEMALE,White alone,Oregon
+3,1961,MALE,White alone,Oregon
+12,1959,FEMALE,Residual,Oregon
+2,1968,FEMALE,White alone,Oregon
+12,1954,FEMALE,White alone,Virginia
+11,1954,FEMALE,White alone,Oregon
+6,1952,MALE,White alone,Texas
+9,1986,MALE,White alone,Texas
+1,1933,FEMALE,Black alone,Texas
+4,1964,FEMALE,White alone,Texas
+3,1969,FEMALE,White alone,Texas
+8,1972,MALE,White alone,Texas
+5,1973,MALE,White alone,Texas
+4,1961,MALE,White alone,Indiana
+5,1955,FEMALE,Black alone,Michigan
+10,1975,FEMALE,Black alone,Indiana
+10,1924,FEMALE,White alone,Texas
+7,1960,MALE,White alone,Texas
+2,1970,MALE,White alone,Texas
+3,1965,FEMALE,White alone,Texas
+6,1964,FEMALE,White alone,Texas
+1,1947,MALE,White alone,Texas
+3,1940,FEMALE,White alone,Texas
+1,1943,FEMALE,White alone,Indiana
+6,1980,FEMALE,Black alone,Indiana
+5,1990,MALE,White alone,Indiana
+11,1956,MALE,White alone,Indiana
+5,1943,FEMALE,Black alone,Mississippi
+9,1960,FEMALE,Black alone,Colorado
+9,1974,FEMALE,White alone,Colorado
+10,1951,MALE,White alone,Texas
+6,1988,MALE,White alone,Texas
+10,1945,MALE,White alone,Colorado
+7,1960,FEMALE,White alone,Texas
+8,1962,MALE,White alone,Colorado
+2,1953,FEMALE,White alone,New Hampshire
+11,1963,MALE,Residual,New Hampshire
+6,1977,FEMALE,White alone,Georgia
+3,1989,MALE,White alone,Washington
+9,1960,MALE,White alone,Georgia
+4,1952,MALE,White alone,Washington
+3,1964,MALE,White alone,Washington
+2,1935,FEMALE,White alone,Washington
+12,1951,FEMALE,White alone,Washington
+10,1951,FEMALE,White alone,Washington
+1,1977,FEMALE,White alone,Washington
+9,1941,FEMALE,White alone,Georgia
+9,1962,FEMALE,White alone,Washington
+5,1944,FEMALE,White alone,California
+3,1943,FEMALE,White alone,California
+12,1949,FEMALE,White alone,California
+9,1967,MALE,White alone,Michigan
+5,1953,FEMALE,White alone,California
+8,1963,FEMALE,Black alone,Michigan
+3,1985,FEMALE,Black alone,Wisconsin
+7,1965,FEMALE,White alone,New York
+9,1963,FEMALE,White alone,California
+4,1988,MALE,White alone,California
+12,1938,MALE,White alone,California
+2,1933,FEMALE,White alone,New York
+7,1951,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,New York
+4,1953,MALE,White alone,Michigan
+5,1922,MALE,White alone,Wyoming
+1,1947,MALE,White alone,California
+3,1928,MALE,White alone,California
+1,1965,FEMALE,White alone,California
+7,1959,FEMALE,White alone,New York
+9,1920,FEMALE,White alone,New York
+6,1987,FEMALE,White alone,California
+3,1982,MALE,White alone,New York
+11,1934,MALE,Black alone,Michigan
+8,1982,MALE,White alone,Georgia
+12,1930,MALE,White alone,Washington
+5,1924,FEMALE,White alone,Washington
+3,1950,FEMALE,White alone,Georgia
+7,1969,FEMALE,White alone,Georgia
+9,1986,MALE,Black alone,Georgia
+7,1943,MALE,White alone,Georgia
+12,1920,FEMALE,White alone,Maine
+3,1978,FEMALE,White alone,Washington
+12,1935,FEMALE,White alone,Washington
+7,1926,MALE,White alone,Washington
+7,1955,FEMALE,White alone,Georgia
+11,1966,MALE,Asian alone,Washington
+1,1975,MALE,White alone,Washington
+4,1960,FEMALE,White alone,Georgia
+12,1921,FEMALE,White alone,Washington
+12,1966,MALE,White alone,Washington
+8,1951,MALE,White alone,Washington
+12,1982,FEMALE,White alone,Washington
+8,1945,MALE,White alone,Georgia
+4,1978,MALE,White alone,Washington
+6,1957,MALE,White alone,Arizona
+6,1958,MALE,White alone,Arizona
+12,1940,MALE,White alone,Rhode Island
+3,1961,FEMALE,White alone,Maryland
+11,1987,MALE,Black alone,Maryland
+8,1984,FEMALE,Residual,Maryland
+4,1957,MALE,White alone,New Jersey
+6,1986,FEMALE,White alone,Arizona
+6,1954,MALE,White alone,Arizona
+6,1990,MALE,Black alone,Maryland
+9,1980,MALE,White alone,Arizona
+1,1959,FEMALE,White alone,Maryland
+2,1934,FEMALE,White alone,Maryland
+1,1976,MALE,Asian alone,New Jersey
+6,1949,FEMALE,Black alone,North Carolina
+11,1989,FEMALE,White alone,Maryland
+5,1935,FEMALE,White alone,New Jersey
+9,1924,FEMALE,White alone,Arizona
+12,1982,FEMALE,White alone,Arizona
+10,1941,FEMALE,White alone,Arizona
+8,1951,FEMALE,White alone,Maryland
+3,1988,FEMALE,White alone,New Jersey
+7,1957,FEMALE,White alone,Arizona
+8,1979,MALE,White alone,Maryland
+5,1942,FEMALE,White alone,West Virginia
+4,1920,MALE,White alone,Ohio
+10,1939,MALE,White alone,Missouri
+10,1929,MALE,White alone,Missouri
+2,1981,FEMALE,White alone,Illinois
+5,1940,FEMALE,White alone,Missouri
+10,1972,FEMALE,White alone,Iowa
+3,1989,MALE,White alone,Iowa
+10,1959,MALE,White alone,Ohio
+5,1954,FEMALE,White alone,Ohio
+10,1959,MALE,White alone,Utah
+9,1967,MALE,White alone,Ohio
+9,1988,FEMALE,White alone,Ohio
+9,1936,FEMALE,Black alone,Ohio
+2,1984,MALE,White alone,Connecticut
+2,1937,MALE,White alone,Connecticut
+12,1966,FEMALE,White alone,Iowa
+5,1960,FEMALE,White alone,Iowa
+2,1928,FEMALE,White alone,Connecticut
+3,1936,MALE,White alone,Missouri
+12,1989,MALE,White alone,Texas
+4,1968,FEMALE,White alone,Colorado
+12,1948,MALE,White alone,Texas
+7,1985,FEMALE,White alone,Texas
+11,1978,FEMALE,Asian alone,Texas
+8,1964,MALE,White alone,Texas
+3,1975,FEMALE,White alone,Texas
+2,1961,MALE,White alone,Colorado
+9,1926,MALE,White alone,Colorado
+12,1957,MALE,White alone,Mississippi
+7,1970,FEMALE,White alone,Indiana
+9,1984,MALE,White alone,Colorado
+10,1973,MALE,White alone,Colorado
+6,1977,MALE,White alone,Texas
+4,1967,MALE,White alone,Indiana
+3,1967,FEMALE,White alone,Indiana
+11,1980,MALE,Residual,Tennessee
+9,1984,FEMALE,White alone,Indiana
+2,1972,FEMALE,White alone,Indiana
+10,1985,FEMALE,White alone,Nevada
+2,1977,FEMALE,White alone,Colorado
+2,1952,FEMALE,White alone,Colorado
+6,1955,FEMALE,White alone,Oklahoma
+2,1949,FEMALE,White alone,Oklahoma
+12,1963,FEMALE,White alone,Kansas
+11,1937,FEMALE,White alone,Kentucky
+12,1955,MALE,White alone,Virginia
+3,1974,MALE,Black alone,Virginia
+4,1936,FEMALE,Black alone,Virginia
+9,1989,MALE,White alone,Nebraska
+10,1958,MALE,Black alone,Virginia
+9,1989,FEMALE,White alone,Kentucky
+9,1972,FEMALE,White alone,Virginia
+2,1985,FEMALE,White alone,Kentucky
+6,1958,MALE,White alone,Alabama
+6,1988,FEMALE,White alone,Alabama
+12,1926,FEMALE,White alone,Virginia
+5,1970,FEMALE,White alone,Kentucky
+9,1972,FEMALE,Asian alone,Oregon
+2,1952,FEMALE,White alone,Virginia
+8,1957,FEMALE,White alone,Virginia
+4,1944,FEMALE,White alone,Oregon
+11,1957,MALE,White alone,Virginia
+6,1956,MALE,White alone,Oregon
+7,1982,MALE,White alone,Florida
+7,1920,FEMALE,White alone,Alabama
+1,1981,MALE,White alone,California
+9,1975,FEMALE,Asian alone,California
+11,1980,FEMALE,White alone,California
+12,1972,MALE,White alone,California
+9,1963,FEMALE,White alone,California
+3,1957,MALE,White alone,New York
+1,1976,FEMALE,White alone,California
+8,1959,MALE,White alone,New York
+6,1942,FEMALE,White alone,Hawaii
+4,1921,MALE,White alone,New York
+7,1988,MALE,Residual,New York
+6,1957,FEMALE,Asian alone,California
+4,1944,FEMALE,White alone,California
+2,1970,FEMALE,White alone,California
+1,1985,FEMALE,White alone,California
+4,1984,MALE,White alone,Michigan
+1,1953,FEMALE,White alone,California
+8,1980,MALE,White alone,California
+7,1956,FEMALE,White alone,Idaho
+9,1972,MALE,Asian alone,New York
+9,1950,MALE,White alone,New York
+1,1962,MALE,Residual,New York
+12,1955,FEMALE,White alone,New York
+1,1985,MALE,White alone,New York
+9,1962,MALE,Black alone,California
+10,1926,FEMALE,Black alone,California
+3,1942,MALE,White alone,California
+2,1980,FEMALE,White alone,California
+3,1955,FEMALE,White alone,Michigan
+3,1939,MALE,White alone,Michigan
+12,1957,MALE,White alone,California
+9,1948,MALE,White alone,New York
+2,1957,MALE,White alone,New York
+1,1962,FEMALE,White alone,California
+8,1920,FEMALE,White alone,New York
+3,1978,MALE,Black alone,New York
+1,1920,FEMALE,Residual,Arkansas
+4,1935,FEMALE,White alone,Arkansas
+9,1982,FEMALE,Residual,Arkansas
+12,1965,FEMALE,White alone,Florida
+3,1957,MALE,White alone,Arkansas
+11,1959,MALE,White alone,Wisconsin
+4,1953,MALE,White alone,Wisconsin
+4,1974,MALE,White alone,Wisconsin
+9,1989,FEMALE,White alone,New Mexico
+6,1963,FEMALE,White alone,Massachusetts
+5,1948,MALE,White alone,South Carolina
+6,1933,FEMALE,White alone,Massachusetts
+5,1984,MALE,White alone,Massachusetts
+12,1986,FEMALE,White alone,Wisconsin
+12,1989,MALE,White alone,South Carolina
+11,1965,MALE,White alone,Massachusetts
+11,1931,FEMALE,Residual,New Mexico
+12,1978,MALE,White alone,South Carolina
+9,1972,FEMALE,Residual,Wisconsin
+1,1989,FEMALE,White alone,Wisconsin
+2,1979,MALE,White alone,Tennessee
+5,1982,FEMALE,White alone,North Carolina
+2,1946,FEMALE,Black alone,North Carolina
+7,1966,FEMALE,White alone,Illinois
+6,1987,FEMALE,White alone,Illinois
+1,1951,FEMALE,White alone,Minnesota
+9,1946,MALE,White alone,Tennessee
+12,1962,MALE,Residual,North Carolina
+7,1979,FEMALE,White alone,Minnesota
+1,1936,MALE,White alone,Tennessee
+1,1941,FEMALE,White alone,Tennessee
+6,1961,FEMALE,White alone,Minnesota
+3,1924,MALE,White alone,Illinois
+12,1970,FEMALE,White alone,Illinois
+11,1968,FEMALE,White alone,Illinois
+11,1956,MALE,White alone,Illinois
+6,1987,FEMALE,Black alone,Minnesota
+10,1950,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,Illinois
+6,1951,MALE,White alone,Pennsylvania
+3,1937,MALE,White alone,Pennsylvania
+6,1942,MALE,White alone,Pennsylvania
+2,1953,MALE,White alone,Pennsylvania
+12,1967,MALE,White alone,Pennsylvania
+10,1965,MALE,White alone,Nevada
+1,1951,MALE,White alone,Louisiana
+4,1940,FEMALE,White alone,Florida
+7,1964,FEMALE,White alone,Pennsylvania
+6,1987,MALE,White alone,Florida
+5,1966,MALE,White alone,Florida
+5,1920,MALE,White alone,Florida
+9,1981,MALE,White alone,Nevada
+10,1990,FEMALE,White alone,Georgia
+2,1989,FEMALE,Black alone,Georgia
+10,1964,MALE,Asian alone,Georgia
+7,1959,MALE,White alone,Georgia
+12,1960,FEMALE,Black alone,Georgia
+6,1982,FEMALE,White alone,Washington
+12,1943,FEMALE,White alone,Washington
+9,1981,FEMALE,Black alone,Georgia
+7,1944,MALE,White alone,Washington
+12,1920,FEMALE,Residual,Oklahoma
+5,1986,MALE,Black alone,Oklahoma
+10,1976,FEMALE,White alone,Oklahoma
+11,1944,FEMALE,White alone,Kansas
+5,1952,MALE,White alone,Kansas
+3,1941,MALE,White alone,Oklahoma
+7,1955,MALE,White alone,Oklahoma
+6,1976,FEMALE,Black alone,Minnesota
+9,1980,FEMALE,Asian alone,North Carolina
+11,1964,FEMALE,White alone,Tennessee
+12,1986,MALE,White alone,North Carolina
+7,1939,MALE,White alone,North Carolina
+11,1963,FEMALE,Black alone,North Carolina
+5,1935,MALE,Black alone,North Carolina
+10,1963,MALE,White alone,Illinois
+9,1920,FEMALE,Black alone,North Carolina
+3,1971,FEMALE,White alone,Minnesota
+7,1980,FEMALE,White alone,Minnesota
+5,1989,MALE,White alone,Minnesota
+5,1962,FEMALE,White alone,Tennessee
+5,1948,MALE,White alone,North Carolina
+12,1958,MALE,White alone,Illinois
+6,1975,FEMALE,Asian alone,Illinois
+4,1932,FEMALE,White alone,Illinois
+10,1984,FEMALE,White alone,Illinois
+2,1989,MALE,White alone,West Virginia
+12,1934,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,North Carolina
+8,1923,FEMALE,White alone,Florida
+1,1970,FEMALE,White alone,Minnesota
+7,1940,MALE,White alone,North Carolina
+11,1965,FEMALE,Residual,Minnesota
+7,1934,FEMALE,White alone,North Carolina
+7,1982,MALE,White alone,Minnesota
+9,1975,MALE,White alone,North Carolina
+11,1930,FEMALE,White alone,Illinois
+1,1936,MALE,White alone,Minnesota
+10,1948,FEMALE,White alone,Montana
+11,1982,FEMALE,Residual,Oklahoma
+3,1920,MALE,White alone,Oklahoma
+6,1973,FEMALE,White alone,Texas
+7,1952,FEMALE,White alone,Kansas
+2,1950,MALE,White alone,Kansas
+12,1944,MALE,White alone,Montana
+5,1935,FEMALE,White alone,Kansas
+9,1971,FEMALE,Residual,Oklahoma
+6,1950,MALE,White alone,Wisconsin
+12,1980,FEMALE,White alone,Wisconsin
+7,1935,MALE,White alone,Wisconsin
+1,1985,MALE,White alone,Wisconsin
+9,1970,MALE,Asian alone,Wisconsin
+2,1957,FEMALE,White alone,Wisconsin
+3,1989,MALE,Black alone,Arkansas
+3,1986,MALE,Residual,Hawaii
+5,1931,FEMALE,White alone,Wisconsin
+6,1972,FEMALE,White alone,Massachusetts
+8,1985,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,Massachusetts
+8,1981,FEMALE,White alone,Massachusetts
+8,1944,FEMALE,Black alone,South Carolina
+12,1948,MALE,White alone,Massachusetts
+2,1920,FEMALE,White alone,Massachusetts
+5,1966,FEMALE,White alone,New Mexico
+3,1934,FEMALE,Black alone,South Carolina
+1,1977,MALE,White alone,New Hampshire
+6,1946,FEMALE,White alone,South Carolina
+3,1921,MALE,White alone,Florida
+9,1949,MALE,Black alone,South Carolina
+8,1968,MALE,White alone,Massachusetts
+3,1965,MALE,White alone,South Carolina
+8,1939,MALE,White alone,New Mexico
+4,1956,FEMALE,White alone,Massachusetts
+12,1978,FEMALE,White alone,Massachusetts
+10,1974,FEMALE,Black alone,South Carolina
+2,1944,FEMALE,White alone,Hawaii
+11,1920,FEMALE,White alone,South Carolina
+12,1946,MALE,White alone,Massachusetts
+11,1961,FEMALE,Residual,South Carolina
+8,1947,FEMALE,White alone,Massachusetts
+7,1987,FEMALE,White alone,Massachusetts
+9,1960,MALE,Black alone,Wisconsin
+9,1967,FEMALE,Black alone,South Carolina
+10,1931,MALE,White alone,Wisconsin
+9,1973,FEMALE,Black alone,South Carolina
+2,1949,MALE,White alone,Texas
+7,1935,MALE,Residual,Texas
+10,1954,FEMALE,Black alone,Michigan
+6,1955,FEMALE,White alone,Texas
+8,1984,FEMALE,Asian alone,Texas
+3,1961,MALE,White alone,Texas
+1,1975,MALE,White alone,Texas
+2,1965,MALE,Black alone,Texas
+11,1971,FEMALE,White alone,Texas
+6,1979,FEMALE,White alone,Texas
+6,1969,FEMALE,Residual,Mississippi
+1,1980,FEMALE,Residual,Texas
+7,1964,MALE,White alone,Texas
+3,1974,MALE,Black alone,Mississippi
+6,1960,FEMALE,White alone,Indiana
+9,1967,FEMALE,White alone,Colorado
+12,1946,MALE,Black alone,Indiana
+6,1960,MALE,White alone,Colorado
+3,1972,FEMALE,White alone,Colorado
+8,1952,FEMALE,White alone,Colorado
+1,1924,MALE,White alone,Indiana
+10,1920,MALE,White alone,Colorado
+5,1954,MALE,White alone,Colorado
+4,1920,FEMALE,White alone,Mississippi
+9,1931,FEMALE,White alone,Arizona
+6,1951,MALE,White alone,West Virginia
+8,1962,FEMALE,Black alone,Maryland
+8,1961,FEMALE,Black alone,Maryland
+8,1973,MALE,White alone,Arizona
+9,1920,FEMALE,White alone,Arizona
+8,1967,FEMALE,Black alone,Maryland
+10,1941,MALE,White alone,Maryland
+7,1990,MALE,White alone,New Jersey
+2,1989,FEMALE,White alone,New Jersey
+9,1928,FEMALE,White alone,New Jersey
+12,1926,FEMALE,White alone,Maryland
+6,1942,MALE,White alone,North Carolina
+12,1987,MALE,White alone,New Jersey
+8,1978,FEMALE,Asian alone,New Jersey
+1,1978,FEMALE,White alone,New Jersey
+3,1988,FEMALE,White alone,Maryland
+10,1953,FEMALE,White alone,Arizona
+6,1950,FEMALE,White alone,Arizona
+1,1951,FEMALE,Black alone,Kentucky
+3,1971,FEMALE,White alone,Virginia
+1,1958,MALE,White alone,Kentucky
+9,1947,FEMALE,White alone,Kentucky
+12,1986,FEMALE,White alone,Pennsylvania
+8,1947,MALE,White alone,Kentucky
+12,1982,MALE,White alone,Virginia
+11,1980,MALE,Residual,Kentucky
+12,1968,FEMALE,White alone,Virginia
+7,1944,FEMALE,White alone,Kentucky
+5,1953,MALE,White alone,Kentucky
+6,1980,FEMALE,White alone,Virginia
+11,1950,MALE,White alone,Kentucky
+5,1957,MALE,White alone,Virginia
+10,1953,MALE,White alone,Virginia
+9,1924,FEMALE,White alone,Oregon
+8,1957,MALE,White alone,Oregon
+1,1967,FEMALE,Black alone,Virginia
+12,1954,MALE,White alone,Virginia
+4,1949,FEMALE,White alone,Virginia
+3,1922,FEMALE,White alone,Virginia
+2,1934,MALE,White alone,Nebraska
+5,1967,FEMALE,White alone,Texas
+12,1968,MALE,White alone,Texas
+12,1985,MALE,White alone,Texas
+8,1960,FEMALE,White alone,Texas
+8,1960,MALE,White alone,Texas
+10,1987,FEMALE,White alone,Florida
+3,1963,FEMALE,White alone,Texas
+5,1926,MALE,White alone,Texas
+12,1961,FEMALE,Black alone,Mississippi
+1,1965,FEMALE,White alone,Texas
+4,1990,FEMALE,Black alone,Texas
+8,1948,FEMALE,White alone,Indiana
+12,1987,FEMALE,White alone,Indiana
+1,1952,FEMALE,Black alone,Indiana
+4,1985,FEMALE,Residual,Indiana
+6,1987,FEMALE,White alone,Texas
+12,1939,FEMALE,White alone,Indiana
+9,1974,FEMALE,White alone,Indiana
+7,1950,FEMALE,White alone,Texas
+7,1982,FEMALE,White alone,Indiana
+9,1966,FEMALE,White alone,Indiana
+1,1978,MALE,White alone,Colorado
+3,1962,FEMALE,White alone,Texas
+6,1966,FEMALE,Residual,Indiana
+4,1981,MALE,White alone,Indiana
+11,1953,FEMALE,White alone,Indiana
+3,1962,FEMALE,White alone,Indiana
+4,1986,FEMALE,White alone,Indiana
+9,1943,FEMALE,White alone,Indiana
+4,1970,MALE,White alone,Colorado
+8,1967,FEMALE,White alone,Louisiana
+11,1959,FEMALE,White alone,California
+2,1940,MALE,White alone,Alabama
+12,1957,FEMALE,White alone,California
+11,1961,MALE,Asian alone,California
+6,1957,MALE,White alone,California
+7,1965,FEMALE,White alone,California
+4,1956,MALE,White alone,Michigan
+2,1964,MALE,White alone,Michigan
+2,1929,FEMALE,White alone,Michigan
+7,1979,MALE,White alone,California
+11,1988,FEMALE,White alone,California
+11,1949,FEMALE,White alone,California
+2,1957,MALE,Asian alone,Michigan
+2,1947,MALE,White alone,California
+12,1987,FEMALE,Black alone,Michigan
+10,1924,MALE,White alone,Idaho
+6,1926,FEMALE,White alone,California
+11,1954,FEMALE,White alone,Michigan
+8,1948,FEMALE,White alone,New York
+6,1944,FEMALE,White alone,New York
+1,1988,MALE,Residual,California
+3,1953,MALE,White alone,New York
+2,1947,FEMALE,White alone,Michigan
+11,1961,FEMALE,White alone,California
+12,1987,FEMALE,White alone,New York
+10,1990,MALE,White alone,California
+7,1977,MALE,Asian alone,California
+5,1990,MALE,White alone,New York
+5,1971,MALE,White alone,New York
+6,1932,MALE,White alone,Florida
+7,1958,FEMALE,Black alone,Florida
+9,1931,MALE,White alone,Florida
+5,1979,FEMALE,White alone,Louisiana
+3,1950,FEMALE,Residual,Pennsylvania
+9,1972,FEMALE,Black alone,Louisiana
+3,1968,MALE,White alone,Florida
+8,1983,FEMALE,White alone,Florida
+8,1966,MALE,White alone,Florida
+12,1941,MALE,White alone,Pennsylvania
+4,1961,FEMALE,White alone,Florida
+4,1987,FEMALE,Black alone,Florida
+11,1976,FEMALE,White alone,Florida
+12,1952,FEMALE,White alone,Florida
+8,1939,MALE,White alone,Nevada
+8,1968,MALE,White alone,Pennsylvania
+12,1941,MALE,White alone,Pennsylvania
+3,1957,FEMALE,White alone,Florida
+6,1962,MALE,White alone,Florida
+12,1975,MALE,White alone,Pennsylvania
+12,1954,FEMALE,White alone,Louisiana
+2,1973,MALE,Black alone,Florida
+8,1976,MALE,White alone,Pennsylvania
+4,1987,MALE,White alone,Pennsylvania
+3,1930,MALE,White alone,Missouri
+5,1961,FEMALE,White alone,Ohio
+4,1959,FEMALE,White alone,Iowa
+9,1969,FEMALE,White alone,Iowa
+12,1963,MALE,White alone,Missouri
+7,1936,MALE,White alone,Ohio
+3,1972,MALE,White alone,Missouri
+12,1953,MALE,White alone,Missouri
+3,1926,MALE,White alone,Ohio
+4,1987,MALE,White alone,Utah
+1,1926,MALE,White alone,Ohio
+8,1955,MALE,White alone,Connecticut
+5,1927,MALE,White alone,Ohio
+11,1946,FEMALE,White alone,Ohio
+7,1955,FEMALE,White alone,Ohio
+2,1970,FEMALE,White alone,Ohio
+1,1988,MALE,Black alone,Connecticut
+9,1920,FEMALE,White alone,Ohio
+3,1989,FEMALE,White alone,Missouri
+1,1964,FEMALE,Black alone,Illinois
+2,1962,FEMALE,White alone,Illinois
+7,1920,MALE,White alone,Illinois
+4,1973,FEMALE,White alone,Minnesota
+8,1955,FEMALE,White alone,North Carolina
+9,1941,MALE,White alone,Tennessee
+10,1953,FEMALE,White alone,Tennessee
+9,1959,MALE,White alone,Tennessee
+3,1983,FEMALE,White alone,Minnesota
+1,1989,FEMALE,White alone,North Carolina
+10,1970,FEMALE,White alone,North Carolina
+2,1950,FEMALE,White alone,Illinois
+3,1990,MALE,White alone,Tennessee
+12,1965,MALE,White alone,Tennessee
+5,1988,MALE,White alone,Minnesota
+4,1971,MALE,White alone,North Carolina
+10,1950,MALE,White alone,Minnesota
+3,1974,MALE,White alone,Minnesota
+5,1931,MALE,White alone,Minnesota
+6,1951,FEMALE,White alone,Tennessee
+6,1920,FEMALE,White alone,North Carolina
+4,1972,FEMALE,White alone,Minnesota
+6,1984,FEMALE,White alone,Ohio
+8,1953,FEMALE,White alone,Missouri
+2,1949,MALE,Residual,Missouri
+1,1947,MALE,White alone,Iowa
+3,1933,FEMALE,Black alone,Ohio
+9,1948,FEMALE,White alone,Ohio
+9,1935,FEMALE,Black alone,Missouri
+1,1954,MALE,White alone,Ohio
+12,1984,FEMALE,White alone,Ohio
+9,1964,FEMALE,White alone,Utah
+2,1925,FEMALE,White alone,Ohio
+7,1920,FEMALE,White alone,Connecticut
+11,1967,FEMALE,Black alone,Connecticut
+12,1989,MALE,White alone,Ohio
+8,1970,FEMALE,White alone,Iowa
+11,1946,FEMALE,White alone,Iowa
+9,1987,FEMALE,White alone,Ohio
+11,1924,FEMALE,White alone,Arkansas
+5,1961,FEMALE,White alone,Arkansas
+2,1959,MALE,White alone,Arkansas
+11,1961,MALE,White alone,New Mexico
+8,1942,FEMALE,Black alone,South Carolina
+10,1946,FEMALE,White alone,Massachusetts
+2,1956,MALE,White alone,Massachusetts
+7,1944,FEMALE,White alone,Massachusetts
+8,1970,MALE,White alone,Wisconsin
+12,1932,FEMALE,White alone,Massachusetts
+10,1969,MALE,White alone,Massachusetts
+1,1990,FEMALE,White alone,Massachusetts
+1,1954,FEMALE,White alone,South Carolina
+12,1953,FEMALE,White alone,New Mexico
+2,1950,MALE,White alone,South Carolina
+6,1985,MALE,Black alone,Wisconsin
+4,1948,FEMALE,White alone,Massachusetts
+9,1943,MALE,White alone,South Carolina
+6,1926,FEMALE,White alone,Massachusetts
+11,1959,MALE,White alone,Wisconsin
+2,1978,FEMALE,Asian alone,South Carolina
+8,1977,FEMALE,White alone,Florida
+10,1985,FEMALE,White alone,Florida
+1,1937,FEMALE,White alone,Florida
+7,1962,MALE,White alone,Florida
+7,1951,FEMALE,White alone,Pennsylvania
+1,1948,MALE,White alone,Florida
+11,1958,MALE,White alone,Pennsylvania
+2,1959,FEMALE,White alone,Florida
+5,1936,MALE,Black alone,Florida
+2,1979,FEMALE,White alone,Florida
+12,1921,FEMALE,White alone,Pennsylvania
+2,1932,MALE,White alone,Pennsylvania
+10,1946,FEMALE,Black alone,Florida
+8,1942,MALE,Black alone,Louisiana
+1,1984,FEMALE,White alone,Florida
+3,1965,MALE,White alone,Florida
+4,1971,FEMALE,White alone,Florida
+6,1955,FEMALE,White alone,Florida
+9,1974,FEMALE,White alone,Arizona
+11,1941,MALE,White alone,Arizona
+6,1981,FEMALE,Black alone,Virginia
+4,1966,FEMALE,White alone,Maryland
+11,1983,FEMALE,White alone,West Virginia
+1,1939,FEMALE,White alone,Arizona
+10,1937,MALE,White alone,Maryland
+2,1930,FEMALE,White alone,New Jersey
+10,1982,FEMALE,Residual,New Jersey
+2,1928,MALE,White alone,New Jersey
+2,1962,MALE,White alone,New Jersey
+6,1958,FEMALE,Black alone,Rhode Island
+4,1949,MALE,White alone,Arizona
+1,1953,FEMALE,Black alone,New Jersey
+8,1963,FEMALE,Black alone,New Jersey
+9,1977,FEMALE,White alone,New Jersey
+4,1939,MALE,White alone,New Jersey
+8,1932,MALE,White alone,Pennsylvania
+11,1956,FEMALE,White alone,Maryland
+11,1970,FEMALE,Black alone,Michigan
+3,1932,FEMALE,White alone,New York
+10,1952,FEMALE,Residual,California
+1,1953,MALE,White alone,California
+1,1977,FEMALE,White alone,California
+6,1962,FEMALE,White alone,California
+11,1988,MALE,White alone,New York
+12,1948,MALE,White alone,California
+7,1955,MALE,White alone,Michigan
+1,1938,FEMALE,White alone,New York
+4,1964,FEMALE,Black alone,Michigan
+6,1947,FEMALE,Asian alone,California
+12,1962,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,Michigan
+2,1945,MALE,Asian alone,California
+11,1936,FEMALE,White alone,Michigan
+9,1952,FEMALE,White alone,California
+5,1987,MALE,Asian alone,Hawaii
+10,1939,FEMALE,White alone,California
+11,1927,FEMALE,White alone,Idaho
+11,1938,FEMALE,White alone,Michigan
+3,1953,FEMALE,Black alone,New York
+11,1949,FEMALE,White alone,Michigan
+1,1956,MALE,White alone,New York
+6,1987,MALE,White alone,Idaho
+7,1983,MALE,White alone,California
+5,1960,FEMALE,Residual,California
+9,1956,MALE,White alone,California
+12,1961,FEMALE,White alone,California
+2,1935,FEMALE,White alone,California
+6,1961,FEMALE,White alone,California
+11,1924,FEMALE,White alone,California
+4,1934,FEMALE,White alone,California
+10,1943,FEMALE,Residual,Idaho
+9,1989,MALE,White alone,Idaho
+8,1926,FEMALE,White alone,Georgia
+1,1990,MALE,White alone,Georgia
+4,1974,FEMALE,White alone,Georgia
+12,1973,MALE,White alone,Georgia
+6,1955,FEMALE,White alone,Georgia
+11,1957,FEMALE,Asian alone,Georgia
+8,1986,MALE,Residual,Georgia
+11,1987,MALE,White alone,Maine
+7,1987,FEMALE,White alone,Georgia
+11,1984,FEMALE,Black alone,Georgia
+10,1969,MALE,White alone,Washington
+12,1935,MALE,White alone,Washington
+11,1969,MALE,White alone,Georgia
+11,1987,MALE,White alone,Georgia
+6,1963,MALE,Black alone,Washington
+12,1948,FEMALE,Black alone,Georgia
+5,1971,MALE,White alone,Georgia
+3,1986,MALE,Black alone,Georgia
+10,1954,MALE,White alone,West Virginia
+10,1942,FEMALE,White alone,New Jersey
+9,1982,FEMALE,White alone,Arizona
+2,1929,MALE,White alone,New Jersey
+11,1944,MALE,White alone,Rhode Island
+8,1924,FEMALE,Black alone,New Jersey
+5,1960,FEMALE,White alone,Rhode Island
+11,1979,FEMALE,Black alone,New Jersey
+4,1959,MALE,White alone,Rhode Island
+4,1968,FEMALE,White alone,Arizona
+3,1983,FEMALE,White alone,New Jersey
+10,1984,FEMALE,White alone,New Jersey
+6,1937,FEMALE,White alone,New Jersey
+7,1933,MALE,White alone,Rhode Island
+9,1985,FEMALE,White alone,Missouri
+1,1958,MALE,White alone,Iowa
+3,1990,MALE,White alone,Ohio
+9,1955,FEMALE,White alone,Missouri
+3,1938,MALE,White alone,Ohio
+6,1980,FEMALE,White alone,Iowa
+9,1956,FEMALE,White alone,Ohio
+9,1931,FEMALE,Black alone,Missouri
+11,1953,MALE,White alone,Ohio
+12,1961,FEMALE,White alone,Missouri
+4,1923,FEMALE,White alone,Missouri
+2,1961,FEMALE,White alone,Ohio
+8,1963,MALE,White alone,Ohio
+11,1980,FEMALE,White alone,Ohio
+2,1955,MALE,White alone,Connecticut
+12,1963,MALE,White alone,Ohio
+8,1948,MALE,White alone,Ohio
+10,1968,MALE,White alone,Virginia
+10,1952,FEMALE,White alone,Virginia
+1,1948,MALE,White alone,Nebraska
+10,1982,FEMALE,Black alone,Virginia
+12,1958,MALE,Black alone,Virginia
+5,1976,MALE,Black alone,Alabama
+7,1970,MALE,White alone,Alabama
+5,1959,MALE,White alone,Kentucky
+10,1975,MALE,White alone,Alabama
+7,1982,FEMALE,White alone,Kentucky
+11,1946,FEMALE,White alone,Kentucky
+2,1961,MALE,White alone,Virginia
+12,1947,FEMALE,White alone,Kentucky
+2,1985,MALE,White alone,Kentucky
+11,1964,MALE,Residual,Oregon
+6,1987,MALE,Residual,Oregon
+4,1940,MALE,Black alone,DC
+2,1943,FEMALE,White alone,Virginia
+7,1929,MALE,White alone,Alabama
+4,1961,FEMALE,White alone,Virginia
+8,1960,MALE,White alone,Kentucky
+5,1943,FEMALE,White alone,Oregon
+12,1962,FEMALE,Black alone,Alabama
+8,1960,FEMALE,White alone,Oregon
+7,1976,FEMALE,White alone,Nebraska
+5,1929,FEMALE,White alone,Florida
+5,1946,MALE,White alone,Florida
+6,1937,FEMALE,White alone,Pennsylvania
+5,1973,FEMALE,White alone,Pennsylvania
+1,1990,MALE,White alone,Pennsylvania
+9,1968,FEMALE,White alone,Florida
+2,1990,MALE,Residual,Alaska
+11,1982,FEMALE,Black alone,Louisiana
+12,1964,MALE,Black alone,Louisiana
+12,1983,FEMALE,White alone,Florida
+11,1966,FEMALE,White alone,Pennsylvania
+11,1974,FEMALE,Black alone,Florida
+6,1926,FEMALE,White alone,Florida
+4,1965,FEMALE,Black alone,Pennsylvania
+3,1970,FEMALE,White alone,Florida
+11,1959,MALE,White alone,Minnesota
+6,1949,FEMALE,White alone,Tennessee
+7,1960,FEMALE,Black alone,Illinois
+2,1942,MALE,White alone,North Carolina
+11,1955,FEMALE,Black alone,Minnesota
+4,1951,FEMALE,White alone,North Carolina
+11,1987,MALE,Black alone,Tennessee
+12,1973,FEMALE,White alone,North Carolina
+12,1965,FEMALE,White alone,Minnesota
+4,1941,FEMALE,White alone,Minnesota
+5,1929,MALE,White alone,Tennessee
+3,1974,FEMALE,White alone,Minnesota
+3,1979,MALE,Black alone,Illinois
+6,1977,FEMALE,White alone,Illinois
+4,1974,FEMALE,White alone,Illinois
+11,1967,MALE,Asian alone,Illinois
+9,1927,FEMALE,White alone,Tennessee
+10,1958,MALE,Black alone,North Carolina
+3,1963,FEMALE,White alone,Minnesota
+11,1954,FEMALE,White alone,Minnesota
+6,1926,FEMALE,White alone,Minnesota
+9,1935,FEMALE,White alone,North Carolina
+9,1946,FEMALE,Black alone,North Carolina
+7,1986,MALE,White alone,Illinois
+9,1977,MALE,White alone,Minnesota
+6,1972,FEMALE,White alone,Minnesota
+7,1977,FEMALE,White alone,Tennessee
+4,1989,FEMALE,White alone,Tennessee
+1,1957,MALE,Black alone,Tennessee
+6,1976,MALE,White alone,North Carolina
+10,1984,FEMALE,White alone,Minnesota
+7,1987,MALE,White alone,Minnesota
+1,1930,FEMALE,White alone,Kansas
+10,1970,MALE,White alone,Oklahoma
+2,1984,MALE,White alone,Kansas
+9,1962,FEMALE,White alone,Kansas
+9,1967,FEMALE,Residual,Vermont
+8,1948,FEMALE,White alone,Oklahoma
+2,1930,FEMALE,White alone,Kansas
+1,1952,FEMALE,White alone,Kansas
+9,1944,MALE,Black alone,Delaware
+4,1974,MALE,White alone,Kansas
+10,1983,MALE,White alone,Montana
+4,1963,MALE,Black alone,Alabama
+9,1984,FEMALE,White alone,Kentucky
+8,1928,FEMALE,White alone,Virginia
+4,1946,FEMALE,Black alone,Virginia
+2,1973,MALE,White alone,Virginia
+3,1981,FEMALE,White alone,Kentucky
+4,1988,FEMALE,White alone,Kentucky
+10,1981,MALE,White alone,Alabama
+4,1935,MALE,White alone,Kentucky
+8,1963,FEMALE,White alone,Virginia
+1,1967,MALE,Black alone,Oregon
+11,1931,MALE,Black alone,Virginia
+3,1977,FEMALE,White alone,Virginia
+6,1958,FEMALE,White alone,Oregon
+2,1984,FEMALE,Asian alone,Virginia
+3,1961,MALE,White alone,Oregon
+12,1959,FEMALE,Residual,Oregon
+2,1968,FEMALE,White alone,Oregon
+12,1954,FEMALE,White alone,Virginia
+11,1954,FEMALE,White alone,Oregon
+6,1952,MALE,White alone,Texas
+1,1933,FEMALE,Black alone,Texas
+4,1964,FEMALE,White alone,Texas
+3,1969,FEMALE,White alone,Texas
+8,1972,MALE,White alone,Texas
+5,1973,MALE,White alone,Texas
+4,1961,MALE,White alone,Indiana
+5,1955,FEMALE,Black alone,Alabama
+10,1975,FEMALE,Black alone,Indiana
+10,1924,FEMALE,White alone,Texas
+7,1960,MALE,White alone,Texas
+2,1970,MALE,White alone,Texas
+3,1965,FEMALE,White alone,Texas
+6,1964,FEMALE,White alone,Texas
+1,1947,MALE,White alone,Texas
+3,1940,FEMALE,White alone,Texas
+1,1943,FEMALE,White alone,Indiana
+6,1980,FEMALE,Black alone,Indiana
+5,1990,MALE,White alone,Indiana
+11,1956,MALE,White alone,Indiana
+5,1943,FEMALE,Black alone,Mississippi
+9,1960,FEMALE,Black alone,Colorado
+9,1974,FEMALE,White alone,Colorado
+9,1955,MALE,White alone,Indiana
+10,1951,MALE,White alone,Texas
+10,1945,MALE,White alone,Colorado
+7,1960,FEMALE,White alone,Texas
+8,1962,MALE,White alone,Colorado
+2,1953,FEMALE,White alone,New Hampshire
+11,1963,MALE,Residual,New Hampshire
+6,1977,FEMALE,White alone,Georgia
+6,1990,FEMALE,Residual,Washington
+3,1989,MALE,White alone,Washington
+9,1960,MALE,White alone,Georgia
+4,1952,MALE,White alone,Washington
+3,1964,MALE,White alone,Washington
+2,1935,FEMALE,White alone,Washington
+12,1951,FEMALE,White alone,Washington
+10,1951,FEMALE,White alone,Washington
+1,1977,FEMALE,White alone,Washington
+9,1941,FEMALE,White alone,Georgia
+9,1962,FEMALE,White alone,Washington
+5,1944,FEMALE,White alone,California
+3,1943,FEMALE,White alone,California
+12,1949,FEMALE,White alone,California
+4,1957,MALE,Asian alone,California
+11,1989,MALE,Asian alone,California
+12,1980,MALE,Asian alone,California
+9,1967,MALE,White alone,Michigan
+5,1953,FEMALE,White alone,California
+8,1963,FEMALE,Black alone,Michigan
+3,1985,FEMALE,Black alone,New York
+7,1965,FEMALE,White alone,New York
+6,1985,MALE,Black alone,California
+9,1963,FEMALE,White alone,California
+4,1988,MALE,White alone,California
+12,1938,MALE,White alone,California
+2,1933,FEMALE,White alone,New York
+7,1951,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,New York
+10,1953,MALE,White alone,Michigan
+5,1922,MALE,White alone,Wyoming
+1,1947,MALE,White alone,California
+3,1928,MALE,White alone,California
+1,1965,FEMALE,White alone,California
+7,1962,FEMALE,White alone,New York
+7,1959,FEMALE,White alone,New York
+9,1920,FEMALE,White alone,New York
+6,1987,FEMALE,White alone,California
+3,1982,MALE,White alone,New York
+11,1934,MALE,Black alone,Michigan
+12,1930,MALE,White alone,Washington
+5,1924,FEMALE,White alone,Washington
+3,1950,FEMALE,White alone,Georgia
+7,1969,FEMALE,White alone,Georgia
+9,1986,MALE,Black alone,Georgia
+7,1943,MALE,White alone,Georgia
+12,1920,FEMALE,White alone,Maine
+3,1978,FEMALE,White alone,Washington
+12,1935,FEMALE,White alone,Washington
+7,1926,MALE,White alone,Washington
+7,1955,FEMALE,White alone,Georgia
+1,1975,MALE,White alone,Washington
+5,1961,FEMALE,White alone,Washington
+4,1960,FEMALE,White alone,Georgia
+12,1921,FEMALE,White alone,Washington
+12,1982,FEMALE,White alone,Washington
+8,1945,MALE,White alone,Georgia
+7,1977,MALE,White alone,Washington
+6,1957,MALE,White alone,Arizona
+6,1958,MALE,White alone,Arizona
+12,1940,MALE,White alone,Rhode Island
+8,1984,FEMALE,Residual,Maryland
+4,1957,MALE,White alone,New Jersey
+6,1986,FEMALE,White alone,Arizona
+6,1954,MALE,White alone,Arizona
+9,1980,MALE,White alone,Arizona
+2,1934,FEMALE,White alone,Maryland
+6,1949,FEMALE,Black alone,North Carolina
+11,1989,FEMALE,White alone,Maryland
+5,1935,FEMALE,White alone,New Jersey
+9,1924,FEMALE,White alone,Arizona
+12,1982,FEMALE,White alone,Arizona
+3,1942,MALE,White alone,Maryland
+10,1941,FEMALE,White alone,Arizona
+8,1951,FEMALE,White alone,Maryland
+3,1988,FEMALE,White alone,New Jersey
+7,1957,FEMALE,White alone,Arizona
+8,1979,MALE,White alone,Maryland
+5,1942,FEMALE,White alone,West Virginia
+4,1920,MALE,White alone,Ohio
+10,1939,MALE,White alone,Missouri
+10,1929,MALE,White alone,Missouri
+5,1940,FEMALE,White alone,Missouri
+10,1972,FEMALE,White alone,Iowa
+3,1989,MALE,White alone,Iowa
+10,1959,MALE,White alone,Ohio
+5,1954,FEMALE,White alone,Ohio
+10,1959,MALE,White alone,Utah
+9,1967,MALE,White alone,Ohio
+9,1988,FEMALE,White alone,Ohio
+9,1936,FEMALE,Black alone,Ohio
+2,1984,MALE,White alone,Connecticut
+2,1937,MALE,White alone,Connecticut
+12,1966,FEMALE,White alone,Iowa
+5,1960,FEMALE,White alone,Iowa
+2,1928,FEMALE,White alone,Connecticut
+3,1936,MALE,White alone,Missouri
+12,1989,MALE,White alone,Texas
+10,1970,MALE,Asian alone,North Carolina
+4,1968,FEMALE,White alone,Colorado
+12,1948,MALE,White alone,Texas
+1,1974,FEMALE,White alone,Texas
+11,1978,FEMALE,Asian alone,Texas
+3,1975,FEMALE,White alone,Texas
+2,1961,MALE,White alone,Colorado
+9,1926,MALE,White alone,Colorado
+12,1945,MALE,Black alone,Indiana
+7,1970,FEMALE,White alone,Indiana
+9,1984,MALE,White alone,Colorado
+10,1973,MALE,White alone,Colorado
+4,1967,MALE,White alone,Indiana
+3,1967,FEMALE,White alone,Indiana
+11,1980,MALE,Residual,Kansas
+8,1926,MALE,White alone,Mississippi
+9,1984,FEMALE,White alone,Indiana
+10,1971,MALE,White alone,Colorado
+10,1985,FEMALE,White alone,Colorado
+2,1977,FEMALE,White alone,Colorado
+2,1952,FEMALE,White alone,Colorado
+12,1987,FEMALE,White alone,Vermont
+6,1955,FEMALE,White alone,Oklahoma
+7,1970,FEMALE,Residual,Oklahoma
+2,1949,FEMALE,White alone,Oklahoma
+3,1978,FEMALE,White alone,Oklahoma
+12,1963,FEMALE,White alone,Kansas
+11,1937,FEMALE,White alone,Kentucky
+12,1955,MALE,White alone,Virginia
+3,1974,MALE,Black alone,Virginia
+4,1936,FEMALE,Black alone,Virginia
+9,1989,MALE,White alone,Nebraska
+10,1958,MALE,Black alone,Virginia
+9,1989,FEMALE,White alone,Kentucky
+9,1972,FEMALE,White alone,Virginia
+2,1985,FEMALE,White alone,Kentucky
+6,1958,MALE,White alone,Alabama
+6,1988,FEMALE,White alone,Alabama
+12,1926,FEMALE,White alone,Virginia
+2,1954,FEMALE,Black alone,Virginia
+5,1970,FEMALE,White alone,Kentucky
+9,1972,FEMALE,Asian alone,Oregon
+2,1952,FEMALE,White alone,Virginia
+8,1957,FEMALE,White alone,Virginia
+4,1944,FEMALE,White alone,Oregon
+5,1970,FEMALE,White alone,Virginia
+11,1957,MALE,White alone,Virginia
+6,1956,MALE,White alone,Oregon
+7,1982,MALE,White alone,Florida
+7,1920,FEMALE,White alone,Alabama
+1,1981,MALE,White alone,California
+12,1972,MALE,White alone,California
+9,1963,FEMALE,White alone,California
+3,1957,MALE,White alone,New York
+1,1976,FEMALE,White alone,California
+8,1959,MALE,White alone,New York
+6,1942,FEMALE,White alone,Hawaii
+4,1921,MALE,White alone,New York
+7,1988,MALE,Residual,New York
+6,1957,FEMALE,Asian alone,California
+4,1944,FEMALE,Residual,California
+2,1970,FEMALE,Residual,California
+1,1985,FEMALE,White alone,California
+4,1984,MALE,White alone,Michigan
+1,1953,FEMALE,White alone,California
+8,1980,MALE,White alone,California
+7,1956,FEMALE,White alone,Idaho
+9,1972,MALE,Asian alone,New York
+9,1985,MALE,White alone,New York
+1,1962,MALE,Residual,New York
+12,1955,FEMALE,White alone,New York
+1,1985,MALE,White alone,New York
+9,1962,MALE,Black alone,California
+11,1968,FEMALE,White alone,Georgia
+10,1926,FEMALE,Black alone,California
+3,1942,MALE,White alone,California
+2,1980,FEMALE,White alone,California
+1,1955,MALE,White alone,New York
+3,1955,FEMALE,White alone,Michigan
+3,1939,MALE,White alone,Michigan
+12,1957,MALE,White alone,California
+9,1948,MALE,White alone,New York
+2,1957,MALE,White alone,New York
+1,1962,FEMALE,White alone,California
+8,1920,FEMALE,White alone,New York
+9,1947,FEMALE,White alone,New York
+3,1978,MALE,Black alone,New York
+1,1920,FEMALE,Residual,Arkansas
+4,1935,FEMALE,White alone,Arkansas
+9,1982,FEMALE,Residual,Arkansas
+12,1965,FEMALE,White alone,Florida
+3,1957,MALE,White alone,Arkansas
+11,1959,MALE,White alone,Wisconsin
+4,1953,MALE,White alone,Wisconsin
+4,1974,MALE,White alone,Wisconsin
+9,1989,FEMALE,White alone,New Mexico
+6,1963,FEMALE,White alone,Massachusetts
+5,1948,MALE,White alone,South Carolina
+10,1962,MALE,White alone,Massachusetts
+6,1933,FEMALE,White alone,Massachusetts
+12,1986,FEMALE,White alone,Wisconsin
+12,1989,MALE,White alone,South Carolina
+11,1965,MALE,White alone,Massachusetts
+11,1931,FEMALE,Residual,New Mexico
+6,1973,MALE,White alone,Massachusetts
+12,1978,MALE,White alone,South Carolina
+9,1972,FEMALE,Residual,Wisconsin
+1,1989,FEMALE,White alone,Wisconsin
+2,1979,MALE,White alone,Tennessee
+5,1982,FEMALE,White alone,Florida
+7,1966,FEMALE,White alone,Illinois
+6,1987,FEMALE,White alone,Illinois
+7,1982,MALE,White alone,Tennessee
+9,1989,MALE,White alone,Minnesota
+8,1987,MALE,White alone,North Carolina
+3,1952,FEMALE,White alone,Minnesota
+9,1946,MALE,White alone,Tennessee
+12,1962,MALE,Residual,North Carolina
+7,1979,FEMALE,White alone,Minnesota
+1,1936,MALE,White alone,Tennessee
+1,1941,FEMALE,White alone,Tennessee
+6,1961,FEMALE,White alone,Minnesota
+3,1924,MALE,White alone,Illinois
+12,1970,FEMALE,White alone,Illinois
+11,1968,FEMALE,White alone,Illinois
+11,1956,MALE,White alone,Illinois
+6,1987,FEMALE,Black alone,Minnesota
+10,1950,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,Illinois
+6,1951,MALE,White alone,Pennsylvania
+2,1932,MALE,White alone,Pennsylvania
+6,1942,MALE,White alone,Pennsylvania
+2,1990,MALE,White alone,Louisiana
+2,1953,MALE,White alone,Pennsylvania
+12,1967,MALE,White alone,Pennsylvania
+10,1965,MALE,White alone,Nevada
+1,1951,MALE,White alone,Louisiana
+4,1940,FEMALE,White alone,Florida
+7,1964,FEMALE,White alone,Pennsylvania
+6,1987,MALE,White alone,Florida
+5,1920,MALE,White alone,Florida
+9,1981,MALE,White alone,Nevada
+2,1989,FEMALE,Black alone,Georgia
+11,1949,FEMALE,White alone,Maine
+10,1964,MALE,Asian alone,Georgia
+12,1960,FEMALE,Black alone,Georgia
+6,1982,FEMALE,White alone,Washington
+12,1943,FEMALE,White alone,Washington
+9,1981,FEMALE,Black alone,Georgia
+5,1975,FEMALE,White alone,Washington
+7,1944,MALE,White alone,Washington
+12,1920,FEMALE,Residual,Oklahoma
+5,1986,MALE,Black alone,Oklahoma
+10,1976,FEMALE,White alone,Oklahoma
+11,1944,FEMALE,White alone,Kansas
+5,1952,MALE,White alone,Kansas
+3,1941,MALE,White alone,Oklahoma
+7,1955,MALE,White alone,Oklahoma
+6,1976,FEMALE,Black alone,Minnesota
+9,1980,FEMALE,Asian alone,North Carolina
+11,1964,FEMALE,White alone,Tennessee
+12,1986,MALE,White alone,North Carolina
+7,1939,MALE,White alone,North Carolina
+11,1963,FEMALE,Black alone,North Carolina
+5,1935,MALE,Black alone,North Carolina
+10,1963,MALE,White alone,Illinois
+9,1920,FEMALE,Black alone,North Carolina
+3,1971,FEMALE,White alone,Minnesota
+5,1989,MALE,White alone,Minnesota
+5,1962,FEMALE,White alone,Tennessee
+5,1948,MALE,White alone,North Carolina
+12,1958,MALE,White alone,Illinois
+6,1975,FEMALE,Asian alone,Illinois
+4,1932,FEMALE,White alone,Illinois
+10,1984,FEMALE,White alone,Illinois
+2,1989,MALE,White alone,West Virginia
+12,1934,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,North Carolina
+8,1923,FEMALE,White alone,Florida
+1,1970,FEMALE,White alone,Minnesota
+7,1940,MALE,White alone,North Carolina
+11,1965,FEMALE,Residual,Minnesota
+7,1934,FEMALE,White alone,North Carolina
+2,1983,MALE,White alone,Minnesota
+9,1975,MALE,White alone,North Carolina
+11,1930,FEMALE,White alone,Illinois
+9,1953,FEMALE,White alone,Illinois
+1,1936,MALE,White alone,Minnesota
+10,1948,FEMALE,White alone,Montana
+11,1982,FEMALE,Residual,Oklahoma
+3,1920,MALE,White alone,Oklahoma
+7,1984,MALE,White alone,Oklahoma
+6,1973,FEMALE,White alone,Texas
+7,1952,FEMALE,White alone,Kansas
+2,1950,MALE,White alone,Kansas
+12,1944,MALE,White alone,Montana
+5,1935,FEMALE,White alone,Kansas
+9,1971,FEMALE,Residual,Oklahoma
+6,1950,MALE,White alone,Wisconsin
+12,1980,FEMALE,White alone,Wisconsin
+7,1935,MALE,White alone,Wisconsin
+1,1985,MALE,White alone,Wisconsin
+9,1970,MALE,Asian alone,Wisconsin
+2,1957,FEMALE,White alone,Wisconsin
+3,1989,MALE,Black alone,Arkansas
+3,1986,MALE,Residual,Hawaii
+5,1931,FEMALE,White alone,Wisconsin
+6,1972,FEMALE,White alone,Massachusetts
+8,1985,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,Massachusetts
+8,1981,FEMALE,White alone,Massachusetts
+8,1944,FEMALE,Black alone,South Carolina
+12,1948,MALE,White alone,Massachusetts
+2,1920,FEMALE,White alone,Massachusetts
+5,1966,FEMALE,White alone,New Mexico
+11,1965,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,South Carolina
+6,1946,FEMALE,White alone,South Carolina
+8,1952,FEMALE,White alone,Wisconsin
+3,1921,MALE,White alone,Florida
+9,1949,MALE,Black alone,South Carolina
+8,1968,MALE,White alone,Massachusetts
+3,1965,MALE,White alone,South Carolina
+8,1939,MALE,White alone,New Mexico
+4,1956,FEMALE,White alone,Massachusetts
+10,1974,FEMALE,Black alone,South Carolina
+2,1944,FEMALE,White alone,Hawaii
+11,1920,FEMALE,White alone,South Carolina
+12,1946,MALE,White alone,Massachusetts
+11,1961,FEMALE,Residual,South Carolina
+8,1955,FEMALE,White alone,Massachusetts
+1,1990,MALE,Black alone,Massachusetts
+8,1947,FEMALE,White alone,Massachusetts
+7,1987,FEMALE,White alone,Massachusetts
+9,1960,MALE,Black alone,Wisconsin
+9,1967,FEMALE,Black alone,South Carolina
+10,1931,MALE,White alone,Wisconsin
+9,1973,FEMALE,Black alone,South Carolina
+7,1935,MALE,Residual,Texas
+10,1954,FEMALE,Black alone,Michigan
+6,1955,FEMALE,White alone,Texas
+3,1961,MALE,White alone,Texas
+2,1965,MALE,Black alone,Texas
+11,1971,FEMALE,White alone,Texas
+6,1979,FEMALE,White alone,Texas
+6,1969,FEMALE,Residual,Mississippi
+1,1980,FEMALE,Residual,Texas
+7,1964,MALE,White alone,Texas
+3,1974,MALE,Black alone,Mississippi
+6,1960,FEMALE,White alone,Indiana
+9,1967,FEMALE,White alone,Colorado
+12,1946,MALE,Black alone,Indiana
+6,1960,MALE,White alone,Colorado
+3,1972,FEMALE,White alone,Colorado
+8,1952,FEMALE,White alone,Colorado
+10,1920,MALE,White alone,Colorado
+7,1957,MALE,White alone,Indiana
+4,1920,FEMALE,White alone,Mississippi
+9,1931,FEMALE,White alone,Arizona
+6,1951,MALE,White alone,West Virginia
+8,1962,FEMALE,Black alone,Maryland
+11,1964,FEMALE,White alone,Arizona
+4,1982,FEMALE,White alone,Arizona
+3,1962,FEMALE,Black alone,Maryland
+8,1973,MALE,White alone,Arizona
+9,1920,FEMALE,White alone,Arizona
+8,1967,FEMALE,Black alone,Maryland
+10,1941,MALE,White alone,Maryland
+7,1990,MALE,White alone,New Jersey
+2,1989,FEMALE,White alone,New Jersey
+9,1928,FEMALE,White alone,New Jersey
+12,1926,FEMALE,White alone,Maryland
+6,1942,MALE,White alone,North Carolina
+12,1987,MALE,White alone,New Jersey
+8,1978,FEMALE,Asian alone,New Jersey
+1,1978,FEMALE,White alone,New Jersey
+3,1988,FEMALE,White alone,Maryland
+10,1953,FEMALE,White alone,Arizona
+6,1950,FEMALE,White alone,Arizona
+1,1951,FEMALE,Black alone,Kentucky
+3,1971,FEMALE,White alone,Virginia
+1,1958,MALE,White alone,Kentucky
+9,1947,FEMALE,White alone,Kentucky
+8,1947,MALE,White alone,Kentucky
+12,1982,MALE,White alone,Virginia
+11,1980,MALE,Residual,Kentucky
+12,1968,FEMALE,White alone,Virginia
+7,1944,FEMALE,White alone,Kentucky
+5,1953,MALE,White alone,Kentucky
+6,1977,MALE,White alone,Kentucky
+6,1980,FEMALE,White alone,Virginia
+11,1950,MALE,White alone,Kentucky
+5,1957,MALE,White alone,Virginia
+10,1953,MALE,White alone,Virginia
+8,1957,MALE,White alone,Oregon
+1,1967,FEMALE,Black alone,Virginia
+12,1954,MALE,White alone,Virginia
+4,1949,FEMALE,White alone,Virginia
+3,1922,FEMALE,White alone,Virginia
+4,1970,FEMALE,White alone,Oregon
+2,1934,MALE,White alone,Nebraska
+5,1967,FEMALE,White alone,Texas
+12,1968,MALE,White alone,Texas
+12,1985,MALE,White alone,Texas
+8,1949,MALE,White alone,Texas
+8,1960,FEMALE,White alone,Texas
+8,1960,MALE,White alone,Texas
+10,1987,FEMALE,White alone,Florida
+3,1963,FEMALE,White alone,Texas
+5,1926,MALE,White alone,Texas
+12,1951,FEMALE,White alone,Colorado
+9,1986,FEMALE,White alone,Mississippi
+1,1965,FEMALE,White alone,Texas
+11,1947,MALE,White alone,Colorado
+4,1990,FEMALE,Black alone,Texas
+8,1948,FEMALE,White alone,Indiana
+12,1987,FEMALE,White alone,Indiana
+1,1952,FEMALE,Black alone,Indiana
+4,1985,FEMALE,Residual,Indiana
+2,1988,FEMALE,White alone,Texas
+6,1987,FEMALE,White alone,Texas
+12,1939,FEMALE,White alone,Indiana
+9,1974,FEMALE,White alone,Indiana
+7,1950,FEMALE,White alone,Texas
+7,1982,FEMALE,White alone,Indiana
+9,1966,FEMALE,White alone,Indiana
+1,1978,MALE,White alone,Colorado
+6,1966,FEMALE,Residual,Indiana
+4,1981,MALE,White alone,Indiana
+11,1953,FEMALE,White alone,Indiana
+3,1962,FEMALE,White alone,Indiana
+4,1986,FEMALE,White alone,Indiana
+9,1943,FEMALE,White alone,Indiana
+4,1970,MALE,White alone,Colorado
+11,1959,FEMALE,White alone,California
+12,1957,FEMALE,White alone,California
+11,1961,MALE,Asian alone,California
+12,1920,MALE,White alone,California
+7,1965,FEMALE,White alone,California
+9,1970,FEMALE,White alone,New York
+2,1929,FEMALE,White alone,Michigan
+7,1979,MALE,White alone,California
+11,1988,FEMALE,White alone,California
+2,1957,MALE,Asian alone,Michigan
+2,1947,MALE,White alone,California
+12,1987,FEMALE,Black alone,Michigan
+6,1926,FEMALE,White alone,California
+11,1954,FEMALE,White alone,Michigan
+8,1948,FEMALE,White alone,New York
+6,1944,FEMALE,White alone,New York
+1,1988,MALE,Residual,California
+3,1953,MALE,White alone,New York
+2,1947,FEMALE,White alone,Michigan
+3,1990,MALE,Black alone,North Carolina
+11,1961,FEMALE,White alone,California
+12,1987,FEMALE,White alone,New York
+5,1990,MALE,White alone,New York
+4,1990,FEMALE,Asian alone,California
+5,1971,MALE,White alone,New York
+12,1977,FEMALE,White alone,New York
+6,1932,MALE,White alone,Florida
+7,1958,FEMALE,Black alone,Florida
+9,1931,MALE,White alone,Florida
+3,1968,MALE,Residual,Louisiana
+5,1979,FEMALE,White alone,Louisiana
+3,1950,FEMALE,Residual,Pennsylvania
+9,1972,FEMALE,Black alone,Louisiana
+9,1984,MALE,Residual,Alaska
+3,1968,MALE,White alone,Florida
+8,1983,FEMALE,White alone,Florida
+8,1966,MALE,White alone,Florida
+12,1941,MALE,White alone,Pennsylvania
+4,1961,FEMALE,White alone,Florida
+4,1987,FEMALE,Black alone,Florida
+11,1976,FEMALE,White alone,Florida
+12,1952,FEMALE,White alone,Florida
+4,1979,MALE,White alone,Pennsylvania
+12,1941,MALE,White alone,Pennsylvania
+3,1957,FEMALE,White alone,Florida
+6,1962,MALE,White alone,Florida
+12,1954,FEMALE,White alone,Louisiana
+8,1976,MALE,White alone,Pennsylvania
+4,1987,MALE,White alone,Pennsylvania
+3,1930,MALE,White alone,Missouri
+5,1961,FEMALE,White alone,Ohio
+4,1959,FEMALE,White alone,Iowa
+9,1969,FEMALE,White alone,Iowa
+12,1963,MALE,White alone,Missouri
+1,1969,FEMALE,White alone,Iowa
+3,1931,FEMALE,White alone,Iowa
+7,1936,MALE,White alone,Ohio
+3,1972,MALE,White alone,Missouri
+3,1926,MALE,White alone,Ohio
+4,1987,MALE,White alone,Utah
+1,1926,MALE,White alone,Ohio
+8,1955,MALE,White alone,Connecticut
+5,1927,MALE,White alone,Ohio
+11,1946,FEMALE,White alone,Ohio
+7,1955,FEMALE,White alone,Ohio
+2,1970,FEMALE,White alone,Ohio
+8,1979,FEMALE,Black alone,Connecticut
+1,1988,MALE,Black alone,Connecticut
+9,1920,FEMALE,White alone,Ohio
+3,1989,FEMALE,White alone,Missouri
+1,1964,FEMALE,Black alone,Illinois
+2,1962,FEMALE,White alone,Illinois
+6,1959,MALE,White alone,Illinois
+7,1920,MALE,White alone,Illinois
+4,1973,FEMALE,White alone,Minnesota
+8,1955,FEMALE,White alone,North Carolina
+9,1961,MALE,White alone,Tennessee
+10,1953,FEMALE,White alone,Tennessee
+9,1959,MALE,White alone,Tennessee
+3,1983,FEMALE,White alone,Minnesota
+9,1982,FEMALE,White alone,Illinois
+1,1989,FEMALE,White alone,North Carolina
+10,1970,FEMALE,White alone,North Carolina
+2,1950,FEMALE,White alone,Illinois
+3,1990,MALE,White alone,Tennessee
+12,1965,MALE,White alone,Tennessee
+5,1988,MALE,White alone,Minnesota
+10,1950,MALE,White alone,Minnesota
+3,1974,MALE,White alone,Minnesota
+5,1931,MALE,White alone,Minnesota
+6,1920,FEMALE,White alone,North Carolina
+4,1972,FEMALE,White alone,Minnesota
+6,1984,FEMALE,White alone,Ohio
+8,1953,FEMALE,White alone,Missouri
+2,1949,MALE,Residual,Missouri
+1,1947,MALE,White alone,Iowa
+3,1933,FEMALE,Black alone,Ohio
+9,1948,FEMALE,White alone,Ohio
+9,1935,FEMALE,Black alone,Missouri
+11,1953,FEMALE,White alone,Ohio
+1,1954,MALE,White alone,Ohio
+12,1984,FEMALE,White alone,Ohio
+9,1964,FEMALE,White alone,Utah
+2,1925,FEMALE,White alone,Ohio
+7,1920,FEMALE,White alone,Connecticut
+11,1967,FEMALE,Black alone,Connecticut
+7,1953,FEMALE,White alone,Connecticut
+12,1989,MALE,White alone,Ohio
+8,1970,FEMALE,White alone,Iowa
+11,1946,FEMALE,White alone,Iowa
+9,1987,FEMALE,White alone,Ohio
+11,1924,FEMALE,White alone,Arkansas
+5,1961,FEMALE,White alone,Arkansas
+2,1959,MALE,White alone,Arkansas
+11,1961,MALE,White alone,New Mexico
+8,1942,FEMALE,Black alone,South Carolina
+10,1948,FEMALE,White alone,Massachusetts
+2,1956,MALE,White alone,Massachusetts
+7,1944,FEMALE,White alone,Massachusetts
+8,1970,MALE,White alone,Wisconsin
+12,1932,FEMALE,White alone,Massachusetts
+10,1969,MALE,White alone,Massachusetts
+1,1990,FEMALE,White alone,Massachusetts
+1,1954,FEMALE,White alone,South Carolina
+12,1953,FEMALE,White alone,New Mexico
+2,1950,MALE,White alone,South Carolina
+6,1985,MALE,Black alone,Wisconsin
+4,1948,FEMALE,White alone,Massachusetts
+9,1943,MALE,White alone,South Carolina
+6,1926,FEMALE,White alone,Massachusetts
+11,1959,MALE,White alone,Wisconsin
+2,1978,FEMALE,Asian alone,South Carolina
+8,1977,FEMALE,White alone,Florida
+10,1985,FEMALE,White alone,Florida
+1,1937,FEMALE,White alone,Florida
+7,1962,MALE,White alone,Florida
+7,1951,FEMALE,White alone,Pennsylvania
+1,1948,MALE,White alone,Florida
+12,1970,FEMALE,White alone,Pennsylvania
+2,1959,FEMALE,White alone,Florida
+5,1936,MALE,Black alone,Florida
+2,1979,FEMALE,White alone,Florida
+12,1921,FEMALE,White alone,Pennsylvania
+2,1932,MALE,White alone,Pennsylvania
+10,1946,FEMALE,Black alone,Florida
+8,1942,MALE,Black alone,Louisiana
+3,1965,MALE,White alone,Florida
+4,1971,FEMALE,White alone,Florida
+9,1930,FEMALE,White alone,Louisiana
+1,1969,MALE,White alone,Pennsylvania
+6,1955,FEMALE,White alone,Florida
+6,1963,FEMALE,Black alone,Louisiana
+8,1950,FEMALE,White alone,Pennsylvania
+9,1974,FEMALE,White alone,Arizona
+11,1941,MALE,White alone,Arizona
+6,1981,FEMALE,Black alone,Virginia
+4,1966,FEMALE,White alone,Maryland
+11,1983,FEMALE,White alone,West Virginia
+1,1939,FEMALE,White alone,Arizona
+10,1937,MALE,White alone,Maryland
+2,1930,FEMALE,White alone,New Jersey
+2,1928,MALE,White alone,New Jersey
+2,1962,MALE,White alone,New Jersey
+6,1958,FEMALE,Black alone,Rhode Island
+4,1949,MALE,White alone,Arizona
+8,1963,FEMALE,Black alone,New Jersey
+9,1977,FEMALE,White alone,New Jersey
+4,1939,MALE,White alone,New Jersey
+8,1932,MALE,White alone,Pennsylvania
+11,1956,FEMALE,White alone,Maryland
+11,1970,FEMALE,Black alone,Michigan
+3,1932,FEMALE,White alone,New York
+1,1953,MALE,White alone,California
+1,1977,FEMALE,White alone,California
+6,1962,FEMALE,White alone,California
+11,1988,MALE,White alone,New York
+12,1948,MALE,White alone,California
+7,1955,MALE,White alone,Michigan
+1,1938,FEMALE,White alone,New York
+4,1964,FEMALE,Black alone,Michigan
+6,1947,FEMALE,Asian alone,California
+12,1962,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,Michigan
+2,1945,MALE,Asian alone,California
+11,1936,FEMALE,White alone,Michigan
+9,1952,FEMALE,White alone,California
+5,1987,MALE,Asian alone,Hawaii
+10,1939,FEMALE,White alone,California
+11,1927,FEMALE,White alone,Idaho
+11,1938,FEMALE,White alone,Michigan
+3,1953,FEMALE,Black alone,New York
+11,1949,FEMALE,White alone,Michigan
+6,1958,FEMALE,White alone,New York
+1,1956,MALE,White alone,New York
+6,1987,MALE,White alone,Washington
+7,1983,MALE,White alone,California
+5,1960,FEMALE,Residual,California
+9,1956,MALE,White alone,California
+2,1935,FEMALE,White alone,California
+6,1961,FEMALE,White alone,California
+11,1924,FEMALE,White alone,California
+4,1934,FEMALE,White alone,California
+10,1943,FEMALE,Residual,Idaho
+8,1926,FEMALE,White alone,Georgia
+10,1981,FEMALE,White alone,Washington
+1,1990,MALE,White alone,Georgia
+4,1974,FEMALE,White alone,Georgia
+12,1973,MALE,White alone,Georgia
+1,1947,FEMALE,White alone,Georgia
+11,1957,FEMALE,Asian alone,Georgia
+8,1986,MALE,Residual,Georgia
+11,1987,MALE,White alone,Maine
+8,1946,FEMALE,White alone,Washington
+7,1987,FEMALE,White alone,Georgia
+11,1984,FEMALE,Black alone,Georgia
+10,1969,MALE,White alone,Washington
+12,1935,MALE,White alone,Washington
+11,1969,MALE,White alone,Georgia
+11,1987,MALE,White alone,Georgia
+6,1963,MALE,Black alone,Washington
+12,1948,FEMALE,Black alone,Georgia
+5,1971,MALE,White alone,Georgia
+9,1982,MALE,Residual,Washington
+3,1986,MALE,Black alone,Georgia
+10,1954,MALE,White alone,West Virginia
+10,1942,FEMALE,White alone,New Jersey
+6,1964,FEMALE,White alone,New Jersey
+9,1944,MALE,White alone,New Jersey
+9,1982,FEMALE,White alone,Arizona
+2,1929,MALE,White alone,New Jersey
+11,1944,MALE,White alone,Rhode Island
+8,1924,FEMALE,Black alone,New Jersey
+5,1960,FEMALE,White alone,Rhode Island
+11,1979,FEMALE,Black alone,New Jersey
+4,1959,MALE,White alone,Rhode Island
+4,1968,FEMALE,White alone,Arizona
+3,1983,FEMALE,White alone,New Jersey
+10,1984,FEMALE,White alone,New Jersey
+6,1937,FEMALE,White alone,New Jersey
+7,1933,MALE,White alone,Rhode Island
+9,1985,FEMALE,White alone,Missouri
+1,1958,MALE,White alone,Iowa
+1,1956,FEMALE,White alone,Missouri
+9,1955,FEMALE,White alone,Missouri
+3,1938,MALE,White alone,Ohio
+6,1980,FEMALE,White alone,Iowa
+9,1956,FEMALE,White alone,Ohio
+9,1931,FEMALE,Black alone,Missouri
+11,1953,MALE,White alone,Ohio
+12,1961,FEMALE,White alone,Missouri
+4,1923,FEMALE,White alone,Missouri
+2,1961,FEMALE,White alone,Ohio
+8,1963,MALE,White alone,Ohio
+11,1980,FEMALE,White alone,Ohio
+2,1955,MALE,White alone,Connecticut
+12,1963,MALE,White alone,Ohio
+8,1948,MALE,White alone,Ohio
+10,1968,MALE,White alone,Virginia
+10,1952,FEMALE,White alone,Virginia
+1,1948,MALE,White alone,Nebraska
+10,1982,FEMALE,Black alone,Virginia
+12,1958,MALE,Black alone,Virginia
+5,1976,MALE,Black alone,Alabama
+7,1970,MALE,White alone,Alabama
+5,1959,MALE,White alone,Kentucky
+10,1975,MALE,White alone,Alabama
+11,1946,FEMALE,White alone,Kentucky
+2,1961,MALE,White alone,Virginia
+2,1985,MALE,White alone,Kentucky
+11,1964,MALE,Residual,Oregon
+6,1987,MALE,Residual,Oregon
+9,1981,FEMALE,White alone,Virginia
+4,1940,MALE,Black alone,DC
+2,1943,FEMALE,White alone,Virginia
+7,1929,MALE,White alone,Alabama
+9,1970,MALE,Residual,Oregon
+4,1961,FEMALE,White alone,Virginia
+8,1960,MALE,White alone,Kentucky
+5,1943,FEMALE,White alone,Oregon
+12,1962,FEMALE,Black alone,Alabama
+7,1976,FEMALE,White alone,Nebraska
+5,1929,FEMALE,White alone,Florida
+5,1946,MALE,White alone,Florida
+6,1937,FEMALE,White alone,Pennsylvania
+5,1973,FEMALE,White alone,Pennsylvania
+1,1990,MALE,White alone,Pennsylvania
+2,1990,MALE,Residual,Alaska
+8,1964,FEMALE,White alone,Nevada
+11,1982,FEMALE,Black alone,Louisiana
+7,1954,MALE,Black alone,Louisiana
+12,1983,FEMALE,White alone,Florida
+11,1966,FEMALE,White alone,Pennsylvania
+11,1974,FEMALE,Black alone,Florida
+6,1926,FEMALE,White alone,Florida
+4,1965,FEMALE,Black alone,Pennsylvania
+3,1970,FEMALE,White alone,Florida
+11,1959,MALE,White alone,Minnesota
+6,1949,FEMALE,White alone,Tennessee
+7,1960,FEMALE,Black alone,Illinois
+2,1942,MALE,White alone,North Carolina
+11,1955,FEMALE,Black alone,Minnesota
+10,1978,MALE,White alone,Minnesota
+4,1951,FEMALE,White alone,North Carolina
+11,1987,MALE,Black alone,Tennessee
+3,1963,MALE,White alone,North Carolina
+12,1973,FEMALE,White alone,North Carolina
+12,1965,FEMALE,White alone,Minnesota
+4,1941,FEMALE,White alone,Minnesota
+5,1929,MALE,White alone,Tennessee
+3,1974,FEMALE,White alone,Minnesota
+3,1979,MALE,Black alone,Illinois
+6,1977,FEMALE,White alone,Illinois
+4,1974,FEMALE,White alone,Illinois
+11,1967,MALE,Asian alone,Illinois
+9,1927,FEMALE,White alone,Tennessee
+10,1958,MALE,Black alone,North Carolina
+3,1963,FEMALE,White alone,Minnesota
+11,1954,FEMALE,White alone,Minnesota
+6,1926,FEMALE,White alone,Minnesota
+9,1935,FEMALE,White alone,North Carolina
+9,1946,FEMALE,Black alone,North Carolina
+7,1986,MALE,White alone,Illinois
+9,1977,MALE,White alone,Minnesota
+6,1972,FEMALE,White alone,Minnesota
+7,1977,FEMALE,White alone,Tennessee
+4,1989,FEMALE,White alone,Tennessee
+1,1957,MALE,Black alone,Tennessee
+6,1976,MALE,White alone,North Carolina
+10,1984,FEMALE,White alone,Minnesota
+7,1987,MALE,White alone,Minnesota
+1,1930,FEMALE,White alone,Kansas
+3,1977,MALE,White alone,Oklahoma
+10,1970,MALE,White alone,Oklahoma
+2,1984,MALE,White alone,Kansas
+9,1967,FEMALE,Residual,Vermont
+8,1948,FEMALE,White alone,Oklahoma
+2,1930,FEMALE,White alone,Kansas
+1,1952,FEMALE,White alone,Kansas
+9,1944,MALE,Black alone,Delaware
+4,1974,MALE,White alone,Kansas
+10,1983,MALE,White alone,Montana
+4,1963,MALE,Black alone,Alabama
+9,1984,FEMALE,White alone,Kentucky
+8,1928,FEMALE,White alone,Virginia
+4,1946,FEMALE,Black alone,Virginia
+2,1973,MALE,White alone,Virginia
+3,1981,FEMALE,White alone,Kentucky
+4,1988,FEMALE,White alone,Kentucky
+10,1981,MALE,White alone,Alabama
+4,1935,MALE,White alone,Kentucky
+8,1963,FEMALE,White alone,Virginia
+1,1967,MALE,Black alone,Oregon
+1,1964,MALE,Black alone,Virginia
+11,1931,MALE,Black alone,Virginia
+3,1977,FEMALE,White alone,Virginia
+8,1955,MALE,White alone,Kentucky
+6,1958,FEMALE,White alone,Oregon
+2,1984,FEMALE,Asian alone,Virginia
+3,1948,FEMALE,White alone,Oregon
+3,1961,MALE,White alone,Oregon
+12,1959,FEMALE,Residual,Oregon
+2,1968,FEMALE,White alone,Oregon
+12,1954,FEMALE,White alone,Virginia
+11,1954,FEMALE,White alone,Oregon
+6,1952,MALE,White alone,Texas
+9,1986,MALE,White alone,Texas
+4,1964,FEMALE,White alone,Texas
+3,1969,FEMALE,White alone,Texas
+8,1972,MALE,White alone,Texas
+5,1973,MALE,White alone,Texas
+4,1961,MALE,White alone,Indiana
+5,1955,FEMALE,Black alone,Alabama
+10,1975,FEMALE,Black alone,Indiana
+10,1924,FEMALE,White alone,Texas
+7,1960,MALE,White alone,Texas
+2,1970,MALE,White alone,Texas
+3,1965,FEMALE,White alone,Texas
+6,1964,FEMALE,White alone,Texas
+1,1947,MALE,White alone,Texas
+3,1940,FEMALE,White alone,Texas
+1,1943,FEMALE,White alone,Indiana
+6,1980,FEMALE,Black alone,Indiana
+11,1956,MALE,White alone,Indiana
+5,1943,FEMALE,Black alone,Mississippi
+9,1960,FEMALE,Black alone,Colorado
+9,1974,FEMALE,White alone,Colorado
+9,1955,MALE,White alone,Indiana
+10,1951,MALE,White alone,Texas
+6,1988,MALE,White alone,Texas
+10,1945,MALE,White alone,Colorado
+7,1960,FEMALE,White alone,Texas
+8,1962,MALE,White alone,Colorado
+2,1953,FEMALE,White alone,New Hampshire
+11,1963,MALE,Residual,New Hampshire
+6,1977,FEMALE,White alone,Georgia
+3,1989,MALE,White alone,Washington
+9,1960,MALE,White alone,Georgia
+4,1952,MALE,White alone,Washington
+3,1964,MALE,White alone,Washington
+2,1935,FEMALE,White alone,Washington
+12,1951,FEMALE,White alone,Washington
+10,1951,FEMALE,White alone,Washington
+1,1977,FEMALE,White alone,Washington
+9,1941,FEMALE,White alone,Georgia
+9,1962,FEMALE,White alone,Washington
+5,1944,FEMALE,White alone,California
+3,1943,FEMALE,White alone,California
+12,1949,FEMALE,White alone,California
+4,1957,MALE,Asian alone,California
+11,1989,MALE,Asian alone,California
+12,1980,MALE,Asian alone,California
+9,1967,MALE,White alone,Michigan
+5,1953,FEMALE,White alone,California
+8,1963,FEMALE,Black alone,Michigan
+3,1985,FEMALE,Black alone,New York
+7,1965,FEMALE,White alone,New York
+6,1985,MALE,Black alone,California
+9,1963,FEMALE,White alone,California
+4,1988,MALE,White alone,California
+12,1938,MALE,White alone,California
+2,1933,FEMALE,White alone,New York
+7,1951,FEMALE,White alone,Michigan
+1,1943,MALE,White alone,New York
+2,1954,MALE,White alone,Michigan
+5,1922,MALE,White alone,Wyoming
+1,1947,MALE,White alone,California
+3,1928,MALE,White alone,California
+1,1965,FEMALE,White alone,California
+8,1983,FEMALE,White alone,New York
+7,1962,FEMALE,White alone,New York
+7,1959,FEMALE,White alone,New York
+9,1920,FEMALE,White alone,New York
+6,1987,FEMALE,White alone,California
+12,1951,FEMALE,White alone,New York
+3,1982,MALE,White alone,New York
+11,1934,MALE,Black alone,Michigan
+8,1982,MALE,White alone,Georgia
+12,1930,MALE,White alone,Washington
+12,1920,FEMALE,White alone,Washington
+5,1924,FEMALE,White alone,Washington
+3,1950,FEMALE,White alone,Georgia
+7,1969,FEMALE,White alone,Georgia
+9,1986,MALE,Black alone,Georgia
+7,1943,MALE,White alone,Georgia
+12,1920,FEMALE,White alone,Maine
+3,1978,FEMALE,White alone,Washington
+12,1935,FEMALE,White alone,Washington
+2,1953,FEMALE,White alone,Washington
+7,1926,MALE,White alone,Washington
+7,1955,FEMALE,White alone,Georgia
+1,1975,MALE,White alone,Washington
+5,1961,FEMALE,White alone,Washington
+4,1960,FEMALE,White alone,Georgia
+12,1921,FEMALE,White alone,Washington
+12,1982,FEMALE,White alone,Washington
+8,1945,MALE,White alone,Georgia
+4,1977,MALE,White alone,Washington
+6,1957,MALE,White alone,Arizona
+6,1958,MALE,White alone,Arizona
+12,1940,MALE,White alone,Rhode Island
+8,1984,FEMALE,Residual,Maryland
+4,1957,MALE,White alone,New Jersey
+6,1986,FEMALE,White alone,Arizona
+6,1954,MALE,White alone,Arizona
+9,1980,MALE,White alone,Arizona
+2,1934,FEMALE,White alone,Maryland
+1,1976,MALE,Asian alone,New Jersey
+6,1949,FEMALE,Black alone,North Carolina
+11,1989,FEMALE,White alone,Maryland
+5,1935,FEMALE,White alone,New Jersey
+9,1924,FEMALE,White alone,Arizona
+12,1982,FEMALE,White alone,Arizona
+3,1942,MALE,White alone,Maryland
+8,1951,FEMALE,White alone,Maryland
+3,1988,FEMALE,White alone,New Jersey
+7,1957,FEMALE,White alone,Arizona
+8,1979,MALE,White alone,Maryland
+5,1942,FEMALE,White alone,West Virginia
+4,1920,MALE,White alone,Ohio
+10,1939,MALE,White alone,Missouri
+10,1929,MALE,White alone,Missouri
+2,1981,FEMALE,White alone,Missouri
+5,1940,FEMALE,White alone,Missouri
+10,1972,FEMALE,White alone,Iowa
+3,1989,MALE,White alone,Iowa
+10,1959,MALE,White alone,Ohio
+5,1954,FEMALE,White alone,Ohio
+10,1959,MALE,White alone,Utah
+1,1977,FEMALE,White alone,Ohio
+1,1983,MALE,White alone,Utah
+9,1967,MALE,White alone,Ohio
+9,1936,FEMALE,Black alone,Ohio
+2,1984,MALE,White alone,Connecticut
+2,1937,MALE,White alone,Connecticut
+12,1966,FEMALE,White alone,Iowa
+5,1960,FEMALE,White alone,Iowa
+2,1928,FEMALE,White alone,Connecticut
+3,1936,MALE,White alone,Missouri
+12,1989,MALE,White alone,Texas
+4,1968,FEMALE,White alone,Colorado
+12,1948,MALE,White alone,Texas
+1,1974,FEMALE,White alone,Texas
+7,1985,FEMALE,White alone,Texas
+11,1978,FEMALE,Asian alone,Texas
+8,1964,MALE,White alone,Texas
+3,1975,FEMALE,White alone,Texas
+2,1961,MALE,White alone,Colorado
+9,1926,MALE,White alone,Colorado
+12,1957,MALE,White alone,Mississippi
+12,1945,MALE,Black alone,Indiana
+7,1970,FEMALE,White alone,Indiana
+9,1984,MALE,White alone,Colorado
+10,1973,MALE,White alone,Colorado
+4,1967,MALE,White alone,Indiana
+3,1967,FEMALE,White alone,Indiana
+11,1980,MALE,Residual,Kansas
+8,1926,MALE,White alone,Mississippi
+9,1984,FEMALE,White alone,Indiana
+10,1971,MALE,White alone,Colorado
+2,1972,FEMALE,White alone,Indiana
+10,1985,FEMALE,White alone,Colorado
+7,1927,MALE,White alone,Colorado
+2,1977,FEMALE,White alone,Colorado
+2,1952,FEMALE,White alone,Colorado
+12,1987,FEMALE,White alone,Vermont
+2,1969,MALE,White alone,Kansas
+6,1955,FEMALE,White alone,Oklahoma
+7,1970,FEMALE,Residual,Oklahoma
+2,1949,FEMALE,White alone,Oklahoma
+12,1964,MALE,White alone,Vermont
+3,1978,FEMALE,White alone,Oklahoma
+12,1963,FEMALE,White alone,Kansas
+11,1937,FEMALE,White alone,Kentucky
+12,1955,MALE,White alone,Virginia
+3,1974,MALE,Black alone,Virginia
+4,1936,FEMALE,Black alone,Virginia
+9,1989,MALE,White alone,Nebraska
+9,1989,FEMALE,White alone,Kentucky
+9,1972,FEMALE,White alone,Virginia
+2,1985,FEMALE,White alone,Kentucky
+2,1930,FEMALE,White alone,Alabama
+6,1958,MALE,White alone,Alabama
+6,1988,FEMALE,White alone,Alabama
+12,1926,FEMALE,White alone,Virginia
+2,1954,FEMALE,Black alone,Virginia
+5,1970,FEMALE,White alone,Kentucky
+9,1972,FEMALE,Asian alone,Oregon
+2,1952,FEMALE,White alone,Virginia
+8,1957,FEMALE,White alone,Virginia
+4,1944,FEMALE,White alone,Oregon
+5,1970,FEMALE,White alone,Virginia
+11,1957,MALE,White alone,Virginia
+6,1956,MALE,White alone,Oregon
+7,1920,FEMALE,White alone,Alabama
+6,1972,FEMALE,Black alone,California
+1,1981,MALE,White alone,California
+12,1959,FEMALE,White alone,California
+12,1972,MALE,White alone,California
+9,1963,FEMALE,White alone,California
+3,1957,MALE,White alone,New York
+1,1976,FEMALE,White alone,California
+8,1959,MALE,White alone,New York
+6,1942,FEMALE,White alone,Hawaii
+4,1921,MALE,White alone,New York
+7,1988,MALE,Residual,New York
+6,1957,FEMALE,Asian alone,California
+4,1944,FEMALE,Residual,California
+2,1970,FEMALE,Residual,California
+1,1985,FEMALE,White alone,California
+4,1984,MALE,White alone,Michigan
+3,1979,MALE,Black alone,Michigan
+1,1953,FEMALE,White alone,California
+8,1980,MALE,White alone,California
+7,1956,FEMALE,White alone,Idaho
+9,1972,MALE,Asian alone,New York
+10,1972,FEMALE,White alone,California
+9,1985,MALE,White alone,New York
+1,1962,MALE,Residual,New York
+12,1955,FEMALE,White alone,New York
+1,1985,MALE,White alone,New York
+9,1962,MALE,Black alone,California
+2,1981,MALE,White alone,California
+11,1968,FEMALE,White alone,Georgia
+10,1926,FEMALE,Black alone,California
+3,1942,MALE,White alone,California
+2,1980,FEMALE,White alone,California
+5,1954,MALE,White alone,New York
+3,1955,FEMALE,White alone,Michigan
+3,1939,MALE,White alone,Michigan
+12,1957,MALE,White alone,California
+9,1946,FEMALE,White alone,California
+9,1948,MALE,White alone,New York
+2,1957,MALE,White alone,New York
+1,1962,FEMALE,White alone,California
+8,1920,FEMALE,White alone,New York
+9,1947,FEMALE,White alone,New York
+3,1978,MALE,Black alone,New York
+1,1920,FEMALE,Residual,Arkansas
+5,1925,FEMALE,White alone,Wisconsin
+4,1935,FEMALE,White alone,Arkansas
+9,1982,FEMALE,Residual,Arkansas
+12,1965,FEMALE,White alone,Florida
+3,1957,MALE,White alone,Arkansas
+11,1959,MALE,White alone,Wisconsin
+4,1953,MALE,White alone,Wisconsin
+9,1989,FEMALE,White alone,New Mexico
+6,1963,FEMALE,White alone,Massachusetts
+5,1948,MALE,White alone,South Carolina
+10,1962,MALE,White alone,Massachusetts
+6,1933,FEMALE,White alone,Massachusetts
+12,1986,FEMALE,White alone,Wisconsin
+12,1989,MALE,White alone,South Carolina
+11,1965,MALE,White alone,Massachusetts
+11,1931,FEMALE,Residual,New Mexico
+6,1973,MALE,White alone,Massachusetts
+12,1978,MALE,White alone,South Carolina
+9,1972,FEMALE,Residual,Wisconsin
+1,1989,FEMALE,White alone,Wisconsin
+2,1979,MALE,White alone,Tennessee
+5,1982,FEMALE,White alone,Florida
+7,1966,FEMALE,White alone,Illinois
+6,1987,FEMALE,White alone,Illinois
+7,1982,MALE,White alone,Tennessee
+9,1989,MALE,White alone,Minnesota
+8,1987,MALE,White alone,North Carolina
+9,1946,MALE,White alone,Tennessee
+12,1962,MALE,Residual,North Carolina
+7,1979,FEMALE,White alone,Minnesota
+1,1936,MALE,White alone,Tennessee
+1,1941,FEMALE,White alone,Tennessee
+6,1961,FEMALE,White alone,Minnesota
+3,1924,MALE,White alone,Illinois
+12,1970,FEMALE,White alone,Illinois
+11,1968,FEMALE,White alone,Illinois
+11,1956,MALE,White alone,Illinois
+6,1987,FEMALE,Black alone,Minnesota
+10,1950,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,Illinois
+6,1951,MALE,White alone,Pennsylvania
+2,1932,MALE,White alone,Pennsylvania
+2,1953,MALE,White alone,Pennsylvania
+12,1967,MALE,White alone,Pennsylvania
+10,1965,MALE,White alone,Nevada
+1,1951,MALE,White alone,Louisiana
+4,1940,FEMALE,White alone,Florida
+7,1964,FEMALE,White alone,Pennsylvania
+6,1987,MALE,White alone,Florida
+5,1966,MALE,White alone,Florida
+5,1920,MALE,White alone,Florida
+9,1981,MALE,White alone,Nevada
+2,1989,FEMALE,Black alone,Georgia
+11,1949,FEMALE,White alone,Maine
+10,1964,MALE,Asian alone,Georgia
+12,1960,FEMALE,Black alone,Georgia
+6,1982,FEMALE,White alone,Washington
+12,1943,FEMALE,White alone,Washington
+9,1981,FEMALE,Black alone,Georgia
+5,1975,FEMALE,White alone,Washington
+7,1944,MALE,White alone,Washington
+12,1920,FEMALE,Residual,Oklahoma
+5,1986,MALE,Black alone,Oklahoma
+10,1976,FEMALE,White alone,Oklahoma
+11,1944,FEMALE,White alone,Kansas
+5,1952,MALE,White alone,Kansas
+3,1941,MALE,White alone,Oklahoma
+2,1989,MALE,White alone,Vermont
+7,1955,MALE,White alone,Oklahoma
+6,1976,FEMALE,Black alone,Minnesota
+9,1980,FEMALE,Asian alone,North Carolina
+11,1964,FEMALE,White alone,Tennessee
+12,1986,MALE,White alone,North Carolina
+7,1939,MALE,White alone,North Carolina
+11,1963,FEMALE,Black alone,North Carolina
+5,1935,MALE,Black alone,North Carolina
+10,1963,MALE,White alone,Illinois
+9,1920,FEMALE,Black alone,North Carolina
+3,1971,FEMALE,White alone,Minnesota
+5,1989,MALE,White alone,Minnesota
+5,1962,FEMALE,White alone,Tennessee
+5,1948,MALE,White alone,North Carolina
+12,1958,MALE,White alone,Illinois
+6,1975,FEMALE,Asian alone,Illinois
+4,1932,FEMALE,White alone,Illinois
+10,1984,FEMALE,White alone,Illinois
+2,1989,MALE,White alone,West Virginia
+12,1934,MALE,White alone,Illinois
+10,1947,FEMALE,White alone,North Carolina
+1,1970,FEMALE,White alone,Minnesota
+7,1940,MALE,White alone,North Carolina
+11,1965,FEMALE,Residual,Minnesota
+4,1927,FEMALE,White alone,Tennessee
+7,1934,FEMALE,White alone,North Carolina
+9,1975,MALE,White alone,North Carolina
+11,1930,FEMALE,White alone,Illinois
+9,1953,FEMALE,White alone,Illinois
+1,1936,MALE,White alone,Minnesota
+10,1948,FEMALE,White alone,Montana
+11,1982,FEMALE,Residual,Oklahoma
+3,1920,MALE,White alone,Oklahoma
+7,1984,MALE,White alone,Oklahoma
+6,1973,FEMALE,White alone,Texas
+8,1947,FEMALE,Residual,Kansas
+7,1952,FEMALE,White alone,Kansas
+2,1950,MALE,White alone,Kansas
+12,1944,MALE,White alone,Montana
+5,1935,FEMALE,White alone,Kansas
+9,1971,FEMALE,Residual,Oklahoma
+6,1950,MALE,White alone,Wisconsin
+12,1980,FEMALE,White alone,Wisconsin
+7,1935,MALE,White alone,Wisconsin
+1,1985,MALE,White alone,Wisconsin
+9,1970,MALE,Asian alone,Wisconsin
+2,1957,FEMALE,White alone,Wisconsin
+3,1989,MALE,Black alone,Arkansas
+3,1986,MALE,Residual,Hawaii
+5,1931,FEMALE,White alone,Wisconsin
+8,1985,MALE,White alone,Massachusetts
+1,1936,FEMALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,Massachusetts
+8,1981,FEMALE,White alone,Massachusetts
+8,1944,FEMALE,Black alone,South Carolina
+12,1948,MALE,White alone,Massachusetts
+2,1920,FEMALE,White alone,Massachusetts
+5,1966,FEMALE,White alone,New Mexico
+11,1965,MALE,White alone,Massachusetts
+3,1934,FEMALE,Black alone,South Carolina
+8,1986,FEMALE,Black alone,Wisconsin
+6,1946,FEMALE,White alone,South Carolina
+8,1955,MALE,White alone,Wisconsin
+8,1952,FEMALE,White alone,Wisconsin
+3,1921,MALE,White alone,South Carolina
+9,1949,MALE,Black alone,South Carolina
+8,1968,MALE,White alone,Massachusetts
+3,1965,MALE,White alone,South Carolina
+8,1939,MALE,White alone,New Mexico
+4,1956,FEMALE,White alone,Massachusetts
+12,1978,FEMALE,White alone,Massachusetts
+10,1974,FEMALE,Black alone,South Carolina
+2,1944,FEMALE,White alone,Hawaii
+11,1920,FEMALE,White alone,South Carolina
+12,1946,MALE,White alone,Massachusetts
+10,1962,FEMALE,Residual,South Carolina
+3,1952,FEMALE,White alone,Hawaii
+8,1955,FEMALE,White alone,Massachusetts
+1,1990,MALE,Black alone,Massachusetts
+8,1947,FEMALE,White alone,Massachusetts
+9,1960,MALE,Black alone,Wisconsin
+9,1967,FEMALE,Black alone,South Carolina
+10,1931,MALE,White alone,Wisconsin
+9,1973,FEMALE,Black alone,South Carolina
+7,1935,MALE,Residual,Texas
+6,1955,FEMALE,White alone,Texas
+3,1961,MALE,White alone,Texas
+1,1975,MALE,White alone,Texas
+11,1971,FEMALE,White alone,Texas
+6,1982,FEMALE,White alone,Nevada
+6,1979,FEMALE,White alone,Texas
+6,1969,FEMALE,Residual,Mississippi
+1,1980,FEMALE,Residual,Texas
+7,1964,MALE,White alone,Texas
+3,1974,MALE,Black alone,Mississippi
+6,1960,FEMALE,White alone,Indiana
+9,1967,FEMALE,White alone,Colorado
+12,1946,MALE,Black alone,Indiana
+6,1960,MALE,White alone,Colorado
+3,1972,FEMALE,White alone,Colorado
+8,1952,FEMALE,White alone,Colorado
+10,1958,FEMALE,White alone,Indiana
+1,1924,MALE,White alone,Indiana
+10,1920,MALE,White alone,Colorado
+7,1957,MALE,White alone,Indiana
+4,1920,FEMALE,White alone,Mississippi
+9,1931,FEMALE,White alone,Arizona
+6,1951,MALE,White alone,West Virginia
+8,1962,FEMALE,Black alone,Maryland
+11,1964,FEMALE,White alone,Arizona
+4,1982,FEMALE,White alone,Arizona
+8,1961,FEMALE,Black alone,Maryland
+8,1973,MALE,White alone,Arizona
+8,1967,FEMALE,Black alone,Maryland
+10,1941,MALE,White alone,Maryland
+8,1945,FEMALE,Black alone,Maryland
+2,1988,MALE,Black alone,Maryland
+2,1989,FEMALE,White alone,New Jersey
+9,1928,FEMALE,White alone,New Jersey
+12,1926,FEMALE,White alone,Maryland
+6,1942,MALE,White alone,North Carolina
+8,1978,FEMALE,Asian alone,New Jersey
+1,1978,FEMALE,White alone,New Jersey
+3,1988,FEMALE,White alone,Maryland
+10,1953,FEMALE,White alone,Arizona
+1,1951,FEMALE,Black alone,Kentucky
+3,1971,FEMALE,White alone,Virginia
+1,1958,MALE,White alone,Kentucky
+9,1947,FEMALE,White alone,Kentucky
+8,1947,MALE,White alone,Kentucky
+12,1982,MALE,White alone,Virginia
+11,1980,MALE,Residual,Kentucky
+12,1968,FEMALE,White alone,Virginia
+7,1944,FEMALE,White alone,Kentucky
+5,1953,MALE,White alone,Kentucky
+6,1977,MALE,White alone,Kentucky
+6,1980,FEMALE,White alone,Virginia
+11,1950,MALE,White alone,Kentucky
+5,1957,MALE,White alone,Virginia
+10,1953,MALE,White alone,Virginia
+8,1957,MALE,White alone,Oregon
+1,1967,FEMALE,Black alone,Virginia
+12,1954,MALE,White alone,Virginia
+4,1949,FEMALE,White alone,Virginia
+3,1922,FEMALE,White alone,Virginia
+4,1970,FEMALE,Residual,Oregon
+2,1934,MALE,White alone,Nebraska
+5,1967,FEMALE,White alone,Texas
+12,1968,MALE,White alone,Texas
+12,1985,MALE,White alone,Texas
+8,1949,MALE,White alone,Texas
+8,1960,FEMALE,White alone,Texas
+8,1960,MALE,White alone,Texas
+10,1987,FEMALE,White alone,Florida
+3,1963,FEMALE,White alone,Texas
+5,1926,MALE,White alone,Texas
+12,1951,FEMALE,White alone,Colorado
+12,1961,FEMALE,Black alone,Mississippi
+1,1965,FEMALE,White alone,Texas
+11,1947,MALE,White alone,Colorado
+8,1948,FEMALE,White alone,Indiana
+12,1987,FEMALE,White alone,Indiana
+1,1952,FEMALE,Black alone,Indiana
+4,1985,FEMALE,Residual,Indiana
+6,1987,FEMALE,White alone,Texas
+12,1939,FEMALE,White alone,Indiana
+9,1974,FEMALE,White alone,Indiana
+7,1950,FEMALE,White alone,Texas
+7,1982,FEMALE,White alone,Indiana
+9,1966,FEMALE,White alone,Indiana
+1,1978,MALE,White alone,Colorado
+3,1962,FEMALE,White alone,Texas
+6,1966,FEMALE,Residual,Indiana
+4,1981,MALE,White alone,Indiana
+11,1953,FEMALE,White alone,Indiana
+3,1962,FEMALE,White alone,Indiana
+4,1986,FEMALE,White alone,Indiana
+9,1943,FEMALE,White alone,Indiana
+11,1959,FEMALE,White alone,California
+12,1957,FEMALE,White alone,California
+11,1961,MALE,Asian alone,California
+12,1920,MALE,White alone,California
+6,1957,MALE,White alone,California
+7,1965,FEMALE,White alone,California
+4,1956,MALE,White alone,Michigan
+9,1970,FEMALE,White alone,New York
+2,1964,MALE,White alone,Michigan
+2,1929,FEMALE,White alone,Michigan
+7,1979,MALE,White alone,California
+11,1988,FEMALE,White alone,California
+11,1949,FEMALE,White alone,California
+2,1957,MALE,Asian alone,Michigan
+2,1947,MALE,White alone,California
+12,1987,FEMALE,Black alone,Michigan
+10,1924,MALE,White alone,Idaho
+6,1926,FEMALE,White alone,California
+11,1954,FEMALE,White alone,Michigan
+8,1948,FEMALE,White alone,New York
+6,1944,FEMALE,White alone,New York
+1,1988,MALE,Residual,California
+3,1953,MALE,White alone,New York
+4,1942,FEMALE,Residual,New York
+2,1947,FEMALE,White alone,Michigan
+3,1990,MALE,Black alone,North Carolina
+11,1961,FEMALE,White alone,California
+12,1987,FEMALE,White alone,New York
+7,1977,MALE,Asian alone,California
+5,1971,MALE,White alone,New York
+12,1977,FEMALE,White alone,New York
