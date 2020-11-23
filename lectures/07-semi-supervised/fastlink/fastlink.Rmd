@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: fastlink"
+title: "Module 7: fastlink, Part I"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:

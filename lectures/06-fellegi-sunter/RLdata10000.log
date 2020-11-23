@@ -1,5 +1,0 @@
-Quitting from lines 396-435 (fellegi-sunter.Rmd) 
-Error in log2(rpairs@M/rpairs@U) : 
-  non-numeric argument to mathematical function
-Calls: <Anonymous> ... withVisible -> eval -> eval -> runFS -> paste -> as.ram
-Execution halted

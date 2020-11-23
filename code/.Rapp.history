@@ -1,0 +1,140 @@
+source("runFS.R")#
+source("evaluate.R")#
+set.seed(24052018)#
+#
+# -------------------------------- Load data --------------------------------- ##
+# Read each file into a separate data frame#
+fileDir <- "../datasets/"#
+file.name <- "RLdata10000.csv"#
+filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"), #
+                     stringsAsFactors = FALSE, colClasses = "character")#
+#
+# ------------------------------- Configuration ------------------------------ ##
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+blockPasses      <- list(c("by"), c("bm", "bd"))#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+strDist          <- "levenshtein"#
+strCutoff        <- 0.70#
+dataName         <- "RLdata10000"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50) # This give 100 data points
+blockString <- paste(bv, collapse = ".")
+bv <- c("by")
+rpairs <- RLBigDataDedup(filesDf, #
+                             blockfld = bv, #
+                             identity = as.factor(filesDf[,entIdField]),#
+                             exclude = union(setdiff(colnames(filesDf), linkingFields), bv), #
+                             strcmp = strLinkingFields, #
+                             strcmpfun = strDist)
+vLinkingFields <- setdiff(colnames(rpairs@pairs), c("id1", "id2", "is_match"))#
+    message("Verify linking fields: ", paste(vLinkingFields, collapse=", "), "\n")
+is_match <- clone.ff(rpairs@pairs$is_match)
+is_match
+numPairs <- length(is_match)
+numPaiRS
+numPairs
+rpairs@pairs$is_match <- ffrep.int(as.integer(NA), numPairs)
+rpairs@pairs$is_match
+rpairs <- emWeights(rpairs, cutoff = strCutoff, verbose = TRUE)
+rpairs
+scores <- paste(as.ram(log2(rpairs@M/rpairs@U)), collapse = ", ")#
+    message("Scores for each pattern are [", scores, "]")
+result <- emClassify(rpairs, threshold.upper = threshold)
+result
+result@data@pairs$is_match <- update.ff(result@data@pairs$is_match, from = is_match)
+require(ffbase)
+result@data@pairs$is_match <- update.ff(result@data@pairs$is_match, from = is_match)
+install.packages("update.ff")
+require(ffbase)
+library(ffbase)
+source("runFS.R")#
+source("evaluate.R")#
+set.seed(24052018)#
+#
+# -------------------------------- Load data --------------------------------- ##
+# Read each file into a separate data frame#
+fileDir <- "../datasets/"#
+file.name <- "RLdata10000.csv"#
+filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"), #
+                     stringsAsFactors = FALSE, colClasses = "character")#
+#
+# ------------------------------- Configuration ------------------------------ ##
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+blockPasses      <- list(c("by"), c("bm", "bd"))#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+strDist          <- "levenshtein"#
+strCutoff        <- 0.70#
+dataName         <- "RLdata10000"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50) # This give 100 data points
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, #
+      strDist, strCutoff, dataName, threshold)
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+blockPasses      <- list(c("by"))#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+strDist          <- "levenshtein"#
+strCutoff        <- 0.70#
+dataName         <- "RLdata10000"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50) # This give 100 data points#
+#sampleSize       <- c(5, 25)
+set.seed(24052018)
+# ------------------------------- Configuration ------------------------------ ##
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+blockPasses      <- list(c("by"), c("bm", "bd"))#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+strDist          <- "levenshtein"#
+strCutoff        <- 0.70#
+dataName         <- "RLdata10000"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50) # This give 100 data points#
+#sampleSize       <- c(5, 25)
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, #
+      strDist, strCutoff, dataName, threshold)
+set.seed(1234)
+strDist, strCutoff, dataName, threshold)
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, #
+      strDist, strCutoff, dataName, threshold)
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+blockPasses      <- list(c("by"))#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+strDist          <- "levenshtein"#
+strCutoff        <- 0.70#
+dataName         <- "RLdata10000"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50) # This give 100 data points#
+#sampleSize       <- c(5, 25)
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, #
+      strDist, strCutoff, dataName, threshold)
+source("runFS.R")#
+source("evaluate.R")#
+set.seed(24052018)
+Read each file into a separate data frame#
+fileDir <- "../datasets/"#
+file.name <- "RLdata500.csv"#
+filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"), #
+                     stringsAsFactors = FALSE, colClasses = "character")#
+#
+# ------------------------------- Configuration ------------------------------ ##
+linkingFields     <- c("fname_c1", "lname_c1", "by", "bm", "bd")#
+strLinkingFields <- c("fname_c1", "lname_c1")#
+recIdField       <- "rec_id"#
+entIdField       <- "ent_id"#
+blockPasses       <- list("by", "bm")#
+strDist         <- "levenshtein"#
+strCutoff       <- 0.70#
+dataName         <- "RLdata500"#
+threshold        <- -10.0#
+sampleSize       <- c(5, 50)
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, #
+      strDist, strCutoff, dataName, threshold)

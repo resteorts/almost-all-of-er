@@ -1,0 +1,4 @@
+*** Starting blocking pass "by" ***
+Indexing record pair comparisons...
+Error in is.data.frame(dataset) : object 'filesDf' not found
+Error in eval(lhs, parent, parent) : object 'filesDf' not found
