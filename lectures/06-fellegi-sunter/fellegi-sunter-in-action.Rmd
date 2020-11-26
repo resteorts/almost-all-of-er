@@ -2,7 +2,7 @@
 ---
 title: "Module 6: Fellegi-Sunter Method Applied to RLdata500"
 author: "Rebecca C. Steorts"
-institute: joint with Olivier Binette
+institute: 
 output: 
      beamer_presentation:
       includes: 
@@ -12,13 +12,14 @@ font-size: 8px
 
 ## Agenda 
 
-
+Walk through toy example of Fellegi Sunter applied to RLdata500
 
 
 ## Load packages
 
-```{r, echo=FALSE}
+```{r, message=FALSE}
 library(RecordLinkage)
+library(ffbase)
 ```
 
 ## RLdata500
@@ -92,8 +93,145 @@ rpairs$pairs[c(1:3, 1203:1204),]
 
 Observe that these records agree on first name but not date of birth (as designed).
 
-# String Comparators
+## String Comparators
+
+Recall that string comparators measure the similarity between strings, usually with a similarity measure in
+the range $[0,1],$ where 0 denotes maximal dissimilarity and 1 equality.
+
+Examples: Edit and Jaro Winkler 
+
+## Blocking and String Comparators
+
+```{r}
+# blocking on birth day and month
+# use jarowinkler string distance
+rpairsfuzzy <- compare.dedup(RLdata500, 
+                             blockfld = c(5,6), 
+                             strcmp = TRUE,
+                             strcmpfun = jarowinkler)
+
+```
+
+Blocking on **birth day and month** where the **Jaro Winkler** string comparator is used.  
+
+## Blocking and String Comparators
+
+\footnotesize
+```{r}
+# inspect first five record pairs 
+rpairsfuzzy$pairs[1:5,]
+```
 
 
+## Stochastic record linkage
+
+Stochastic record linkage relies on the assumption of
+conditional probabilities concerning comparison pat-
+terns.
+
+The probabilities of the random vector $\gamma = (\gamma_1, \ldots \gamma_n)$
+having value $\tilde{\gamma} = (\tilde{\gamma}_1, \ldots \tilde{\gamma}_n)$ conditional on the match status $Z$ are defined by
+
+$$u_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid Z=0)$$
+
+$$m_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid Z=1),$$
+
+where $Z=0$ stands for a non-match and $Z=1$ stands for a match. 
+
+## Stochastic record linkage
+
+In the Fellegi-Sunter model these probabilities are used to compute weights of the form
+
+$$w_{\tilde{\gamma}} = \log \frac{P(\gamma = \tilde{\gamma} \mid Z=1)}{P(\gamma = \tilde{\gamma} \mid Z=0)}.$$
+
+These weights are used in order to discern between matches and non-matches, where there are several ways to estimate the probabilities/weights.
+
+## EM algorithm
 
 
+The EM algorithm is used typically to estimate the weights, where the backbone of this algorithm is described by Haber (1984).
+
+Weight calculation based on the EM algorithm and the method by Contiero et al. (2005) are implemented by functions `emWeights` and `epiWeights`.
+
+Calling `summary` on the result shows the distribution of weights in histogram style. 
+
+## EM algorithm
+
+\footnotesize
+```{r}
+rpairs <- epiWeights(rpairs)
+summary(rpairs)
+```
+
+## Computing Weight Thresholds
+
+Discernment between matches and non-matches is achieved by means of computing weight thresholds.
+
+The function `epiClassify` allows the user to specify a threshold. 
+
+## Computing Weight Thresholds
+
+\tiny
+```{r}
+result <- epiClassify(rpairs, 0.55)
+#summary(result)
+```
+
+## Objects of `result`
+
+We can look at many objects of `result` which include
+
+- data
+- pairs
+- frequencies
+- type 
+- Wdatas
+- prediction
+- threshold
+
+## Evaluation Metrics
+
+\footnotesize
+
+#```{r}
+#getErrorMeasures-methods()
+#```
+
+```{r}
+fileDir <- "datasets/"
+file.name <- "RLdata10000.csv"
+filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"), 
+                     stringsAsFactors = FALSE, colClasses = "character")
+
+# ------------------------------- Configuration ------------------------------ #
+linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")
+strLinkingFields <- c("fname_c1", "lname_c1")
+blockPasses      <- list(c("by"), c("bm", "bd"))
+recIdField       <- "rec_id"
+entIdField       <- "ent_id"
+strDist          <- "levenshtein"
+strCutoff        <- 0.70
+dataName         <- "RLdata10000"
+threshold        <- -10.0
+sampleSize       <- c(5, 50) # This give 100 data points
+```
+
+## Evaluation Metrics
+
+```{r}
+library(ff)
+source("fs-code/runFS.R")
+runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, 
+      strDist, strCutoff, dataName, threshold)
+```
+
+## Evaluation Metrics
+
+```{r}
+source("fs-code/evaluationMetrics.R")
+source("fs-code/evaluate.R")
+evaluate(filesDf, linkingFields, strLinkingFields, recIdField, 
+         entIdField, blockPasses, strDist, strCutoff, dataName, 
+         threshold, sampleSize)
+
+```

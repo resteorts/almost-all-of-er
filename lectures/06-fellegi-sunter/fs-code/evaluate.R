@@ -1,6 +1,6 @@
 require(tidyverse)
 require(RecordLinkage)
-source("evaluationMetrics.R")
+#source("evaluationMetrics.R")
 
 evaluate <- function(filesDf, linkingFields, strLinkingFields, recIdField, 
                      entIdField, blockPasses, strDist, strCutoff, dataName, 

@@ -38,8 +38,8 @@ runFS <- function(filesDf, linkingFields, strLinkingFields,
     # Run the EM algorithm to estimate the M and U probabilities
     rpairs <- emWeights(rpairs, cutoff = strCutoff, verbose = TRUE)
     
-    scores <- paste(as.ram(log2(rpairs@M/rpairs@U)), collapse = ", ")
-    message("Scores for each pattern are [", scores, "]")
+    #scores <- paste(as.ram(log2(rpairs@M/rpairs@U)), collapse = ", ")
+    #message("Scores for each pattern are [", scores, "]")
     
     # Make predictions by applying a threhsold
     result <- emClassify(rpairs, threshold.upper = threshold)

@@ -1,5 +1,7 @@
 source("runFS.R")
 source("evaluate.R")
+library("ff")
+library("biglm")
 set.seed(1234)
 
 # -------------------------------- Load data --------------------------------- #
@@ -12,7 +14,7 @@ filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"),
 # ------------------------------- Configuration ------------------------------ #
 linkingFields    <- c("fname_c1", "lname_c1", "by", "bm", "bd")
 strLinkingFields <- c("fname_c1", "lname_c1")
-blockPasses      <- list(c("by"))
+blockPasses      <- list(c("by"), c("bd"))
 recIdField       <- "rec_id"
 entIdField       <- "ent_id"
 strDist          <- "levenshtein"
