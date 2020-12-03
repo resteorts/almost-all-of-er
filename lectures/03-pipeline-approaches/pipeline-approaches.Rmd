@@ -13,7 +13,7 @@ Reading
 ===
 
 - Binette and Steorts (2020)
-- Christen (2012), give page numbers
+- Christen (2012)
 
 
 Agenda
@@ -23,12 +23,12 @@ Agenda
 - Deterministic Record Linkage
 - Exact Matching 
 - Scoring Functions
-- Application to XX
+- Application to El Salvador
 
 Load R packages
 ===
 
-```{r, echo=FALSE }
+```{r message=FALSE}
 library(RecordLinkage)
 ```
 

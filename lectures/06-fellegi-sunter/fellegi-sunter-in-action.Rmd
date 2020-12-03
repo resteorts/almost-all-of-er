@@ -19,7 +19,7 @@ Walk through toy example of Fellegi Sunter applied to RLdata500
 
 ```{r, message=FALSE}
 library(RecordLinkage)
-library(ffbase)
+#library(ffbase)
 ```
 
 ## RLdata500
@@ -193,10 +193,6 @@ We can look at many objects of `result` which include
 
 \footnotesize
 
-#```{r}
-#getErrorMeasures-methods()
-#```
-
 ```{r}
 fileDir <- "datasets/"
 file.name <- "RLdata10000.csv"
@@ -218,8 +214,10 @@ sampleSize       <- c(5, 50) # This give 100 data points
 
 ## Evaluation Metrics
 
-```{r}
+\footnotesize
+```{r, message=FALSE, warning=FALSE}
 library(ff)
+library(ffbase)
 source("fs-code/runFS.R")
 runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPasses, 
       strDist, strCutoff, dataName, threshold)
@@ -227,7 +225,8 @@ runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField, blockPas
 
 ## Evaluation Metrics
 
-```{r}
+\footnotesize
+```{r, message=FALSE, warning=FALSE}
 source("fs-code/evaluationMetrics.R")
 source("fs-code/evaluate.R")
 evaluate(filesDf, linkingFields, strLinkingFields, recIdField, 
