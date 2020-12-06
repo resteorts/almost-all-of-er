@@ -230,6 +230,7 @@ Recap
 
 Can you answer these questions?
 
+[Write questions that students should be able to answer.]
 
 
 
@@ -238,44 +239,5 @@ Can you answer these questions?
 
 
 
-
-<!-- Teams -->
-<!-- === -->
-
-<!-- Collaborative work is essential, and it's important to identify each role of each member of the group.  -->
-
-<!-- I like to work in groups of two's or three's as otherwise the teams becomes crowded.  -->
-
-<!-- Team Leader -->
-<!-- === -->
-
-<!-- - Your in charge of your team and your role is to lead -->
-<!-- - Your role is to get feedback from your team regarding what is working well and what needs changes -->
-<!-- - Your role is also to understanding how to place your team members in effective roles -->
-<!-- - Your role is to chat with your supervisor (me) when you have questions to get guidance or have team meetings with me when you need group guidance  -->
-<!-- - Your role is to also contribute to the team  -->
-<!-- - If you find yourself not liking leading a group, it's important to state this (to me) so that there can be a role switch regarding team leadership.  -->
-
-<!-- Support Team -->
-<!-- === -->
-
-<!-- Each Team has two support members, where you goal is to provide support and feedback to your team leader.  -->
-
-<!-- - Your roles should be defined precisely, based upon your interests  -->
-<!-- - Your main role might be to write up the backbone of the programming for a project, while another member checks and de-bugs your code.  -->
-
-<!-- Example -->
-<!-- === -->
-
-<!-- Suppose we have team members Brian, Olivier, and Ale.  -->
-
-<!-- Olivier is the team leader, and he responsibilities are as follows: -->
-
-<!-- - He will set up his group's github repo and share it with the other members.  -->
-<!-- - He will set up bi-weekly meetings with his group to work on projects so there is structured time for homeworks and projects.  -->
-<!-- - He will ask each member their strengths and weakness so he can help identify what will work best for their team as a whole. -->
-<!-- - He will have a team meeting to talk about identifying how to divide up tasks for the first homework project and setting deadlines.  -->
-
-<!-- As an example, Brian has volunteered to code up the first homework assignment. Ale has volunteered to run Brian's code on the data set so he can de-bug and test it and write a draft of the homework assignment. Olivier has volunteered to do a full check of everything. The group will meet if there are any issues along the way.  -->
 
 
