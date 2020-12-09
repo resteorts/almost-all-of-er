@@ -72,23 +72,25 @@ Reproducibility
 
 \center
 \Large
-What is reproducibility and why is this important? 
+What is reproducibility and why is it important? 
 
 
 
 The Reproducibility Crisis 
 ===
 
-"The terms “reproducibility crisis” and “replication crisis” gained currency in conversation and in print over the last decade (Pashler & Wagenmakers 2012), as disappointing results emerged from large scale reproducibility projects in various medical, life and behavioural sciences (Open Science Collaboration, OSC 2015)."
+"The terms “reproducibility crisis” and “replication crisis” gained currency in conversation and in print over the last decade (Pashler & Wagenmakers, 2012) as disappointing results emerged from large scale reproducibility projects in various medical, life and behavioural sciences (Open Science Collaboration, OSC 2015)."
 
 The Reproducibility Crisis 
 ===
 
 What does this mean? 
 
-- Researchers are findings that we they try and replicate papers, they are not finding the same results as in the published work. 
+- Researchers are finding that when they try and replicate papers, their results are not the same as in the published work. 
 
-- This has led to the above crisis, and thus, pushing us as data scientists to publish work that is fully transparent and can be checked when we pass it to someone else. 
+- This has led to the above crisis.
+
+- The response is to push data scientists to publish work that is **fully transparent** and can be **fully checked** when we pass it to someone else. 
 
 Reproducibility
 ===
@@ -132,7 +134,7 @@ To make our work the most reproducible as possible, best practice is writing our
 R packages
 ===
 
-1. CRAN packages have strict criteria for acceptance so this force you to write your code in best practice
+1. CRAN packages have strict criteria for acceptance so this forces you to write your code in best practice
 2. You can tie in your R packages to your paper/project to make it reproducible from start to finish 
 
 This is the most idealized way of writing software and working with a team. 
@@ -140,14 +142,6 @@ This is the most idealized way of writing software and working with a team.
 To learn more about R packages, you can check out \url{https://r-pkgs.org/}. 
 
 
-Rmarkdown
-===
-
-[DEMO]
-
-Let's perform a demo regarding how we can make a simple .Rmd file reproducible in markdown. 
-
-Question: What are the benefits over just writing an R script? 
 
 Version Control
 ===
@@ -211,18 +205,95 @@ Github and Tips
 
 - There are a lot of Git commands and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
 
+Github Terminology
+===
+
+\textbf{Repository}: A repository (repo) is similiar to the project's folder. It contains all of the project's files and stores each file's revision history. A repo can either be private or public. 
+
+Example: I'd like for your to make a repository called \texttt{hello world}. 
+
+Github Terminology
+===
+
+\textbf{Clone}: A clone is the act of making a copy of a repository from a webpage or server. 
+
+Example: I'd like for your to clone an existing repository called \texttt{blink}. 
+
+Github Terminology
+===
+
+\textbf{Remote}: The **remote or global version** is hosted on a server or webpage. It can be connected to the local copy on your computer so that changes can be synced. 
+
+Example: The remote or global version of the repository is hosted on github. 
+
+Github Terminology
+===
+
+\textbf{Pull}: This is the act of fetching information from the **global (remote) server** with your local copy. 
+
+Example: I am ready to pull the global changes that Olivier made to my local copy (on my computer). 
+
+Github Terminology
+===
+
+\textbf{Commit}: An individual change to a file (or set of files). Every time you save the file(s), a 
+a unique ID is created that keeps a record of what the change was and who made the change. 
+
+Example: I've fixed some typos to my repository and I'm going to commit the change, indicating that typos were fixed. 
+
+Github Terminology
+===
+
+\textbf{Push}: Sending your committed changes to a remote repository such as gitHub.com.
+
+Example: I'm ready to push my changes to the global repository. 
+
+Github Terminology
+===
+
+\textbf{Fork}: A fork is a personal copy of another user’s repository that lives on your account. Forks allow you to freely make changes to a project without affecting the original.
+
+Example: I'm going to fork a repository so that I can make changes to it without affecting the original repository since I don't have permissions to change it! 
+
+Github Terminology
+===
+
+\textbf{Pull Request}: Proposed changes to a repository submitted by a user and accepted or
+rejected by a repository’s collaborators.
+
+Example: I've found a typo in a repository. I'm going to submitted a pull request to propose a change to the repository and improve the quality of open source code. 
+
+Github Terminology
+===
+
+\textbf{Issue}: Issues are suggested improvements, tasks or questions related to the
+repository.
+
+Example: There seems to be an issue with my collaborators code, so I open an issue so that my collaborator can take a closer look. 
+
+
 Git and Github Tour
 ===
 
 [DEMO]
 
-- Connect an R project to GitHub repository
-- Working with a local and remote repository
-- Making a change locally, committing, and pushing
-- Making a change on GitHub and pulling
+In this demo, we will do the following:
 
+- Create a new repository called hello world
+- We will work with our local and remote (global) repository
+- Make a change locally, committing, and pushing to the global repository
+- Make a change on GitHub and pull to our local repository
 
+Your turn
+===
 
+1. Create a github account and username 
+2. Consider your username, want to be identiable, professional and probably include your actual name. Do you have other handles? Twitter?
+3. Don’t worry about paying for a plan now, stick with the free one
+4. Create a hello-world repo
+5. Play around with your hello world repository and try out the same demo that I did
+
+Questions? 
 
 
 Recap
@@ -230,8 +301,11 @@ Recap
 
 Can you answer these questions?
 
-[Write questions that students should be able to answer.]
-
+- Explain why code needs to be organized
+- Explain the reproducibility crisis
+- Explain reprodubile workflow
+- Explain version control 
+- How can we put all these tools together? 
 
 
 
