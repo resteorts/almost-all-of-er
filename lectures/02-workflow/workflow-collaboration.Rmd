@@ -271,6 +271,24 @@ repository.
 
 Example: There seems to be an issue with my collaborators code, so I open an issue so that my collaborator can take a closer look. 
 
+When should I commit?
+===
+
+- You should commit early and often to your repository. 
+
+Think of commits as a checkpoint in a video game. This is a point in time when you want
+to save your status so that you can come back to it later if need be. Otherwise, everything might be gone!  
+
+Things will blow up
+===
+
+- Sometimes your local repo gets borked and you might have merge conflicts. 
+
+- My main advice is that sometimes you can work very hard to fix them and sometimes you have to stash (store your work) and manually resolve your merge conflicts. 
+
+- This is **the most frustrating part of using version control**, which is why I commit early and often. 
+
+
 
 Git and Github Tour
 ===
@@ -294,6 +312,10 @@ Your turn
 5. Play around with your hello world repository and try out the same demo that I did
 
 Questions? 
+
+
+
+
 
 
 Recap
