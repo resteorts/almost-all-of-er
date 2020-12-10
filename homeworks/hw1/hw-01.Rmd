@@ -56,7 +56,7 @@ Some questions that you might want to ponder are the following:
 - Do you have missing data? How much missing data do you have? 
 - Do you have unique identifiers? 
 
-Comment on how this assessment will help you be a better statitical scientist and data scientist when working with this case study in the future. (Just a few sentences will suffice).
+Comment on how this assessment will help you be a better data scientist when working with this case study in the future. (Just a few sentences will suffice).
 
  
 

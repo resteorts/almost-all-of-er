@@ -235,27 +235,6 @@ unitHispanicSimilarity <- function(x, y, sep = '\\s+', knownTokens = NULL) {
 }
 ```
 
-\section*{Solution to Task 1}
-
-Consider comparing the following two names using Edit distance: `r df$firstname[1]` and `r df$firstname[2]`. We find that using the following code below that the distance is just `r levenshteinSim(df$firstname[1], df$firstname[2])`. This seems quite reasonable given that both names are quite different.
-
-```{r, message=FALSE}
-levenshteinSim(df$firstname[1], df$firstname[2])
-```
-
-Consider comparing the following two names using Edit distance: `r df$firstname[731]` and `r df$firstname[732]`.
-We find the Edit distance is `r levenshteinSim(df$firstname[731], df$firstname[732])`.
-
-We have now seen an interesting case. Hopefully, you have noticed that Hispanic first names, have two tokens, and thus, are much longer than Western names. Perhaps we might want to change the distance function. 
-
-Now when comparing `r df$firstname[1]` and `r df$firstname[2]` under the Monge Elkan metric our score is
-`r unitHispanicSimilarity(df$firstname[1], df$firstname[2])`. 
-
-Now when comparing `r df$firstname[731]` and `r df$firstname[732]` under the Monge Elkan metric our score is
-`r unitHispanicSimilarity(df$firstname[731], df$firstname[732])`. 
-
-
-
 \section*{Task 2}
 
 \textbf{How does exact matching work on this data set? What about off by one matching? Be sure to provide the precision and recall. Hint: Be sure to work on the modified data set below as I have removed columns that would not be wise for comparing, such as the record label.}
@@ -265,25 +244,18 @@ head(df)
 head(df_new <- df[,3:8,10])
 ```
 
-\section*{Solution Task 2}
-
 \section*{Task 3}
 
 \textbf{How would you build a decision rule for matches/non-matches based upon scoring rules. What would your scoring rule be? Write this up as an algorithm.}
-
-\section*{Solution Task 3}
 
 
 \section*{Task 4}
 
 \textbf{Code up your algorithm in Task 3 and provide the precision and recall. Did your method do better or worse than exact matching?}
 
-\section*{Solution Task 4}
-
 \section*{Task 5}
 
 \textbf{Give insights into how you might be able to improve deterministic approaches moving forward if you re-did your analysis. What advice would you give to a new member that is just joining the project after working on this project (assume that they have just joined your team and your job is to bring them up to speed).}
 
-\section*{Solution Task 5}
 
 

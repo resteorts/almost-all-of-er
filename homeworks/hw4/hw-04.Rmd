@@ -1,6 +1,6 @@
 
 ---
-title: "Homework 3: Blocking Approaches Applied to the El Salvodoran Conflict "
+title: "Homework 4: Entity Resolution Approaches Applied to the El Salvodoran Conflict "
 author: "Rebecca C. Steorts, STA 490/690"
 output: 
      pdf_document:
@@ -34,9 +34,9 @@ head(new_df)
 
 Recall that we are only considering two municipalities in El Salvador now, which is what was considered in Sadinle (2014). 
 
-\section*{Blocking applied to the El Salvadoran conflict}
+\section*{Entity resolution applied to the El Salvadoran conflict}
 
-\textbf{In this assignment, you should explore deterministic and probablistic blocking methods and how these work on the El Salvadoran data set. Find at least one deterministic and probabilistic blocking criterion that seems suitable for this data set. Illustrate its effectiveness on the data using the reduction ratio, precision, and recall. Utilize other vizualiations that might also help you in explaining your results. How would you use these blocking methods to remove duplicate records in the data set?}
+\textbf{In this assignment, you should explore entity resolution approaches and how they work on the El Salvadoran conflict. Specifically, each team should investigate a different entity resolution method (citing the methodology or paper) and explain their results/evaluations.}
 
 
 
