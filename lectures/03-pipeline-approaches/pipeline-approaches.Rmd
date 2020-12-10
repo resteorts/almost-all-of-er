@@ -59,6 +59,53 @@ are a match if they match on all common attributes except k, where k is an integ
 
 - Exact matching (or extensions) are used when all the attributes are categorical as it tends to perform well, as opposed to when textual variables are introduced.
 
+
+Exact Matching Example
+===
+
+\Large 
+\center
+Let's apply off by one matching, off by two matchibng, and off by k-matching to the RLdata500 data set. 
+
+- \textcolor{red}{TODO OB: Put in example of exact matching, off by two matching, and off by k-matching in here on RLdata500 and off by k-matching}
+
+RLdata500
+===
+
+```{r, message=FALSE}
+#load RLdata500
+library(blink)
+data(RLdata500)
+head(RLdata500)
+```
+
+
+
+RLdata500
+===
+
+```{r}
+# remove missing values 
+# from colums 2 and 4
+data <- RLdata500[-c(2,4)]
+head(data)
+```
+
+Off by one matching 
+===
+
+TODO: write a simple example to do this.
+
+Off by two matching
+===
+
+TODO: write a simple example to do this.
+
+Off by k matching
+===
+
+TODO: write a simple example to do this.
+
 Scoring Rules
 ===
 
