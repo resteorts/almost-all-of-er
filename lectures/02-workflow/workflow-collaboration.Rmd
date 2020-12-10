@@ -210,7 +210,7 @@ Github Terminology
 
 \textbf{Repository}: A repository (repo) is similiar to the project's folder. It contains all of the project's files and stores each file's revision history. A repo can either be private or public. 
 
-Example: I'd like for your to make a repository called \texttt{hello world}. 
+Example: I'd like for your to make a repository called \texttt{hello-world}. 
 
 Github Terminology
 ===
@@ -297,7 +297,7 @@ Git and Github Tour
 
 In this demo, we will do the following:
 
-- Create a new repository called hello world
+- Create a new repository called \texttt{hello-world}
 - We will work with our local and remote (global) repository
 - Make a change locally, committing, and pushing to the global repository
 - Make a change on GitHub and pull to our local repository
@@ -308,8 +308,8 @@ Your turn
 1. Create a github account and username 
 2. Consider your username, want to be identiable, professional and probably include your actual name. Do you have other handles? Twitter?
 3. Don’t worry about paying for a plan now, stick with the free one
-4. Create a hello-world repo
-5. Play around with your hello world repository and try out the same demo that I did
+4. Create a \texttt{hello-world} repo
+5. Play around with your \texttt{hello-world} repository and try out the same demo that I did
 
 Questions? 
 

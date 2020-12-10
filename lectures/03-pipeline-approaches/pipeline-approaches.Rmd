@@ -94,17 +94,17 @@ head(data)
 Off by one matching 
 ===
 
-TODO: write a simple example to do this.
+\textcolor{red}{TODO OB: write a simple example to do this.}
 
 Off by two matching
 ===
 
-TODO: write a simple example to do this.
+\textcolor{red}{TODO OB: write a simple example to do this.}
 
 Off by k matching
 ===
 
-TODO: write a simple example to do this.
+\textcolor{red}{TODO OB: write a simple example to do this.}
 
 Scoring Rules
 ===

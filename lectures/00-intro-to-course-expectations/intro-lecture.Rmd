@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Almost All of Entity Resolution (STA 490/690)"
+title: "Almost All of Entity Resolution (STA 490/690)"
 author: "Professor Rebecca Steorts"
 output: 
   xaringan::moon_reader:
