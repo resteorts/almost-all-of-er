@@ -263,6 +263,7 @@ In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use
 library(sadinle14)
 library(exchangeableER)
 library(magrittr)
+library(clevr)
 RLdata500[['rec_id']] <- seq.int(length.out=nrow(RLdata500))
 head(RLdata500)
 ```
