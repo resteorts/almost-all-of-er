@@ -367,7 +367,6 @@ Let's block on a combination of gender and region.
 
 # Your turn solution
 
-\tiny
 ```{r}
 recordsPerBlock <- italy %>% 
 group_by(IREG, SEX) %>% 
@@ -376,6 +375,8 @@ group_by(count) %>%
 ggplot() +
 geom_histogram(aes(count))  
 ```
+
+The histogram is not printing now for some reason. 
 
 # Your turn solution
 
@@ -392,15 +393,16 @@ italy %>%
 This seems to provide a histogram of the blocks with the number of records in each block. Roughly we have about 1500 blocks, where the no block has more than five records. 
 
 # Your turn solution
-
-# ```{r}
-# grouping <- group_by(italy, italy$IREG, italy$SEX)
-# recordsPerBlock <- summarise(italyBlocked, count=n())
-# table(recordsPerBlock$count)
-# print(rr <- reduction.ratio(recordsPerBlock$count))
-# precision(recordsPerBlock$count, id)
-# recall(recordsPerBlock$count, id)
-# ```
+\tiny
+```{r}
+grouping <- group_by(italy, italy$IREG, italy$SEX)
+recordsPerBlock <- summarise(grouping, count=n())
+blockIDs = paste0(italy$IREG, italy$SEX, sep="_")
+table(recordsPerBlock$count)
+print(rr <- reduction.ratio(recordsPerBlock$count))
+precision(recordsPerBlock$count, blockIDs)
+recall(recordsPerBlock$count, blockIDs)
+ ```
 
 
 
