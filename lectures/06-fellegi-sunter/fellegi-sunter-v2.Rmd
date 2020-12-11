@@ -312,3 +312,61 @@ Goal of an **optimal decision procedure**:
 
 Minimize the number of \textit{possible links}, while achieving the above error rates at fixed levels $\mu$ and $\lambda$.
 
+## A Fundamental Theorem for Record Linkage 
+
+Fellegi and Sunter (1969) showed that the **optimal decision procedure** is obtained by a **likelihood ratio test**. 
+
+## Comparison Vectors
+
+Let $$i = 1,2,\dots, N_1\times N_2$$ enumerate the set of all record pairs in $A \times B$.
+\pause
+
+- For the $i$th pair of records, we compute a corresponding **comparison vector**
+$$
+  \gamma_i = (\gamma_i^{(1)}, \gamma_i^{(2)}, \dots, \gamma_i^{(k)}).
+$$
+\pause
+
+- Each $\gamma_i^{j}$ compares the $j$th field of the records.
+
+\pause
+
+Example: Let the $j$th field be "age." Then $\gamma_i^{j} = 0$ if all ages are the same and $\gamma_i^{j} = 1$ if ages different.
+
+## The Fellegi-Sunter model
+
+**Binary comparisons:**
+
+- $\gamma_i^{j} \in \{0,1\}$
+\pause
+
+**Levels of agreement/disagreement:**
+
+- $\gamma_i^{j} \in \{0, 1, 2,\dots, L_j\}$
+\pause
+
+**How they're obtained:**
+
+- You choose!
+- Use string distance functions to compare names.
+
+## Proposed methods
+
+Fellegi and Sunter (1969) proposed two methods in their paper. 
+
+**Method 1**: This is roughly what Newcombe el al (1959) proposed: 
+
+- Completely unsupervised
+- Uses frequency of occurence of names, ages, addresses as additional information
+- Requires prior knowledge of error rates ($\mu$ and $\lambda$). For some problems, these are known or can be estimated. 
+
+Example: At the U.S. Census Bureau, they currently use Method 1 in production for the decennial census and have prior knowledge of the error rates from working on the problem for a very long period of time. 
+
+## Proposed methods
+
+**Method 2**
+
+Method 
+
+
+
