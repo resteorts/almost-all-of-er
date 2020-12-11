@@ -382,14 +382,12 @@ This seems to provide a histogram of the blocks with the number of records in ea
 # Your turn solution
 
 ```{r}
-italyBlocked <- group_by(italy, italy$IREG, italy$SEX)
-temp <- summarise(italyBlocked, count=n())
-italyFinalBlocked <- group_by(temp, count)
-table(italyFinalBlocked$count)
-hist(italyFinalBlocked$count)
-print(rr <- reduction.ratio(italyFinalBlocked))
-precision(italyFinalBlocked$count, id)
-recall(italyFinalBlocked$count, id)
+grouping <- group_by(italy, italy$IREG, italy$SEX)
+recordsPerBlock <- summarise(italyBlocked, count=n())
+table(recordsPerBlock$count)
+print(rr <- reduction.ratio(recordsPerBlock$count))
+precision(recordsPerBlock$count, id)
+recall(recordsPerBlock$count, id)
 ```
 
 
