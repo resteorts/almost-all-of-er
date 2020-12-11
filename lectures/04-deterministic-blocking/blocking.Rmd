@@ -29,9 +29,14 @@ Load R packages
 ===
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width=4, fig.height=3, fig.align="center")
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.width=4, 
+                      fig.height=3, 
+                      fig.align="center")
 library(RecordLinkage)
 library(blink)
+library(italy)
+library(tidyverse)
 ```
 
 Data Cleaning Pipeline
@@ -237,19 +242,16 @@ recall <- function(block.labels, IDs) {
 
 We will now explore a case study to the SHIW 
 
-```{r}
-install.packages("italy", repos='http://cran.us.r-project.org')
-#library(devtools)
-#devtools::install_github("cleanzr/italy")
-library(italy)
-```
+# SHIW
+
+- The Italian Survey on Household and Wealth (SHIW) is a sample survey 383 households
+conducted by the Bank of Italy every two years (2008 and 2010).
+- The data set is anonymized to remove first and last name (and other sensitive information). 
 
 # SHIW
 
-- The SHIW is a sample survey 383 households
-conducted by the Bank of Italy every two years.
-- The data set is anonymized to remove first and last name (and other sensitive information). 
-- The following attribute information is available: 
+The following attribute information is available: 
+
 \begin{itemize}
 \item PARENT (parental status)
 \item GENDER
@@ -261,17 +263,26 @@ conducted by the Bank of Italy every two years.
 \item Q (quality of life status)
 \item QUAL (whether or not Italian national)
 \item SETT (highest educational level obtained)
-\item ireq (region of italy)
+\item IREG (region of italy)
 \end{itemize}
 
 # Explore Data
 
+\tiny
 ```{r}
 head(italy08) # first year of SHIW
-head(italy10) # second year of SHIW
 ```
+
+# Explore Data
+
+\tiny
+```{r}
+head(italy08) # second year of SHIW
+```
+
 # Reformat Data
 
+\footnotesize
 ```{r}
 id08 <- italy08$id
 id10 <- italy10$id
@@ -279,6 +290,7 @@ id <- c(italy08$id, italy10$id) # combine the id
 italy08 <- italy08[-c(1)] # remove the id
 italy10 <- italy10[-c(1)] # remove the id 
 italy <- rbind(italy08, italy10)
+head(italy)
 ```
 
 
@@ -292,9 +304,11 @@ italy <- rbind(italy08, italy10)
 - What is the pairwise recall and precision?
 - Would you recommend your blocking criterion for an ER task? Why or why not. 
 
+Hint: You might consider blocking on gender, regions (in Italy), or combinations of these. What do you find? 
+
 # Your turn solution
 
-I will block on gender. Why?
+Let's block on gender.
 
 ```{r}
 # block by gender 
@@ -312,6 +326,7 @@ The block sizes are similar. But note, they are still quite large.
 plot(recordsPerBlock,
 cex.axis=0.6, xlab="", ylab="")
 ```
+
 # Your turn solution
 ```{r}
 print(rr <- reduction.ratio(blockByGender))
@@ -330,10 +345,52 @@ This is not an optimal blocking criterion as ideally, we would want both the pre
 
 # Your turn solution
 
+\tiny
+
+Let's block on the twenty regions in Italy. 
+
 ```{r}
-blockRule <- italy$SEX & italy$ANASC
+blockRule <- (italy$IREG) 
+(recordsPerBlock <- table(blockRule))
+plot(recordsPerBlock,
+cex.axis=0.6, xlab="", ylab="")
+print(rr <- reduction.ratio(blockRule))
 precision(blockRule, id)
 recall(blockRule, id)
 ```
+
+# Your turn solution
+
+Let's block on a combination of gender and region. 
+
+\textcolor{red}{Trying to make this work using tidyverse as it seems more elegant.}
+
+# Your turn solution
+
+\tiny
+```{r, message=FALSE}
+italy %>%
+  group_by(italy$IREG, italy$SEX) %>%
+  summarise(count = n()) %>%
+  group_by(count) %>%
+  ggplot() +
+  geom_histogram(aes(count))
+```
+
+This seems to provide a histogram of the blocks with the number of records in each block. Roughly we have about 1500 blocks, where the no block has more than five records. 
+
+# Your turn solution
+
+```{r}
+italyBlocked <- group_by(italy, italy$IREG, italy$SEX)
+temp <- summarise(italyBlocked, count=n())
+italyFinalBlocked <- group_by(temp, count)
+table(italyFinalBlocked$count)
+hist(italyFinalBlocked$count)
+print(rr <- reduction.ratio(italyFinalBlocked))
+precision(italyFinalBlocked$count, id)
+recall(italyFinalBlocked$count, id)
+```
+
 
 
