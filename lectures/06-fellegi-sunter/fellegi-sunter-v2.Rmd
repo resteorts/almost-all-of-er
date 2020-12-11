@@ -335,20 +335,6 @@ Example: Let the $j$th field be "age." Then $\gamma_i^{j} = 0$ if all ages are t
 
 ## Comparison Vectors
 
-How can we visualize the comparison vectors? 
-
-
-\begin{align}
-\gamma_1 &= (\gamma_1^{(1)}, \gamma_1^{(2)}, \dots, \gamma_1^{(k)}) \\
-\gamma_2 &= (\gamma_2^{(1)}, \gamma_2^{(2)}, \dots, \gamma_2^{(k)}) \\
-&\vdots\\
-\gamma_{(N_1 \times N_2)} &= (\gamma_{(N_1 \times N_2)}^{(1)}, \gamma_{(N_1 \times N_2)}^{(2)}, \dots, \gamma_{(N_1 \times N_2)}^{(k)}) 
-\end{align}
-
-Let $$\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_{(N_1 \times N_2)})$$
-
-## Comparison Vectors
-
 **Binary comparisons:**
 
 - $\gamma_i^{j} \in \{0,1\}$
@@ -364,11 +350,78 @@ Let $$\gamma = (\gamma_1, \gamma_2, \ldots, \gamma_{(N_1 \times N_2)})$$
 - You choose!
 - Use string distance functions to compare names.
 
+## Comparison Vectors
+
+How can we visualize the comparison vectors? 
+
+\begin{align}
+\gamma_1 &= (\gamma_1^{(1)}, \gamma_1^{(2)}, \dots, \gamma_1^{(k)}) \\
+\gamma_2 &= (\gamma_2^{(1)}, \gamma_2^{(2)}, \dots, \gamma_2^{(k)}) \\
+&\vdots\\
+\gamma_{(N_1 \times N_2)} &= (\gamma_{(N_1 \times N_2)}^{(1)}, \gamma_{(N_1 \times N_2)}^{(2)}, \dots, \gamma_{(N_1 \times N_2)}^{(k)}) 
+\end{align}
+
+Let $$\gamma = (\gamma_1^{(1)}, \gamma_2^{(2)}, \ldots, \gamma_{(N_1 \times N_2)}^{(k)})$$
+
+
+## Likelihood Ratio Test
+
+Define
+
+\begin{align}
+m(\gamma) &= \mathbb{P}(\gamma \mid \text{the records are a match}) \\
+u(\gamma) &= \mathbb{P}(\gamma \mid \text{the records are not a match})
+\end{align}
+
+\pause
+
+Then the **matching weight** or **log-likelihood ratio** is
+\begin{align}
+W(\gamma) &= \log(m(\gamma) / u(\gamma))
+\end{align}
+
+## Likelihood Ratio Test
+
+Two thresholds $T_\mu$ and $T_\lambda$ must be computed as a function of the desired error levels $\mu$ and $\lambda$.
+
+\vspace*{2em}
+
+Specifically, we
+\begin{itemize}
+  \item \textit{link} if $W(\gamma) > T_\mu$;
+  \item \textit{possible link} if $T_\mu \geq W(\gamma) > T_\lambda$; and
+  \item do \textit{not link} if otherwise $T_\lambda \geq W(\gamma)$.
+\end{itemize}
+
+\vspace*{2em}
+
+
+We are ignoring the boundary cases (see Appendix 1 of Fellegi-Sunter (1969) for details).
+
+## Key Questions
+
+\begin{enumerate}
+        \item How do we compute the probabilities
+            $$m(\gamma) = \mathbb{P}(\gamma \mid \text{the records are a match}),$$
+        $$u(\gamma) = \mathbb{P}(\gamma \mid \text{the records are not a match})?$$
+        \item Do we care about the error rates
+        $$
+    \mu = \mathbb{P}\left(\text{linking} | \text{records don't match}\right),
+    $$
+    $$
+        \lambda = \mathbb{P}\left(\text{not linking} | \text{records are a match}\right)?
+    $$
+    \end{enumerate}
 
 
 ## Proposed methods
 
-Fellegi and Sunter (1969) proposed two methods in their paper. 
+Fellegi and Sunter (1969) proposed two methods in their paper for calculating $m(\gamma)$ and $u(\gamma).$
+
+They referred to these as Method 1 and Method 2, and thus, we will stick with the same terminology. 
+
+
+## Method 1
 
 **Method 1**: This is roughly what Newcombe el al (1959) proposed: 
 
@@ -380,17 +433,18 @@ Example: At the U.S. Census Bureau, they currently use Method 1 in production fo
 
 ## Method 2
 
-
-The second method applies to all the comparison vectors $\gamma_i = (\gamma_i^{(1)}, \gamma_i^{(2)}, \dots, \gamma_i^{(k)})$ under the following assumptions: 
+The second method applies to the comparison vectors $\gamma = (\gamma_1^{(1)}, \gamma_2^{(2)}, \ldots, \gamma_{(N_1 \times N_2)}^{(k)})$ under the following assumptions: 
 
 \begin{itemize}
-        \item $\gamma_i \in \{0,1\}$ is a binary comparison
-        \item $\{\gamma_i\}_{i=1}^k$ is conditionally independent given the true match or non-match status of the pair of records.
+        \item $\gamma_i^j \in \{0,1\}$ is a binary comparison
+        \item $\{\gamma_i^j\}_{j=1}^k$ is conditionally independent given the true match or non-match status of the pair of records.
 \end{itemize}
 
 ## Method 2
 
-  Abusing notation, the idea is to consider the equations:
+Let $M$ be the set of true matches among record pairs, $U$ be the set of true non-matches.
+
+Abusing notation, the idea is to consider the equations:
     \begin{align*}
     P(\gamma) &= P(\gamma\mid M)P(M) + P(\gamma\mid U)P(U)\\
        &= \left\{\prod_{i=1}^k P(\gamma_i | M)\right\} P(M) + \left\{\prod_{i=1}^k P(\gamma_i | U)\right\} P(U)\\
@@ -398,10 +452,32 @@ The second method applies to all the comparison vectors $\gamma_i = (\gamma_i^{(
     \end{align*}
     which are $2^k - 1$ equations for $2k + 1$ variables; there can be a solution when $k \geq 3$.
     
-    \begin{itemize}
-        \item Here $M$ is the set of \textbf{true} match among record pairs, $U$ is the set of true non-matches.
-        \item Nowadays the EM algorithm is used.
-    \end{itemize}
+To solve for $m(\gamma_i)$ and $u(\gamma_i),$ the EM algorithm is used.   
+    
+    
+## Final Question
+
+Do we care about the error rates
+$$
+    \mu = \mathbb{P}\left(\text{linking} | \text{records don't match}\right),
+$$
+$$
+        \lambda = \mathbb{P}\left(\text{not linking} | \text{records are a match}\right)?
+$$
+   
+In practice, we do not know if a given pair of record is a match or not, so put simply, we cannot answer this question directly. 
+
+## Final Question
+
+We can answer related questions, such as: 
+
+\begin{itemize}
+    \item $\mathbb{P}(\text{records don't match} \mid \text{we linked them})$; or
+    \item $\mathbb{P}(\text{records match} \mid \gamma)$
+\end{itemize}
+
+To explore this more in depth, see Binette and Steorts (2020) to see connections to Bayes' rule and see Tepping (1968). 
+
 
 
 
