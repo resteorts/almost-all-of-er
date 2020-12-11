@@ -28,7 +28,7 @@ Agenda
 Load R packages
 ===
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+```{r, echo=TRUE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       fig.width=4, 
                       fig.height=3, 
@@ -38,6 +38,8 @@ library(blink)
 library(italy)
 library(tidyverse)
 library(assert)
+data(italy08)
+data(italy10)
 ```
 
 Data Cleaning Pipeline
