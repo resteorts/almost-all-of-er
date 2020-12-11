@@ -217,6 +217,9 @@ sum(n_matches) / n_pairs
 
 ```{r}
 precision <- function(block.labels, IDs) {
+  assert(is.vector(block.labels),
+         is.vector(IDs),
+         length(block.labels) == length(IDs))
   labels = unique(block.labels)
 
   # Number of matching pairs among blocks

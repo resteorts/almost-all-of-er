@@ -48,63 +48,138 @@ Deterministic Record Linkage
 The most commonly used record linkage methods are based on a series of deterministic rules involving the comparison of record attributes.
 
 
-Exact Matching 
+Exact Matching and off by $k$ matching
 ===
 
 - Exact matching is where two record pairs are linked if they
 agree on all common attributes.
 
 - An extension, off by k-matching, states that two record pairs
-are a match if they match on all common attributes except k, where k is an integer larger than 0.
+are a match if they match on all common attributes except at most k, where k is an integer larger than 0.
 
 - Exact matching (or extensions) are used when all the attributes are categorical as it tends to perform well, as opposed to when textual variables are introduced.
 
 
-Exact Matching Example
+Off by $k$ matching example
 ===
 
-\Large 
-\center
-Let's apply off by one matching, off by two matchibng, and off by k-matching to the RLdata500 data set. 
-
-- \textcolor{red}{TODO OB: Put in example of exact matching, off by two matching, and off by k-matching in here on RLdata500 and off by k-matching}
-
-RLdata500
-===
+Let's apply off by $k$ matching to the RLdata500 data set, removing columns with missing values.
 
 ```{r, message=FALSE}
 #load RLdata500
 library(blink)
 data(RLdata500)
-head(RLdata500)
-```
-
-
-
-RLdata500
-===
-
-```{r}
-# remove missing values 
-# from colums 2 and 4
-data <- RLdata500[-c(2,4)]
+data <- RLdata500[-c(2,4)] # Remove
 head(data)
 ```
 
-Off by one matching 
+Off by $k$ matching example
 ===
 
-\textcolor{red}{TODO OB: write a simple example to do this.}
+Now let's consider all possible pairs of records.
 
-Off by two matching
+```{r}
+pairs = t(combn(1:nrow(RLdata500), 2))
+head(pairs)
+```
+
+Off by $k$ matching example
 ===
 
-\textcolor{red}{TODO OB: write a simple example to do this.}
+For each pair of record, compute the the number of fields which disagree. This takes a few minutes in R (there are more efficient ways to go about it).
 
-Off by k matching
+```{r, cache=TRUE}
+n_disagree = sapply(1:nrow(pairs), function(i) {
+  recordA = data[pairs[i,1],]
+  recordB = data[pairs[i,2],]
+  sum(recordA != recordB)
+})
+```
+
+Off by $k$ matching example 
 ===
 
-\textcolor{red}{TODO OB: write a simple example to do this.}
+Now let's plot the distribution of the number of field disagreement among record pairs.
+
+\small
+```{r, fig.width=4, fig.height=3, fig.align="center"}
+plot(table(n_disagree), 
+     xlab="Number of field disagreements",
+     ylab="Number of record pairs")
+```
+Off by $k$ matching example 
+===
+
+We see most record pairs disagree on 4 or 5 fields. We can expect those pairs to be unmatched. Pairs disagreeing only on 1, 2 or 3 fields *might* be matches.
+
+Off by $k$ matching example
+===
+
+**Exact matching:** Link record pairs that for which there are no disagreement.
+
+Here there are no such pairs...
+```{r}
+sum(n_disagree == 0)
+```
+
+
+Off by $k$ matching example
+===
+
+**Off by 1 matching:** link record pairs which disagree only in one field.
+\small
+
+```{r, message=FALSE, warning=FALSE}
+# Links
+links = pairs[n_disagree <= 1, ]
+
+# Number of estimated links
+nrow(links)
+
+# Number of correctly estimated links
+sum(sapply(1:nrow(links), function(i) {
+  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
+}))
+```
+
+Off by $k$ matching example
+===
+
+**Off by 2 matching:** link record pairs which disagree only in two field.
+\small
+
+```{r}
+# Links
+links = pairs[n_disagree <= 2, ]
+
+# Number of estimated links
+nrow(links)
+
+# Number of correctly estimated links
+sum(sapply(1:nrow(links), function(i) {
+  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
+}))
+```
+
+Off by $k$ matching example
+===
+
+**Off by 3 matching:** link record pairs which disagree only in two field.
+\small
+
+```{r}
+# Links
+links = pairs[n_disagree <= 3, ]
+
+# Number of estimated links
+nrow(links)
+
+# Number of correctly estimated links
+sum(sapply(1:nrow(links), function(i) {
+  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
+}))
+```
+
 
 Scoring Rules
 ===
