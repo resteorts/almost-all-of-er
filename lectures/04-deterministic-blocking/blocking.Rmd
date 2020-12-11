@@ -191,6 +191,9 @@ reduction.ratio <- function(block.labels) {
 reduction.ratio(last_init)
 ```
 
+
+
+
 # Pairwise Precision
 
 ```{r}
@@ -238,6 +241,9 @@ recall <- function(block.labels, IDs) {
   precision(IDs, block.labels)
 }
 ```
+
+
+
 
 
 # Italian Survey on Household and Wealth (SHIW)
@@ -365,7 +371,7 @@ recall(blockRule, id)
 
 Let's block on a combination of gender and region. 
 
-\textcolor{red}{Trying to make this work using tidyverse as it seems more elegant.}
+Hint: Use \texttt{tidyverse}. 
 
 
 The histogram is not printing now for some reason. 
@@ -374,42 +380,24 @@ The histogram is not printing now for some reason.
 
 \tiny
 ```{r, message=FALSE}
-italy %>%
-  group_by(italy$IREG, italy$SEX) %>%
-  summarise(count = n()) %>%
-  group_by(count) %>%
-  ggplot() +
-  geom_histogram(aes(count))
+italy %>% 
+ group_by(IREG, SEX) %>% 
+ summarise(count = n(), .groups="drop") %>% 
+ ggplot() +
+ geom_histogram(aes(count))
 ```
-
-This seems to provide a histogram of the blocks with the number of records in each block. Roughly we have about 1500 blocks, where the no block has more than five records. 
 
 # Your turn solution
 
 \tiny
 ```{r}
-recordsPerBlock <- italy %>% 
-group_by(IREG, SEX) %>% 
-summarise(count = n(), .groups="drop")  %>% 
-group_by(count) %>%
-ggplot() +
-geom_histogram(aes(count))
-head(recordsPerBlock)
+blockIDs = paste(italy$IREG, italy$SEX, sep="_")
+table(blockIDs)
+print(rr <- reduction.ratio(blockIDs))
+precision(blockIDs, id)
+recall(blockIDs, id)
 ```
 
-I can no longer provide a histogram of this any longer for some reason. 
-
-# Your turn solution
-\tiny
-```{r}
-grouping <- group_by(italy, italy$IREG, italy$SEX)
-recordsPerBlock <- summarise(grouping, count=n())
-blockIDs = paste0(italy$IREG, italy$SEX, sep="_")
-table(recordsPerBlock$count)
-print(rr <- reduction.ratio(recordsPerBlock$count))
-precision(recordsPerBlock$count, blockIDs)
-recall(recordsPerBlock$count, blockIDs)
-```
 
 
 
