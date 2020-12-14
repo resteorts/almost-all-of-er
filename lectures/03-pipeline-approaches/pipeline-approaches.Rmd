@@ -54,16 +54,31 @@ Exact Matching and off by $k$ matching
 - Exact matching is where two record pairs are linked if they
 agree on all common attributes.
 
+\pause
+
+- Off by one matching links records pairs if they link on all common attributes (except for one). 
+
+\pause
+
+- Off by two matching links record pairs if they link on all common attributes (except for two). 
+
+\pause
+
+Exact Matching and off by $k$ matching
+===
+
 - An extension, off by k-matching, states that two record pairs
 are a match if they match on all common attributes except at most k, where k is an integer larger than 0.
+
+\pause
 
 - Exact matching (or extensions) are used when all the attributes are categorical as it tends to perform well, as opposed to when textual variables are introduced.
 
 
-Off by $k$ matching example
+RLdata500
 ===
 
-Let's apply off by $k$ matching to the RLdata500 data set, removing columns with missing values.
+Recall the \texttt{RLdata500} data set, removing any columns that contain missing values.
 
 ```{r, message=FALSE}
 #load RLdata500
@@ -73,20 +88,22 @@ data <- RLdata500[-c(2,4)] # Remove
 head(data)
 ```
 
-Off by $k$ matching example
+All pairs of records
 ===
 
 Now let's consider all possible pairs of records.
 
 ```{r}
-pairs = t(combn(1:nrow(RLdata500), 2))
+# create all pairs of records
+pairs <- t(combn(1:nrow(RLdata500), 2))
 head(pairs)
 ```
 
-Off by $k$ matching example
+Pairwise features that disagree
 ===
 
-For each pair of record, compute the the number of fields which disagree. This takes a few minutes in R (there are more efficient ways to go about it).
+For each pair of records, compute the number of features that disagree. 
+This takes a few minute to compute in \texttt{R}. (There are more efficient ways to do this). 
 
 ```{r, cache=TRUE}
 n_disagree = sapply(1:nrow(pairs), function(i) {
@@ -96,39 +113,68 @@ n_disagree = sapply(1:nrow(pairs), function(i) {
 })
 ```
 
-Off by $k$ matching example 
+Distribution of Feature Disagreement Among Record Pairs
 ===
 
-Now let's plot the distribution of the number of field disagreement among record pairs.
+Let's plot the total number of record pair comparisons versus the number of featurs that disagree. 
 
-\small
+\footnotesize 
 ```{r, fig.width=4, fig.height=3, fig.align="center"}
 plot(table(n_disagree), 
-     xlab="Number of field disagreements",
-     ylab="Number of record pairs")
+     xlab="Number of features that  disagree",
+     ylab="Total number of record pairs")
 ```
-Off by $k$ matching example 
+
+Distribution of Feature Disagreement Among Record Pairs
 ===
 
-We see most record pairs disagree on 4 or 5 fields. We can expect those pairs to be unmatched. Pairs disagreeing only on 1, 2 or 3 fields *might* be matches.
+What do you observe? 
 
-Off by $k$ matching example
+\footnotesize 
+```{r, fig.width=4, fig.height=3, fig.align="center"}
+plot(table(n_disagree), 
+     xlab="Number of features that  disagree",
+     ylab="Total number of record pairs")
+```
+
+Distribution of Feature Disagreement Among Record Pairs
 ===
 
-**Exact matching:** Link record pairs that for which there are no disagreement.
+- Observe that record pairs disagree on four or 5 features. We expect these records to not be matched. 
 
-Here there are no such pairs...
+\pause
+
+- Pairs disagreeing only on 1, 2 or 3 features *might* be matches.
+
+\pause 
+
+Is this intuitive? 
+
+
+Exact Matching 
+===
+
+**Exact matching:** Link record pairs that agree on all features. 
+
+\vspace*{1em}
+
 ```{r}
 sum(n_disagree == 0)
 ```
 
+\vspace*{1em}
 
-Off by $k$ matching example
+No pairs are exact matches! 
+
+
+Off by one matching
 ===
 
-**Off by 1 matching:** link record pairs which disagree only in one field.
-\small
+**Off by 1 matching:** Link record pairs that disagree only in one feature.
 
+
+\vspace*{1em}
+\footnotesize
 ```{r, message=FALSE, warning=FALSE}
 # Links
 links = pairs[n_disagree <= 1, ]
@@ -138,16 +184,19 @@ nrow(links)
 
 # Number of correctly estimated links
 sum(sapply(1:nrow(links), function(i) {
-  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
+  identity.RLdata500[links[i,1]] == 
+    identity.RLdata500[links[i,2]]
 }))
 ```
 
-Off by $k$ matching example
+Off by two matching example
 ===
 
-**Off by 2 matching:** link record pairs which disagree only in two field.
-\small
+**Off by 2 matching:** link record pairs that disagree only in two features.
 
+
+\vspace*{1em}
+\footnotesize
 ```{r}
 # Links
 links = pairs[n_disagree <= 2, ]
@@ -161,12 +210,13 @@ sum(sapply(1:nrow(links), function(i) {
 }))
 ```
 
-Off by $k$ matching example
+Off by three matching example
 ===
 
-**Off by 3 matching:** link record pairs which disagree only in two field.
-\small
+**Off by 3 matching:** link record pairs which disagree only in three features. 
 
+\vspace*{1em}
+\footnotesize
 ```{r}
 # Links
 links = pairs[n_disagree <= 3, ]
