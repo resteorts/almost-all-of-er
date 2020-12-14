@@ -1,7 +1,7 @@
 
 ---
-title: "Homework 0: Exploratory Data Analysis on the El Salavordan Conflict"
-author: "Olivier Binette, STA 490/690"
+title: "Homework 0: Give This A Name! "
+author: "Olivier Binette and Rebecca C. Steorts, STA 490/690"
 output: 
      pdf_document:
       includes: 
@@ -26,6 +26,8 @@ code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's wi
 \newpage
 
 # Introduction
+
+\textcolor{red}{Can you provide a bit more background on the pantry. Who is the pantry? Who does the pantry assist? }
 
 A Durham pantry provides food and basic necessities to students in need of assistance. Since the beginning of the COVID-19 pandemic, pantry usage has mainly been restricted to the weekly bag program: students fill bag orders through a Qualtrics survey, and the bags are then delivered to them or ready for pick-up on the next Saturday.
 
@@ -69,19 +71,27 @@ The raw Pantry records consists of weekly bag orders filled between June 24 and 
 \caption{Summary of the Qualtrics "Weekly Grocery Bag Request Survey" questions. Note that number of sub-questions which are not relevant to this analysis have been omitted.}
 \end{table}
 
+\paragraph{Protecting Privacy of Users}
+
+\textcolor{red}{I might elaborate here more regarding why it's improtant to protect the privacy and how you did this. You might want to build a small lecture on this where we can talk about the data set with the students in class + how you did the encryption. I think that this would be a great lecture to add into the class and would make it quite exciting. Up to you. }
+
 In order to protect the privacy of pantry users, the raw records have been anonymized and only a subset of this data is made available to you. The personal identifiers `name`, `phone` and `email` have been encrypted using an MD5 hash function. Furthermore, only the non free-form survey answers (questions 30-34) have been provided to you for your analysis. This data is contained in the `order_data.rds` file and the anonymization pre-processing script can be found in `encrypt_responses.R`.
 
-# Methodology
+# Methodology and Goals
 
-Many pantry users have filed more than one order in the considered time period. Your first task is therefore to resolve individual pantry users using this data. Next, you will consolidate survey answers for each individual. Finally, you will provide summary statistics and provide recommendations regarding the Pantry's data collection efforts.
+Many pantry users have filed more than one order in the considered time period. First, you will resolve individual pantry users using the pantry data set. Second, you will consolidate survey answers for each individual in the pantry. Finally, you will provide summary statistics and provide recommendations regarding the pantry's data collection efforts. In order to do this, you will perform three tasks below! 
 
-## Task 1: record linkage
+## Task 1: Deterministic Record Linkage
 
-The fields `name`, `phone` and `email` are all expected to contain variations. For example, I could have entered my name as "Olivier", "Olivier B." or "Olivier Binette" in different days, or pantry volunteers may have recorded my name as "Oliver". I have two duke email addresses: \url{olivier.binette@duke.edu} as well as \url{ob37@duke.edu}, and on some days I could have used my gmail address. My phone number changed a few months after I moved to Durham.
+The features  `name`, `phone` and `email` may have variations, such as variants in spelling of first and last name. For example, one user may enter the first name "Olivier" or "Oliver" by accident. As another example, this same user may have multiple email addresses such as \url{olivier.binette@duke.edu} and \url{ob37@duke.edu}. The user may decide to use both email addresses at random. Finally, the pantry user may have both a cell number or a landline, and thus, you may observe different `phone` numbers for the same user. 
 
-In order to identify unique individuals, perform deterministic record linkage using the three fields `name`, `phone` and `email` in combination: define two records to be a match if they agree on at least one of these fields. Given this record linkage, assign a unique entity identifier to each pantry user.
+Your goal is identify unique individuals to help the pantry's operations. To do this, you perform **deterministic record linkage** using the three fields `name`, `phone` and `email` and define two records to be a match if they agree on at least one of these fields. Given your deterministic record linkage, assign a unique entity identifier to each pantry user. 
 
-You may use parts (a)-(g) below as a guide, or you may submit a different solution of your own.
+\textcolor{red}{Should we put the helper sections in an appendix so they try it on their own and so it looks a bit more clean?}
+
+\textcolor{red}{Where can students find the encrypted data? Do they need the real data? I would mentioned at the start of the assignment what data they will work with and where to find it in the homework folder:)}
+
+**Parts  (a)-(g) provide a guided solution. You can also submit a solution of your own. Any correct solution will be accepted.**
 
 **Part a)** Read-in the encrypted data `order_data.rds` and view it using the function `View()`. How many non-empty orders were placed in the considered time period?
 
@@ -101,9 +111,11 @@ You may use parts (a)-(g) below as a guide, or you may submit a different soluti
 
 ## Task 2
 
-Construct a data frame where each row represents a unique pantry user and each column is a representative answer to the survey question. This does not have to be complicated. For example, you can choose the representative answer to be the first non NA answer for this individual.
+Construct a data frame where each **row represents a unique pantry user** and each **column is a representative answer to the survey question**. \textcolor{red}{Remind the student where to find the survey questions.}
 
-You may use parts (a)-(b) below as a guide or provide your own complete solution.
+\textbf{Hint: This is easier than you might think. For example, you can choose the representative answer to be the first non NA answer for this individual.}
+
+**Parts  (a)-(b) provide a guided solution. You can also submit a solution of your own. Any correct solution will be accepted.**
 
 **Part a)** Write a function `first_non_na()` which returns the first non-NA entry of a vector or otherwise returns "NA".
 
@@ -112,14 +124,14 @@ You may use parts (a)-(b) below as a guide or provide your own complete solution
 
 ## Task 3
 
-Given the above, answer the following questions:
+Given your answer in Task 2, answer the following questions:
 
-1. How many individuals have only used the pantry only one time in this time period?
+1. How many individuals have only used the pantry **only once** in the given time period?
 
 2. Plot the distribution of the number of visits per pantry user.
 
-3. What is the composition of degree type and order type among pantry users? Hint: you can use pie charts for simplicity.
+3. \textcolor{red}{What is the composition of degree type and order type among pantry users?} Hint: you can use pie charts for simplicity.
+\textcolor{red}{Could you clarify what you mean about the composition of degree type? Do you mean the degree type such as undergrad, postdoc, PhD or something else?}
 
-
-Furthermore, discuss the following: How could the pantry improve its data collection efforts in order to gain more meaningful insights into its users and their needs? Keep in mind the need to protect the privacy of the pantry users.
+4. Discuss the following:  How could the pantry improve its data collection efforts in order to gain more meaningful insights into its users and their needs? Make sure to keep in mind the importance of the need to protect the privacy of the pantry users.
 
