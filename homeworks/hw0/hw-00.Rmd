@@ -1,13 +1,20 @@
 
 ---
-title: "Homework 0: Give This A Name! "
-author: "Olivier Binette and Rebecca C. Steorts, STA 490/690"
+title: "Homework 0: Record linkage of business records for a community pantry"
+author: "Olivier Binette, STA 490/690"
 output: 
      pdf_document:
       includes: 
           in_header: custom2.tex
 font-size: 8px
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+
+if (!require(pacman)) install.packages("pacman")
+pacman::p_load(dplyr, kable, kableExtra)
+```
 
 ***General instructions for homeworks***: Please follow the uploading file instructions according to the syllabus. Your code must be completely reproducible and must compile. 
 
@@ -25,22 +32,25 @@ code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's wi
 
 \newpage
 
-# Introduction
+# 1. Introduction
 
-\textcolor{red}{Can you provide a bit more background on the pantry. Who is the pantry? Who does the pantry assist? }
+A community pantry located in Durham\footnote{The pantry allowed the use of their anonymized data for this case study bu requested not to be named.} provides food and basic necessities to Duke graduate students in need of assistance. Since the beginning of the COVID-19 pandemic, pantry usage has mainly been restricted to the weekly bag program: students fill food bag orders through a Qualtrics survey, and the bags are then delivered to them or ready for pick-up on the next Saturday. The bags typically contain canned beans, canned fruits and vegetables, cereals, rice, flour, and other basic necessities such as diapers. 
 
-A Durham pantry provides food and basic necessities to students in need of assistance. Since the beginning of the COVID-19 pandemic, pantry usage has mainly been restricted to the weekly bag program: students fill bag orders through a Qualtrics survey, and the bags are then delivered to them or ready for pick-up on the next Saturday.
+As a volunteer statistician at the Pantry, you are tasked to describe the composition of pantry users through bag order records (see section 2), where each bag order record represents a food bag that was given to a student. Furthermore, you will provide recommendations regarding how the pantry could improve its data collection efforts to better evaluate the need of students. Your analysis will assist the pantry in its negotiation with university stakeholders and will help them prepare for an upcoming symposium on the subject of food insecurity in U.S. colleges.
 
-As a volunteer statistician at the Pantry, you are tasked to:
+In order to describe the composition of pantry users, you will perform the following three tasks:
 
-1. describe the composition of pantry users through bag order records; and
-2. provide recommendations regarding how the pantry could improve its data collection efforts to better evaluate the need of students.
+1. perform deterministic record linkage on anonymized data;
 
-Your analysis will assist the Pantry in its negotiation with University stakeholders and will help them prepare for the upcoming Campus Food Insecurity Symposium.
+2. construct representative records for individual pantry users identified in (1); and
 
-# Data
+3. report summary statistics based on (2).
 
-The raw Pantry records consists of weekly bag orders filled between June 24 and November 4 2020 using a Qualtrics survey. This is an online survey made available to all of Duke's graduate and professional students. The survey is mainly advertised over email in periodical newsletters and it records all bag orders for the given time period. Its content is summarized in Table 1.
+The tasks are outlined in more detail in section 3.
+
+# 2. Data
+
+The pantry's bag order records consists of bag orders filled between June 24 and November 4 2020 through an online Qualtrics form. Each record contains a date, name, phone number, email, physical address, the requested food order for the week and the answers to a few background questions. This is summarized in Table 1.
 
 \begin{table}[ht]
 \centering
@@ -71,27 +81,73 @@ The raw Pantry records consists of weekly bag orders filled between June 24 and 
 \caption{Summary of the Qualtrics "Weekly Grocery Bag Request Survey" questions. Note that number of sub-questions which are not relevant to this analysis have been omitted.}
 \end{table}
 
-\paragraph{Protecting Privacy of Users}
+\paragraph{Protecting privacy of users.}
 
-\textcolor{red}{I might elaborate here more regarding why it's improtant to protect the privacy and how you did this. You might want to build a small lecture on this where we can talk about the data set with the students in class + how you did the encryption. I think that this would be a great lecture to add into the class and would make it quite exciting. Up to you. }
+The data collected by the pantry about its users is kept private and is only used for the purpose of fulfilling orders, of reporting summaries of operations and for improving its services. For the purpose of this homework, the pantry has agreed to share an anonymized subset of the bag order records. The anonymization procedure (see file `encrypt_responses.R`) ensures that no private information is shared and that it is highly unlikely that any individual pantry user could be re-identified through a cryptographic or linkage attacks. Specifically, the personal identifiers `name`, `phone` and `email` have been encrypted using an MD5 hash function. Furthermore, only the non free-form survey answers (questions 30-34) have been provided to you for your analysis. This anonymized data is contained in the file `order_data.rds` which will be individual provided to you. Do not share the data.
 
-In order to protect the privacy of pantry users, the raw records have been anonymized and only a subset of this data is made available to you. The personal identifiers `name`, `phone` and `email` have been encrypted using an MD5 hash function. Furthermore, only the non free-form survey answers (questions 30-34) have been provided to you for your analysis. This data is contained in the `order_data.rds` file and the anonymization pre-processing script can be found in `encrypt_responses.R`.
-
-# Methodology and Goals
+# 3. Methodology
 
 Many pantry users have filed more than one order in the considered time period. First, you will resolve individual pantry users using the pantry data set. Second, you will consolidate survey answers for each individual in the pantry. Finally, you will provide summary statistics and provide recommendations regarding the pantry's data collection efforts. In order to do this, you will perform three tasks below! 
 
-## Task 1: Deterministic Record Linkage
+## Task 1: record linkage
 
 The features  `name`, `phone` and `email` may have variations, such as variants in spelling of first and last name. For example, one user may enter the first name "Olivier" or "Oliver" by accident. As another example, this same user may have multiple email addresses such as \url{olivier.binette@duke.edu} and \url{ob37@duke.edu}. The user may decide to use both email addresses at random. Finally, the pantry user may have both a cell number or a landline, and thus, you may observe different `phone` numbers for the same user. 
 
-Your goal is identify unique individuals to help the pantry's operations. To do this, you perform **deterministic record linkage** using the three fields `name`, `phone` and `email` and define two records to be a match if they agree on at least one of these fields. Given your deterministic record linkage, assign a unique entity identifier to each pantry user. 
+Your first task is to identify unique individuals who filed bag orders during the considered time period. To do this, perform **deterministic record linkage** using the three fields `name`, `phone` and `email` and define two records to be a match if they agree on at least one of these fields. Given your deterministic record linkage, assign a unique entity identifier to each pantry user.
 
-\textcolor{red}{Should we put the helper sections in an appendix so they try it on their own and so it looks a bit more clean?}
+For example, the following two records should be linked since they agree on email and phone number.
 
-\textcolor{red}{Where can students find the encrypted data? Do they need the real data? I would mentioned at the start of the assignment what data they will work with and where to find it in the homework folder:)}
+```{r, echo=FALSE}
+data = readRDS("order_data.rds")
+data[c(63, 190), ] %>% 
+  mutate(name = paste0(substr(name, 1, 5), "..."),
+         email = paste0(substr(email, 1, 5), "..."),
+         phone = paste0(substr(phone, 1, 5), "..."),
+         how = paste0(substr(how, 1, 6))) %>% 
+  kable(booktabs=TRUE) %>% 
+  kable_styling(font_size = 7)
+```
 
-**Parts  (a)-(g) provide a guided solution. You can also submit a solution of your own. Any correct solution will be accepted.**
+You may use the guide provided in the appendix to help with this task. Any correct solution will be accepted.
+
+## Task 2: canonicalization
+
+Construct a data frame where each **row represents a unique pantry user** and with **columns `degree` and `school`**, where each entry is a representative answer for this individual. For example, you can choose the representative answer to be the first non NA answer for this individual.
+
+The first three records of this data frame could look like this:
+
+\begin{center}
+\begin{tabular}{rll}
+\toprule
+uniqueID & degree & school\\
+\midrule
+1 & Master's & Fuqua School of Business\\
+2 & Master's & Graduate School\\
+3 & Master's & Fuqua School of Business\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+You may use the guide provided in the appendix to help with this task. Any correct solution will be accepted.
+
+## Task 3: summary statistics
+
+Given the above, answer the following questions:
+
+1. How many distinct individuals used the pantry? How many orders have they placed on average? How many individuals used the pantry only once?
+
+2. Plot the distribution of the number of visits per pantry user.
+
+3. What is the composition of degree type (Masters, PhD, etc) and school (Graduate School, Nicholas School, etc) among pantry users? Report the proportions using pie charts and use your best judgment if the categories need to be cleaned up.
+
+Furthermore, discuss the following: How could the pantry improve its data collection efforts in order to gain more meaningful insights into its users and their needs? Keep in mind the need to protect the privacy of the pantry users.
+
+\newpage
+\appendix
+
+\section{Appendix}
+
+\subsection{Guide to task 1}
 
 **Part a)** Read-in the encrypted data `order_data.rds` and view it using the function `View()`. How many non-empty orders were placed in the considered time period?
 
@@ -109,29 +165,8 @@ Your goal is identify unique individuals to help the pantry's operations. To do 
 
 **Part g)** (Optional challenge) Can you perform the record linkage much more efficiently, without enumerating all record pairs? Hint: use sorting.
 
-## Task 2
-
-Construct a data frame where each **row represents a unique pantry user** and each **column is a representative answer to the survey question**. \textcolor{red}{Remind the student where to find the survey questions.}
-
-\textbf{Hint: This is easier than you might think. For example, you can choose the representative answer to be the first non NA answer for this individual.}
-
-**Parts  (a)-(b) provide a guided solution. You can also submit a solution of your own. Any correct solution will be accepted.**
+\subsection{Guide to task 2}
 
 **Part a)** Write a function `first_non_na()` which returns the first non-NA entry of a vector or otherwise returns "NA".
 
 **Part b)** Construct a data frame where each row represent a unique pantry user and each column is the first non-NA data entry for this person. Hint: group `data` by unique ID and use the function `dplyr::summarize_all()` to summarize each column using the `first_non_na()` function.
-
-
-## Task 3
-
-Given your answer in Task 2, answer the following questions:
-
-1. How many individuals have only used the pantry **only once** in the given time period?
-
-2. Plot the distribution of the number of visits per pantry user.
-
-3. \textcolor{red}{What is the composition of degree type and order type among pantry users?} Hint: you can use pie charts for simplicity.
-\textcolor{red}{Could you clarify what you mean about the composition of degree type? Do you mean the degree type such as undergrad, postdoc, PhD or something else?}
-
-4. Discuss the following:  How could the pantry improve its data collection efforts in order to gain more meaningful insights into its users and their needs? Make sure to keep in mind the importance of the need to protect the privacy of the pantry users.
-
