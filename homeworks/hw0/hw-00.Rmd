@@ -83,7 +83,7 @@ The pantry's bag order records consists of bag orders filled between June 24 and
 
 \paragraph{Protecting privacy of users.}
 
-The data collected by the pantry about its users is kept private and is only used for the purpose of fulfilling orders, of reporting summaries of operations and for improving its services. For the purpose of this homework, the pantry has agreed to share an anonymized subset of the bag order records. The anonymization procedure (see file `encrypt_responses.R`) ensures that no private information is shared and that it is highly unlikely that any individual pantry user could be re-identified through a cryptographic or linkage attacks. Specifically, the personal identifiers `name`, `phone` and `email` have been encrypted using an MD5 hash function. Furthermore, only the non free-form survey answers (questions 30-34) have been provided to you for your analysis. This anonymized data is contained in the file `order_data.rds` which will be individual provided to you. Do not share the data.
+The data collected by the pantry about its users is kept private and is only used for the purpose of fulfilling orders, of reporting summaries of operations and for improving its services. For the purpose of this homework, the pantry has agreed to share an anonymized subset of the bag order records. The anonymization procedure (see file `encrypt_responses.R`) ensures that no private information is shared and that it is highly unlikely that any individual pantry user could be re-identified through cryptographic or linkage attacks. Specifically, the personal identifiers `name`, `phone` and `email` have been encrypted using an MD5 hash function. Furthermore, only the non free-form survey answers (questions 30-34) have been provided to you for your analysis. This anonymized data is contained in the file `order_data.rds` which will be individual provided to you. Do not share the data.
 
 # 3. Methodology
 
@@ -134,7 +134,7 @@ You may use the guide provided in the appendix to help with this task. Any corre
 
 Given the above, answer the following questions:
 
-1. How many distinct individuals used the pantry? How many orders have they placed on average? How many individuals used the pantry only once?
+1. How many distinct individuals used the pantry? On average, how many orders has each user placed in the considered time period? How many individuals used the pantry only once?
 
 2. Plot the distribution of the number of visits per pantry user.
 
