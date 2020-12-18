@@ -1,10 +1,6 @@
 base
-methods
-datasets
-utils
-grDevices
-graphics
-stats
-sadinle14
-exchangeableER
+exer
 magrittr
+sadinle14
+comparator
+clevr

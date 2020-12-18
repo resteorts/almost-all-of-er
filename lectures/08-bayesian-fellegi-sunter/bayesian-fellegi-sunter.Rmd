@@ -15,6 +15,13 @@ font-size: 8px
 - Binette and Steorts (2020)
 - Sadinle (2014)
 
+# Load Libraries
+
+```{r, cache=TRUE}
+#install.packages("exer_0.2.0.tar.gz", repos = NULL, type="source")
+library(exer)
+```
+
 # Duplicate detection
 
 **Duplicate detection** is the task of finding sets of records that refer to the same entities within a data file.
@@ -260,9 +267,12 @@ In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use
 # sadinle14 package 
 \footnotesize
 ```{r, message=FALSE}
-library(sadinle14)
-library(exchangeableER)
 library(magrittr)
+library(sadinle14)
+library(exer)
+# >> INSERT
+library(comparator)
+# <<
 library(clevr)
 RLdata500[['rec_id']] <- seq.int(length.out=nrow(RLdata500))
 head(RLdata500)
@@ -271,13 +281,22 @@ head(RLdata500)
 # distance functions
 \footnotesize
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
+# scoringFns <- list(
+#   fname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
+#   lname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
+#   by = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
+#   bm = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
+#   bd = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE)
+# )
+# >> INSERT
 scoringFns <- list(
-  fname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
-  lname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
-  by = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
-  bm = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
-  bd = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE)
+  fname_c1 = comparator::Levenshtein(normalize=TRUE),
+  lname_c1 = comparator::Levenshtein(normalize=TRUE),
+  by = function(x, y) abs(x - y),
+  bm = function(x, y) abs(x - y),
+  bd = function(x, y) abs(x - y)
 )
+# <<
 ```
 
 # breaks
@@ -359,11 +378,11 @@ beta1 <- alpha1
 
 Finally we initialize the model and run inference using Markov chain  Monte Carlo.
 ```{r, eval=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
-             model <- sadinle14::initializeModel(pairs,  
-                      lambda,  alpha1, 
-                      beta1, id.cols 
-                      = c("rec_id.x", "rec_id.y"),
-                      candidate.col = "candidate")
+model <- sadinle14::initializeModel(pairs,  
+         lambda,  alpha1, 
+         beta1, id.cols 
+         = c("rec_id.x", "rec_id.y"),
+         candidate.col = "candidate")
 
 result <- sadinle14::runInference(model, 
           100, thinningInterval=10, 
@@ -385,17 +404,49 @@ linkageChain <- sadinle14::completeLinkageChain(result,
                 RLdata500$rec_id)
 ```
 
+<!-- # evaluations -->
+
+<!-- - We evaluate the quality of the posterior linkage structure (deduplication)  based on a point estimate computed using the _shared most probable maximal matching sets method_ -->
+<!--  from  Steorts, Hall, Fienberg (2016).   -->
+
+<!-- - This functionality is available from the `exchangeableER` package. -->
+
+<!-- ```{r, eval=TRUE, message=FALSE, warning=FALSE} -->
+<!-- #mpc <- exchangeableER::mostProbableClusters(linkageChain) -->
+<!-- #predClusters <- exchangeableER::sharedMostProbableClusters(mpc) -->
+<!-- #predMatches <- exchangeableER::clustersToPairs(predClusters) -->
+<!-- #trueClusters <- exchangeableER::membershipToClusters(identity.RLdata500, ids=as.character(RLdata500$rec_id)) -->
+<!-- #trueMatches <- exchangeableER::clustersToPairs(trueClusters) -->
+<!-- # >> INSERT -->
+<!-- predClusters <- exer::smp_clusters(linkageChain) -->
+<!-- predMatches <- clevr::clusters_to_pairs(predClusters) -->
+<!-- trueMatches <- clevr::membership_to_pairs(identity.RLdata500) -->
+<!-- numRecords <- nrow(RLdata500) -->
+<!-- clevr::eval_report_pairs(trueMatches, predMatches,  -->
+<!--                          num_pairs = numRecords*(numRecords-1)/2) -->
+<!-- ``` -->
+
+
 # evaluations
 
 - We evaluate the quality of the posterior linkage structure (deduplication)  based on a point estimate computed using the _shared most probable maximal matching sets method_
  from  Steorts, Hall, Fienberg (2016).  
 
-- This functionality is available from the `exchangeableER` package.
+- This functionality is available from the `exer` package.
 
+# evaluations
+
+\footnotesize
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
-#mpc <- exchangeableER::mostProbableClusters(linkageChain)
-#predClusters <- exchangeableER::sharedMostProbableClusters(mpc)
-#predMatches <- exchangeableER::clustersToPairs(predClusters)
-#trueClusters <- exchangeableER::membershipToClusters(identity.RLdata500, ids=as.character(RLdata500$rec_id))
-#trueMatches <- exchangeableER::clustersToPairs(trueClusters)
+predClusters <- exer::smp_clusters(linkageChain)
+predMatches <- clevr::clusters_to_pairs(predClusters)
+trueMatches <- clevr::membership_to_pairs(identity.RLdata500)
+numRecords <- nrow(RLdata500)
+```
+
+# evaluations
+\footnotesize
+```{r, eval=TRUE, message=FALSE, warning=FALSE}
+clevr::eval_report_pairs(trueMatches, predMatches, 
+                         num_pairs = numRecords*(numRecords-1)/2)
 ```
