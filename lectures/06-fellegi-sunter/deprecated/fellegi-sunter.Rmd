@@ -273,51 +273,6 @@ $N_2$ & Frances & Hung & NA\\
 
 ## The Fellegi-Sunter model
 
-Fellegi and Sunter (1969) formalizes Newcombe et al. (1959) in a decision-theoretic framework.
-
-\vspace*{2em}
-
-We consider **three possible actions** for a given pair of records:
-\begin{itemize}
-    \item to \textit{link} them;
-    \item to call them a \textit{possible link}; or
-    \item to \textit{not link} them.
-\end{itemize}
-
-## A Theory for Record Linkage 
-
-Consider **two error probabilities** (error rates):
-
-$$
-    \mu = \mathbb{P}\left(\text{linking} \mid \text{records do not match}\right),
-$$
-
-\vspace*{2em}
-
-$$
-    \lambda = \mathbb{P}\left(\text{not linking} \mid \text{records do match}\right).
-$$
-
-
-## A Theory for Record Linkage 
-
-
-\begin{center}
-      \includegraphics[width=\linewidth]{finalFigures/Scan}
-\end{center}
-
-
-Goal of an **optimal decision procedure**:
-\vspace{0.03in}
-
-Minimize the number of \textit{possible links}, while achieving the above error rates at fixed levels $\mu$ and $\lambda$.
-
-## A Fundamental Theorem for Record Linkage 
-
-Fellegi and Sunter (1969) showed that the **optimal decision procedure** is obtained by a **likelihood ratio test**. 
-
-## Comparison Vectors
-
 Let $$i = 1,2,\dots, N_1\times N_2$$ enumerate the set of all record pairs in $A \times B$.
 \pause
 
@@ -329,11 +284,11 @@ $$
 
 - Each $\gamma_i^{j}$ compares the $j$th field of the records.
 
-
+\pause
 
 Example: Let the $j$th field be "age." Then $\gamma_i^{j} = 0$ if all ages are the same and $\gamma_i^{j} = 1$ if ages different.
 
-## Comparison Vectors
+## The Fellegi-Sunter model
 
 **Binary comparisons:**
 
@@ -350,133 +305,89 @@ Example: Let the $j$th field be "age." Then $\gamma_i^{j} = 0$ if all ages are t
 - You choose!
 - Use string distance functions to compare names.
 
-## Comparison Vectors
+## The Fellegi-Sunter model
 
-How can we visualize the comparison vectors? 
-
-\begin{align}
-\gamma_1 &= (\gamma_1^{(1)}, \gamma_1^{(2)}, \dots, \gamma_1^{(k)}) \\
-\gamma_2 &= (\gamma_2^{(1)}, \gamma_2^{(2)}, \dots, \gamma_2^{(k)}) \\
-&\vdots\\
-\gamma_{(N_1 \times N_2)} &= (\gamma_{(N_1 \times N_2)}^{(1)}, \gamma_{(N_1 \times N_2)}^{(2)}, \dots, \gamma_{(N_1 \times N_2)}^{(k)}) 
-\end{align}
-
-Let $$\gamma = (\gamma_1^{(1)}, \gamma_2^{(2)}, \ldots, \gamma_{(N_1 \times N_2)}^{(k)})$$
-
-
-## Likelihood Ratio Test
-
-Define
-
-\begin{align}
-m(\gamma) &= \mathbb{P}(\gamma \mid \text{the records are a match}) \\
-u(\gamma) &= \mathbb{P}(\gamma \mid \text{the records are not a match})
-\end{align}
-
+The set $\{\gamma_k\}_{j=1}^{N_1 \times N_2}$ of computed comparison vectors becomes the **observed data** for the Fellegi-Sunter model.
 \pause
 
-Then the **matching weight** or **log-likelihood ratio** is
-\begin{align}
-W(\gamma) &= \log(m(\gamma) / u(\gamma))
-\end{align}
+**Next component of the model:**
 
-## Likelihood Ratio Test
+- The **matching configuration** $r = \{r_j\}_{j=1}^{N_1 \times N_2}$, with $r_j = 1$ if the $j$th record pair matches, and $r_j = 0$ otherwise.
+  - This is the adjacency list representation. We can also use a matching configuration matrix.
 
-Two thresholds $T_\mu$ and $T_\lambda$ must be computed as a function of the desired error levels $\mu$ and $\lambda$.
+- This is not a very efficient representation for bipartite matching. Sadinle (2017) instead uses a *matching labeling*.
 
-\vspace*{2em}
+## The Fellegi-Sunter model
 
-Specifically, we
-\begin{itemize}
-  \item \textit{link} if $W(\gamma) > T_\mu$;
-  \item \textit{possible link} if $T_\mu \geq W(\gamma) > T_\lambda$; and
-  \item do \textit{not link} if otherwise $T_\lambda \geq W(\gamma)$.
-\end{itemize}
+- For record pairs that are a ***m**atch* ($r_j = 1$), we assume that $\gamma \sim m$ independently.
+\pause
 
-\vspace*{2em}
+- For record pairs that are ***u**nmatched* ($r_j = 0$), we assume that $\gamma \sim u$ independently.
+\pause
 
+- More precisely, 
 
-We are ignoring the boundary cases (see Appendix 1 of Fellegi-Sunter (1969) for details).
-
-## Key Questions
-
-\begin{enumerate}
-        \item How do we compute the probabilities
-            $$m(\gamma) = \mathbb{P}(\gamma \mid \text{the records are a match}),$$
-        $$u(\gamma) = \mathbb{P}(\gamma \mid \text{the records are not a match})?$$
-        \item Do we care about the error rates
-        $$
-    \mu = \mathbb{P}\left(\text{linking} | \text{records don't match}\right),
-    $$
-    $$
-        \lambda = \mathbb{P}\left(\text{not linking} | \text{records are a match}\right)?
-    $$
-    \end{enumerate}
-
-
-## Proposed methods
-
-Fellegi and Sunter (1969) proposed two methods in their paper for calculating $m(\gamma)$ and $u(\gamma).$
-
-They referred to these as Method 1 and Method 2, and thus, we will stick with the same terminology. 
-
-
-## Method 1
-
-**Method 1**: This is roughly what Newcombe el al (1959) proposed: 
-
-- Completely unsupervised
-- Uses frequency of occurence of names, ages, addresses as additional information
-- Requires prior knowledge of error rates ($\mu$ and $\lambda$). For some problems, these are known or can be estimated. 
-
-Example: At the U.S. Census Bureau, they currently use Method 1 in production for the decennial census and have prior knowledge of the error rates from working on the problem for a very long period of time. 
-
-## Method 2
-
-The second method applies to the comparison vectors $\gamma = (\gamma_1^{(1)}, \gamma_2^{(2)}, \ldots, \gamma_{(N_1 \times N_2)}^{(k)})$ under the following assumptions: 
-
-\begin{itemize}
-        \item $\gamma_i^j \in \{0,1\}$ is a binary comparison
-        \item $\{\gamma_i^j\}_{j=1}^k$ is conditionally independent given the true match or non-match status of the pair of records.
-\end{itemize}
-
-## Method 2
-
-Let $M$ be the set of true matches among record pairs, $U$ be the set of true non-matches.
-
-Abusing notation, the idea is to consider the equations:
-    \begin{align*}
-    P(\gamma) &= P(\gamma\mid M)P(M) + P(\gamma\mid U)P(U)\\
-       &= \left\{\prod_{i=1}^k P(\gamma_i | M)\right\} P(M) + \left\{\prod_{i=1}^k P(\gamma_i | U)\right\} P(U)\\
-        &= \left\{\prod_{i=1}^k m(\gamma_i)\right\} P(M) + \left\{\prod_{i=1}^k u(\gamma_i)\right\} (1-P(M)),
-    \end{align*}
-    which are $2^k - 1$ equations for $2k + 1$ variables; there can be a solution when $k \geq 3$.
-    
-To solve for $m(\gamma_i)$ and $u(\gamma_i),$ the EM algorithm is used.   
-    
-    
-## Final Question
-
-Do we care about the error rates
 $$
-    \mu = \mathbb{P}\left(\text{linking} | \text{records don't match}\right),
+  p\left(\{\gamma_j\}_{j=1}^{N_1 \times N_2} \mid r, m, u\right) = \left(\prod_{j\,:\,r_j = 1} m(\gamma_j) \right)\times\left(\prod_{j\,:\,r_j = 0} u(\gamma_j) \right).
 $$
+
+## The Fellegi-Sunter model
+
 $$
-        \lambda = \mathbb{P}\left(\text{not linking} | \text{records are a match}\right)?
+  p\left(\{\gamma_j\}_{j=1}^{N_1 \times N_2} \mid r, m, u\right) = \left(\prod_{j\,:\,r_j = 1} m(\gamma_j) \right)\times\left(\prod_{j\,:\,r_j = 0} u(\gamma_j) \right).
 $$
-   
-In practice, we do not know if a given pair of record is a match or not, so put simply, we cannot answer this question directly. 
 
-## Final Question
+\begin{center}
+  \includegraphics[width=0.85\linewidth]{finalFigures/mixture}
+\end{center}
 
-We can answer related questions, such as: 
+## The Fellegi-Sunter model
 
-\begin{itemize}
-    \item $\mathbb{P}(\text{records don't match} \mid \text{we linked them})$; or
-    \item $\mathbb{P}(\text{records match} \mid \gamma)$
-\end{itemize}
+What's left to do?
+\pause
 
-To explore this more in depth, see Binette and Steorts (2020) to see connections to Bayes' rule and see Tepping (1968). 
+- Estimate model parameters.
+\pause
+
+- Define a prior $p(r, m, u)$.
+\pause
+
+- Obtain a posterior
+\begin{align*}
+  p(r \mid \{\gamma_j\}_{j=1}^{N_1 \times N_2}) &= \int p(r, m ,u \mid \{\gamma_j\}_{j=1}^{N_1 \times N_2})\,dm\, du\\
+  &\propto \int p(\{\gamma_j\}_{j=1}^{N_1 \times N_2}\mid r, m, u)p(r, m, u)\,dm\, du
+\end{align*}
+
+## The Fellegi-Sunter model
+
+- This is **not** what Fellegi-Sunter originally proposed
+\pause
+
+- Originally, FS proposed to estimate $m$ and $u$ on their own.
+\pause
+
+- Then, define the log-likelihood ratio (**matching weight**)
+$$
+  W(\gamma_j) = \log \frac{m(\gamma_j)}{u(\gamma_j)}.
+$$
+\pause
+
+- Say that the $j$th pair is a match if $W(\gamma_j)$ is large, that they're not a match if $W(\gamma_j)$ is small: this is a likelihood ratio test.
+
+## The Fellegi-Sunter model
+
+What's the problem with the original FS approach?
+\pause
+
+- You consider all record pairs independently.
+\pause
+
+- You could link records $a$ and $b$, and $b$ and $c$, and yet say that $a$ and $c$ are not a match. This is incoherent.
+\pause
+
+- In the *bipartite record linkage* framework, we want to specify a prior on $r$ which reflects the fact that there is duplication across but not within databases.
+
+
 
 
 
