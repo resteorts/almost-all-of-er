@@ -18,8 +18,8 @@ font-size: 8px
 # Load Libraries
 
 ```{r, cache=TRUE}
-#install.packages("exer_0.2.0.tar.gz", repos = NULL, type="source")
-library(exer)
+#install.packages("exchanger_0.2.0.tar.gz", repos = NULL, type="source")
+library(exchanger)
 ```
 
 # Duplicate detection
