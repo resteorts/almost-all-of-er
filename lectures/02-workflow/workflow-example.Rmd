@@ -1,0 +1,27 @@
+
+---
+title: "Example workflow: Getting organized using GitHub and RStudio"
+author: "Olivier Binette"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Agenda
+===
+
+- Getting set-up in RStudio
+- Organizing your projects
+- Using GitHub for project management
+
+Getting set-up in RStudio
+===
+
+## Why use RStudio?
+
+- Convenient **git pane** to manage a git project (commit, push, pull, etc)
+
+
+
