@@ -118,8 +118,19 @@ Using RStudio's git pane, you can now:
 
 # Organizing your project
 
-**Overall,** you project could be structured like this:
+**Tip 5:** Avoid file path issues using the "here" package.
 
+- Place an empty file named ".here" at the project root.
+- Using there "here" package, you can obtain the path to the project root by calling the function here().
+- Refer to project files using e.g. here("R/my_code.R")
+
+This avoids common issues related to file paths using R/RStudio. 
+
+# Organizing your project
+
+Overall, you project could be structured like this:
+
+- .here
 - **R/**
 - **vignettes/**
 - **experiments/**
@@ -129,13 +140,13 @@ Using RStudio's git pane, you can now:
         - **input/**: data.rds
         - **src/**: 1-parse-data.R, 2-PCA.R, 3-make-plots.R
         - **output/**: pca-results.rds, plot.pdf
-- **writeup**
+- **writeup/**
     - main.tex
     - biblio.bib
     
 # Organizing your project
 
-**Tip 5:** Want to avoid merge conflicts?
+**Tip 6:** Want to avoid merge conflicts?
 
 - Branch off!
 
