@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  11 JAN 2021 06:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 JAN 2021 09:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -558,20 +558,16 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 415.
 Package rerunfilecheck Info: File `syllabus-sta490-spring-2021.out' has not cha
 nged.
 (rerunfilecheck)             Checksum: FF8C30B71BBDB57E65A8F4A32003EEB5;466.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 415.
  ) 
 Here is how much of TeX's memory you used:
  6410 strings out of 480608
  95776 string characters out of 5903631
- 365036 words of memory out of 5000000
+ 364036 words of memory out of 5000000
  22072 multiletter control sequences out of 15000+600000
  543176 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,45p,900b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,45p,900b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb>
@@ -584,7 +580,7 @@ texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on syllabus-sta490-spring-2021.pdf (12 pages, 189400 bytes).
+Output written on syllabus-sta490-spring-2021.pdf (12 pages, 189436 bytes).
 PDF statistics:
  286 PDF objects out of 1000 (max. 8388607)
  257 compressed objects within 3 object streams
