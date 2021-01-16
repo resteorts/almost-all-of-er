@@ -1,0 +1,24 @@
+---
+title: "Article extraction from historical newspaper archives"
+author: "Olivier Binette, STA 490/690"
+output: 
+     pdf_document:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+\begin{quote}
+``The Chronicle is Duke's independent, student-run newspaper. Founded December 19, 1905, it was called the Trinity Chronicle, as the school was called Trinity College at the time.'' \footnote{Learn more at \url{https://repository.duke.edu/dc/dukechronicle}}
+\end{quote}
+
+Duke has a long history of student journalism, dating back at least to 1905 when the Trinity Chronicle (now Duke Chronicle) was first published. The Duke University Library has digitized their collection which is now available at \url{https://repository.duke.edu/dc/dukechronicle}.
+
+The undergraduate \textit{Duke Applied Machine Learning} club has a team working on the analysis of this historical newspaper archive. While the archive is currently searchable -- the newspaper scans have been read-in using optical character recognition (OCR) software -- the current system does not provide information regarding the belonging of the text to individual article. The team is therefore tackling the technical challenge of \textit{article extraction}. The goal is to identify individual articles as part of the text, recovering both their title and continuous text content.
+
+There are many aspects to this problem. First the newspaper scans have to be segmented into its chunks of text, and this text has to be read using OCR. Semantic segmentation tools have also been used to identify publicities, titles, and other newspaper features in similar analyses. Next, the segmented chunks of text have to be linked according to the article to which they belong, using both the layout of the newspaper and the text itself as references.
+
+In this homework, we will explore the use of Entity Resolution tools to assist article extraction.
+
+
+
