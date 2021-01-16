@@ -22,7 +22,7 @@ Piazza will be used as a group forum for all questions for the course as well as
 
 [Github]()
 
-Github will be used for all homework submissions and group projects. You will be expected to have group repository for this class that is organized by your group leader. [[OB: We should perhaps make a template for this and have students fork this to make workflow easier?]
+Github will be used for all homework submissions and group projects. You will be expected to have group repository for this class that is organized by your group leader. 
 
 # Required Readings
 
