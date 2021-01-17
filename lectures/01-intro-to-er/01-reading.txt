@@ -1,0 +1,7 @@
+# Reading, Module 1
+
+1. Data Matching, Peter Christen, 2012 
+2. Almost all of Entity Resolution, Binette and Steorts
+
+
+
