@@ -9,15 +9,14 @@ output:
 font-size: 8px
 ---
 
-***Reading*** Read the paper Binette and Steorts (2020) to get an overview of entity resolution. You'll want to refer to this during the course of the semester as it's meant to be a quick reference regarding the concepts that we will be covering. For more details, refere to the book by Christen (2012). 
+***General instructions for homeworks***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
 
-***General instructions for homeworks***: Please follow the uploading file instructions according to the syllabus. Your code must be completely reproducible and must compile. 
+***Reading*** Read the paper Binette and Steorts (2020) to get an overview of entity resolution. You'll want to refer to this during the course of the semester as it's meant to be a quick reference regarding the concepts that we will be covering. For more details, refer to the book by Christen (2012). 
 
 ***Advice***: Start early on the homeworks and it is advised that you not wait until the day of as these homeworks are meant to be longer and treated as case studies.
 
 ***Commenting code***
-Code should be commented. See the Google style guide for questions regarding commenting or how to write 
-code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's will be accepted.
+Code should be commented. See the Google style guide for questions regarding commenting or how to write code \url{https://google.github.io/styleguide/Rguide.xml}.
 
 ***R Markdown Test***
 

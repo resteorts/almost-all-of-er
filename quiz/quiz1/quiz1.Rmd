@@ -9,17 +9,14 @@ output:
 font-size: 8px
 ---
 
-
-
-***General instructions for homeworks***: Please follow the uploading file instructions according to the syllabus. Your code must be completely reproducible and must compile. 
+***General instructions for homeworks***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
 
 ***Advice***: Start early on the quizzes early and it is advised that you not wait until the day of as these are meant to be longer and worked on within a group environment.
 
 ***Commenting code***
-Code should be commented. See the Google style guide for questions regarding commenting or how to write 
-code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's will be accepted.
+Code should be commented. See the Google style guide for questions regarding commenting or how to write code \url{https://google.github.io/styleguide/Rguide.xml}.
 
-***R Markdown Test***
+# Problem statement
 
 Create a homework for the class that is broken up into five tasks, and provide a worked through solution and grading rubric to your homework. Make sure that goals for your homework assignment are clear, motivated by real data, and that you give helpful hints if needed. 
 
