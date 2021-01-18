@@ -1,0 +1,25 @@
+
+---
+title: "Quiz 2"
+author: "Due: TBD"
+output: 
+     pdf_document:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+
+
+***General instructions for quiz***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
+
+***Advice***: Start early on the quizzes early and it is advised that you not wait until the day of as these are meant to be longer and worked on within a group environment.
+
+***Commenting code***
+Code should be commented. See the Google style guide for questions regarding commenting or how to write code \url{https://google.github.io/styleguide/Rguide.xml}.
+
+# Problem statement
+
+This is a group assignment, where you will complete one of the assignments from quiz 1 that a team from our course believes is a good assignment on entity resolution. 
+
+Please work through the quiz assigned to your team, and submit it! 

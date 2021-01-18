@@ -1,0 +1,26 @@
+
+---
+title: "Quiz 3"
+author: "Due: TBD"
+output: 
+     pdf_document:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+
+
+***General instructions for quiz***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
+
+***Advice***: Start early on the quizzes early and it is advised that you not wait until the day of as these are meant to be longer and worked on within a group environment.
+
+***Commenting code***
+Code should be commented. See the Google style guide for questions regarding commenting or how to write code \url{https://google.github.io/styleguide/Rguide.xml}.
+
+# Problem statement
+
+Based upon the rubric from your group's quiz, you will grade the work of another group and assess it. This is to get experience of giving others constructive feedback on code and writing as you might do in industry. 
+
+Please be clear regarding your feedback on what your assigned group did well on and what they could improve on in future work. Be sure to follow your rubric that you created so that it matches everyone expectations. 
+

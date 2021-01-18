@@ -9,7 +9,7 @@ output:
 font-size: 8px
 ---
 
-***General instructions for homeworks***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
+***General instructions for quiz***: Your code must be completely reproducible and must compile. No late homeworks will be accepted.
 
 ***Advice***: Start early on the quizzes early and it is advised that you not wait until the day of as these are meant to be longer and worked on within a group environment.
 
