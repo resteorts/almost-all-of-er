@@ -205,10 +205,10 @@ Tips for creating a username from [Happy Git with R](http://happygitwithr.com/gi
 
 ## Clone the class repository 
 
-- Clone the class repository **modern-bayes**
+- Clone the class repository **almost-all-er**
 
 ```{r, echo=FALSE,out.width = '100%'}
-knitr::include_graphics("figures/clone-repo.png")
+knitr::include_graphics("figures/er-class.png")
 ```
 
 
@@ -216,15 +216,12 @@ knitr::include_graphics("figures/clone-repo.png")
 Raise your hand if you have any questions. 
 ]
 
----
 
-## Clone the class repository 
 
-[Demo of cloning the class repository]
 
 ---
 
-## Discussion 
+## Getting to know each other and Cloning the Class Repository
 
 Discuss the following with a partner (in a breakout room).
 
@@ -264,10 +261,9 @@ class: middle, center
 
 - [A First Course in Bayesian Statistical Methods, Peter Hoff]
     - Free PDF available online through the library. Hard copy available for purchase.
-    - Assigned readings on github. 
   
 - [Some of Bayesian Statistics: The Essential Parts](https://github.com/resteorts/modern-bayes/blob/master/reading/essential_bayes.pdf)
-    - Assigned readings. 
+    
     
     
 
@@ -294,6 +290,8 @@ class: middle, center
 - <font class="vocab"> Homework </font>: Individual assignments combining conceptual and computational skills. *Lowest score dropped.*
 
 - <font class="vocab"> Quizzes </font>: Quizzes that will assess your knowledge of the course. *Lowest score dropped.*
+
+- <font class="vocab"> Final Project</font>: You will work on a final project at the end of the semester that will build upon homeworks/quizzes in the course. 
 
 - <font class="vocab">Class</font>: **You will be responsible for keeping up with all class and lab material on a weekly basis (even though there are recordings)!**
 
