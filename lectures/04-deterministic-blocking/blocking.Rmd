@@ -70,17 +70,23 @@ Blocking
 
 - Blocking partitions similar records into partitions/blocks.
 
-- ER is only performed within each blocks. 
+- ER is only performed within each block. 
 
 Traditional Blocking
 ===
 
 - A deterministic (fixed) partition is formed based upon the data. 
 - A partition is created by treating certain fields that are thought to be nearly error-free as fixed.
+
+Example: Blocking on date of birth year. 
+
+Traditional Blocking
+===
+
 - Benefits:  simple, easy to understand, and fast to implement. 
 - Downsides: the blocks are treated as error free, which is not usually accurate and can lead to errors in the ER task that cannot be accounted for. 
 
-Example: Blocking on date of birth year. 
+
 
 Probabilistic Blocking 
 ===
@@ -143,31 +149,24 @@ plot(recordsPerBlock,
      cex.axis=0.6, xlab="", ylab="")
 ```
 
-# RLdata500 (Continued)
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-# Total number of records pairs per block
-choose(recordsPerBlock, 2)
-
-# Reduction on comparison space
-sum(choose(recordsPerBlock, 2))
-```
 
 # RLdata500 (Continued)
 
 What is the overall dimension reduction form the original space to the reduced space induced by blocking? 
 
-Recall the original space of comparisons was 
+# RLdata500 (Continued)
+
+Recall the total number of all-to-all record comparisons made was:
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
 choose(500, 2)
 ```
 
-We have reduced the number of comparisons to 
+Using blocking, we have reduced the compison space to the following:
 ```{r, eval=TRUE, message=FALSE, warning=FALSE}
 sum(choose(recordsPerBlock, 2))
 ```
 
-# How do we calculate the reducation ratio?
+# How do we calculate the reduction ratio (RR)?
 
 The reduction ratio is
 $$
@@ -179,7 +178,7 @@ $$
 choose(500, 2)
 ```
 
-# How do we calculate the reducation ratio (via a function)?
+# How do we calculate the RR (via a function)?
 
 ```{r}
 reduction.ratio <- function(block.labels) {
@@ -191,6 +190,45 @@ reduction.ratio <- function(block.labels) {
 
 reduction.ratio(last_init)
 ```
+
+# Reduction Ratio
+
+In summary, we have reduced the comparison space by roughly 88 percent. 
+
+# Evaluation metrics
+
+What other evaluation metrics should we consider for entity resolution/blocking? 
+
+# The confusion matrix
+
+
+\begin{enumerate}
+\item  Pairs of data can be linked in both the handmatched
+training data (which we refer to as ``truth") and under the estimated
+linked data. We refer to this situation as true positives (TP). 
+\item Pairs of data can be linked under the truth but not linked under the estimate, which
+are called false negatives (FN). 
+\item Pairs of data can be not linked under the truth but linked under the estimate, which are called false positives (FP). 
+\item Pairs of data can be not linked under the truth and also not linked
+under the estimate, which we refer to as true negatives (TN).
+\end{enumerate}
+
+
+# Pairwise evaluation metrics
+
+$$\text{Recall} = \frac{TP}{TP + FN} = 1 - \text{FNR}.$$
+
+$$\text{Precision} = \frac{TP}{TP + FP} = 1 - \text{FDR}.$$
+
+$$\text{F-measure} = 2 \times \frac{(precision \times recall)}{(precision + recall)}.$$
+
+# Recall
+
+For blocking, its paramount that our recall be as close a possible to 1. 
+
+Example: What does it mean if we have a blocking criterion where our recall is 0.5? 
+
+Answer: This means that we are splitting entities across blocks 50 percent of the time, which implies that then applying ER post-blocking is quite useless (as we cannot fix this error). 
 
 
 # Pairwise Precision
@@ -228,9 +266,8 @@ precision <- function(block.labels, IDs) {
 
   sum(n_matches) / n_pairs
 }
-
-precision(last_init, identity.RLdata500)
 ```
+
 
 # Pairwise Recall
 
@@ -240,6 +277,13 @@ recall <- function(block.labels, IDs) {
   
   precision(IDs, block.labels)
 }
+```
+
+# Pairwise Precision and Recall
+
+```{r}
+precision(last_init, identity.RLdata500)
+recall(last_init, identity.RLdata500)
 ```
 
 # Italian Survey on Household and Wealth (SHIW)
