@@ -1,6 +1,6 @@
 
 ---
-title: "Module 3: Pipeline Approaches and Deterministic ER"
+title: "Module 3: Pipeline and Deterministic ER"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:
@@ -13,7 +13,7 @@ Reading
 ===
 
 - Binette and Steorts (2020)
-- Christen (2012)
+- Christen (2012), Chapters 1-3
 
 
 Agenda
@@ -67,24 +67,25 @@ agree on all common attributes.
 Exact Matching and off by $k$ matching
 ===
 
-- An extension, off by k-matching, states that two record pairs
+An extension, off by k-matching, states that two record pairs
 are a match if they match on all common attributes except at most k, where k is an integer larger than 0.
+
+\vspace*{2em}
 
 \pause
 
-- Exact matching (or extensions) are used when all the attributes are categorical as it tends to perform well, as opposed to when textual variables are introduced.
+Exact matching (or extensions) are used when all the attributes are categorical as it tends to perform well, as opposed to when textual variables are introduced.
 
 
 RLdata500
 ===
 
-Recall the \texttt{RLdata500} data set, removing any columns that contain missing values.
+Consider the \texttt{RLdata500} data set, removing any columns that contain missing values.
 
 ```{r, message=FALSE}
-#load RLdata500
-library(blink)
+library(blink) # load RLdata500
 data(RLdata500)
-data <- RLdata500[-c(2,4)] # Remove
+data <- RLdata500[-c(2,4)] # Remove missing values
 head(data)
 ```
 
@@ -102,8 +103,7 @@ head(pairs)
 Pairwise features that disagree
 ===
 
-For each pair of records, compute the number of features that disagree. 
-This takes a few minute to compute in \texttt{R}. (There are more efficient ways to do this). 
+For each pair of records, compute the number of features that disagree.\footnote{This takes a few minute to compute in \texttt{R}. (There are more efficient ways to do this).}
 
 ```{r, cache=TRUE}
 n_disagree = sapply(1:nrow(pairs), function(i) {
@@ -116,7 +116,7 @@ n_disagree = sapply(1:nrow(pairs), function(i) {
 Distribution of Feature Disagreement Among Record Pairs
 ===
 
-Let's plot the total number of record pair comparisons versus the number of featurs that disagree. 
+Let's plot the total number of record pair comparisons versus the number of featur that disagree. 
 
 \footnotesize 
 ```{r, fig.width=4, fig.height=3, fig.align="center"}
@@ -125,13 +125,11 @@ plot(table(n_disagree),
      ylab="Total number of record pairs")
 ```
 
-Distribution of Feature Disagreement Among Record Pairs
+What do you observe?
 ===
 
-What do you observe? 
-
 \footnotesize 
-```{r, fig.width=4, fig.height=3, fig.align="center"}
+```{r, fig.width=4, fig.height=3, fig.align="center" ,echo=FALSE}
 plot(table(n_disagree), 
      xlab="Number of features that  disagree",
      ylab="Total number of record pairs")
@@ -148,7 +146,14 @@ Distribution of Feature Disagreement Among Record Pairs
 
 \pause 
 
+\vspace*{2em}
+
 Is this intuitive? 
+
+Exact Matching, Etc
+===
+
+Now, let's investigate exact matching (and extensions) on the \texttt{RLdata500} data set. 
 
 
 Exact Matching 
@@ -189,47 +194,58 @@ sum(sapply(1:nrow(links), function(i) {
 }))
 ```
 
-Off by two matching example
+Off by two matching
 ===
 
-**Off by 2 matching:** link record pairs that disagree only in two features.
+How would you extend this to off by two matching? 
+
+What do you find? 
+
+<!-- Off by two matching example -->
+<!-- === -->
+
+<!-- **Off by 2 matching:** link record pairs that disagree only in two features. -->
 
 
-\vspace*{1em}
-\footnotesize
-```{r}
-# Links
-links = pairs[n_disagree <= 2, ]
+<!-- \vspace*{1em} -->
+<!-- \footnotesize -->
+<!-- ```{r} -->
+<!-- # Links -->
+<!-- links = pairs[n_disagree <= 2, ] -->
 
-# Number of estimated links
-nrow(links)
+<!-- # Number of estimated links -->
+<!-- nrow(links) -->
 
-# Number of correctly estimated links
-sum(sapply(1:nrow(links), function(i) {
-  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
-}))
-```
+<!-- # Number of correctly estimated links -->
+<!-- sum(sapply(1:nrow(links), function(i) { -->
+<!--   identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]] -->
+<!-- })) -->
+<!-- ``` -->
 
-Off by three matching example
+<!-- Off by three matching example -->
+<!-- === -->
+
+<!-- **Off by 3 matching:** link record pairs which disagree only in three features.  -->
+
+<!-- \vspace*{1em} -->
+<!-- \footnotesize -->
+<!-- ```{r} -->
+<!-- # Links -->
+<!-- links = pairs[n_disagree <= 3, ] -->
+
+<!-- # Number of estimated links -->
+<!-- nrow(links) -->
+
+<!-- # Number of correctly estimated links -->
+<!-- sum(sapply(1:nrow(links), function(i) { -->
+<!--   identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]] -->
+<!-- })) -->
+<!-- ``` -->
+
+Scoring Rules
 ===
 
-**Off by 3 matching:** link record pairs which disagree only in three features. 
-
-\vspace*{1em}
-\footnotesize
-```{r}
-# Links
-links = pairs[n_disagree <= 3, ]
-
-# Number of estimated links
-nrow(links)
-
-# Number of correctly estimated links
-sum(sapply(1:nrow(links), function(i) {
-  identity.RLdata500[links[i,1]] == identity.RLdata500[links[i,2]]
-}))
-```
-
+We now turn to scoring rules and how these are used in entity resolution tasks.
 
 Scoring Rules
 ===
@@ -312,78 +328,17 @@ Other distance functions
 
 There are many other distance functions, such as the Jaccard, Hamming, and Cosine distances just to name a few. 
 
-Case study on El Salvador. 
+Recap
 ===
 
-Let's consider a case study from El Salvador that we will return to throughout the course. 
+You should now be familiar with the following:
+
+- the pipeline approach
+- deterministic record linkage methods
+- exact matching and extensions
+- scoring functions
 
 
-Civil War in the Republic of El Salvador
-===
-
-Between 1980 and 1991, the Republic of El Salvador witnessed a civil war between the central government, the left-wing guerrilla Farabundo Marti National Liberation Front (FMLN), and right-wing paramilitary death squads.
-
-\vspace*{2em}
-
-After the peace agreement in 1992, the United Nations created a Commission on the Truth (UNTC) for El Salvador, which invited members of Salvadoran society to report war-related human rights violations, which mainly focused on killings and disappearances. 
-
-
-
-Civil War in the Republic of El Salvador
-===
-
-In order to collect such information the UNTC invited individuals through newspapers, radio, and television advertisements to come forward and testify. 
-
-\vspace*{2em}
-
-The UNTC opened offices through El Salvador where witnesses could provide their testimonials, and this resulted in a list of potential victims with names, date of death, and reported location. 
-
-Data analysis
-===
-
-Let's read in the data and inspect it. 
-
-\tiny
-```{r}
-# read in data
-df <- read.csv("./sv-mauricio/sv-mauricio.csv")
-head(df)
-```
-
-
-
-First steps
-===
-
-What steps do we need to take before running any algorithms or methods on this data? 
-
-Meet with your group and discuss. Be prepared to discuss ideas and any observations.
-
-
-Task 1
-===
-
-What types of string distance metrics are appropriate and which are not appropriate? 
-
-Task 2
-===
-
-How does exact matching perform on this data set? What about off-by-one matching? 
-
-Task 3
-=== 
-
-How would you build a decision rule for matches/non-matches based upon scoring rules. What would your scoring rule be? Write this up. 
-
-Task 4
-===
-
-Implement you scoring rule from Task 4 and compare it to exact and off-by-one matching. What are you findings? 
-
-Task 5
-===
-
-Give insights into how you might be able to improve deterministic approaches moving forward if you re-did your analysis. 
 
 
 
