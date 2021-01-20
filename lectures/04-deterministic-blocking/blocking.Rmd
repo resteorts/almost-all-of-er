@@ -25,6 +25,8 @@ Agenda
 - Blocking
 - Traditional Blocking
 - Probabilistic Blocking
+- Evaluation Metrics
+- Examples
 
 Load R packages and data
 ===
@@ -68,9 +70,9 @@ Blocking
 Blocking
 ===
 
-- Blocking partitions similar records into partitions/blocks.
+- Blocking places similar records into partitions/blocks.
 
-- ER is only performed within each block. 
+- ER (typically) is only performed within each block. 
 
 Traditional Blocking
 ===
@@ -97,9 +99,74 @@ Example: Fellegi-Sunter (1969), or Locality Sensitive Hashing
 
 Under both blocking approaches, record pairs that do not meet the blocking criteria are automatically classified as non-matches.
 
+# Evaluation Metrics
+
+Evaluation metrics are important for ER as they help us evaluate our proposed methodology (as long as some notion of ground truth exists). 
+
+The three that we will focus on in this module are:
+
+- reduction ratio
+- precision
+- recall
+- f-measure
+
+# Reduction Ratio
+
+The reduction ratio (RR) measures the relative reduction of the comparison space from the de-duplication or hashing technique. 
+
+\vspace*{1em}
+
+See Christen (2012), Steorts, Ventura, Sadinle, Fienberg (2014) for a formal definition. 
+
+# Pairwise Precision and Recall
+
+Let's now turn to formally defining the pairwise precision and recall. 
+
+# The confusion matrix
+
+
+\begin{enumerate}
+\item  Pairs of data can be linked in both the handmatched
+training data (which we refer to as ``truth") and under the estimated
+linked data. We refer to this situation as true positives (TP). 
+\item Pairs of data can be linked under the truth but not linked under the estimate, which
+are called false negatives (FN). 
+\item Pairs of data can be not linked under the truth but linked under the estimate, which are called false positives (FP). 
+\item Pairs of data can be not linked under the truth and also not linked
+under the estimate, which we refer to as true negatives (TN).
+\end{enumerate}
+
+# The confusion matrix
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/confusion}
+    \caption{Data cleaning pipeline.}
+    \end{center}
+\end{figure}
+
+
+# Pairwise evaluation metrics
+
+$$\text{Recall} = \frac{TP}{TP + FN} = 1 - \text{FNR}.$$
+
+$$\text{Precision} = \frac{TP}{TP + FP} = 1 - \text{FDR}.$$
+
+$$\text{F-measure} = 2 \times \frac{(precision \times recall)}{(precision + recall)}.$$
+
+# Recall
+
+- For blocking, it is critical the recall be as close a possible to 1. 
+
+\vspace*{1em}
+
+- To think about why, what does it mean if we have a blocking criterion where our recall is 0.5? 
+
+\vspace*{1em}
+
+See Shrivastava and Steorts (2018) and Chen, Shrivastava, Steorts (2018) for further regarding about blocking criterion using human rights data. 
+
 # Example: Traditional blocking
-
-
 
 \begin{figure}
   \begin{center}
@@ -197,47 +264,7 @@ In summary, we have reduced the comparison space by roughly 88 percent.
 
 # Evaluation metrics
 
-What other evaluation metrics should we consider for entity resolution/blocking? 
-
-# The confusion matrix
-
-
-\begin{enumerate}
-\item  Pairs of data can be linked in both the handmatched
-training data (which we refer to as ``truth") and under the estimated
-linked data. We refer to this situation as true positives (TP). 
-\item Pairs of data can be linked under the truth but not linked under the estimate, which
-are called false negatives (FN). 
-\item Pairs of data can be not linked under the truth but linked under the estimate, which are called false positives (FP). 
-\item Pairs of data can be not linked under the truth and also not linked
-under the estimate, which we refer to as true negatives (TN).
-\end{enumerate}
-
-# The confusion matrix
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[width=\textwidth]{finalFigures/confusion}
-    \caption{Data cleaning pipeline.}
-    \end{center}
-\end{figure}
-
-
-# Pairwise evaluation metrics
-
-$$\text{Recall} = \frac{TP}{TP + FN} = 1 - \text{FNR}.$$
-
-$$\text{Precision} = \frac{TP}{TP + FP} = 1 - \text{FDR}.$$
-
-$$\text{F-measure} = 2 \times \frac{(precision \times recall)}{(precision + recall)}.$$
-
-# Recall
-
-For blocking, its paramount that our recall be as close a possible to 1. 
-
-Example: What does it mean if we have a blocking criterion where our recall is 0.5? 
-
-Answer: This means that we are splitting entities across blocks 50 percent of the time, which implies that then applying ER post-blocking is quite useless (as we cannot fix this error). 
+Let's now code up the evaluation metrics for pairwise precision and recall.  
 
 
 # Pairwise Precision
