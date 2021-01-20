@@ -213,6 +213,15 @@ are called false negatives (FN).
 under the estimate, which we refer to as true negatives (TN).
 \end{enumerate}
 
+# The confusion matrix
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/confusion}
+    \caption{Data cleaning pipeline.}
+    \end{center}
+\end{figure}
+
 
 # Pairwise evaluation metrics
 
