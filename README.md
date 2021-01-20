@@ -12,7 +12,7 @@ The course webpage is meant to be a place that you can access all the relevant c
 
 This has summary information regarding the course that can be used as a reference guide. It is not meant to replace the syllabus. 
 
-[Syllabus]()
+[Syllabus](https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/syllabus-sta490-spring-2021.pdf)
 
 The syllabus is a comprehensive place regarding expectations for the course.
 
