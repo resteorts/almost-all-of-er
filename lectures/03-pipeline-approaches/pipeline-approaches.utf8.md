@@ -28,7 +28,8 @@ Agenda
 Load R packages
 ===
 
-```{r message=FALSE}
+
+```r
 library(RecordLinkage)
 ```
 
@@ -82,11 +83,22 @@ RLdata500
 
 Consider the \texttt{RLdata500} data set, removing any columns that contain missing values.
 
-```{r, message=FALSE}
+
+```r
 library(blink) # load RLdata500
 data(RLdata500)
 data <- RLdata500[-c(2,4)] # Remove missing values
 head(data)
+```
+
+```
+##   fname_c1 lname_c1   by bm bd
+## 1  CARSTEN    MEIER 1949  7 22
+## 2     GERD    BAUER 1968  7 27
+## 3   ROBERT HARTMANN 1930  4 30
+## 4   STEFAN    WOLFF 1957  9  2
+## 5     RALF  KRUEGER 1966  1 13
+## 6  JUERGEN   FRANKE 1929  7  4
 ```
 
 All pairs of records
@@ -94,10 +106,21 @@ All pairs of records
 
 Now let's consider all possible pairs of records.
 
-```{r}
+
+```r
 # create all pairs of records
 pairs <- t(combn(1:nrow(RLdata500), 2))
 head(pairs)
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    1    3
+## [3,]    1    4
+## [4,]    1    5
+## [5,]    1    6
+## [6,]    1    7
 ```
 
 Pairwise features that disagree
@@ -105,7 +128,8 @@ Pairwise features that disagree
 
 For each pair of records, compute the number of features that disagree.\footnote{This takes a few minute to compute in \texttt{R}. (There are more efficient ways to do this).}
 
-```{r, cache=TRUE}
+
+```r
 n_disagree = sapply(1:nrow(pairs), function(i) {
   recordA = data[pairs[i,1],]
   recordB = data[pairs[i,2],]
@@ -117,21 +141,23 @@ Distribution of Feature Disagreement Among Record Pairs
 ===
 
 \footnotesize 
-```{r, fig.width=4, fig.height=3, fig.align="center"}
+
+```r
 plot(table(n_disagree), 
      xlab="Number of features that  disagree",
      ylab="Total number of record pairs")
 ```
+
+
+
+\begin{center}\includegraphics{pipeline-approaches_files/figure-beamer/unnamed-chunk-5-1} \end{center}
 
 What do you observe?
 ===
 
 \footnotesize 
-```{r, fig.width=4, fig.height=3, fig.align="center" ,echo=FALSE}
-plot(table(n_disagree), 
-     xlab="Number of features that  disagree",
-     ylab="Total number of record pairs")
-```
+
+\begin{center}\includegraphics{pipeline-approaches_files/figure-beamer/unnamed-chunk-6-1} \end{center}
 
 Distribution of Feature Disagreement Among Record Pairs
 ===
@@ -161,8 +187,13 @@ Exact Matching
 
 \vspace*{1em}
 
-```{r}
+
+```r
 sum(n_disagree == 0)
+```
+
+```
+## [1] 0
 ```
 
 \vspace*{1em}
@@ -178,18 +209,29 @@ Off by one matching
 
 \vspace*{1em}
 \footnotesize
-```{r, message=FALSE, warning=FALSE}
+
+```r
 # Links
 links = pairs[n_disagree <= 1, ]
 
 # Number of estimated links
 nrow(links)
+```
 
+```
+## [1] 46
+```
+
+```r
 # Number of correctly estimated links
 sum(sapply(1:nrow(links), function(i) {
   identity.RLdata500[links[i,1]] == 
     identity.RLdata500[links[i,2]]
 }))
+```
+
+```
+## [1] 46
 ```
 
 Off by two matching
@@ -280,10 +322,15 @@ Solution
 
 Let's verify this in \texttt{R}.
 
-```{r}
+
+```r
 s1 <- "Adam"
 s2 <- "Alan"
 levenshteinSim("s1", "s2")
+```
+
+```
+## [1] 0.5
 ```
 
 Jaro-Winkler
@@ -312,9 +359,14 @@ Let's return to the example of comparing Adam and Alan.
 Example
 ===
 
-```{r}
+
+```r
 ## It seems Jaro is not supported in R
 jarowinkler(s1,s2)
+```
+
+```
+## [1] 0.7
 ```
 
 e.g. Adam vs Alan: p=1,  J= 0.67 and JW=0.7.
