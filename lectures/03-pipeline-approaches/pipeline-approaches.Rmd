@@ -14,6 +14,7 @@ Reading
 
 - Binette and Steorts (2020)
 - Christen (2012), Chapters 1-3
+- Edit distance: \url{https://medium.com/@ethannam/understanding-the-levenshtein-distance-equation-for-beginners-c4285a5604f0}
 
 
 Agenda
@@ -23,7 +24,6 @@ Agenda
 - Deterministic Record Linkage
 - Exact Matching 
 - Scoring Functions
-- Application to El Salvador
 
 Load R packages
 ===
