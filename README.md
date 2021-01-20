@@ -2,25 +2,33 @@ Welcome to STA 490/690, Spring 2021!
 
 The readings/preparations for the class can be found on the course webpage.
 
+## Zoom Meetings
+
+**Class time:** Friday 10am - 12:30pm EDT
+
+**Class and Office Hours Meeting ID:** [942 6221 2181](https://duke.zoom.us/s/94262212181)
+
+**Passcode:** 6165237
+
 ## Course Information
 
 [Course Webpage](https://resteorts.github.io/teach/almost-all-er.html)
 
 The course webpage is meant to be a place that you can access all the relevant course materials, such as readings, slides, etc. 
 
-[Cheat Sheet to Course]()
+<!--[Cheat Sheet to Course]()
 
-This has summary information regarding the course that can be used as a reference guide. It is not meant to replace the syllabus. 
+This has summary information regarding the course that can be used as a reference guide. It is not meant to replace the syllabus. -->
 
 [Syllabus](https://github.com/resteorts/almost-all-of-er/blob/master/syllabus/syllabus-sta490-spring-2021.pdf)
 
 The syllabus is a comprehensive place regarding expectations for the course.
 
-[Piazza]()
+Piazza
 
 Piazza will be used as a group forum for all questions for the course as well as announcements. 
 
-[Github]()
+Github
 
 Github will be used for all homework submissions and group projects. You will be expected to have group repository for this class that is organized by your group leader. 
 
