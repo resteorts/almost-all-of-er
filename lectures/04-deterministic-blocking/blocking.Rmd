@@ -338,7 +338,7 @@ recall(last_init, identity.RLdata500)
 # Italian Survey on Household and Wealth (SHIW)
 
 - We will now explore a case study to the Italian Survey on Household and Wealth (SHIW)
-- The SHiW is a sample survey 383 households conducted by the Bank of Italy every two years (2008 and 2010).
+- The SHIW is a sample survey 383 households conducted by the Bank of Italy every two years (2008 and 2010).
 - The data set is anonymized to remove first and last name (and other sensitive information). 
 
 # SHIW
@@ -370,7 +370,7 @@ head(italy08) # first year of SHIW
 
 \tiny
 ```{r}
-head(italy08) # second year of SHIW
+head(italy10) # second year of SHIW
 ```
 
 # Reformat Data
@@ -434,7 +434,7 @@ precision(blockByGender, id)
 recall(blockByGender, id)
 ```
 
-This is not an optimal blocking criterion as ideally, we would want both the precision and recall to be close to 1. 
+
 
 <!-- # Your turn solution 1 -->
 
