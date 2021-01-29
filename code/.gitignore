@@ -1,0 +1,110 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+capture-recapture.Rproj
+downstream-task.Rproj
+
+# tex crap
+*-concordance.tex
+*.bbl
+*.log
+*.synctex.gz
+*.aux
+.DS_store
+
+
+# rmarkdown crap
+*.nav
+*.snm
+
+# geCO files #
+#############
+data/geco_sim/generate_scripts/lookup-files
+data/geco_sim/generate_scripts/docu
+data/geco_sim/generate_scripts/papers
+data/geco_sim/generate_scripts/tests
+data/geco_sim/generate_scripts/MPL2.0.txt
+data/geco_sim/generate_scripts/attrgenfunct.py
+data/geco_sim/generate_scripts/basefunctions.py
+data/geco_sim/generate_scripts/contdepfunct.py
+data/geco_sim/generate_scripts/corruptor.py
+data/geco_sim/generate_scripts/generator.py
+data/geco_sim/generate_scripts/attrgenfunct.pyc
+data/geco_sim/generate_scripts/basefunctions.pyc
+data/geco_sim/generate_scripts/contdepfunct.pyc
+data/geco_sim/generate_scripts/corruptor.pyc
+data/geco_sim/generate_scripts/generator.pyc
+
+data/geco_sim_3_max_dup/generate_scripts/lookup-files
+data/geco_sim_3_max_dup/generate_scripts/docu
+data/geco_sim_3_max_dup/generate_scripts/papers
+data/geco_sim_3_max_dup/generate_scripts/tests
+data/geco_sim_3_max_dup/generate_scripts/MPL2.0.txt
+data/geco_sim_3_max_dup/generate_scripts/attrgenfunct.py
+data/geco_sim_3_max_dup/generate_scripts/basefunctions.py
+data/geco_sim_3_max_dup/generate_scripts/contdepfunct.py
+data/geco_sim_3_max_dup/generate_scripts/corruptor.py
+data/geco_sim_3_max_dup/generate_scripts/generator.py
+data/geco_sim_3_max_dup/generate_scripts/attrgenfunct.pyc
+data/geco_sim_3_max_dup/generate_scripts/basefunctions.pyc
+data/geco_sim_3_max_dup/generate_scripts/contdepfunct.pyc
+data/geco_sim_3_max_dup/generate_scripts/corruptor.pyc
+data/geco_sim_3_max_dup/generate_scripts/generator.pyc
+
+# lambdas #
+###########
+code/written/rl-blink/lambda*
+
+# cache #
+########
+writing/ba/cache/*
+writing/ba-revision-one/cache/*
+writing/arXiv/
+writing/notes/ncvoter_eda_cache/*
+writing/notes/durham_voters_cache/*
+writing/notes/durham_voters_files/*
+writing/post-neurips/cache/*
+writing/jasa/cache/*
+
+# gdelt raw files
+data/gdelt/raw/*
+data/gdelt/*
+
+# ncvoter too big even for git lfs
+data/ncvoter/*.txt
+data/abs_employee/
+data/ncvoter-christen/
+code/written/rl-eber/durham_voters_eber.Rdata
+code/written/rl-eber/durham_voters_address_eber.Rdata
+code/written/rl-eber/durham_voters_address_eber_point_est.Rdata
+code/written/rl-eber/durham_voters_eber_point_error_records.Rdata
+code/written/rl-eber/durham_voters_no_space_eber.Rdata
+code/written/rl-eber/durham_voters_no_space_eber_point_est.Rdata
+
+# dblink output is a mess
+code/record_linkage/dblink/spark-warehouse
+code/record_linkage/dblink/durham_voters/durham_voters_results/*.parquet
+*.crc
+code/record_linkage/dblink/durham_voters/durham_voters_results/shared-most-probable-clusters.csv/
+code/record_linkage/dblink/febrl/febrl2_results/*.parquet
+code/record_linkage/dblink/febrl/febrl2_results/shared-most-probable-clusters.csv/
+code/record_linkage/dblink/febrl/febrl3_results/*.parquet
+code/record_linkage/dblink/febrl/febrl3_results/shared-most-probable-clusters.csv/
+code/record_linkage/dblink/caswell_voters/caswell_voters_results/*.parquet
+code/record_linkage/dblink/caswell_voters/caswell_voters_results/shared-most-probable-clusters.csv/
+code/record_linkage/dblink/geco/geco1_results/*.parquet
+code/record_linkage/dblink/geco/geco1_results/shared-most-probable-clusters.csv/
+
+# paper stuff
+writing/neurips/neurips_reviews.pdf
+
+# big files
+code/written/rl-eber/poland_5k_eber.Rdata
+
+# spark stuff
+metastore_db/
+code/record_linkage/dblink/Logs/
+
+# code appendix repo
+canonical-code
