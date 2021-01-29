@@ -1,110 +1,114 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-capture-recapture.Rproj
-downstream-task.Rproj
+# Data files #
+##############
+# *.csv # want to add the synthetic data files
+*.dat
+*.RData
+*.Rhistory
 
-# tex crap
-*-concordance.tex
-*.bbl
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
 *.log
-*.synctex.gz
+*.sql
+*.sqlite
+
+# Latex #
+#########
+## Core latex/pdflatex aux files:
 *.aux
-.DS_store
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
 
+## Bibliography auxiliary files:
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
 
-# rmarkdown crap
-*.nav
-*.snm
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+papers/*.pdf
+.Rproj.user
+nips-eber.Rproj
 
 # geCO files #
 #############
-data/geco_sim/generate_scripts/lookup-files
-data/geco_sim/generate_scripts/docu
-data/geco_sim/generate_scripts/papers
-data/geco_sim/generate_scripts/tests
-data/geco_sim/generate_scripts/MPL2.0.txt
-data/geco_sim/generate_scripts/attrgenfunct.py
-data/geco_sim/generate_scripts/basefunctions.py
-data/geco_sim/generate_scripts/contdepfunct.py
-data/geco_sim/generate_scripts/corruptor.py
-data/geco_sim/generate_scripts/generator.py
-data/geco_sim/generate_scripts/attrgenfunct.pyc
-data/geco_sim/generate_scripts/basefunctions.pyc
-data/geco_sim/generate_scripts/contdepfunct.pyc
-data/geco_sim/generate_scripts/corruptor.pyc
-data/geco_sim/generate_scripts/generator.pyc
+data/generate_scripts/lookup-files
+data/generate_scripts/docu
+data/generate_scripts/papers
+data/generate_scripts/tests
+data/generate_scripts/MPL2.0.txt
+data/generate_scripts/attrgenfunct.py
+data/generate_scripts/basefunctions.py
+data/generate_scripts/contdepfunct.py
+data/generate_scripts/corruptor.py
+data/generate_scripts/generator.py
+data/generate_scripts/attrgenfunct.pyc
+data/generate_scripts/basefunctions.pyc
+data/generate_scripts/contdepfunct.pyc
+data/generate_scripts/corruptor.pyc
+data/generate_scripts/generator.pyc
 
-data/geco_sim_3_max_dup/generate_scripts/lookup-files
-data/geco_sim_3_max_dup/generate_scripts/docu
-data/geco_sim_3_max_dup/generate_scripts/papers
-data/geco_sim_3_max_dup/generate_scripts/tests
-data/geco_sim_3_max_dup/generate_scripts/MPL2.0.txt
-data/geco_sim_3_max_dup/generate_scripts/attrgenfunct.py
-data/geco_sim_3_max_dup/generate_scripts/basefunctions.py
-data/geco_sim_3_max_dup/generate_scripts/contdepfunct.py
-data/geco_sim_3_max_dup/generate_scripts/corruptor.py
-data/geco_sim_3_max_dup/generate_scripts/generator.py
-data/geco_sim_3_max_dup/generate_scripts/attrgenfunct.pyc
-data/geco_sim_3_max_dup/generate_scripts/basefunctions.pyc
-data/geco_sim_3_max_dup/generate_scripts/contdepfunct.pyc
-data/geco_sim_3_max_dup/generate_scripts/corruptor.pyc
-data/geco_sim_3_max_dup/generate_scripts/generator.pyc
+# vi files #
+############
+*.tex~
+*.swp
+*.un~
 
-# lambdas #
-###########
-code/written/rl-blink/lambda*
 
-# cache #
-########
-writing/ba/cache/*
-writing/ba-revision-one/cache/*
-writing/arXiv/
-writing/notes/ncvoter_eda_cache/*
-writing/notes/durham_voters_cache/*
-writing/notes/durham_voters_files/*
-writing/post-neurips/cache/*
-writing/jasa/cache/*
-
-# gdelt raw files
-data/gdelt/raw/*
-data/gdelt/*
-
-# ncvoter too big even for git lfs
-data/ncvoter/*.txt
-data/abs_employee/
-data/ncvoter-christen/
-code/written/rl-eber/durham_voters_eber.Rdata
-code/written/rl-eber/durham_voters_address_eber.Rdata
-code/written/rl-eber/durham_voters_address_eber_point_est.Rdata
-code/written/rl-eber/durham_voters_eber_point_error_records.Rdata
-code/written/rl-eber/durham_voters_no_space_eber.Rdata
-code/written/rl-eber/durham_voters_no_space_eber_point_est.Rdata
-
-# dblink output is a mess
-code/record_linkage/dblink/spark-warehouse
-code/record_linkage/dblink/durham_voters/durham_voters_results/*.parquet
-*.crc
-code/record_linkage/dblink/durham_voters/durham_voters_results/shared-most-probable-clusters.csv/
-code/record_linkage/dblink/febrl/febrl2_results/*.parquet
-code/record_linkage/dblink/febrl/febrl2_results/shared-most-probable-clusters.csv/
-code/record_linkage/dblink/febrl/febrl3_results/*.parquet
-code/record_linkage/dblink/febrl/febrl3_results/shared-most-probable-clusters.csv/
-code/record_linkage/dblink/caswell_voters/caswell_voters_results/*.parquet
-code/record_linkage/dblink/caswell_voters/caswell_voters_results/shared-most-probable-clusters.csv/
-code/record_linkage/dblink/geco/geco1_results/*.parquet
-code/record_linkage/dblink/geco/geco1_results/shared-most-probable-clusters.csv/
-
-# paper stuff
-writing/neurips/neurips_reviews.pdf
-
-# big files
-code/written/rl-eber/poland_5k_eber.Rdata
-
-# spark stuff
-metastore_db/
-code/record_linkage/dblink/Logs/
-
-# code appendix repo
-canonical-code
+# private data #
+################
+private-data/
+sigmod-datasets/
