@@ -40,7 +40,7 @@ font-size: 8px
 
 3. Create a SSH RSA key
 
-![](./screenshots/create-ssh-key.png)
+![](./screenshots/create-ssh-key.png){width=50%}
 
 # Getting set-up in RStudio
 
@@ -71,7 +71,7 @@ Using RStudio's git pane, you can now:
 
 1. Download ssh address
 
-![](./screenshots/clone-ssh.png)
+![](./screenshots/clone-ssh.png){width=50%}
 
 # Getting set-up in RStudio
 

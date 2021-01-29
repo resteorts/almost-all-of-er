@@ -166,6 +166,21 @@ $$\text{F-measure} = 2 \times \frac{(precision \times recall)}{(precision + reca
 
 See Shrivastava and Steorts (2018) and Chen, Shrivastava, Steorts (2018) for further regarding about blocking criterion using human rights data. 
 
+# Example: RLdata500
+
+Let's return to the RLdata500 data set, where we will block by last name initial. 
+
+Our goal are the following:
+
+- visualize the blocks
+- compute the evaluation metrics introduced
+
+# Example: RLdata500
+
+```{r, eval=TRUE, message=FALSE, warning=FALSE}
+head(RLdata500)
+```
+
 # Example: Traditional blocking
 
 \begin{figure}
@@ -176,11 +191,7 @@ See Shrivastava and Steorts (2018) and Chen, Shrivastava, Steorts (2018) for fur
     \end{center}
 \end{figure}
 
-# Example: RLdata500
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-head(RLdata500)
-```
 
 # RLdata500 (Continued)
 
@@ -209,6 +220,8 @@ head(recordsPerBlock)
 ```
 
 # RLdata500 (Continued)
+
+Observe that the block sizes vary. 
 
 ```{r, eval=TRUE, message=FALSE, warning=FALSE, fig.width=5}
 # Block sizes can vary 
@@ -324,18 +337,14 @@ recall(last_init, identity.RLdata500)
 
 # Italian Survey on Household and Wealth (SHIW)
 
-We will now explore a case study to the SHIW 
-
-# SHIW
-
-- The Italian Survey on Household and Wealth (SHIW) is a sample survey 383 households
-conducted by the Bank of Italy every two years (2008 and 2010).
+- We will now explore a case study to the Italian Survey on Household and Wealth (SHIW)
+- The SHIW is a sample survey 383 households conducted by the Bank of Italy every two years (2008 and 2010).
 - The data set is anonymized to remove first and last name (and other sensitive information). 
 
 # SHIW
 
 The following attribute information is available: 
-
+\footnotesize
 \begin{itemize}
 \item PARENT (parental status)
 \item GENDER
@@ -361,7 +370,7 @@ head(italy08) # first year of SHIW
 
 \tiny
 ```{r}
-head(italy08) # second year of SHIW
+head(italy10) # second year of SHIW
 ```
 
 # Reformat Data
@@ -381,7 +390,7 @@ head(italy)
 
 # Your turn
 
-- Construct a blocking criterion for the SHIW data set. 
+- Construct a blocking criterion for the SHIW data set
 - Provide code to construct the blocks
 - Are your blocks well balanced?
 - What is the reduction ratio? 
@@ -425,34 +434,31 @@ precision(blockByGender, id)
 recall(blockByGender, id)
 ```
 
-This is not an optimal blocking criterion as ideally, we would want both the precision and recall to be close to 1. 
 
-# Your turn solution
 
-\tiny
+<!-- # Your turn solution 1 -->
 
-Let's block on the twenty regions in Italy. 
+<!-- \tiny -->
 
-```{r}
-blockRule <- (italy$IREG) 
-(recordsPerBlock <- table(blockRule))
-plot(recordsPerBlock,
-cex.axis=0.6, xlab="", ylab="")
-print(rr <- reduction.ratio(blockRule))
-precision(blockRule, id)
-recall(blockRule, id)
-```
+<!-- Let's block on the twenty regions in Italy.  -->
 
-# Your turn solution
+<!-- ```{r} -->
+<!-- blockRule <- (italy$IREG)  -->
+<!-- (recordsPerBlock <- table(blockRule)) -->
+<!-- plot(recordsPerBlock, -->
+<!-- cex.axis=0.6, xlab="", ylab="") -->
+<!-- print(rr <- reduction.ratio(blockRule)) -->
+<!-- precision(blockRule, id) -->
+<!-- recall(blockRule, id) -->
+<!-- ``` -->
+
+# Your turn solution 2
 
 Let's block on a combination of gender and region. 
 
 Hint: Use \texttt{tidyverse}. 
 
-
-The histogram is not printing now for some reason. 
-
-# Your turn solution
+# Your turn solution 2
 
 \tiny
 ```{r, message=FALSE}
@@ -463,13 +469,17 @@ italy %>%
  geom_histogram(aes(count))
 ```
 
-# Your turn solution
+# Your turn solution 2
 
 \tiny
 ```{r}
 blockIDs = paste(italy$IREG, italy$SEX, sep="_")
 table(blockIDs)
 print(rr <- reduction.ratio(blockIDs))
+```
+
+# Your turn solution 2
+```{r}
 precision(blockIDs, id)
 recall(blockIDs, id)
 ```

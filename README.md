@@ -8,7 +8,7 @@ The readings/preparations for the class can be found on the course webpage.
 
 **Class and Office Hours Meeting ID:** [942 6221 2181](https://duke.zoom.us/s/94262212181)
 
-**Passcode:** 6165237
+**Passcode:** Has been emailed to you! 
 
 ## Course Information
 
