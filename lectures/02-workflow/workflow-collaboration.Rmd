@@ -9,6 +9,71 @@ output:
 font-size: 8px
 ---
 
+Expectations 
+===
+
+- Assume that you have caught up from last week if you weren't in class
+- Assume you have read the syllabus and know course expectations
+- Assume you have joined Piazza, Sakai, and answered Olivier's questions on Piazza 
+- Assume you have watched the pre-recorded videos for today and gone over the slides
+- Assume you have started homework 0 and know how to submit it 
+
+I forgot to do something
+===
+
+- If you forgot to do something today, don't panic! 
+
+- If you have not done any of these items, please make sure to do these after class. 
+
+- Please also make sure that you're doing these each week and keeping up with the course. 
+
+Expectations 
+===
+
+- Come prepared and ready to interact
+- Ask questions! 
+- Bring coffee + snacks if you need them
+- Please give me feedback if something is NOT working for you regarding how I'm teaching the course. I want to know what's going well and what can be improved. 
+
+Goals
+===
+
+My personal goal is that everyone does well in this course and gets practical applied experience to take away to industry, academia, etc. 
+
+\vspace*{1em}
+
+My personal goal for myself is that I am an effective instructor and help you meet your goals (despite the online learning environment)! 
+
+
+Finally, if you happen to have a difficult time during the semester, **please let me know**. 
+
+\vspace*{1em}
+
+I hope we can all be supportive of each other during these stressful/hard times. 
+
+
+
+Flow of Class
+===
+
+Introduction
+
+\vspace*{1em}
+
+- Name, Major, Something Unique About Yourself
+
+Flow of Class
+===
+
+In today's lecture, we're going to review the following concepts:
+
+- organization
+- reproducibility
+- version control 
+
+We will also perform an interactive exercise of setting up a repository (individually). 
+
+Then we will move into how we can work together collaboratively on projects and talk about why this is important. 
 
 
 Agenda
