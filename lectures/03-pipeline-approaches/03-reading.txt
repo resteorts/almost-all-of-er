@@ -1,4 +1,4 @@
-# Reading, Module 1
+# Reading, Module 3
 
 1. Data Matching, Peter Christen, 2012, Chapters 1--3 (Please see Sakai posting regarding access to book). 
 2. Almost all of Entity Resolution, Binette and Steorts, https://arxiv.org/pdf/2008.04443.pdf

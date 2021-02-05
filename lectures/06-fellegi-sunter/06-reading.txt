@@ -1,0 +1,9 @@
+# Reading, Module 5
+
+1. Data Matching, Peter Christen, 2012, Chapter 5 (Please see Sakai posting regarding access to book). 
+2. Almost all of Entity Resolution, Binette and Steorts, https://arxiv.org/pdf/2008.04443.pdf
+4. Fellegi and Sunter (1969), https://www.tandfonline.com/doi/abs/10.1080/01621459.1969.10501049
+5. Supplementary reading: Sadinle and Fienberg (2013): https://arxiv.org/pdf/1205.3217.pdf
+
+
+

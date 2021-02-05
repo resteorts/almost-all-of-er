@@ -9,6 +9,8 @@ output:
 font-size: 8px
 ---
 
+***Group assignment***: This is a group assignment, where you will submit in groups of no larger than four, and you can choose your groups. There must be a team leader, so please designate one, who's job is to help your group be organized through this homework assignment. Each team member must contribute equally to the homework assignment, which will be measured by pushes to the team repository. Please set up a work flow using braching, where tasks are assigned to just one team member. You might wish to have other team members review tasks as you go given they build upon each other. 
+
 ***General instructions for homeworks***: Please follow the uploading file instructions according to the syllabus. Your code must be completely reproducible and must compile. 
 
 ***Advice***: Start early on the homeworks and it is advised that you not wait until the day of as these homeworks are meant to be longer and treated as case studies.

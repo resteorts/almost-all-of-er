@@ -25,6 +25,37 @@ Agenda
 - Exact Matching 
 - Scoring Functions
 
+Reminders/check in
+===
+
+- Homework 0 is due today at 5 PM EDT. 
+- Homework 1 is ready for your to start! 
+
+Recap of Pipeline Approach
+===
+
+- Explain the pipeline. Go! 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/pipeline}
+    \caption{Data cleaning pipeline.}
+    \end{center}
+\end{figure}
+
+Recap of deterministic record linkage
+===
+
+- What are some examples of how you can perform deterministic record linkage?
+- What are the benefits?
+- What is the downside?
+- How could you put deterministic rules together to build more complex rules? 
+
+
+
+
+
+
 Load R packages
 ===
 

@@ -1,0 +1,114 @@
+# Data files #
+##############
+# *.csv # want to add the synthetic data files
+*.dat
+*.RData
+*.Rhistory
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Latex #
+#########
+## Core latex/pdflatex aux files:
+*.aux
+*.lof
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## Bibliography auxiliary files:
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+papers/*.pdf
+.Rproj.user
+nips-eber.Rproj
+
+# geCO files #
+#############
+data/generate_scripts/lookup-files
+data/generate_scripts/docu
+data/generate_scripts/papers
+data/generate_scripts/tests
+data/generate_scripts/MPL2.0.txt
+data/generate_scripts/attrgenfunct.py
+data/generate_scripts/basefunctions.py
+data/generate_scripts/contdepfunct.py
+data/generate_scripts/corruptor.py
+data/generate_scripts/generator.py
+data/generate_scripts/attrgenfunct.pyc
+data/generate_scripts/basefunctions.pyc
+data/generate_scripts/contdepfunct.pyc
+data/generate_scripts/corruptor.pyc
+data/generate_scripts/generator.pyc
+
+# vi files #
+############
+*.tex~
+*.swp
+*.un~
+
+
+# private data #
+################
+private-data/
+sigmod-datasets/
