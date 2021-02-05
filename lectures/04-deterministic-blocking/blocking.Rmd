@@ -10,6 +10,41 @@ output:
 font-size: 8px
 ---
 
+Reminders
+===
+
+- Homework 0 is due today at 5 PM EDT
+- Homework 1 is ready to start! 
+
+Recap
+===
+
+Define blocking and relate it to the figure below. 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/block.png}
+    \caption{Left: All to all record comparison. Right: Example of resulting blocking partitions. }
+    \end{center}
+\end{figure}
+
+Traditional blocking 
+===
+
+- What is traditional blocking? 
+- Consider the RLdata500 data set. What is a good blocking attribute to use? How can you validate this? 
+- What is probabilistic blocking? 
+
+Evaluation metrics
+===
+
+Explain the following evaluation metrics and why we use these:
+
+- Reduction ratio
+- Precision 
+- Recall
+- Fscore
+
 Reading
 ===
 
