@@ -196,36 +196,46 @@ Using the `title`, `authors`, and `journal` fields in the `cora` dataset,
 2. Obtain the Jaccard similarity between each pair of records (**hint:** use `jaccard_similarity`)
 \vfill
 
-# Your turn (solution)
+# Your turn (partial solution)
 \small
 ```{r your-turn-sol-1, echo=TRUE, cache=TRUE}
-# get only the columns we want
-# number of records
-n <- nrow(cora) 
-# create id column
-dat <- data.frame(id = seq_len(n)) 
-# get columns we want
-dat <- cbind(dat, cora[, c("title", "authors", "journal")])
+# get only the columns we want 
+# number of records 
+n <- nrow(cora)  
+# create id column 
+dat <- data.frame(id = seq_len(n))  
+# get columns we want 
+dat <- cbind(dat, cora[, c("title", "authors", "journal")]) 
+```
 
+
+# Summary
+
+For a data set of size $n$, the number of comparisons we must compute is $$\frac{n(n-1)}{2}.$$
+
+\vfill
+For our set of records, we needed to compute $`r scales::comma(nrow(dat)*(nrow(dat) - 1)/2)`$ comparisons
+\vfill
+For very large data sets, we need something faster (where we filter out records that are not similar).
+\vfill
+A better approach for data sets of any realistic size is to use *hashing*, which we will look at next time. 
+\vfill
+
+# Your turn (Full solution)
+
+\small
+```{r your-turn-sol-2, echo=TRUE, cache=TRUE}
 # 1. paste the columns together and tokenize for each record
 shingles <- apply(dat, 1, function(x) {
   # tokenize strings
   tokenize_character_shingles(paste(x[-1], collapse=" "), n = 3)[[1]]
 })
-```
-
-# Your turn (solution)
-
-\small
-```{r your-turn-sol-2, echo=TRUE, cache=TRUE}
 # 2. Jaccard similarity between pairs
 # empty holder for similarities
 jaccard <- expand.grid(record1 = seq_len(n), 
                        record2 = seq_len(n))
-
 # don't need to compare the same things twice
 jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
-
 time <- Sys.time() # for timing comparison
 jaccard$similarity <- apply(jaccard, 1, function(pair) {
   # get jaccard for each pair
@@ -262,18 +272,6 @@ ggplot(jaccard) +
   xlab("Record id") + ylab("Record id") +
   theme(plot.margin = margin(5,.8,5,.8, "cm"))
 ```
-
-# Summary
-
-For a data set of size $n$, the number of comparisons we must compute is $$\frac{n(n-1)}{2}.$$
-
-\vfill
-For our set of records, we needed to compute $`r scales::comma(nrow(dat)*(nrow(dat) - 1)/2)`$ comparisons
-\vfill
-For very large data sets, we need something faster (where we filter out records that are not similar).
-\vfill
-A better approach for data sets of any realistic size is to use *hashing*, which we will look at next time. 
-\vfill
 
 
 
