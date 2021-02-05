@@ -189,6 +189,7 @@ $$\text{Precision} = \frac{TP}{TP + FP} = 1 - \text{FDR}.$$
 
 $$\text{F-measure} = 2 \times \frac{(precision \times recall)}{(precision + recall)}.$$
 
+
 # Recall
 
 - For blocking, it is critical the recall be as close a possible to 1. 

@@ -26,7 +26,8 @@ Agenda
 Load R packages
 ===
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+
+```r
 library(RecordLinkage)
 library(blink)
 library(knitr)
@@ -116,7 +117,8 @@ Suppose our data set is the string "Hello world", then
 # Your turn
 
 We have the following two records:
-```{r your-turn1}
+
+```r
 # load RL data
 data("RLdata500")
 
@@ -127,6 +129,13 @@ names(records) <- c("First name", "Last name")
 # inspect records
 kable(records)
 ```
+
+
+
+|    |First name |Last name |
+|:---|:----------|:---------|
+|129 |MICHAEL    |VOGEL     |
+|130 |MICHAEL    |MEYER     |
 
 # Your turn (continued)
 
@@ -144,7 +153,7 @@ kable(records)
 <!-- \vfill -->
 <!-- 1. The $2$-shingles for the first record are $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, el}\}$ and for the second are $\{\text{mi, ic, ch, ha, ae, el, lm, me, ey, ye, er}\}$ -->
 <!-- \vfill -->
-<!-- 2. There are 6 items in common $\{\text{mi, ic, ch, ha, ae, el}\}$ and 15 items total $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, lm, me, ey, ye, er}\}$, so the Jaccard similarity is $\frac{6}{15} = \frac{2}{5} = `r 6/15`$ -->
+<!-- 2. There are 6 items in common $\{\text{mi, ic, ch, ha, ae, el}\}$ and 15 items total $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, lm, me, ey, ye, er}\}$, so the Jaccard similarity is $\frac{6}{15} = \frac{2}{5} = 0.4$ -->
 <!-- \vfill -->
 <!-- 3. You should have learned that this is very tedious to do by hand!  -->
 
@@ -156,7 +165,8 @@ Here are some useful packages in `R` that can help us!
 
 \vline
 
-```{r helpful-packages, echo=TRUE, message=FALSE, warning=FALSE}
+
+```r
 library(textreuse) # text reuse/document similarity
 library(tokenizers) # shingles
 ```
@@ -167,7 +177,8 @@ We can use the following functions to create $k$-shingles and calculate Jaccard 
 
 \vline
 
-```{r helpful-functions, eval=FALSE, echo=TRUE}
+
+```r
 # get k-shingles
 tokenize_character_shingles(x, n)
 
@@ -181,9 +192,30 @@ Research paper headers and citations, with information on authors, title, instit
 
 # Citation Data Set
 
-```{r load-ex-data-2, echo=TRUE, message=FALSE, warning=FALSE}
+
+```r
 data(cora) # load the cora data set
 str(cora) # structure of cora
+```
+
+```
+## 'data.frame':	1879 obs. of  16 variables:
+##  $ id         : int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ title      : 'noquote' chr  "Inganas and M.R" NA NA NA ...
+##  $ book_title : 'noquote' chr  NA NA NA NA ...
+##  $ authors    : 'noquote' chr  "M. Ahlskog, J. Paloheimo, H. Stubb, P. Dyreklev, M. Fahlman, O" "M. Ahlskog, J. Paloheimo, H. Stubb, P. Dyreklev, M. Fahlman, O. Inganas and M.R.   Andersson" "M. Ahlskog, J. Paloheimo, H. Stubb, P. Dyreklev, M. Fahlman, O.  Inganas and M.R.  Andersson" "M. Ahlskog, J. Paloheimo, H. Stubb, P. Dyreklev, M. Fahlman, O. Inganas and M.R. Andersson" ...
+##  $ address    : 'noquote' chr  NA NA NA NA ...
+##  $ date       : 'noquote' chr  "1994" "1994" "1994" "1994" ...
+##  $ year       : 'noquote' chr  NA NA NA NA ...
+##  $ editor     : 'noquote' chr  NA NA NA NA ...
+##  $ journal    : 'noquote' chr  "Andersson, J Appl. Phys." "JAppl. Phys." "J Appl. Phys." "J Appl.Phys." ...
+##  $ volume     : 'noquote' chr  "76" "76" "76" "76" ...
+##  $ pages      : 'noquote' chr  "893" "893" "893" "893" ...
+##  $ publisher  : 'noquote' chr  NA NA NA NA ...
+##  $ institution: 'noquote' chr  NA NA NA NA ...
+##  $ type       : 'noquote' chr  NA NA NA NA ...
+##  $ tech       : 'noquote' chr  NA NA NA NA ...
+##  $ note       : 'noquote' chr  NA NA NA NA ...
 ```
 
 # Your turn 
@@ -198,7 +230,8 @@ Using the `title`, `authors`, and `journal` fields in the `cora` dataset,
 
 # Your turn (solution)
 \small
-```{r your-turn-sol-1, echo=TRUE, cache=TRUE}
+
+```r
 # get only the columns we want
 # number of records
 n <- nrow(cora) 
@@ -217,7 +250,8 @@ shingles <- apply(dat, 1, function(x) {
 # Your turn (solution)
 
 \small
-```{r your-turn-sol-2, echo=TRUE, cache=TRUE}
+
+```r
 # 2. Jaccard similarity between pairs
 # empty holder for similarities
 jaccard <- expand.grid(record1 = seq_len(n), 
@@ -236,11 +270,12 @@ time <- difftime(Sys.time(), time, units = "secs")
 ```
 
 \normalsize
-This took took $`r round(time, 2)`$ seconds $\approx `r round(time/(60), 2)`$ minutes
+This took took $108.7$ seconds $\approx 1.81$ minutes
 
 # Your turn (solution, cont'd)
 
-```{r your-turn2-plot, fig.cap="Jaccard similarity for each pair of records. Light blue indicates the two records are more similar and dark blue indicates less similar."}
+
+```r
 # plot the jaccard similarities for each pair of records
 ggplot(jaccard) +
   geom_raster(aes(x = record1, y = record2, 
@@ -250,25 +285,18 @@ ggplot(jaccard) +
   xlab("Record id") + ylab("Record id")
 ```
 
+![Jaccard similarity for each pair of records. Light blue indicates the two records are more similar and dark blue indicates less similar.](probabilistic-blocking-partI_files/figure-beamer/your-turn2-plot-1.pdf) 
+
 # Your turn (solution, cont'd)
 
-```{r your-turn2-plot-again, fig.cap="Jaccard similarity for each pair of records. Light blue indicates the two records are more similar and dark blue indicates less similar.", echo=FALSE}
-# plot the jaccard similarities for each pair of records
-ggplot(jaccard) +
-  geom_raster(aes(x = record1, y = record2, 
-                  fill=similarity)) +
-  theme(aspect.ratio = 1) +
-  scale_fill_gradient("Jaccard similarity") +
-  xlab("Record id") + ylab("Record id") +
-  theme(plot.margin = margin(5,.8,5,.8, "cm"))
-```
+![Jaccard similarity for each pair of records. Light blue indicates the two records are more similar and dark blue indicates less similar.](probabilistic-blocking-partI_files/figure-beamer/your-turn2-plot-again-1.pdf) 
 
 # Summary
 
 For a data set of size $n$, the number of comparisons we must compute is $$\frac{n(n-1)}{2}.$$
 
 \vfill
-For our set of records, we needed to compute $`r scales::comma(nrow(dat)*(nrow(dat) - 1)/2)`$ comparisons
+For our set of records, we needed to compute $1,764,381$ comparisons
 \vfill
 For very large data sets, we need something faster (where we filter out records that are not similar).
 \vfill
