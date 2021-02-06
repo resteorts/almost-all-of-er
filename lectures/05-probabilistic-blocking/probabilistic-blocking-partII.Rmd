@@ -159,12 +159,21 @@ time <- difftime(Sys.time(), time, units = "secs")
 
 # Hashing shingles (continued)
 
-- To hash the shingles, it took $`r object.size(hashed_shingles)`$ bytes. 
-- To store the shingles, it took $`r object.size(shingles)`$ bytes. 
+
+To store the shingles, it took $`r object.size(shingles)`$ bytes. 
 
 \vspace*{1em}
 
-\textbf{The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches, so keep in mind we have not improved this aspect of our approach.}
+To hash the shingles, it took $`r object.size(hashed_shingles)`$ bytes. 
+
+\vspace*{1em}
+
+Thus, we will **hash shingles** because it takes up less memory.  
+
+
+\vspace*{1em}
+
+\textbf{The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches, so keep in mind we have not improved this aspect of our approach, but we will improve upon this later!}
 
 
 
