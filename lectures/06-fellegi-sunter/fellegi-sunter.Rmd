@@ -436,7 +436,7 @@ Example: At the U.S. Census Bureau, they currently use Method 1 in production fo
 The second method applies to the comparison vectors $\gamma = (\gamma_1^{(1)}, \gamma_2^{(2)}, \ldots, \gamma_{(N_1 \times N_2)}^{(k)})$ under the following assumptions: 
 
 \begin{itemize}
-        \item $\gamma_i^j \in \{0,1\}$ is a binary comparison
+        \item $\gamma_i^j \in \{0,1\}$ is a binary comparison vector
         \item $\{\gamma_i^j\}_{j=1}^k$ is conditionally independent given the true match or non-match status of the pair of records.
 \end{itemize}
 
@@ -479,5 +479,11 @@ We can answer related questions, such as:
 To explore this more in depth, see Binette and Steorts (2020) to see connections to Bayes' rule and see Tepping (1968). 
 
 
+## Summary
 
+- Soundex algorithm 
+- What are the main contributions of Newcombe et al. (1959)?
+- Comparison vectors
+- What did Fellegi and Sunter (1969) propose (two methods) ?
+- How would you summarize the main ideas of this lecture and summarize it to a friend? 
 

@@ -1,0 +1,511 @@
+
+---
+title: "Module 5: Probabilistic Blocking, Part II"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+
+
+Agenda
+===
+
+- Data Cleaning Pipeline
+- Blocking
+- Locality Sensitive Hashing (LSH)
+- Hash functions
+- Hashed shingles
+- Signatures
+- Characteristic Matrix
+- Minhash (Jaccard Similarity Approximation)
+- Back to LSH
+
+Load R packages
+===
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(RecordLinkage)
+library(blink)
+library(knitr)
+library(textreuse) # text reuse/document similarity
+library(tokenizers) # shingles
+library(devtools)
+library(cora)
+library(ggplot2)
+# install_github("resteorts/cora")
+data(cora) # load the cora data set
+```
+
+
+
+Data Cleaning Pipeline
+===
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/pipeline}
+    \caption{Data cleaning pipeline.}
+    \end{center}
+\end{figure}
+
+Blocking
+===
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=\textwidth]{finalFigures/block.png}
+    \caption{Left: All to all record comparison. Right: Example of resulting blocking partitions. }
+    \end{center}
+\end{figure}
+
+
+LSH
+===
+
+Locality sensitive hashing (LSH) is a fast method of blocking for record linkage that orginates from the computer science literature. 
+
+
+\small
+```{r, cache=TRUE, echo=FALSE}
+# get only the columns we want
+# number of records
+n <- nrow(cora) 
+# create id column
+dat <- data.frame(id = seq_len(n)) 
+# get columns we want
+dat <- cbind(dat, cora[, c("title", "authors", "journal")]) 
+shingles <- apply(dat, 1, function(x) {
+  # tokenize strings
+  tokenize_character_shingles(paste(x[-1], collapse=" "), n = 3)[[1]]
+})
+# empty holder for similarities
+jaccard <- expand.grid(record1 = seq_len(n), 
+                       record2 = seq_len(n))
+
+# don't need to compare the same things twice
+jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
+```
+
+
+# Hash function overview
+
+- Traditionally, a *hash function* maps objects to integers such that similar objects are far apart
+
+\vspace*{1em}
+
+- Instead, we will use a special hash function that does the **opposite** of this, i.e., similar objects are placed closed together!
+
+\vspace*{1em} Technical reading on this: Chen et al. (2018) and Shrivastava and Steorts (2018)
+
+# Hash function 
+
+
+A *hash function* $h()$ is defined such that
+
+\begin{enumerate}
+\item If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is \textbf{high} and 
+\item if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is \textbf{low}.
+\end{enumerate}
+
+
+
+# Hashing shingles
+
+\begin{enumerate}
+\item Instead of storing the strings as shingles, we store the \textbf{hashed values}.
+\item These are integers (instead of strings). 
+\end{enumerate}
+
+We do this because the integers take up less memory, so we are performing a type of **dimension reduction**. 
+
+
+
+
+# Hashing shingles (continued)
+
+
+```{r hash-tokens, echo=TRUE, cache=TRUE, echo=FALSE}
+# instead store hash values (less memory)
+hashed_shingles <- apply(dat, 1, function(x) {
+  # get the string
+  string <- paste(x[-1], collapse=" ") 
+  shingles <- 
+    # 3-shingles
+    tokenize_character_shingles(string, n = 3)[[1]] 
+  # return hashed shingles
+  hash_string(shingles) 
+})
+```
+
+# Hashing shingles (continued)
+\small
+```{r hash-tokens-jaccard, cache=TRUE, echo=FALSE}
+# Jaccard similarity on hashed shingles
+hashed_jaccard <- 
+  expand.grid(record1 = seq_len(n), record2 = seq_len(n))
+
+# don't need to compare the same things twice
+hashed_jaccard <- 
+  hashed_jaccard[hashed_jaccard$record1 
+                 < hashed_jaccard$record2,]
+# see how long this takes
+time <- Sys.time() 
+hashed_jaccard$similarity <- 
+  apply(hashed_jaccard, 1, function(pair) {
+  jaccard_similarity(hashed_shingles[[pair[1]]], 
+                     hashed_shingles[[pair[2]]])
+}) # get jaccard for each hashed pair
+time <- difftime(Sys.time(), time, units = "secs") 
+```
+
+# Hashing shingles (continued)
+
+- To hash the shingles, it took $`r object.size(hashed_shingles)`$ bytes. 
+- To store the shingles, it took $`r object.size(shingles)`$ bytes. 
+
+\vspace*{1em}
+
+\textbf{The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches, so keep in mind we have not improved this aspect of our approach.}
+
+
+# Similarity preserving summaries of sets
+
+Sets of shingles are large (larger than the original data set)
+\vfill
+
+If we have millions of records in our data set, it may not be possible to store all the shingle-sets in memory
+\vfill
+
+We can replace large sets by smaller representations, called *signatures*
+\vfill
+
+We can use the \emph{signatures} to **approximate** Jaccard similarity (using a cool fact)
+\vfill
+
+# Characteristic matrix
+
+How do we build signatures? 
+
+\vspace*{1em}
+
+1. Build a characteristic matrix
+2. Then build the signature matrix 
+3. Find the minhash
+
+\vspace*{1em}
+
+Columns correspond to records and the rows correspond to all hashed shingles
+
+# Picture
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/permuted-matrix}
+    % Source: Original work by RCS
+  \end{center}
+  \caption{Permuted matrix from the characteristic one. The $\pi$ vector is the specified permutation.}
+  \label{figure:permute}
+\end{figure}	
+
+# Helper Function for Building Characteristic Matrix
+
+```{r}
+# return if an item is in a list
+item_in_list <- function(item, list) {
+  as.integer(item %in% list) 
+}
+```
+
+# Characteristic matrix
+\small
+```{r characteristic, cache=TRUE}
+# get the characteristic matrix
+# items are all the unique hash values
+# columns will be each record
+# we want to keep track of where each hash is included 
+char_mat <- data.frame(item = unique(unlist(hashed_shingles)))
+# for each hashed shingle, see if it is in each row
+contained <- lapply(hashed_shingles, function(col) {
+  vapply(char_mat$item, FUN = item_in_list, 
+         FUN.VALUE = integer(1), list = col)
+})
+# list to matrix
+char_mat <- do.call(cbind, contained) 
+# row names
+rownames(char_mat) <- unique(unlist(hashed_shingles)) 
+# column names
+colnames(char_mat) <- paste("Record", seq_len(nrow(dat))) 
+```
+
+# Characteristic matrix (continued)
+```{r characteristic-2, cache=TRUE}
+# inspect results
+kable(char_mat[10:15, 1:5])
+```
+
+
+The result is a $`r dim(char_mat)[1]`\times `r dim(char_mat)[2]`$ matrix
+
+**Question: **Why would we not store the data as a characteristic matrix?
+
+# Minhashing
+
+We want to create the signature matrix through minhashing
+
+1. Permute the rows of the characteristic matrix $m$ times
+\vspace{.2in}
+2. Iterate over each column of the permuted matrix 
+\vspace{.2in}
+3. Populate the signature matrix, row-wise, with the row index from the first `1` value found in the column 
+
+The signature matrix is a hashing of values from the permuted characteristic matrix and has one row for the number of permutations calculated ($m$), and a column for each record
+
+# Minhashing (cont'd)
+\small
+```{r minhash-1, cache=TRUE}
+# set seed for reproducibility
+set.seed(02082018)
+# function to get signature for 1 permutation
+get_sig <- function(char_mat) {
+  # get permutation order
+  permute_order <- sample(seq_len(nrow(char_mat)))
+  # get min location of "1" for each column (apply(2, ...))
+  t(apply(char_mat[permute_order, ], 2, 
+          function(col) min(which(col == 1))))
+}
+# repeat many times
+m <- 360
+sig_mat <- matrix(NA, nrow=m, 
+                  ncol=ncol(char_mat)) #empty matrix
+for(i in 1:m) {
+  sig_mat[i, ] <- get_sig(char_mat) #fill matrix
+}
+colnames(sig_mat) <- colnames(char_mat) #column names
+```
+
+# Minhashing (cont'd)
+```{r minhash-2, cache=TRUE}
+# inspect results
+kable(sig_mat[1:10, 1:5])
+```
+
+# Signature matrix and Jaccard similarity
+
+The relationship between the random permutations of the characteristic matrix and the Jaccard Similarity is
+$$
+Pr\{\min[h(A)] = \min[h(B)]\} = \frac{|A \cap B|}{|A \cup B|}
+$$
+
+\vfill
+
+We use this relationship to **approximate** the similarity between any two records 
+
+\vfill
+We look down each column of the signature matrix, and compare it to any other column
+
+\vfill
+The number of agreements over the total number of combinations is an approximation to Jaccard measure
+
+\vfill
+
+# Jaccard similarity approximation
+\small
+```{r jaccard-sig, fig.height=4, cache=TRUE}
+# add jaccard similarity approximated from the minhash to compare
+# number of agreements over the total number of combinations
+hashed_jaccard$similarity_minhash <- 
+  apply(hashed_jaccard, 1, function(row) {
+  sum(sig_mat[, row[["record1"]]] 
+      == sig_mat[, row[["record2"]]])/nrow(sig_mat)
+})
+
+# how far off is this approximation? plot differences
+qplot(hashed_jaccard$similarity_minhash - hashed_jaccard$similarity) +
+  xlab("Difference between Jaccard similarity and minhash approximation")
+```
+
+# Jaccard similarity approximation
+
+```{r jaccard-sig-again, fig.height=4, cache=TRUE, echo=FALSE, warning=FALSE}
+# add jaccard similarity approximated from the minhash to compare
+# number of agreements over the total number of combinations
+hashed_jaccard$similarity_minhash <- 
+  apply(hashed_jaccard, 1, function(row) {
+  sum(sig_mat[, row[["record1"]]] == 
+        sig_mat[, row[["record2"]]])/nrow(sig_mat)
+})
+
+# how far off is this approximation? plot differences
+qplot(hashed_jaccard$similarity_minhash - hashed_jaccard$similarity) +
+  xlab("Difference between Jaccard similarity and minhash approximation") 
+```
+
+Used minhashing to get an approximation to the Jaccard similarity, which helps by allowing us to store less data (hashing) and avoid storing sparse data (signature matrix)
+
+# Wait did I miss something?
+
+We still haven not addressed the issue of **pairwise comparisons**!
+
+# Locality Sensitive Hashing (LSH)
+
+We want to hash items several times such that similar items are more likely to be hashed into the same bucket.
+
+1. Divide signature matrix into $b$ bands with $r$ rows each so $m = b * r$ where *m* is the number of times that we drew a permutation of the characteristic matrix in the process of minhashing
+2. Each band is hashed to a bucket by comparing the minhash for those permutations 
+    - If they match within the band, then they will be hashed to the same bucket
+3. If two documents are hashed to the same bucket they will be considered candidate pairs 
+  
+We only check *candidate pairs* for similarity
+
+# Banding and buckets
+
+```{r banding, results='asis'}
+# view the signature matrix
+print(xtable::xtable(sig_mat[1:10, 1:5]), hline.after = c(-1,0,5,10), comment=F)
+```
+
+# Tuning
+
+## How to choose $k$
+
+How large $k$ should be depends on how long our data strings are
+
+The important thing is $k$ should be picked large enough such that the probability of any given shingle is *low*
+
+## How to choose $b$
+
+$b$ must divide $m$ evenly such that there are the same number of rows $r$ in each band 
+
+What else?
+
+# Choosing $b$
+
+\vspace{-.2in}
+\scriptsize
+$$
+P(\text{two documents w/ Jaccard similarity } s \text{ marked as potential match}) = 1 - (1 - s^{m/b})^b
+$$
+
+\normalsize
+
+```{r inclusion-probs, fig.cap=paste0("Probability that a pair of documents with a Jaccard similarity $s$ will be marked as potential matches for various bin sizes $b$ for $s = .25, .75$ for the number of permutations we did, $m = ", m, "$."), fig.height=3}
+# library to get divisors of m
+library(numbers) 
+
+# look at probability of binned together for various bin sizes and similarity values
+bin_probs <- expand.grid(s = c(.25, .75), h = m, b = divisors(m))
+bin_probs$prob <- apply(bin_probs, 1, function(x) lsh_probability(x[["h"]], x[["b"]], x[["s"]]))
+
+
+# plot as curves
+ggplot(bin_probs) +
+  geom_line(aes(x = prob, y = b, colour = factor(s), group = factor(s)), size = 2) +
+  geom_point(aes(x = prob, y = b, colour = factor(s)), size = 3) +
+  xlab("Probability") +
+  scale_color_discrete("s")
+  
+```
+
+For $b = 90$, a pair of records with Jaccard similarity $.25$ will have a `r scales::percent(bin_probs[bin_probs$b == 90 & bin_probs$s == .25, "prob"])` chance of being matched as candidates and a pair of records with Jaccard similarity $.75$ will have a `r scales::percent(bin_probs[bin_probs$b == 90 & bin_probs$s == .75, "prob"])` chance of being matched as candidates
+
+# "Easy" LSH in R
+
+There an easy way to do LSH using the built in functions in the `textreuse` package via the functions `minhash_generator` and `lsh` (so we don't have to perform it by hand): 
+
+
+```{r show-package-lsh, echo=TRUE, cache=TRUE}
+# choose appropriate num of bands
+b <- 90
+
+# create the minhash function
+minhash <- minhash_generator(n = m, seed = 02082018)
+```
+
+# "Easy" LSH in R (Continued)
+
+```{r show-package-lsh-1, echo=TRUE, cache=TRUE}
+# build the corpus using textreuse
+docs <- apply(dat, 1, function(x) paste(x[-1], collapse = " ")) # get strings
+names(docs) <- dat$id # add id as names in vector
+corpus <- TextReuseCorpus(text = docs, # dataset
+                          tokenizer = tokenize_character_shingles, n = 3, simplify = TRUE, # shingles
+                          progress = FALSE, # quietly
+                          keep_tokens = TRUE, # store shingles
+                          minhash_func = minhash) # use minhash
+
+
+```
+
+# "Easy" LSH in R (Continued)
+
+```{r show-package-lsh-2, echo=TRUE, cache=TRUE}
+
+# perform lsh to get buckets
+buckets <- lsh(corpus, bands = b, progress = FALSE)
+
+# grab candidate pairs
+candidates <- lsh_candidates(buckets)
+
+# get Jaccard similarities only for candidates
+lsh_jaccard <- lsh_compare(candidates, corpus, jaccard_similarity, progress = FALSE)
+```
+
+# "Easy" LSH in R (cont'd)
+
+```{r, lsh-plot}
+# plot jaccard similarities that are candidates
+qplot(lsh_jaccard$score)
+```
+
+# Putting it all together
+
+The last thing we need is to go from candidate pairs to blocks
+
+
+```{r, echo=TRUE}
+library(igraph) #graph package
+# think of each record as a node
+# there is an edge between nodes if they are candidates
+```
+
+# Putting it all together
+```{r, echo=TRUE, cache=TRUE}
+g <- make_empty_graph(n, directed = FALSE) # empty graph
+g <- add_edges(g, is.vector((candidates[, 1:2]))) # candidate edges
+g <- set_vertex_attr(g, "id", value = dat$id) # add id
+
+# get custers, these are the blocks
+clust <- components(g, "weak") # get clusters
+blocks <- data.frame(id = V(g)$id, # record id
+                     block = clust$membership) # block number  
+head(blocks)
+```
+
+# Your turn
+
+Using the `fname_c1` and `lname_c1` columns in the `RecordLinkage::RL500` dataset, 
+
+1. Use LSH to get candidate pairs for the dataset
+  - What $k$ to use for shingling?
+  - What $b$ to use for bucket size?
+  
+2. Append the blocks to the original dataset as a new column, `block`
+
+# Even faster?
+
+(**fast**): In minhashing we have to perform $m$ permutations to create multiple hashes
+\vfill
+(**faster**): We would like to reduce the number of hashes we need to create -- "Densified" One Permutation Hashing (DOPH)
+\vfill
+
+- One permutation of the signature matrix is used
+- The feature space is then binned into $m$ evenly spaced bins
+- The $m$ minimums (for each bin separately) are the $m$ different hash values
+
+\vfill
+
+

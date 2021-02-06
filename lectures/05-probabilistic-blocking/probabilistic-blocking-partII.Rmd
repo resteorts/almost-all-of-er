@@ -68,12 +68,9 @@ LSH
 
 Locality sensitive hashing (LSH) is a fast method of blocking for record linkage that orginates from the computer science literature. 
 
-# Citation data set
-
-Recall that last time we worked with the `cora` citation data set.
 
 \small
-```{r, cache=TRUE}
+```{r, cache=TRUE, echo=FALSE}
 # get only the columns we want
 # number of records
 n <- nrow(cora) 
@@ -97,25 +94,41 @@ jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
 # Hash function overview
 
 - Traditionally, a *hash function* maps objects to integers such that similar objects are far apart
-- Instead, we want special hash functions that do the **opposite** of this, i.e. similar objects are placed closed together!
+
+\vspace*{1em}
+
+- Instead, we will use a special hash function that does the **opposite** of this, i.e., similar objects are placed closed together!
+
+\vspace*{1em} Technical reading on this: Chen et al. (2018) and Shrivastava and Steorts (2018)
 
 # Hash function 
 
 
-*Hash functions* $h()$ are defined such that
+A *hash function* $h()$ is defined such that
 
-> If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is **high** and if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is **low**.
+\begin{enumerate}
+\item If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is \textbf{high} and 
+\item if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is \textbf{low}.
+\end{enumerate}
+
+
 
 # Hashing shingles
 
-Instead of storing the strings as shingles, we can instead store the  *hashed values*  
+\begin{enumerate}
+\item Instead of storing the strings as shingles, we store the \textbf{hashed values}.
+\item These are integers (instead of strings). 
+\end{enumerate}
 
-These are integers (instead of strings), and they take up less space/memory.
+We do this because the integers take up less memory, so we are performing a type of **dimension reduction**. 
+
+
+
 
 # Hashing shingles (continued)
 
 
-```{r hash-tokens, echo=TRUE, cache=TRUE}
+```{r hash-tokens, echo=TRUE, cache=TRUE, echo=FALSE}
 # instead store hash values (less memory)
 hashed_shingles <- apply(dat, 1, function(x) {
   # get the string
@@ -130,14 +143,15 @@ hashed_shingles <- apply(dat, 1, function(x) {
 
 # Hashing shingles (continued)
 \small
-```{r hash-tokens-jaccard, cache=TRUE}
+```{r hash-tokens-jaccard, cache=TRUE, echo=FALSE}
 # Jaccard similarity on hashed shingles
 hashed_jaccard <- 
   expand.grid(record1 = seq_len(n), record2 = seq_len(n))
 
 # don't need to compare the same things twice
 hashed_jaccard <- 
-  hashed_jaccard[hashed_jaccard$record1 < hashed_jaccard$record2,]
+  hashed_jaccard[hashed_jaccard$record1 
+                 < hashed_jaccard$record2,]
 # see how long this takes
 time <- Sys.time() 
 hashed_jaccard$similarity <- 
@@ -152,7 +166,10 @@ time <- difftime(Sys.time(), time, units = "secs")
 
 - To hash the shingles, it took $`r object.size(hashed_shingles)`$ bytes. 
 - To store the shingles, it took $`r object.size(shingles)`$ bytes. 
-- The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches. 
+
+\vspace*{1em}
+
+\textbf{The entire pairwise comparison still took the same amount of time ($\approx `r round(time/(60), 2)`$ minutes) for both approaches, so keep in mind we have not improved this aspect of our approach.}
 
 
 # Similarity preserving summaries of sets
@@ -166,14 +183,33 @@ If we have millions of records in our data set, it may not be possible to store 
 We can replace large sets by smaller representations, called *signatures*
 \vfill
 
-We can use signatures to **approximate** Jaccard similarity
+We can use the \emph{signatures} to **approximate** Jaccard similarity (using a cool fact)
 \vfill
 
 # Characteristic matrix
 
-In order to get a signature of our data set, we build a *characteristic matrix* 
+How do we build signatures? 
+
+\vspace*{1em}
+
+1. Build a characteristic matrix
+2. Then build the signature matrix 
+3. Find the minhash
+
+\vspace*{1em}
 
 Columns correspond to records and the rows correspond to all hashed shingles
+
+# Picture
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/permuted-matrix}
+    % Source: Original work by RCS
+  \end{center}
+  \caption{Permuted matrix from the characteristic one. The $\pi$ vector is the specified permutation.}
+  \label{figure:permute}
+\end{figure}	
 
 # Helper Function for Building Characteristic Matrix
 
