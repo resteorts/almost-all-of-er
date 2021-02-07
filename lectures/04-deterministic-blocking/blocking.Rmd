@@ -318,58 +318,50 @@ Let's now code up the evaluation metrics for pairwise precision and recall.
 
 # Pairwise Precision
 
-```{r}
-clusters = split(1:length(last_init), identity.RLdata500)
-
-# Number of matching pairs among blocks
-n_matches = sapply(clusters, function(records) {
-  # Number of matches in that block
-  sum(choose(table(identity.RLdata500[records]), 2))
-})
-
-# Total number of pairs
-n_pairs = sum(choose(table(last_init), 2))
-
-sum(n_matches) / n_pairs
-```
-
-# Pairwise Precision
-
+\small
 ```{r}
 precision <- function(block.labels, IDs) {
-  assert(length(block.labels) == length(IDs))
+  ct = xtabs(~block.labels+IDs)
   
-  clusters = split(1:length(block.labels), block.labels)
-
-  # Number of matching pairs among blocks
-  n_matches = sapply(clusters, function(records) {
-    sum(choose(table(IDs[records]), 2))
-  })
+  # Number of true positives
+  TP = sum(choose(ct, 2))
   
-  # Total number of pairs
-  n_pairs = sum(choose(table(block.labels), 2))
-
-  sum(n_matches) / n_pairs
+  # Number of positives = TP + FP
+  P = sum(choose(rowSums(ct), 2)) 
+  
+  return(TP/P)
 }
 ```
-
+\normalfont
 
 # Pairwise Recall
 
+\small
 ```{r}
 recall <- function(block.labels, IDs) {
-  assert(length(block.labels) == length(IDs))
+  ct = xtabs(~IDs+block.labels)
   
-  precision(IDs, block.labels)
+  # Number of true positives
+  TP = sum(choose(ct, 2))
+  
+  # Number of true links = TP + FN
+  TL = sum(choose(rowSums(ct), 2))
+  
+  return(TP/TL)
 }
 ```
+\normalsize
 
 # Pairwise Precision and Recall
 
+\small
 ```{r}
 precision(last_init, identity.RLdata500)
 recall(last_init, identity.RLdata500)
+precision(last_init, identity.RLdata500) == 
+  recall(identity.RLdata500, last_init)
 ```
+\normalsize
 
 # Italian Survey on Household and Wealth (SHIW)
 
