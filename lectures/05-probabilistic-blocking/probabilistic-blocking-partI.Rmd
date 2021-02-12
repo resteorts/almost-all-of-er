@@ -177,16 +177,18 @@ tokenize_character_shingles(x, n)
 jaccard_similarity(a, b) 
 ```
 
-<!-- # Your turn (solution) -->
+# Your turn (solution)
 
 
-<!-- ```{r} -->
-<!-- name.1 <- c("MICHAEL VOGEL") -->
-<!-- name.2 <- c("MICHAEL MEYER") -->
-<!-- token.1 <- tokenize_character_shingles(name.1, n=2) -->
-<!-- token.2 <- tokenize_character_shingles(name.2, n=2) -->
-<!-- jaccard_similarity(token.1,token.2) -->
-<!-- ``` -->
+```{r}
+# create shingles for both names
+token.1 <- 
+  tokenize_character_shingles("MICHAELVOGEL", n=2)
+token.2 <- 
+  tokenize_character_shingles("MICHAELMEYER", n=2)
+# compute jaccard similarity 
+jaccard_similarity(unlist(token.1),unlist(token.2))
+```
 
 # Citation Data Set
 
@@ -223,7 +225,7 @@ dat <- cbind(dat, cora[, c("title", "authors", "journal")])
 
 # Your turn (partial solution)
 
-**Finish the rest of the exercise with a partner.**
+**Finish the rest of the exercise with a partner, which can be found after the summar**
 
 
 # Summary
