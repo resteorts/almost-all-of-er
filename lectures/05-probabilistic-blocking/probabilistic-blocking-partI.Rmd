@@ -140,13 +140,13 @@ kable(records)
 
 **Do this on your own and compare with a partner.**
 
-<!-- # Your turn solution -->
-<!-- \vfill -->
-<!-- 1. The $2$-shingles for the first record are $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, el}\}$ and for the second are $\{\text{mi, ic, ch, ha, ae, el, lm, me, ey, ye, er}\}$ -->
-<!-- \vfill -->
-<!-- 2. There are 6 items in common $\{\text{mi, ic, ch, ha, ae, el}\}$ and 15 items total $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, lm, me, ey, ye, er}\}$, so the Jaccard similarity is $\frac{6}{15} = \frac{2}{5} = `r 6/15`$ -->
-<!-- \vfill -->
-<!-- 3. You should have learned that this is very tedious to do by hand!  -->
+# Your turn solution
+\vfill
+1. The $2$-shingles for the first record are $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, el}\}$ and for the second are $\{\text{mi, ic, ch, ha, ae, el, lm, me, ey, ye, er}\}$
+\vfill
+2. There are 6 items in common $\{\text{mi, ic, ch, ha, ae, el}\}$ and 15 items total $\{\text{mi, ic, ch, ha, ae, el, lv, vo, og, ge, lm, me, ey, ye, er}\}$, so the Jaccard similarity is $\frac{6}{15} = \frac{2}{5} = `r 6/15`$
+\vfill
+3. You should have learned that this is very tedious to do by hand!
 
 # Useful packages/functions in `R`
 
@@ -161,6 +161,8 @@ library(textreuse) # text reuse/document similarity
 library(tokenizers) # shingles
 ```
 
+
+
 # Shingling
 
 We can use the following functions to create $k$-shingles and calculate Jaccard similarity for our data
@@ -174,6 +176,17 @@ tokenize_character_shingles(x, n)
 # calculate jaccard similarity for two sets
 jaccard_similarity(a, b) 
 ```
+
+<!-- # Your turn (solution) -->
+
+
+<!-- ```{r} -->
+<!-- name.1 <- c("MICHAEL VOGEL") -->
+<!-- name.2 <- c("MICHAEL MEYER") -->
+<!-- token.1 <- tokenize_character_shingles(name.1, n=2) -->
+<!-- token.2 <- tokenize_character_shingles(name.2, n=2) -->
+<!-- jaccard_similarity(token.1,token.2) -->
+<!-- ``` -->
 
 # Citation Data Set
 
