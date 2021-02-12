@@ -108,7 +108,7 @@ A *hash function* $h()$ is defined such that
 
 \begin{enumerate}
 \item If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is \textbf{high} and 
-\item if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is \textbf{low}.
+\item if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is \textbf{high}.
 \end{enumerate}
 
 
