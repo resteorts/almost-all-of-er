@@ -68,6 +68,16 @@ LSH
 
 Locality sensitive hashing (LSH) is a fast method of blocking for record linkage that orginates from the computer science literature. 
 
+LSH
+===
+
+\begin{itemize}
+\item LSH tries to preserve similarity after dimension reduction.
+\begin{itemize}
+\item What kind of similarity? $\leftrightarrow$ What kind of dimension reduction?
+\end{itemize}
+\end{itemize}
+
 
 \small
 ```{r, cache=TRUE, echo=FALSE}
@@ -104,12 +114,11 @@ jaccard <- jaccard[jaccard$record1 < jaccard$record2,]
 # Hash function 
 
 
-A *hash function* $h()$ is defined such that
-
-\begin{enumerate}
-\item If records $A$ and $B$ have high similarity, then the probability that $h(A) = h(B)$ is \textbf{high} and 
-\item if records $A$ and $B$ have low similarity, then the probability that $h(A) \not= h(B)$ is \textbf{high}.
-\end{enumerate}
+We are looking for a hash function $h()$ such that
+\begin{itemize}
+\item if $\text{sim}(A,B)$ is high, then with high prob.\ $h(A) = h(B).$
+\item if $\text{sim}(A,B)$ is low, then with high prob.\ $h(A) \neq h(B).$
+\end{itemize}
 
 
 
@@ -292,7 +301,7 @@ signature.matrix <- c(2,4,3,1)
 
 The relationship between the random permutations of the characteristic matrix and the Jaccard Similarity is
 $$
-Pr\{\min[h(A)] = \min[h(B)]\} = \frac{|A \cap B|}{|A \cup B|}
+Pr\{\min[\pi(A)] = \min[\pi(B)]\} = \frac{|A \cap B|}{|A \cup B|}
 $$
 
 \vfill
@@ -306,6 +315,27 @@ We look down each column of the signature matrix, and compare it to any other co
 The number of agreements over the total number of combinations is an approximation to Jaccard measure
 
 \vfill
+
+# Proof
+
+Assume that $\pi$ is a random permutation. Then
+$$\text{Pr} \{ \min[\pi(A)] = \min[\pi(B)] \} = 
+\frac{|A \cap B   |           }{  |A \cup B|      }.$$
+
+\textbf{Proof}:
+Suppose $X$ is a record (set of shingles). Let $y \in X$ be a shingle.
+$\text{Pr} [ \pi(y) = \min \pi( X)  ] = 1/|X|.$\footnote{It's equally likely that any $y \in X$ is mapped to the min element.} 
+
+Let $y$ be such that $\pi(y) = \min (\pi(A \cap B)).$ Then
+\begin{itemize}
+\item $\pi(y) = \min (\pi(A)) $ if $y \in A$ OR
+\item $\pi(y) = \min (\pi(B)) $ if $y \in B.$
+\end{itemize}
+The probability that both are true is $Pr(y \in A \cap B).$
+This implies that 
+$$\text{Pr} \{ \min(\pi(A)) = \min(\pi(B)) \} = 
+\frac{|A \cap B   |           }{  |A \cup B|      }.$$
+
 
 # Signature Matrix
 
