@@ -12,7 +12,9 @@ font-size: 8px
 
 ## Agenda 
 
-Walk through toy example of Fellegi Sunter applied to RLdata500
+- Let's consider the RLdata500 data set and apply Fellegi Sunter to it
+- We will first use the RecordLinkage package 
+- Then we will look at a wrapper function that makes this a bit easier. 
 
 
 ## Load packages
