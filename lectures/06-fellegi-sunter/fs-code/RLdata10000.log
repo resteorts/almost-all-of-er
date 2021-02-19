@@ -1,4 +1,45 @@
 *** Starting blocking pass "by" ***
 Indexing record pair comparisons...
-Error in is.data.frame(dataset) : object 'filesDf' not found
-Error in eval(lhs, parent, parent) : object 'filesDf' not found
+Verify linking fields: fname_c1, lname_c1, bm, bd
+
+Count pattern frequencies...
+Run EM algorithm...
+Writing results to disk at RLdata10000_candidates_by.csv
+Wall clock running time 4.69161510467529 secs
+
+*** Starting blocking pass "bd" ***
+Indexing record pair comparisons...
+Verify linking fields: fname_c1, lname_c1, by, bm
+
+Count pattern frequencies...
+Run EM algorithm...
+Writing results to disk at RLdata10000_candidates_bd.csv
+Wall clock running time 10.8803930282593 secs
+
+Warning messages:
+1: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.match' not found
+2: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.nonmatch' not found
+3: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.match' not found
+4: In rm(rpairs, is_match, result, pred.match, pred.nonmatch, resultDf) :
+  object 'pred.nonmatch' not found
+There are 1000 matching pairs in the population
+Reading candidate pairs for blocking pass "by" from RLdata10000_candidates_by.csv
+Reading candidate pairs for blocking pass "bd" from RLdata10000_candidates_bd.csv
+Joining, by = c("id1", "id2", "is_match")
+There are 94648 candidate pairs with score >= -10 across all passes
+Joining, by = c("id1", "id2", "is_match")
+There are 131 matching pairs outside the blocks
+Indexing record pairs...
+
+*** Evaluating for sample size 10 ***
+There are 4405 pairs with score >= 0 across all passes
+Sampled 5 pairs with score >= 0 to include in the training set
+There are 2234160 total candidate pairs
+Starting rejection sampling of pairs with score < 0. This can be slow.
+Sampled 5 pairs with score < 0 to include in the training set
+Finding optimal threshold for scores in blocking pass "by"
+Candidate thresholds are 6.44477383705874,13.4934074394479
+Error in calcF1(predictions, labels) : could not find function "calcF1"

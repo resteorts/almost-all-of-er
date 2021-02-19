@@ -24,7 +24,7 @@ code \url{https://google.github.io/styleguide/Rguide.xml}. No late homework's wi
 
 Consider the \texttt{RLdata500} data set in the \texttt{RecordLinkage} package. 
 
-Suppose that this data set is too large to work with and we would like to create a sample size of 10 records that is representative of the 500 records in this data set. Let's investigate how we can do this!
+Suppose that this data set is too large to work with and we would like to create a sample size of 10 records that is representative of the 500 records in this data set. Specifically, we want to make sure that our performance (precision, recall, F-measure) on the sampled data set is representative of the original data set. Let's investigate how we can do this!
 
 \begin{enumerate}
 \item Start by doing simple exploratory data analysis of the data set. What do you find? 

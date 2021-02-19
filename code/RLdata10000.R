@@ -6,7 +6,7 @@ set.seed(1234)
 
 # -------------------------------- Load data --------------------------------- #
 # Read each file into a separate data frame
-fileDir <- "../datasets/"
+fileDir <- "../../datasets/"
 file.name <- "RLdata10000.csv"
 filesDf <- read.csv(paste0(fileDir,file.name), na.strings=c("NA"), 
                      stringsAsFactors = FALSE, colClasses = "character")

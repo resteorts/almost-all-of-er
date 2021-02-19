@@ -1,0 +1,4 @@
+Error in runFS(filesDf, linkingFields, strLinkingFields, recIdField, entIdField,  : 
+  could not find function "runFS"
+Error in evaluate(filesDf, linkingFields, strLinkingFields, recIdField,  : 
+  could not find function "evaluate"
