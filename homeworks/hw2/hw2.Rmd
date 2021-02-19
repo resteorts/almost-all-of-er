@@ -1,7 +1,7 @@
 
 ---
 title: "Homework 2: Exploring Splitting the Data for Entity Resolution"
-author: "Due Friday, March 5"
+author: "Due Friday, March 5 at 5 PM EDT"
 output: 
      pdf_document:
       includes: 
@@ -29,7 +29,7 @@ Suppose that this data set is too large to work with and we would like to create
 \begin{enumerate}
 \item Start by doing simple exploratory data analysis of the data set. What do you find? 
 \item What happens if you randomly sample 10 records from the original data set? Do this a few times and describe what happens? Is this representative of the original data set? Explain and be specific. 
-\item Propose something that works better than random sampling and explain why this works better. 
+\item Propose a method that works better than random sampling and explain why this works better. 
 \item Propose evaluation metrics, visualizations, etc. to support any of your claims. 
 \end{enumerate}
 
