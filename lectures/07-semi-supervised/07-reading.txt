@@ -1,0 +1,4 @@
+# Reading, Module 7
+
+1. Enamorado et al. (2018). Using a Probabilistic Model to Assist Merging of Large-Scale Administrative Records.
+2. Enamorado and Steorts (2020).
