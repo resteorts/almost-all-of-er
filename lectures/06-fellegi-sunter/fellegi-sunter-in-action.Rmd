@@ -125,14 +125,25 @@ rpairsfuzzy$pairs[1:5,]
 ```
 
 
-## Stochastic record linkage
+## Probabilistic record linkage
 
-Stochastic record linkage relies on the assumption of
-conditional probabilities concerning comparison pat-
-terns.
+Probabilistic record linkage relies on the assumption of
+conditional probabilities concerning comparison patterns.
+
+Recall that we defined the $u$ and $m$ probabilities previously as the following: 
+
+
+
+$$u_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid \text{the records are a match})$$
+
+$$m_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid \text{the records are not a match}).$$
+
+## Probabilistic record linkage
 
 The probabilities of the random vector $\gamma = (\gamma_1, \ldots \gamma_n)$
-having value $\tilde{\gamma} = (\tilde{\gamma}_1, \ldots \tilde{\gamma}_n)$ conditional on the match status $Z$ are defined by
+having value $\tilde{\gamma} = (\tilde{\gamma}_1, \ldots \tilde{\gamma}_n)$ conditional on the match status $Z$ can more precisely be defined as follows:
+
+
 
 $$u_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid Z=0)$$
 
@@ -140,7 +151,7 @@ $$m_{\tilde{\gamma}} = P(\gamma = \tilde{\gamma} \mid Z=1),$$
 
 where $Z=0$ stands for a non-match and $Z=1$ stands for a match. 
 
-## Stochastic record linkage
+## Probabilistic record linkage
 
 In the Fellegi-Sunter model these probabilities are used to compute weights of the form
 
