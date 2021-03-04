@@ -1,7 +1,7 @@
 
 ---
 title: "Quiz 1"
-author: "March 19, 2021"
+author: "Due March 19, 2021 at 5 PM EDT"
 output: 
      pdf_document:
       includes: 
@@ -18,7 +18,7 @@ Code should be commented. See the Google style guide for questions regarding com
 
 # Problem statement
 
-Create a homework for the class that is broken up into five tasks, and provide a worked through solution and grading rubric to your homework. Make sure that goals for your homework assignment are clear, motivated by real data, and that you give helpful hints if needed. 
+Create a homework for the class that is broken up into five tasks, and provide a worked through solution and grading rubric to your homework. Make sure that goals for your homework assignment are clear, motivated by real data, and that you give helpful hints if needed. You can work in group sizes of no more than two students, and please choose a group leader.
 
 \textbf{This group assignment will be graded based upon your five tasks, your grading rubric, and the correctness of your worked through solution.}
 
