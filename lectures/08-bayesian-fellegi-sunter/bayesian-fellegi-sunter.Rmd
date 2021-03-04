@@ -35,7 +35,7 @@ library(exchanger)
 
 - This is appealing as one is able to incorporate prior knowledge into the record linkage process. 
 
-- We also, get an approximate posterior distribution, allowing use to know the posterior variance of the sample mean and full posterior distributions of evaluation metrics. Such uncertainty quanification is NOT possible from a probabilistic point of view. 
+- We also, get an approximate posterior distribution, allowing use to know the posterior variance of the sample mean and full posterior distributions of evaluation metrics. Such uncertainty quantification is NOT possible from a probabilistic point of view. 
 
 - Finally, we can also do a fully unsupervised analyst, which Sadinle performs in his case study on the El Salvadorian data set. 
 
@@ -268,9 +268,23 @@ In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use
 
 Review these details on your own. 
 
-# Summarize
+# Discussion Points
 
-Provide summary. 
+- Sadinle (2014) provides the first Bayesian Fellegi and Sunter approach to duplicated detection. 
+
+- What assumptions does he make? How many databases? What types of features/fields? 
+
+- What types of priors does he use? Why does he choose these? 
+
+- What are the advantages of this methods?
+
+- Do you see some drawbacks of the method? 
+
+- How would you investigate this on your own moving forward? 
+
+
+
+
 
 
 
