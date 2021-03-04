@@ -29,7 +29,15 @@ library(exchanger)
 
 # Overview of Bayesian Fellegi and Sunter 
 
-Give an overview of the framework 
+- Sadinle (2014) proposes a Bayesian variant of Fellegi and Sunter (1969). 
+
+- In order to do this, he uses the same basic set up as the original authors, but puts priors on the $m$ and $u$ probabilities such that one has a posterior to approximate. 
+
+- This is appealing as one is able to incorporate prior knowledge into the record linkage process. 
+
+- We also, get an approximate posterior distribution, allowing use to know the posterior variance of the sample mean and full posterior distributions of evaluation metrics. Such uncertainty quanification is NOT possible from a probabilistic point of view. 
+
+- Finally, we can also do a fully unsupervised analyst, which Sadinle performs in his case study on the El Salvadorian data set. 
 
 # Notation 
 
@@ -79,10 +87,10 @@ $\Delta$ is symmetric with only ones in the diagonal.
 
 # Labellings of the partition’s groups
 
-Unfortunately, it is not computationally inefficient to utilized the co-reference matrix in practice. 
+Unfortunately, it is not computationally efficient to utilize the co-reference matrix in practice. 
 
 An alternative is to use arbitrary labelings of
-the **partition’s groups**. 
+the **partition's groups**. 
 
 # Labellings of the partition’s groups
 
@@ -102,7 +110,7 @@ Recall our database has $\{1,2,3,4,5\}$ records and the partition can be represe
 
 
 $$\{1,3\}, \{2\}, \{4,5\}.$$
-What would be examples $Z$ of arbitary labellings for this example?
+What are some examples of vectors $Z$ that would correspond to the partitions above? 
 
 # Example (Continued)
 
@@ -112,7 +120,7 @@ $$Z = (\textcolor{blue}{1}, \textcolor{green}{2}, \textcolor{blue}{1}, \textcolo
 
 $$Z = (\textcolor{blue}{4}, \textcolor{green}{1}, \textcolor{blue}{4}, \textcolor{red}{2}, \textcolor{red}{2})$$ 
 
-would correspond to this partition because both $Z_1 = Z_3 = Z_4 = Z_5$ and $Z_2$ gets its own value.
+would correspond to this partition because both $Z_1 = Z_3$ and  $Z_4 = Z_5$ and $Z_2$ gets its own value.
 
 # Connection to the $r$th Bell number
 
@@ -256,197 +264,13 @@ $$u_{f\ell} \sim \text{Beta}(\alpha_{f0}^0, \beta_{f0}^0)$$ if prior information
 
 # Gibbs sampling
 
-In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use a Gibbs sampler. 
+In order to approximate the joint posterior of $\bm{Z}$ and $\Phi$, one must use a Gibbs sampler, where details can be found in Sadinle's 2014 paper.
 
-# sadinle14 package 
+Review these details on your own. 
 
-- Marchant et. al (2020) have provided a package for implementing Sadinle (2014). 
+# Summarize
 
-- We investigate it on the RLdata500 data set. 
-
-# sadinle14 package 
-\footnotesize
-```{r, message=FALSE}
-library(magrittr)
-library(sadinle14)
-library(exer)
-# >> INSERT
-library(comparator)
-# <<
-library(clevr)
-RLdata500[['rec_id']] <- seq.int(length.out=nrow(RLdata500))
-head(RLdata500)
-```
-
-# distance functions
-\footnotesize
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-# scoringFns <- list(
-#   fname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
-#   lname_c1 = function(x, y) dist_NormLevenshtein(x, y, return.matrix = FALSE),
-#   by = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
-#   bm = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE),
-#   bd = function(x, y) dist_AbsoluteDifference(x, y, return.matrix = FALSE)
-# )
-# >> INSERT
-scoringFns <- list(
-  fname_c1 = comparator::Levenshtein(normalize=TRUE),
-  lname_c1 = comparator::Levenshtein(normalize=TRUE),
-  by = function(x, y) abs(x - y),
-  bm = function(x, y) abs(x - y),
-  bd = function(x, y) abs(x - y)
-)
-# <<
-```
-
-# breaks
-
-For each scoring function above, we provide a breaks vectors whichspecifies the discrete levels of agreement (from 'high' agreement to 'low').
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-scoringBreaks <- list(
-  fname_c1 = c(-Inf,.05,.15,.3,Inf),
-  lname_c1 = c(-Inf,.05,.15,.3,Inf),
-  by = c(-Inf,0,1,3,Inf),
-  bm = c(-Inf,0,1,3,Inf),
-  bd = c(-Inf,0,2,7,Inf)
-)
-```
-
-# comparison vectors 
-
-- Now we are ready to compute the attribute comparison scores for the record pairs. 
-
-- Since this is a small data set, we consider all pairs using the  `computePairs_all` function. 
-
-- For larger data sets, blocking/indexing is 
-recommended using `computePairs_Hamming` or`computePairs_AttrDist`.
-
-# comparison vectors 
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-pairs <- RLdata500 %>% 
-  computePairs_all(id.col = 'rec_id') %>%
-  computeScores(scoringFns) %>% 
-  discretizeScores(scoringBreaks)
-```
-
-# speeding up inference 
-
-- To speed up inference, we only consider a subset of the pairs as  candidate matches. 
-
-- Specifically, we consider pairs that have a strong 
-agreement on name (accounting for missing names).
-
-# speeding up inference 
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-pairs[['candidate']] <- 
-  (pairs$fname_c1 < 4) & 
-  (pairs$lname_c1 < 4) | 
-  is.na(pairs$fname_c1) | 
-  is.na(pairs$lname_c1) 
-```
-
-# priors on $m$ and $u$ probabilities
-
-- Next we specify the priors on the m* and u* probabilities for each 
-attribute and agreement level. 
-
-- `lambda` contains the lower truncation 
-points for the truncated Beta priors on the m* probabilities. `alpha1` and `beta1` are the shape parameters for the truncated Beta distributions. 
-
-- For simplicity, we specify a flat (uniform) prior.
-Note: the priors on the u* probabilities are uniform by default.
-
-# priors on $m$ and $u$ probabilities
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-lambda <- list(
-  fname_c1 = c(0.8,0.85,0.99),
-  lname_c1 = c(0.8,0.85,0.99),
-  by = c(0.8,0.85,0.99),
-  bm = c(0.8,0.85,0.99),
-  bd = c(0.8,0.85,0.99)
-)
-
-alpha1 <- lapply(lambda, function(x) rep(1, length(x)))
-beta1 <- alpha1
-```
-
-# intialization  and Gibbs sampler 
-
-Finally we initialize the model and run inference using Markov chain  Monte Carlo.
-```{r, eval=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
-model <- sadinle14::initializeModel(pairs,  
-         lambda,  alpha1, 
-         beta1, id.cols 
-         = c("rec_id.x", "rec_id.y"),
-         candidate.col = "candidate")
-
-result <- sadinle14::runInference(model, 
-          100, thinningInterval=10, 
-          burninInterval=100)
-```
-
-# posterior samples of linkage structure
-
-The posterior samples of the linkage structure (deduplication) are  accessible from `result@history$linkage`. 
-
-However the linkage structure 
-only includes the record in `pairs`. 
-
-We can obtain samples of the complete 
-linkage structure (for all record) using the following function.
-
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-linkageChain <- sadinle14::completeLinkageChain(result,  
-                RLdata500$rec_id)
-```
-
-<!-- # evaluations -->
-
-<!-- - We evaluate the quality of the posterior linkage structure (deduplication)  based on a point estimate computed using the _shared most probable maximal matching sets method_ -->
-<!--  from  Steorts, Hall, Fienberg (2016).   -->
-
-<!-- - This functionality is available from the `exchangeableER` package. -->
-
-<!-- ```{r, eval=TRUE, message=FALSE, warning=FALSE} -->
-<!-- #mpc <- exchangeableER::mostProbableClusters(linkageChain) -->
-<!-- #predClusters <- exchangeableER::sharedMostProbableClusters(mpc) -->
-<!-- #predMatches <- exchangeableER::clustersToPairs(predClusters) -->
-<!-- #trueClusters <- exchangeableER::membershipToClusters(identity.RLdata500, ids=as.character(RLdata500$rec_id)) -->
-<!-- #trueMatches <- exchangeableER::clustersToPairs(trueClusters) -->
-<!-- # >> INSERT -->
-<!-- predClusters <- exer::smp_clusters(linkageChain) -->
-<!-- predMatches <- clevr::clusters_to_pairs(predClusters) -->
-<!-- trueMatches <- clevr::membership_to_pairs(identity.RLdata500) -->
-<!-- numRecords <- nrow(RLdata500) -->
-<!-- clevr::eval_report_pairs(trueMatches, predMatches,  -->
-<!--                          num_pairs = numRecords*(numRecords-1)/2) -->
-<!-- ``` -->
+Provide summary. 
 
 
-# evaluations
 
-- We evaluate the quality of the posterior linkage structure (deduplication)  based on a point estimate computed using the _shared most probable maximal matching sets method_
- from  Steorts, Hall, Fienberg (2016).  
-
-- This functionality is available from the `exer` package.
-
-# evaluations
-
-\footnotesize
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-predClusters <- exer::smp_clusters(linkageChain)
-predMatches <- clevr::clusters_to_pairs(predClusters)
-trueMatches <- clevr::membership_to_pairs(identity.RLdata500)
-numRecords <- nrow(RLdata500)
-```
-
-# evaluations
-\footnotesize
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
-clevr::eval_report_pairs(trueMatches, predMatches, 
-                         num_pairs = numRecords*(numRecords-1)/2)
-```
