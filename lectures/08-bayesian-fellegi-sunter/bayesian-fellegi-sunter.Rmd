@@ -15,12 +15,6 @@ font-size: 8px
 - Binette and Steorts (2020)
 - Sadinle (2014)
 
-# Load Libraries
-
-```{r, cache=TRUE}
-#install.packages("exchanger_0.2.0.tar.gz", repos = NULL, type="source")
-library(exchanger)
-```
 
 # Duplicate detection
 
