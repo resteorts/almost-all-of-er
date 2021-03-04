@@ -19,7 +19,8 @@ font-size: 8px
 - We investigate it on the RLdata500 data set. 
 
 \footnotesize
-```{r, message=FALSE}
+
+```r
 library(magrittr)    # pipe operator (must be loaded before BDD)
 library(comparator)  # normalized Levenshtein distance
 library(clevr)       # evaluation functions
@@ -28,9 +29,20 @@ RLdata500[['rec_id']] <- seq.int(length.out=nrow(RLdata500))
 head(RLdata500)
 ```
 
+```
+##   fname_c1 fname_c2 lname_c1 lname_c2   by bm bd rec_id
+## 1  CARSTEN     <NA>    MEIER     <NA> 1949  7 22      1
+## 2     GERD     <NA>    BAUER     <NA> 1968  7 27      2
+## 3   ROBERT     <NA> HARTMANN     <NA> 1930  4 30      3
+## 4   STEFAN     <NA>    WOLFF     <NA> 1957  9  2      4
+## 5     RALF     <NA>  KRUEGER     <NA> 1966  1 13      5
+## 6  JUERGEN     <NA>   FRANKE     <NA> 1929  7  4      6
+```
+
 # Distance functions
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 scoring_fns <- list(
   fname_c1 = Levenshtein(normalize = TRUE),
   lname_c1 = Levenshtein(normalize = TRUE),
@@ -44,7 +56,8 @@ scoring_fns <- list(
 
 For each scoring function above, we provide a breaks vectors, which specifies the discrete levels of agreement (from 'high' agreement to 'low').
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 scoring_breaks <- list(
   fname_c1 = c(-Inf,.05,.15,.3,Inf),
   lname_c1 = c(-Inf,.05,.15,.3,Inf),
@@ -65,7 +78,8 @@ scoring_breaks <- list(
 # Comparison vectors 
 
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 pairs <- pairs_all(RLdata500$rec_id) %>%
   compute_scores(RLdata500, scoring_fns, id_col = 'rec_id') %>% 
   discretize_scores(scoring_breaks)
@@ -87,7 +101,8 @@ Specifically, we consider pairs that have a strong agreement on name (accounting
 \vspace*{1em}
 
 \tiny
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 pairs[['candidate']] <- (pairs$fname_c1 < 4) & (pairs$lname_c1 < 4) | 
                             is.na(pairs$fname_c1) | is.na(pairs$lname_c1) 
 ```
@@ -104,7 +119,8 @@ points for the truncated Beta priors on the m* probabilities. `alpha1` and `beta
 
 # priors on $m$ and $u$ probabilities
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 lambda <- list(
   fname_c1 = c(0.8,0.85,0.99),
   lname_c1 = c(0.8,0.85,0.99),
@@ -112,14 +128,14 @@ lambda <- list(
   bm = c(0.8,0.85,0.99),
   bd = c(0.8,0.85,0.99)
 )
-
 ```
 
 # Intialization  and Gibbs sampler 
 
 Finally we initialize the model and run inference using Markov chain  Monte Carlo.
 
-```{r, eval=TRUE, message=FALSE, warning=FALSE, cache=TRUE}
+
+```r
 model <- BDD(pairs, lambda, 
              id_cols = c("rec_id.x", "rec_id.y"), 
              candidate_col = "candidate")
@@ -140,45 +156,27 @@ candidate pairs.
 - We can obtain samples of the complete linkage structure (for all records) 
 using the following function.
 
-```{r, eval=TRUE}
+
+```r
 links_samples <- 
   complete_links_samples(fit, RLdata500$rec_id)
 ```
 
 # Traceplot of the cluster sizes
 
-```{r, eval=TRUE, echo=FALSE}
-n_clusters <- extract(fit, "n_clusters")
-m_probs <- extract(fit, "m")
-u_probs <- extract(fit, "u")
-plot(n_clusters)
-```
+![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-9-1.pdf)<!-- --> 
 
 # Traceplot of the m probabilities 
 
-```{r, echo=FALSE}
-plot(m_probs)
-```
+![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-10-1.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-10-2.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-10-3.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-10-4.pdf)<!-- --> 
 
 # Traceplot of the u probabilities
 
-```{r, echo=FALSE}
-plot(u_probs)
-```
+![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-11-1.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-11-2.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-11-3.pdf)<!-- --> ![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-11-4.pdf)<!-- --> 
 
 # Pairwise Evaluation Metrics (Boxplots)
 
-```{r, eval=TRUE, echo=FALSE}
-n_records <- nrow(RLdata500)
-true_pairs <- membership_to_pairs(identity.RLdata500)
-metrics <- apply(links_samples, 1, function(links) {
-  pred_pairs <- membership_to_pairs(links)
-  pr <- precision_pairs(true_pairs, pred_pairs)
-  re <- recall_pairs(true_pairs, pred_pairs)
-  c(Precision = pr, Recall = re)
-}) %>% t()
-boxplot(metrics)
-```
+![](bayesian-fellegi-sunter-vignette_files/figure-beamer/unnamed-chunk-12-1.pdf)<!-- --> 
 
 # Your Turn and Discussions
 
