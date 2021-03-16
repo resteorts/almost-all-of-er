@@ -1,6 +1,6 @@
 
 ---
-title: "Module X: Bayesian Graphical Entity Resolution"
+title: "Module 9: Bayesian Graphical Entity Resolution"
 author: "Rebecca C. Steorts"
 output: 
      beamer_presentation:
@@ -41,7 +41,7 @@ estimate latent individuals across multiple high dimensional databases.
 5. Theoretical properties have recently been explored for latent variable models, supporting the above approach. 
 
 
-[Copas and Hilton (1990), Tancredi and Liseo (2011), Steorts, Barnes, Neiswanger (2017), Zanella et al. (2016)]
+[Copas and Hilton (1990), Tancredi and Liseo (2011), Steorts, Barnes, Neiswanger (2017), Zanella et al. (2016), Betancourt et al. (2020)]
 
 # The entity resolution graph
 
@@ -273,7 +273,8 @@ est_links_pair <- pairwise(links(lam.gs))
 true_links_pair <- pairwise(links(matrix(identity.RLdata500, nrow = 1)))
 
 #comparison
-comparison <- links.compare(est_links_pair, true_links_pair, counts.only = TRUE)
+comparison <- links.compare(est_links_pair, true_links_pair, 
+                            counts.only = TRUE)
 
 # precision
 precision <- comparison$correct/(comparison$incorrect + comparison$correct)
@@ -439,3 +440,11 @@ ggplot() +
   geom_vline(aes(xintercept=mean(size_est)), lty=2) +
   xlab("Estimated size")
 ```
+
+# Discussion
+
+- Fully Bayesian approach for merging multiple databases simultaneously
+- Handles transitive closures
+- Beats semi-supervised approaches as illustrated in Steorts (2015)
+- Speeds up can be handled in Marchant et al. (2021)
+- Subjective priors instead of the uniform prior as discussed in Zanella et al. (2016) and Betancourt et al. (2021)
