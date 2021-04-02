@@ -1,0 +1,41 @@
+
+---
+title: "Final Project Presentation Template"
+author: "Rebecca C. Steorts"
+output: 
+     beamer_presentation:
+      includes: 
+          in_header: custom2.tex
+font-size: 8px
+---
+
+Data
+===
+
+- Summarize overall a picture of your data and your motivating questions
+
+Entity Resolution
+===
+
+Explain briefly what ER is and why it's needed for your data set at hand. 
+
+Methods
+===
+
+Explain what methods are suitable for your application and why! 
+
+Experiments
+===
+
+Tell us about your experimental set up and evaluation metrics. 
+
+Results
+===
+
+Tell us about the most compelling results and how these allowed you to answer the questions of interest
+
+Discussion
+===
+
+Provide a discussion regarding what you learned, what you still need to do
+
