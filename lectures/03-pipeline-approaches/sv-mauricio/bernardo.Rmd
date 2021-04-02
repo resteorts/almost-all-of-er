@@ -1,0 +1,67 @@
+---
+title: "bernardo"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+library(RecordLinkage)
+library(dplyr)
+library(blink)
+library(knitr)
+library(textreuse)
+library(tokenizers)
+library(devtools)
+library(cora)
+library(ggplot2)
+library(igraph)
+library(tidyverse)
+```
+
+```{r}
+b = 10
+m = 100
+minhash = minhash_generator(n = m, seed = 1234)
+
+dat = read.csv("sv-mauricio.csv")
+dat = dat %>%
+  filter(!is.na(HandID)) 
+
+
+
+docs <- apply(dat, 1, function(x) paste(x[-c(1, 2, 5:11)], collapse = " ")) # get strings
+head(docs)
+  
+  
+#docs <- apply(dat, 1, function(x) paste(x[-c(1, 2, 9)], collapse = " ")) # get strings
+
+
+names(docs) <- dat$id # add id as names in vector
+corpus <- TextReuseCorpus(text = docs, # dataset
+                          tokenizer = tokenize_character_shingles, n = 1, simplify = TRUE, # shingles
+                          progress = FALSE, # quietly
+                          keep_tokens = TRUE, # store shingles
+                          minhash_func = minhash) # use minhash
+
+buckets <- lsh(corpus, bands = b, progress = FALSE)
+candidates <- lsh_candidates(buckets)
+lsh_jaccard <- lsh_compare(candidates, corpus, 
+                           jaccard_similarity, progress = FALSE)
+
+
+qplot(lsh_jaccard$score)
+```
+
+```{r}
+g <- make_empty_graph(nrow(dat), directed = FALSE) # empty graph
+edges <- as.integer(as.vector((as.data.frame(candidates[, 1:2]))))
+#g <- add_edges(g, edges)
+#g <- set_vertex_attr(g, "id", value = dat$id) # add id
+
+#clust <- components(g, "weak") # get clusters
+#blocks <- data.frame(id = V(g)$id, # record id
+                     #block = clust$membership) # block number
+```

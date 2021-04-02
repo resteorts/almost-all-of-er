@@ -9,11 +9,19 @@ output:
 font-size: 8px
 ---
 
-The goal of your project must be motivated by a real application of entity resolution. Undergraduate students will work in pairs, and will be supervised by a master's student. Master's students can work solo if they choose will approval of Professor Steorts.  
+The goal of your project must be motivated by a real application of entity resolution. Students can work in groups no larger than groups of four. 
+
+Deadlines:
+
+- Friday, April 2: In class, run the general idea for approval by Professor Steorts
+- Friday, April 9: First draft due of slides, paper, code
+- Friday, April 16, Second draft due of slides, paper, code
+- Wednesday, April 21, Final draft due of slides, paper
+- Friday, April 23, Final presentations in class (10 minutes per group, including questions)
 
 Each group will have the following goals:
 
-1. Choose an application of entity resolution that is approved by Professor Steorts and Olivier. What is the application and what are the goals of the applied problem that the group is going to tackle? 
+1. Choose an application of entity resolution that is approved by Professor Steorts. What is the application and what are the goals of the applied problem that the group is going to tackle? 
 2. Put forth a proposal motivated by their application to entity resolution that will help solve their applied problem. Be specific. 
 3. Who is in charge of each part of the proposed methodology, and how will you achieve these goals. Write out a timeline and your deliverables.
 
