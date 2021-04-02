@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+%\pdfminorversion=4
+% NOTE: To produce blinded version, replace "1" with "0" below.
+\newcommand{\blind}{1}
+
+\input{subfiles/preamble}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\def\spacingset#1{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize} \spacingset{1}
+
+% ridiculous table spacing
+%\makeatletter
+%\AtBeginEnvironment{tabular}{%
+%  \def\baselinestretch{1}\@currsize}%
+%\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\if1\blind
+{
+  \title{\bf Title}
+  \author{Rebecca C. Steorts\thanks{
+    This work was supported by the National Science Foundation through NSF-1652431 and NSF-1534412.}\hspace{.2cm}\\
+    Department of Statistical Science and Computer Science, Duke University}
+  \maketitle
+} \fi
+
+\if0\blind
+{
+  \bigskip
+  \bigskip
+  \bigskip
+  \begin{center}
+    {\LARGE\bf Title}
+\end{center}
+  \medskip
+} \fi
+
+\bigskip
+
+\begin{abstract}
+Provide a short abstract (summary) regarding the main points of the paper. 
+\end{abstract}
+
+\noindent%
+{\it Keywords:}  TBD
+\vfill
+
+\newpage
+%\spacingset{1.5} % DON'T change the spacing!
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+In this section, you should summarize the entity resolution problem and why it's important, citing any very important references to the literature. You should highlight briefly you main application, it's importance, and what the goals of your paper will be. 
+
+You should then re-summarize your abstract regarding your novel contributions of your paper. 
+
+\subsection{Prior Work}
+
+In this section, you want to highlight quickly any related work that you may be utilizing in the literature or building off of. 
+
+\section{Data}
+\label{sec:data}
+
+In this section, you should briefly describe the data and your motivating questions that you intend to answer by the end of the paper. 
+
+\section{Methods}
+
+In this section, you want to summarize the methodology that you are using (replicating) or extending. Be sure to provide clear notation and summarize this for the reader clearly. If you're able to do a small improvement, this is great. 
+
+\section{Experiments}
+
+In this section, you should provide experimental evidence on your application answering your motivating questions. Think about evaluation metrics and comparisons to other methods if this seems appropriate. Shorter is better as you only want to include what worked. (Don't include what didn't worked). 
+If you have simulation studies, you could put these in an appendix to illustrate how you looked a sensitivity analysis.
+
+Give recommendations to the readers based upon what you observe from your experimental results. 
+
+\section{Discussion}
+
+Provide a discussion based upon your observations and give guidance to what you would do in future work in this section. 
+
+\clearpage
+\newpage
+\section{Discussion}
+
+\clearpage
+\newpage
+
+\bibliographystyle{apalike}
+\bibliography{er-review}
+\clearpage
+\newpage
+
+
+\end{document}

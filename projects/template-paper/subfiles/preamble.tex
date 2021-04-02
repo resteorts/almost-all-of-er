@@ -1,0 +1,68 @@
+\usepackage{xr-hyper}       % cross-referencing (must be loaded before hyperref)
+% Preamble common to both main.tex and supplementary.tex
+
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{natbib}
+
+
+% Custom packages
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{booktabs}       % professional-quality tables
+%\usepackage{algorithm}      % algorithm environment
+%\usepackage{algpseudocode}
+\usepackage{multirow}
+\usepackage{sectsty}
+\usepackage{tabularx}
+\usepackage{graphicx}
+%\usepackage{tikz}           % vector graphics
+\usepackage{bm}             % bold math symbols
+\usepackage{xcolor}
+\usepackage{microtype} 
+\usepackage{import}
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+
+\usepackage{soul, color}
+\usepackage{titling}
+%\usetikzlibrary{arrows, snakes, backgrounds, patterns, matrix, shapes, fit, 
+%calc, shadows, plotmarks}
+
+\graphicspath{{./figures/}}
+
+% Support for multiple bibliographies
+%\usepackage{multibib}
+%\newcites{App}{References}
+
+% Custom commands
+\let\oldvec\vec
+\renewcommand\vec{\bm}
+\newcommand{\simfn}{\mathtt{sim}} % similarity function
+\newcommand{\truncsimfn}{\underline{\simfn}} % truncated similarity function
+\newcommand{\partfn}{\mathtt{PartFn}} % partition function
+\newcommand{\distfn}{\mathtt{dist}} % distance function
+\newcommand{\valset}{\mathcal{V}} % attribute value set
+\newcommand{\entset}{\mathcal{R}} % set of records that make up an entity
+\newcommand{\partset}{\mathcal{E}} % set of entities that make up a partition
+\newcommand{\1}[1]{\mathbb{I}\!\left[#1\right]} % indicator function
+\newcommand{\euler}{\mathrm{e}} % Euler's constant
+\newcommand{\dblink}{\texttt{\upshape \lowercase{d-blink}}} % Name of scalable Bayesian ER model
+\newcommand{\blink}{\texttt{\upshape \lowercase{blink}}} % Name of original Bayesian ER model
+\newcommand{\secref}[1]{Section~\ref{#1}} % Section reference
+\newcommand{\myparagraph}[1]{\smallskip\textbf{#1}}
+\newcommand{\eat}[1]{}
+
+\newtheorem*{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem{example}{Example}
+
+% DON'T change margins - should be 1 inch all around.
+\addtolength{\oddsidemargin}{-.5in}%
+\addtolength{\evensidemargin}{-.5in}%
+\addtolength{\textwidth}{1in}%
+\addtolength{\textheight}{1.3in}%
+\addtolength{\topmargin}{-.8in}%
